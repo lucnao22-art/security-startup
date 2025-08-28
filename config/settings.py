@@ -24,6 +24,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 # Application definition
 INSTALLED_APPS = [
+    'import_export',
     'jazzmin',
     'admin_reorder',
     'django.contrib.admin',
