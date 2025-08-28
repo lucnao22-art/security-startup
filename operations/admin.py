@@ -1,6 +1,12 @@
 # file: operations/admin.py
 from django.contrib import admin
-from .models import CaLamViec, PhanCongCaTruc, ChamCong, BaoCaoSuCo
+from django.utils.html import format_html
+from .models import ViTriChot, CaLamViec, PhanCongCaTruc, ChamCong, BaoCaoSuCo, BaoCaoDeXuat
+
+@admin.register(ViTriChot)
+class ViTriChotAdmin(admin.ModelAdmin):
+    list_display = ('ten_vi_tri', 'muc_tieu')
+    search_fields = ('ten_vi_tri', 'muc_tieu__ten_muc_tieu')
 
 @admin.register(CaLamViec)
 class CaLamViecAdmin(admin.ModelAdmin):
@@ -8,14 +14,61 @@ class CaLamViecAdmin(admin.ModelAdmin):
 
 @admin.register(PhanCongCaTruc)
 class PhanCongCaTrucAdmin(admin.ModelAdmin):
-    list_display = ('nhan_vien', 'muc_tieu', 'ca_lam_viec', 'ngay_truc')
-    list_filter = ('muc_tieu', 'ca_lam_viec', 'ngay_truc')
-    search_fields = ('nhan_vien__ho_ten', 'muc_tieu__ten_muc_tieu')
+    list_display = ('nhan_vien', 'vi_tri_chot', 'ca_lam_viec', 'ngay_truc')
+    list_filter = ('vi_tri_chot__muc_tieu', 'ca_lam_viec', 'ngay_truc')
+    search_fields = ('nhan_vien__ho_ten', 'vi_tri_chot__ten_vi_tri')
+    autocomplete_fields = ['nhan_vien', 'vi_tri_chot']
 
 @admin.register(ChamCong)
 class ChamCongAdmin(admin.ModelAdmin):
-    list_display = ('ca_truc', 'thoi_gian_check_in', 'thoi_gian_check_out')
+    list_display = ('ca_truc', 'thoi_gian_check_in', 'xem_anh_check_in', 'thoi_gian_check_out', 'xem_anh_check_out')
+    list_filter = ('ca_truc__ngay_truc', 'ca_truc__vi_tri_chot__muc_tieu')
+    search_fields = ('ca_truc__nhan_vien__ho_ten',)
+    readonly_fields = ('xem_anh_check_in', 'xem_anh_check_out')
+
+    def xem_anh_check_in(self, obj):
+        if obj.anh_check_in:
+            return format_html(f'<a href="{obj.anh_check_in.url}" target="_blank"><img src="{obj.anh_check_in.url}" width="100" /></a>')
+        return "Chưa có ảnh"
+    xem_anh_check_in.short_description = "Ảnh Check-in"
+
+    def xem_anh_check_out(self, obj):
+        if obj.anh_check_out:
+            return format_html(f'<a href="{obj.anh_check_out.url}" target="_blank"><img src="{obj.anh_check_out.url}" width="100" /></a>')
+        return "Chưa có ảnh"
+    xem_anh_check_out.short_description = "Ảnh Check-out"
 
 @admin.register(BaoCaoSuCo)
 class BaoCaoSuCoAdmin(admin.ModelAdmin):
-    list_display = ('tieu_de', 'ca_truc', 'thoi_gian_bao_cao')
+    list_display = ('tieu_de', 'ca_truc', 'trang_thai', 'nguoi_chiu_trach_nhiem', 'thoi_gian_bao_cao')
+    list_filter = ('trang_thai', 'nguoi_chiu_trach_nhiem')
+    search_fields = ('tieu_de', 'ca_truc__nhan_vien__ho_ten')
+    readonly_fields = ('xem_hinh_anh', 'ca_truc', 'thoi_gian_bao_cao')
+    
+    fieldsets = (
+        ('Thông tin Sự cố', {'fields': ('tieu_de', 'noi_dung', 'xem_hinh_anh', 'ca_truc')}),
+        ('Luồng Xử lý', {'fields': ('trang_thai', 'nguoi_chiu_trach_nhiem', 'lich_su_xu_ly')}),
+    )
+
+    def xem_hinh_anh(self, obj):
+        if obj.hinh_anh:
+            return format_html(f'<a href="{obj.hinh_anh.url}" target="_blank"><img src="{obj.hinh_anh.url}" width="100" /></a>')
+        return "Không có ảnh"
+    xem_hinh_anh.short_description = "Hình ảnh"
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        try:
+            nhan_vien = NhanVien.objects.get(user=request.user)
+            return qs.filter(nguoi_chiu_trach_nhiem=nhan_vien)
+        except NhanVien.DoesNotExist:
+            return qs.none()
+
+@admin.register(BaoCaoDeXuat)
+class BaoCaoDeXuatAdmin(admin.ModelAdmin):
+    list_display = ('tieu_de', 'nhan_vien', 'loai_bao_cao', 'ngay_gui', 'da_doc')
+    list_filter = ('loai_bao_cao', 'da_doc')
+    search_fields = ('tieu_de', 'nhan_vien__ho_ten')
+    readonly_fields = ('nhan_vien', 'loai_bao_cao', 'tieu_de', 'noi_dung', 'ngay_gui')

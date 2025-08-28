@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>Tùy chọn Xuất Lý lịch cho: {{ nhan_vien.ho_ten }}</h1>
+<form action="{% url 'users:export-ly-lich' nhan_vien.id %}" method="post">
+    {% csrf_token %}
+    <fieldset class="module">
+        <h2>Chọn các thông tin cần bao gồm:</h2>
+        <div class="form-row">
+            <input type="checkbox" name="bao_gom_anh_the" id="id_bao_gom_anh_the" checked>
+            <label for="id_bao_gom_anh_the">Bao gồm Ảnh thẻ</label>
+        </div>
+        <div class="form-row">
+            <input type="checkbox" name="bao_gom_thong_tin_ca_nhan" id="id_bao_gom_thong_tin_ca_nhan" checked>
+            <label for="id_bao_gom_thong_tin_ca_nhan">Bao gồm Thông tin Cá nhân</label>
+        </div>
+        <div class="form-row">
+            <input type="checkbox" name="bao_gom_bang_cap" id="id_bao_gom_bang_cap" checked>
+            <label for="id_bao_gom_bang_cap">Bao gồm Bằng cấp & Chứng chỉ</label>
+        </div>
+        <div class="form-row">
+            <input type="checkbox" name="bao_gom_lich_su_cong_tac" id="id_bao_gom_lich_su_cong_tac" checked>
+            <label for="id_bao_gom_lich_su_cong_tac">Bao gồm Lịch sử Công tác</label>
+        </div>
+    </fieldset>
+    <div class="submit-row">
+        <input type="submit" value="Tạo và Tải về PDF">
+    </div>
+</form>
+{% endblock %}

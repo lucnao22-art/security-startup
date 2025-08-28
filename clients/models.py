@@ -35,10 +35,18 @@ class MucTieu(models.Model):
     hop_dong = models.ForeignKey(HopDong, on_delete=models.CASCADE, verbose_name="Hợp đồng")
     ten_muc_tieu = models.CharField("Tên mục tiêu", max_length=255)
     dia_chi = models.TextField("Địa chỉ mục tiêu")
-    
+    chi_huy_truong = models.ForeignKey(
+        'users.NhanVien',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='muc_tieu_quan_ly',
+        verbose_name="Chỉ huy trưởng"
+    )
+
     class Meta:
         verbose_name = "Mục tiêu"
         verbose_name_plural = "Danh sách Mục tiêu"
 
     def __str__(self):
-        return self.ten_muc_tieu
+        return f"{self.ten_muc_tieu} ({self.dia_chi})"

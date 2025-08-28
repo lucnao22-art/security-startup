@@ -1,0 +1,91 @@
+{% extends "operations/mobile/base_mobile.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Bảng điều khiển{% endblock %}
+
+{% block header %}Bảng điều khiển{% endblock %}
+
+{% block content %}
+    {% if nhan_vien %}
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <h4 class="card-title">{{ nhan_vien.ho_ten }}</h4>
+                <p class="card-text text-muted">{{ nhan_vien.ma_nhan_vien }} | {{ nhan_vien.get_chuc_vu_display }}</p>
+                {% if nhan_vien.muc_tieu_lam_viec %}
+                    <p class="card-text"><strong>Mục tiêu:</strong> {{ nhan_vien.muc_tieu_lam_viec.ten_muc_tieu }}</p>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <h4 class="mb-3">Chào, {{ request.user.username }}!</h4>
+    {% endif %}
+    
+    {% if ca_truc_hom_nay %}
+        <div class="card mb-3">
+            <div class="card-header fw-bold">
+                Ca trực Hôm nay ({{ ca_truc_hom_nay.ngay_truc|date:"d/m/Y" }})
+            </div>
+            <div class="card-body">
+                <p><strong>Vị trí:</strong> {{ ca_truc_hom_nay.vi_tri_chot.ten_vi_tri }}</p>
+                <p><strong>Ca:</strong> {{ ca_truc_hom_nay.ca_lam_viec.ten_ca }} ({{ ca_truc_hom_nay.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ ca_truc_hom_nay.ca_lam_viec.gio_ket_thuc|time:"H:i" }})</p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">📸 Chấm công</h5>
+                <form action="{% url 'operations:mobile-cham-cong' %}" method="post" enctype="multipart/form-data" class="mt-3">
+                    {% csrf_token %}
+                    <input type="hidden" name="ca_truc_id" value="{{ ca_truc_hom_nay.id }}">
+                    
+                    <div class="mb-3">
+                        <label for="selfie" class="form-label">Chụp ảnh selfie:</label>
+                        <input class="form-control" type="file" id="selfie" name="anh_selfie" accept="image/*" capture="user" required>
+                    </div>
+                    
+                    {% if not cham_cong or not cham_cong.thoi_gian_check_in %}
+                        <button type="submit" name="loai_cham_cong" value="check_in" class="btn btn-primary w-100 btn-lg">Check-in</button>
+                    {% elif not cham_cong.thoi_gian_check_out %}
+                        <p><strong>Đã Check-in lúc:</strong> {{ cham_cong.thoi_gian_check_in|time:"H:i:s" }}</p>
+                        <button type="submit" name="loai_cham_cong" value="check_out" class="btn btn-success w-100 btn-lg">Check-out</button>
+                    {% else %}
+                        <p><strong>Đã Check-in:</strong> {{ cham_cong.thoi_gian_check_in|time:"H:i:s" }}</p>
+                        <p><strong>Đã Check-out:</strong> {{ cham_cong.thoi_gian_check_out|time:"H:i:s" }}</p>
+                        <div class="alert alert-success" role="alert">✅ Đã hoàn thành ca trực.</div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header fw-bold">Lịch trực Sắp tới</div>
+            <ul class="list-group list-group-flush">
+                {% for ca in lich_truc_tuan_toi %}
+                    <li class="list-group-item">
+                        <strong>{{ ca.ngay_truc|date:"d/m, l" }}:</strong> {{ ca.ca_lam_viec.ten_ca }}<br>
+                        <small class="text-muted">Tại: {{ ca.vi_tri_chot.ten_vi_tri }} ({{ ca.vi_tri_chot.muc_tieu.ten_muc_tieu }})</small>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item">Không có lịch trực nào trong 7 ngày tới.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="list-group">
+            <a href="{% url 'operations:mobile-bao-cao-su-co' %}" class="list-group-item list-group-item-action">⚠️  Báo cáo Sự cố</a>
+            <a href="{% url 'operations:mobile-bao-cao-de-xuat' %}" class="list-group-item list-group-item-action">📝 Gửi Báo cáo / Đề xuất</a>
+        </div>
+        
+    {% else %}
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Không có ca trực</h5>
+                <p class="card-text">Hôm nay bạn không được phân công ca trực nào. Hãy nghỉ ngơi hoặc liên hệ với Chỉ huy trưởng nếu có thắc mắc.</p>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="d-grid mt-4">
+        <a href="{% url 'operations:mobile-logout' %}" class="btn btn-outline-secondary">Đăng xuất</a>
+    </div>
+{% endblock %}

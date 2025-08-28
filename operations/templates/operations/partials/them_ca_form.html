@@ -1,0 +1,17 @@
+<h4>Thêm ca trực mới</h4>
+<form hx-post="{% url 'operations:luu-ca' %}">
+    {% csrf_token %}
+    <input type="hidden" name="ngay_truc" value="{{ ngay_truc }}">
+    <input type="hidden" name="ca_lam_viec_id" value="{{ ca_lam_viec_id }}">
+    <input type="hidden" name="vi_tri_chot_id" value="{{ vi_tri_chot_id }}">
+    
+    <label for="nhan_vien_select" class="form-label">Chọn nhân viên:</label>
+    <select name="nhan_vien_id" id="nhan_vien_select" class="form-select mt-2">
+        <option value="">---------</option>
+        {% for nv in danh_sach_nhan_vien %}
+            <option value="{{ nv.id }}">{{ nv.ho_ten }}</option>
+        {% endfor %}
+    </select>
+    <hr>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+</form>

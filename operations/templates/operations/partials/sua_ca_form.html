@@ -1,0 +1,16 @@
+<h4>Sửa ca trực</h4>
+<form hx-post="{% url 'operations:cap-nhat-ca' phan_cong.id %}">
+    <p><strong>Ngày:</strong> {{ phan_cong.ngay_truc|date:"d/m/Y" }}</p>
+    <p><strong>Ca:</strong> {{ phan_cong.ca_lam_viec.ten_ca }}</p>
+    <select name="nhan_vien_id">
+        <option value="{{ phan_cong.nhan_vien.id }}">{{ phan_cong.nhan_vien.ho_ten }}</option>
+        
+        {% for nv in danh_sach_nhan_vien %}
+            {% if nv.id != phan_cong.nhan_vien.id %}
+                <option value="{{ nv.id }}">{{ nv.ho_ten }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <hr>
+    <button type="submit">Lưu thay đổi</button>
+</form>

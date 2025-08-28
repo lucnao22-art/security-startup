@@ -1,0 +1,8 @@
+<h4>Chi tiết Ca trực</h4>
+<p><strong>Nhân viên:</strong> {{ phan_cong.nhan_vien.ho_ten }}</p>
+<p><strong>SĐT:</strong> {{ phan_cong.nhan_vien.sdt_chinh }}</p>
+<p><strong>Mục tiêu:</strong> {{ phan_cong.muc_tieu }}</p>
+<p><strong>Ngày:</strong> {{ phan_cong.ngay_truc|date:"d/m/Y" }}</p>
+<hr>
+<button hx-get="{% url 'operations:sua-ca-form' phan_cong.id %}" hx-target="#details-panel">Sửa</button>
+<button hx-post="{% url 'operations:xoa-ca' phan_cong.id %}" hx-confirm="Anh có chắc chắn muốn xóa ca trực này?">Xóa</button>

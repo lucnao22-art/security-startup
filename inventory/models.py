@@ -41,3 +41,14 @@ class CapPhatMucTieu(models.Model):
         
     def __str__(self):
         return f"Cấp {self.vat_tu.ten_vat_tu} cho {self.muc_tieu.ten_muc_tieu}"
+
+class TrangBiTieuChuan(models.Model):
+    vat_tu = models.ForeignKey(VatTu, on_delete=models.CASCADE, verbose_name="Vật tư")
+    so_luong = models.PositiveIntegerField("Số lượng tiêu chuẩn", default=1)
+
+    class Meta:
+        verbose_name = "Trang bị Tiêu chuẩn"
+        verbose_name_plural = "Danh sách Trang bị Tiêu chuẩn"
+
+    def __str__(self):
+        return f"{self.vat_tu.ten_vat_tu} (SL: {self.so_luong})"

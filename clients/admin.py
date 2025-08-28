@@ -12,9 +12,14 @@ class HopDongAdmin(admin.ModelAdmin):
     list_display = ('so_hop_dong', 'khach_hang', 'ngay_hieu_luc', 'ngay_het_han')
     search_fields = ('so_hop_dong', 'khach_hang__ten_cong_ty')
     list_filter = ('khach_hang',)
+    autocomplete_fields = ['khach_hang']
 
 @admin.register(MucTieu)
 class MucTieuAdmin(admin.ModelAdmin):
-    list_display = ('ten_muc_tieu', 'hop_dong')
-    search_fields = ('ten_muc_tieu', 'hop_dong__so_hop_dong')
+    # Chúng ta sẽ quản lý ViTriChot trong app 'operations'
+    # inlines = [ViTriChotInline] 
+    fields = ('hop_dong', 'ten_muc_tieu', 'dia_chi', 'chi_huy_truong')
+    list_display = ('ten_muc_tieu', 'hop_dong', 'chi_huy_truong')
+    search_fields = ('ten_muc_tieu', 'hop_dong__so_hop_dong', 'chi_huy_truong__ho_ten')
     list_filter = ('hop_dong__khach_hang',)
+    autocomplete_fields = ['hop_dong', 'chi_huy_truong']

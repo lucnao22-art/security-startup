@@ -1,0 +1,20 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bảo vệ XYZ{% endblock %}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        body { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <h2 class="text-center mb-4">{% block header %}{% endblock %}</h2>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

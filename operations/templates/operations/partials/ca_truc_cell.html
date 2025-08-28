@@ -1,0 +1,17 @@
+{% if phan_cong and phan_cong.nhan_vien %}
+    <div 
+        class="employee"
+        hx-get="{% url 'operations:chi-tiet-ca' phan_cong.id %}"
+        hx-target="#details-panel"
+        style="cursor: pointer;"
+        title="Nhấp để xem chi tiết">
+        {{ phan_cong.nhan_vien.ho_ten }}
+    </div>
+{% else %}
+    <button 
+        class="add-shift-btn"
+        hx-get="{% url 'operations:them-ca-form' %}?ngay={{ day|date:'Y-m-d' }}&ca_id={{ ca.id }}&vi_tri_id={{ vi_tri.id }}"
+        hx-target="#details-panel">
+        +
+    </button>
+{% endif %}
