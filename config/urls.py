@@ -3,8 +3,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/ops/mobile/login/', permanent=True)),
     path('admin/', admin.site.urls),
     path('ops/', include('operations.urls', namespace='operations')),
     path('dashboard/', include('dashboard.urls', namespace='dashboard')),
