@@ -1,16 +1,25 @@
 <h4>Sửa ca trực</h4>
-<form hx-post="{% url 'operations:cap-nhat-ca' phan_cong.id %}">
-    <p><strong>Ngày:</strong> {{ phan_cong.ngay_truc|date:"d/m/Y" }}</p>
-    <p><strong>Ca:</strong> {{ phan_cong.ca_lam_viec.ten_ca }}</p>
-    <select name="nhan_vien_id">
-        <option value="{{ phan_cong.nhan_vien.id }}">{{ phan_cong.nhan_vien.ho_ten }}</option>
-        
-        {% for nv in danh_sach_nhan_vien %}
-            {% if nv.id != phan_cong.nhan_vien.id %}
-                <option value="{{ nv.id }}">{{ nv.ho_ten }}</option>
-            {% endif %}
-        {% endfor %}
-    </select>
-    <hr>
-    <button type="submit">Lưu thay đổi</button>
+<form hx-post="{% url 'operations:cap-nhat-ca' phan_cong.id %}" hx-target="closest .shift-cell" hx-swap="innerHTML">
+    {% csrf_token %}
+    <div class="mb-2">
+        <label class="form-label">Nhân viên:</label>
+        <select name="nhan_vien_id" class="form-select form-select-sm">
+            {% for nv in danh_sach_nhan_vien %}
+                <option value="{{ nv.id }}" {% if nv.id == phan_cong.nhan_vien.id %}selected{% endif %}>
+                    {{ nv.ho_ten }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="d-flex justify-content-end gap-2 mt-3">
+        <button 
+            type="button" 
+            class="btn btn-secondary btn-sm"
+            hx-get="{% url 'operations:chi-tiet-ca' phan_cong.id %}"
+            hx-target="#details-panel"
+            hx-swap="innerHTML">
+            Hủy
+        </button>
+        <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
+    </div>
 </form>

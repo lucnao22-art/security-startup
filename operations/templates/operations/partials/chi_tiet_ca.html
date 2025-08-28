@@ -1,8 +1,12 @@
-<h4>Chi tiết Ca trực</h4>
-<p><strong>Nhân viên:</strong> {{ phan_cong.nhan_vien.ho_ten }}</p>
-<p><strong>SĐT:</strong> {{ phan_cong.nhan_vien.sdt_chinh }}</p>
-<p><strong>Mục tiêu:</strong> {{ phan_cong.muc_tieu }}</p>
-<p><strong>Ngày:</strong> {{ phan_cong.ngay_truc|date:"d/m/Y" }}</p>
+<h5 class="card-title">Chi tiết Ca trực</h5>
 <hr>
-<button hx-get="{% url 'operations:sua-ca-form' phan_cong.id %}" hx-target="#details-panel">Sửa</button>
-<button hx-post="{% url 'operations:xoa-ca' phan_cong.id %}" hx-confirm="Anh có chắc chắn muốn xóa ca trực này?">Xóa</button>
+<p><strong>Nhân viên:</strong><br>{{ phan_cong.nhan_vien.ho_ten }}</p>
+<p><strong>SĐT:</strong><br>{{ phan_cong.nhan_vien.sdt_chinh }}</p>
+<p><strong>Vị trí:</strong><br>{{ phan_cong.vi_tri_chot.ten_vi_tri }}</p>
+<p><strong>Mục tiêu:</strong><br>{{ phan_cong.vi_tri_chot.muc_tieu.ten_muc_tieu }}</p>
+<p><strong>Ngày:</strong><br>{{ phan_cong.ngay_truc|date:"d/m/Y" }}</p>
+<hr>
+<div class="d-grid gap-2">
+    <button hx-get="{% url 'operations:sua-ca-form' phan_cong.id %}" hx-target="#details-panel" hx-swap="innerHTML" class="btn btn-primary btn-sm">Sửa</button>
+    <button hx-post="{% url 'operations:xoa-ca' phan_cong.id %}" hx-confirm="Anh có chắc chắn muốn xóa ca trực này?" class="btn btn-danger btn-sm">Xóa</button>
+</div>

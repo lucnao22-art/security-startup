@@ -3,6 +3,7 @@
         class="employee"
         hx-get="{% url 'operations:chi-tiet-ca' phan_cong.id %}"
         hx-target="#details-panel"
+        hx-swap="innerHTML"
         style="cursor: pointer;"
         title="Nhấp để xem chi tiết">
         {{ phan_cong.nhan_vien.ho_ten }}
@@ -11,7 +12,8 @@
     <button 
         class="add-shift-btn"
         hx-get="{% url 'operations:them-ca-form' %}?ngay={{ day|date:'Y-m-d' }}&ca_id={{ ca.id }}&vi_tri_id={{ vi_tri.id }}"
-        hx-target="#details-panel">
+        hx-target="#details-panel"
+        hx-swap="innerHTML">
         +
     </button>
 {% endif %}
