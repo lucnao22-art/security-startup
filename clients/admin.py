@@ -1,6 +1,11 @@
 # file: clients/admin.py
 from django.contrib import admin
 from .models import KhachHang, HopDong, MucTieu
+from operations.models import ViTriChot # Import từ app operations
+
+class ViTriChotInline(admin.TabularInline):
+    model = ViTriChot
+    extra = 1
 
 @admin.register(KhachHang)
 class KhachHangAdmin(admin.ModelAdmin):
@@ -16,8 +21,7 @@ class HopDongAdmin(admin.ModelAdmin):
 
 @admin.register(MucTieu)
 class MucTieuAdmin(admin.ModelAdmin):
-    # Chúng ta sẽ quản lý ViTriChot trong app 'operations'
-    # inlines = [ViTriChotInline] 
+    inlines = [ViTriChotInline]
     fields = ('hop_dong', 'ten_muc_tieu', 'dia_chi', 'chi_huy_truong')
     list_display = ('ten_muc_tieu', 'hop_dong', 'chi_huy_truong')
     search_fields = ('ten_muc_tieu', 'hop_dong__so_hop_dong', 'chi_huy_truong__ho_ten')

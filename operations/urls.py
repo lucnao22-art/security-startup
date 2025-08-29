@@ -13,6 +13,8 @@ urlpatterns = [
     path('cap-nhat-ca/<int:phan_cong_id>/', views.cap_nhat_ca_view, name='cap-nhat-ca'),
     path('chi-tiet-ca/<int:phan_cong_id>/', views.chi_tiet_ca_view, name='chi-tiet-ca'),
     path('tim-kiem-nhan-vien/', views.tim_kiem_nhan_vien_view, name='tim-kiem-nhan-vien'),
+    path('muc-tieu/', views.danh_sach_muc_tieu_view, name='danh-sach-muc-tieu'),
+    path('muc-tieu/<int:muc_tieu_id>/', views.chi_tiet_muc_tieu_view, name='chi-tiet-muc-tieu'),
    
 
     # URLs CHO GIAO DIỆN DI ĐỘNG

@@ -10,7 +10,15 @@ from clients.models import MucTieu
 from operations.models import BaoCaoSuCo
 from datetime import timedelta
 import json
+from notifications.models import ThongBao # Thêm import
 
+@login_required
+def dashboard_view(request):
+    # Lấy 5 thông báo mới nhất chưa đọc
+    thong_bao_chua_doc = ThongBao.objects.filter(nguoi_nhan=request.user, da_doc=False)[:5]
+    context['thong_bao_list'] = thong_bao_chua_doc
+    
+    return render(request, 'dashboard/main.html', context)
 @login_required
 def dashboard_view(request):
     context = {}

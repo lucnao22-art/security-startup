@@ -10,9 +10,49 @@ from users.models import NhanVien
 from clients.models import MucTieu
 from .models import ViTriChot # Sửa lại đây
 from .models import PhanCongCaTruc, CaLamViec, ChamCong, BaoCaoSuCo, BaoCaoDeXuat
+from inventory.models import CapPhatMucTieu
 from datetime import date, timedelta
 from django.db.models import Q
 
+@login_required
+def chi_tiet_muc_tieu_view(request: HttpRequest, muc_tieu_id: int) -> HttpResponse:
+    muc_tieu = get_object_or_404(MucTieu.objects.select_related('chi_huy_truong'), id=muc_tieu_id)
+    
+    # Lấy danh sách vị trí chốt
+    vi_tri_chot_list = ViTriChot.objects.filter(muc_tieu=muc_tieu)
+    
+    # Lấy danh sách nhân viên đang làm việc tại mục tiêu
+    nhan_vien_list = NhanVien.objects.filter(muc_tieu_lam_viec=muc_tieu, trang_thai_lam_viec='CT')
+    
+    # Lấy danh sách CCDC đã cấp phát
+    ccdc_list = CapPhatMucTieu.objects.filter(muc_tieu=muc_tieu).select_related('vat_tu')
+    
+    # Lấy lịch sử sự cố
+    su_co_list = BaoCaoSuCo.objects.filter(ca_truc__vi_tri_chot__muc_tieu=muc_tieu).order_by('-thoi_gian_bao_cao')[:10]
+
+    context = {
+        'muc_tieu': muc_tieu,
+        'vi_tri_chot_list': vi_tri_chot_list,
+        'nhan_vien_list': nhan_vien_list,
+        'ccdc_list': ccdc_list,
+        'su_co_list': su_co_list,
+    }
+    return render(request, 'operations/chi_tiet_muc_tieu.html', context)
+
+@login_required
+def danh_sach_muc_tieu_view(request: HttpRequest) -> HttpResponse:
+    muc_tieu_list = MucTieu.objects.all()
+    return render(request, 'operations/danh_sach_muc_tieu.html', {'muc_tieu_list': muc_tieu_list})
+
+@login_required
+def chi_tiet_muc_tieu_view(request: HttpRequest, muc_tieu_id: int) -> HttpResponse:
+    muc_tieu = get_object_or_404(MucTieu, id=muc_tieu_id)
+    # Lấy các thông tin liên quan...
+    # (Code để lấy CCDC, lỗi, phản hồi sẽ được thêm sau)
+    context = {
+        'muc_tieu': muc_tieu,
+    }
+    return render(request, 'operations/chi_tiet_muc_tieu.html', context)
 @login_required
 def xep_lich_view(request: HttpRequest) -> HttpResponse:
     today = date.today()
@@ -307,3 +347,32 @@ def mobile_bao_cao_de_xuat_view(request: HttpRequest) -> HttpResponse:
 def mobile_logout_view(request: HttpRequest) -> HttpResponse:
     logout(request)
     return redirect('operations:mobile-login')
+@login_required
+def danh_sach_muc_tieu_view(request: HttpRequest) -> HttpResponse:
+    muc_tieu_list = MucTieu.objects.all()
+    return render(request, 'operations/danh_sach_muc_tieu.html', {'muc_tieu_list': muc_tieu_list})
+
+@login_required
+def chi_tiet_muc_tieu_view(request: HttpRequest, muc_tieu_id: int) -> HttpResponse:
+    muc_tieu = get_object_or_404(MucTieu.objects.select_related('chi_huy_truong'), id=muc_tieu_id)
+    
+    # Lấy danh sách vị trí chốt
+    vi_tri_chot_list = ViTriChot.objects.filter(muc_tieu=muc_tieu)
+    
+    # Lấy danh sách nhân viên đang làm việc tại mục tiêu
+    nhan_vien_list = NhanVien.objects.filter(muc_tieu_lam_viec=muc_tieu, trang_thai_lam_viec='CT')
+    
+    # Lấy danh sách CCDC đã cấp phát cho mục tiêu
+    ccdc_list = CapPhatMucTieu.objects.filter(muc_tieu=muc_tieu).select_related('vat_tu')
+    
+    # Lấy lịch sử sự cố của mục tiêu (10 sự cố gần nhất)
+    su_co_list = BaoCaoSuCo.objects.filter(ca_truc__vi_tri_chot__muc_tieu=muc_tieu).order_by('-thoi_gian_bao_cao')[:10]
+
+    context = {
+        'muc_tieu': muc_tieu,
+        'vi_tri_chot_list': vi_tri_chot_list,
+        'nhan_vien_list': nhan_vien_list,
+        'ccdc_list': ccdc_list,
+        'su_co_list': su_co_list,
+    }
+    return render(request, 'operations/chi_tiet_muc_tieu.html', context)

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'clients.apps.ClientsConfig',
     'users.apps.UsersConfig',
     'backup_restore.apps.BackupRestoreConfig',
+    'notifications.apps.NotificationsConfig', # Thêm dòng này
 ]
 
 MIDDLEWARE = [
@@ -123,8 +124,34 @@ ADMIN_REORDER = (
 )
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Admin", "site_header": "Hệ thống Quản lý Vận hành", "site_brand": "Admin",
-    "welcome_sign": "Chào mừng đến với Hệ thống Quản lý Vận hành", "copyright": "Công ty Bảo vệ XYZ Ltd",
+    "site_title": "Bảo vệ XYZ",
+    "site_header": "Bảo vệ XYZ",
+    "site_brand": "Bảo vệ XYZ",
+    "welcome_sign": "Chào mừng đến với Hệ thống Quản lý Vận hành",
+    "copyright": "Bảo vệ XYZ Ltd",
+    "topmenu_links": [
+        {"name": "Trang chủ",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Xếp lịch", "url": "operations:xep-lich", "permissions": ["auth.view_user"]},
+    ],
+    "show_ui_builder": True, # Cho phép tùy chỉnh giao diện trực tiếp
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "no_navbar_border": False,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
 }
 
 # --- CẤU HÌNH CELERY ---
@@ -134,5 +161,17 @@ CELERY_BEAT_SCHEDULE = {
     'escalate-reports-every-5-minutes': {
         'task': 'operations.tasks.check_and_escalate_reports',
         'schedule': crontab(minute='*/5'),
+    },
+    'check-certs-daily': {
+        'task': 'operations.tasks.check_expired_certificates',
+        'schedule': crontab(hour=8, minute=0), # Chạy vào 8h sáng mỗi ngày
+    },
+    'check-shifts-daily': {
+        'task': 'operations.tasks.check_unassigned_shifts',
+        'schedule': crontab(hour=17, minute=0), # Chạy vào 5h chiều mỗi ngày
+    },
+      'check-contracts-daily': {
+        'task': 'notifications.tasks.check_expiring_contracts',
+        'schedule': crontab(hour=8, minute=30), # Chạy vào 8h30 sáng mỗi ngày
     },
 }

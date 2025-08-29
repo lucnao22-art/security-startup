@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Danh sách Mục tiêu{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Danh sách Mục tiêu</h1>
+        <a href="{% url 'admin:clients_muctieu_add' %}" class="btn btn-primary">Thêm Mục tiêu mới</a>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                {% for mt in muc_tieu_list %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ mt.ten_muc_tieu }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ mt.hop_dong.khach_hang.ten_cong_ty }}</h6>
+                            <p class="card-text"><small>{{ mt.dia_chi }}</small></p>
+                        </div>
+                        <div class="card-footer bg-light">
+                            <a href="{% url 'operations:chi-tiet-muc-tieu' mt.id %}" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col">
+                    <p>Chưa có mục tiêu nào được tạo.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

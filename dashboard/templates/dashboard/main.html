@@ -5,21 +5,54 @@
 
 {% block content %}
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Dashboard</h1>
-        <span>Chào, {{ request.user.first_name|default:request.user.username }}</span>
+    <h1 class="mb-4">Dashboard Tổng quan</h1>
+    
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Tổng số Nhân viên</h5>
+                    <p class="card-text fs-1 fw-bold text-primary">{{ so_luong_nhan_vien }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Tổng số Mục tiêu</h5>
+                    <p class="card-text fs-1 fw-bold text-success">{{ so_luong_muc_tieu }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Sự cố trong Tháng</h5>
+                    <p class="card-text fs-1 fw-bold text-warning">{{ so_luong_su_co_thang_nay }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Sự cố Mới (chưa xử lý)</h5>
+                    <p class="card-text fs-1 fw-bold text-danger">{{ so_su_co_moi }}</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    {% if is_bod %}
     <div class="row">
-        <div class="col-md-3 mb-4"><div class="card text-center"><div class="card-body"><h5 class="card-title">Tổng số Nhân viên</h5><p class="card-text fs-1 fw-bold">{{ so_luong_nhan_vien }}</p></div></div></div>
-        <div class="col-md-3 mb-4"><div class="card text-center"><div class="card-body"><h5 class="card-title">Tổng số Mục tiêu</h5><p class="card-text fs-1 fw-bold">{{ so_luong_muc_tieu }}</p></div></div></div>
-        <div class="col-md-3 mb-4"><div class="card text-center"><div class="card-body"><h5 class="card-title">Sự cố trong Tháng</h5><p class="card-text fs-1 fw-bold">{{ so_luong_su_co_thang_nay }}</p></div></div></div>
-        <div class="col-md-3 mb-4"><div class="card text-center"><div class="card-body"><h5 class="card-title">Sự cố Mới</h5><p class="card-text fs-1 fw-bold">{{ so_su_co_moi }}</p></div></div></div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 mb-4">
-            <div class="card">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Thống kê Nhân viên theo Trạng thái</h5>
+                    <canvas id="employeeStatusChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title text-center">Thống kê Sự cố (7 ngày qua)</h5>
                     <canvas id="incidentsTrendChart"></canvas>
@@ -27,65 +60,45 @@
             </div>
         </div>
     </div>
-    {% endif %}
-    {% if bao_cao_list %}
-    <div class="card">
-        <div class="card-header"><h5 class="mb-0">Các Báo cáo Sự cố cần Xử lý</h5></div>
-        <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Tiêu đề</th><th>Người Báo cáo</th><th>Thời gian</th><th>Trạng thái</th><th>Hành động</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for bc in bao_cao_list %}
-                        <tr>
-                            <td>{{ bc.tieu_de }}</td>
-                            <td>{{ bc.ca_truc.nhan_vien.ho_ten }}</td>
-                            <td>{{ bc.thoi_gian_bao_cao|date:"H:i, d/m/Y" }}</td>
-                            <td>
-                                {% if bc.trang_thai == 'MOI' or bc.trang_thai == 'LEOTHANG' %}
-                                    <span class="badge bg-danger">{{ bc.get_trang_thai_display }}</span>
-                                {% else %}
-                                    <span class="badge bg-warning text-dark">{{ bc.get_trang_thai_display }}</span>
-                                {% endif %}
-                            </td>
-                            <td>
-                                <a href="{% url 'admin:operations_baocaosuco_change' bc.id %}" class="btn btn-primary btn-sm" target="_blank">Xem & Xử lý</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    {% endif %}
-    </div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    // Chỉ chạy script nếu người dùng là Ban Giám đốc
-    {% if is_bod %}
-    const lineCtx = document.getElementById('incidentsTrendChart');
-    if (lineCtx) {
-        new Chart(lineCtx, {
-            type: 'line',
-            data: {
-                labels: {{ line_chart_labels|safe }},
-                datasets: [{
-                    label: 'Số lượng sự cố',
-                    data: {{ line_chart_data|safe }},
-                    fill: false,
-                    borderColor: 'rgb(220, 53, 69)',
-                    tension: 0.1
-                }]
-            },
-            options: { scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
-        });
-    }
-    {% endif %}
-</script>
+</div>
 {% endblock %}
+<script>
+    // Biểu đồ Thống kê Nhân viên
+    const pieCtx = document.getElementById('employeeStatusChart');
+    new Chart(pieCtx, {
+        type: 'doughnut',
+        data: {
+            labels: {{ pie_chart_labels|safe }},
+            datasets: [{
+                label: 'Số lượng nhân viên',
+                data: {{ pie_chart_data|safe }},
+                backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#6c757d'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'top' } }
+        }
+    });
+
+    // Biểu đồ Xu hướng Sự cố
+    const lineCtx = document.getElementById('incidentsTrendChart');
+    new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: {{ line_chart_labels|safe }},
+            datasets: [{
+                label: 'Số lượng sự cố',
+                data: {{ line_chart_data|safe }},
+                fill: false,
+                borderColor: 'rgb(220, 53, 69)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true, ticks: { stepSize: 1 } }
+            }
+        }
+    });
+</script>

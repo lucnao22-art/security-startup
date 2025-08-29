@@ -14,6 +14,17 @@ class ViTriChot(models.Model):
     def __str__(self):
         return f"{self.ten_vi_tri} ({self.muc_tieu.ten_muc_tieu})"
 
+class ViTriChot(models.Model):
+    muc_tieu = models.ForeignKey(MucTieu, on_delete=models.CASCADE, related_name='vi_tri_chot', verbose_name="Mục tiêu")
+    ten_vi_tri = models.CharField("Tên vị trí", max_length=255)
+    
+    class Meta:
+        verbose_name = "Vị trí chốt"
+        verbose_name_plural = "Danh sách Vị trí chốt"
+
+    def __str__(self):
+        return f"{self.ten_vi_tri} ({self.muc_tieu.ten_muc_tieu})"
+
 class CaLamViec(models.Model):
     ten_ca = models.CharField("Tên ca", max_length=100)
     gio_bat_dau = models.TimeField("Giờ bắt đầu")
