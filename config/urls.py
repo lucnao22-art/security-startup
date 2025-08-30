@@ -12,6 +12,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls', namespace='dashboard')),
     path('users/', include('users.urls', namespace='users')),
     path('backup/', include('backup_restore.urls', namespace='backup')),
+    path('clients/', include('clients.urls', namespace='clients')),
 ]
 
 # Thêm dòng này vào cuối file để phục vụ file media trong môi trường development

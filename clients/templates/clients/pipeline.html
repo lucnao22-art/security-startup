@@ -8,46 +8,60 @@
     .pipeline-board {
         display: flex;
         overflow-x: auto;
-        padding: 20px;
+        padding-bottom: 20px;
         gap: 20px;
     }
     .pipeline-column {
-        flex: 0 0 300px; /* Chiều rộng cố định cho mỗi cột */
-        background-color: #e9ecef;
+        flex: 0 0 320px; /* Chiều rộng cố định cho mỗi cột */
+        background-color: #f4f7f6;
         border-radius: 8px;
-        padding: 15px;
     }
-    .pipeline-column h4 {
-        margin-top: 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #ccc;
+    .column-header {
+        padding: 15px;
+        font-weight: bold;
+        border-bottom: 3px solid #007bff;
+    }
+    .card-list {
+        padding: 15px;
+        min-height: 400px; /* Chiều cao tối thiểu để có thể kéo thả */
     }
     .opportunity-card {
         background-color: #fff;
         border-radius: 5px;
-        padding: 10px;
+        padding: 15px;
         margin-bottom: 10px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        cursor: grab;
     }
     .opportunity-card h5 {
         margin-top: 0;
-        font-size: 1em;
+        font-size: 1.1em;
     }
 </style>
 
 <div class="container-fluid">
-    <h1 class="mb-4">Sales Pipeline</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Sales Pipeline</h1>
+        <a href="{% url 'admin:clients_cohoikinhdoanh_add' %}" class="btn btn-primary" target="_blank">
+            <i class="fas fa-plus"></i> Thêm Cơ hội mới
+        </a>
+    </div>
+
     <div class="pipeline-board">
         {% for column in pipeline_data %}
             <div class="pipeline-column">
-                <h4>{{ column.status_name }} ({{ column.opportunities.count }})</h4>
+                <div class="column-header">
+                    {{ column.status_name }} ({{ column.opportunities.count }})
+                </div>
                 <div class="card-list">
                     {% for co_hoi in column.opportunities %}
                         <div class="opportunity-card">
                             <h5>{{ co_hoi.ten_khach_hang }}</h5>
-                            <p class="mb-1"><small>Người liên hệ: {{ co_hoi.nguoi_lien_he }}</small></p>
+                            <p class="mb-1"><small>Liên hệ: {{ co_hoi.nguoi_lien_he }}</small></p>
                             <p class="mb-0"><small>Phụ trách: {{ co_hoi.nhan_vien_phu_trach.ho_ten|default:"Chưa gán" }}</small></p>
                         </div>
+                    {% empty %}
+                        <p class="text-muted text-center mt-3">Chưa có cơ hội nào.</p>
                     {% endfor %}
                 </div>
             </div>
