@@ -3,6 +3,7 @@ from django.db import models
 from users.models import NhanVien
 from clients.models import MucTieu
 
+
 class VatTu(models.Model):
     ten_vat_tu = models.CharField("Tên vật tư", max_length=255)
     don_vi_tinh = models.CharField("Đơn vị tính", max_length=50)
@@ -15,8 +16,11 @@ class VatTu(models.Model):
     def __str__(self):
         return self.ten_vat_tu
 
+
 class CapPhatCaNhan(models.Model):
-    nhan_vien = models.ForeignKey(NhanVien, on_delete=models.CASCADE, verbose_name="Nhân viên")
+    nhan_vien = models.ForeignKey(
+        NhanVien, on_delete=models.CASCADE, verbose_name="Nhân viên"
+    )
     vat_tu = models.ForeignKey(VatTu, on_delete=models.CASCADE, verbose_name="Vật tư")
     so_luong = models.PositiveIntegerField("Số lượng cấp phát")
     ngay_cap_phat = models.DateField("Ngày cấp phát", auto_now_add=True)
@@ -29,18 +33,22 @@ class CapPhatCaNhan(models.Model):
     def __str__(self):
         return f"Cấp {self.vat_tu.ten_vat_tu} cho {self.nhan_vien.ho_ten}"
 
+
 class CapPhatMucTieu(models.Model):
-    muc_tieu = models.ForeignKey(MucTieu, on_delete=models.CASCADE, verbose_name="Mục tiêu")
+    muc_tieu = models.ForeignKey(
+        MucTieu, on_delete=models.CASCADE, verbose_name="Mục tiêu"
+    )
     vat_tu = models.ForeignKey(VatTu, on_delete=models.CASCADE, verbose_name="Vật tư")
     so_luong = models.PositiveIntegerField("Số lượng cấp phát")
     ngay_cap_phat = models.DateField("Ngày cấp phát", auto_now_add=True)
-    
+
     class Meta:
         verbose_name = "Cấp phát Mục tiêu"
         verbose_name_plural = "Lịch sử Cấp phát Mục tiêu"
-        
+
     def __str__(self):
         return f"Cấp {self.vat_tu.ten_vat_tu} cho {self.muc_tieu.ten_muc_tieu}"
+
 
 class TrangBiTieuChuan(models.Model):
     vat_tu = models.ForeignKey(VatTu, on_delete=models.CASCADE, verbose_name="Vật tư")

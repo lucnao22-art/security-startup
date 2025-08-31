@@ -1,104 +1,106 @@
 {% extends "base.html" %}
-{% load django_bootstrap5 %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Bảng điều khiển{% endblock title %}
 
 {% block content %}
-<div class="container">
-    <h1 class="mb-4">Dashboard Tổng quan</h1>
-    
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Bảng điều khiển</h1>
+    </div>
+
     <div class="row">
-        <div class="col-md-3 mb-4">
-            <div class="card text-center h-100 shadow-sm">
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
-                    <h5 class="card-title text-muted">Tổng số Nhân viên</h5>
-                    <p class="card-text fs-1 fw-bold text-primary">{{ so_luong_nhan_vien }}</p>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Tổng Nhân viên (Chính thức)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ so_nhan_vien }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mb-4">
-            <div class="card text-center h-100 shadow-sm">
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
-                    <h5 class="card-title text-muted">Tổng số Mục tiêu</h5>
-                    <p class="card-text fs-1 fw-bold text-success">{{ so_luong_muc_tieu }}</p>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Tổng số Mục tiêu</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ so_muc_tieu }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-bullseye fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mb-4">
-            <div class="card text-center h-100 shadow-sm">
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
-                    <h5 class="card-title text-muted">Sự cố trong Tháng</h5>
-                    <p class="card-text fs-1 fw-bold text-warning">{{ so_luong_su_co_thang_nay }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mb-4">
-            <div class="card text-center h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-muted">Sự cố Mới (chưa xử lý)</h5>
-                    <p class="card-text fs-1 fw-bold text-danger">{{ so_su_co_moi }}</p>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Ca trực Hôm nay
+                            </div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ so_ca_truc_hom_nay }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Thống kê Nhân viên theo Trạng thái</h5>
-                    <canvas id="employeeStatusChart"></canvas>
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Sự cố Mới Báo cáo</h6>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Thống kê Sự cố (7 ngày qua)</h5>
-                    <canvas id="incidentsTrendChart"></canvas>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Thời gian</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Mục tiêu</th>
+                                    <th>Người báo cáo</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for su_co in su_co_gan_day %}
+                                <tr>
+                                    <td>{{ su_co.thoi_gian_bao_cao|date:"H:i, d/m/Y" }}</td>
+                                    <td><a href="#">{{ su_co.tieu_de }}</a></td> {# Thay href="#" bằng link chi tiết sau
+                                    #}
+                                    <td>{{ su_co.ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}</td>
+                                    <td>{{ su_co.ca_truc.nhan_vien.ho_ten }}</td>
+                                    <td><span class="badge badge-danger">{{ su_co.get_trang_thai_display }}</span></td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5" class="text-center">Chưa có báo cáo sự cố nào.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
-<script>
-    // Biểu đồ Thống kê Nhân viên
-    const pieCtx = document.getElementById('employeeStatusChart');
-    new Chart(pieCtx, {
-        type: 'doughnut',
-        data: {
-            labels: {{ pie_chart_labels|safe }},
-            datasets: [{
-                label: 'Số lượng nhân viên',
-                data: {{ pie_chart_data|safe }},
-                backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#6c757d'],
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: { legend: { position: 'top' } }
-        }
-    });
-
-    // Biểu đồ Xu hướng Sự cố
-    const lineCtx = document.getElementById('incidentsTrendChart');
-    new Chart(lineCtx, {
-        type: 'line',
-        data: {
-            labels: {{ line_chart_labels|safe }},
-            datasets: [{
-                label: 'Số lượng sự cố',
-                data: {{ line_chart_data|safe }},
-                fill: false,
-                borderColor: 'rgb(220, 53, 69)',
-                tension: 0.1
-            }]
-        },
-        options: {
-            scales: {
-                y: { beginAtZero: true, ticks: { stepSize: 1 } }
-            }
-        }
-    });
-</script>
+{% endblock content %}

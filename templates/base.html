@@ -1,58 +1,96 @@
-{% load django_bootstrap5 %}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Hệ thống Quản lý Vận hành{% endblock %}</title>
+    <title>{% block title %}{% endblock %} | {{ company.ten_cong_ty|default:"Hệ thống" }}</title>
+    
+    {% load django_bootstrap5 %}
     {% bootstrap_css %}
-    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <style>
-        body { background-color: #f8f9fa; }
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #f4f7fc; }
+        .wrapper { display: flex; width: 100%; min-height: 100vh; }
+        #sidebar { width: 260px; position: fixed; top: 0; left: 0; height: 100vh; z-index: 999; background: #0d253f; color: #fff; transition: all 0.3s; }
+        .sidebar-header { padding: 20px; background: #0a1d31; text-align: center; }
+        .sidebar-header .logo { max-width: 80px; margin-bottom: 10px; }
+        #sidebar ul.components { padding: 20px 0; border-bottom: 1px solid #47748b; }
+        #sidebar ul li a { padding: 10px 20px; font-size: 1.1em; display: block; color: #adb5bd; transition: all 0.2s; text-decoration: none; }
+        #sidebar ul li a:hover { color: #fff; background: #556ee6; }
+        #sidebar ul li.active>a { color: #fff; background: #556ee6; }
+        #content { width: 100%; padding: 20px; min-height: 100vh; transition: all 0.3s; margin-left: 260px; }
+        .topbar-nav { margin-left: auto; }
+        /* Style cho nút đăng xuất giống link */
+        .logout-form button {
+            background: none;
+            border: none;
+            padding: 0;
+            color: inherit;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
     </style>
 </head>
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'dashboard:main' %}">Bảo vệ XYZ</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'dashboard:main' %}">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'operations:xep-lich' %}">Xếp lịch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'clients:pipeline' %}">Pipeline Kinh doanh</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ user.username }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'admin:index' %}">Trang Admin</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{% url 'admin:logout' %}">Đăng xuất</a></li>
-                        </ul>
-                    </li>
-                    {% endif %}
-                </ul>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                {% if company.logo %}
+                    <img src="{{ company.logo.url }}" alt="Company Logo" class="logo rounded-circle">
+                {% endif %}
+                <h5>{{ company.ten_cong_ty|default:"Hệ thống Vận hành" }}</h5>
             </div>
+            <ul class="list-unstyled components">
+                <li class="{% if section == 'dashboard' %}active{% endif %}">
+                    <a href="{% url 'dashboard:main' %}"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                </li>
+                <li class="{% if section == 'xep_lich' %}active{% endif %}">
+                    <a href="{% url 'operations:xep-lich' %}"><i class="fas fa-calendar-alt me-2"></i>Xếp lịch</a>
+                </li>
+                <li class="{% if section == 'pipeline' %}active{% endif %}">
+                    <a href="{% url 'clients:pipeline' %}"><i class="fas fa-chart-line me-2"></i>Pipeline</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 rounded">
+                <div class="container-fluid">
+                    <ul class="navbar-nav topbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle me-1"></i> {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Trang Admin</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    {# --- PHẦN ĐĂNG XUẤT ĐÃ SỬA LỖI --- #}
+                                    <form class="logout-form px-3" action="{% url 'logout' %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="dropdown-item p-0">Đăng xuất</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            {% block content %}{% endblock %}
         </div>
-    </nav>
-
-    <main class="container-fluid">
-        {% block content %}
-        {% endblock %}
-    </main>
+    </div>
+    {% bootstrap_javascript %}
+    {% if user.is_staff %}
+    <script>
+        const notificationSocket = new WebSocket('ws://' + window.location.host + '/ws/notifications/');
+        notificationSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            alert('Thông báo: ' + data.message); 
+        };
+    </script>
+    {% endif %}
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

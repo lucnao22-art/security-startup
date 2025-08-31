@@ -1,71 +1,116 @@
 {% extends "base.html" %}
-{% load django_bootstrap5 %}
+{% load humanize %}
 
-{% block title %}Sales Pipeline{% endblock %}
+{% block title %}Pipeline Kinh doanh{% endblock %}
 
 {% block content %}
 <style>
     .pipeline-board {
         display: flex;
         overflow-x: auto;
-        padding-bottom: 20px;
-        gap: 20px;
+        padding-bottom: 1rem;
+        gap: 1rem;
     }
     .pipeline-column {
-        flex: 0 0 320px; /* Chiều rộng cố định cho mỗi cột */
-        background-color: #f4f7f6;
-        border-radius: 8px;
+        min-width: 300px;
+        max-width: 320px;
+        flex-shrink: 0;
+        background-color: #f4f7fc; /* Màu nền nhẹ nhàng */
+        border-radius: 0.5rem;
     }
-    .column-header {
-        padding: 15px;
-        font-weight: bold;
-        border-bottom: 3px solid #007bff;
+    .pipeline-column-header {
+        padding: 1rem;
+        border-bottom: 2px solid #e9ecef;
     }
-    .card-list {
-        padding: 15px;
-        min-height: 400px; /* Chiều cao tối thiểu để có thể kéo thả */
+    .pipeline-column-header h6 {
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        color: #0d253f; /* Màu xanh đậm giống sidebar */
+    }
+    .stage-summary {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+    .pipeline-cards {
+        padding: 1rem;
+        height: calc(100vh - 250px); /* Điều chỉnh chiều cao để có thanh cuộn */
+        overflow-y: auto;
     }
     .opportunity-card {
         background-color: #fff;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 10px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        cursor: grab;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid #556ee6; /* Màu nhấn của sidebar */
+        border-radius: 0.375rem;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.75rem;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-    .opportunity-card h5 {
-        margin-top: 0;
-        font-size: 1.1em;
+    .opportunity-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .opportunity-card .card-title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #343a40;
+        margin-bottom: 0.25rem;
+    }
+    .opportunity-card .card-subtitle {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+    .opportunity-card .card-value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #28a745; /* Màu xanh lá cho giá trị */
     }
 </style>
 
-<div class="container-fluid">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Sales Pipeline</h1>
-        <a href="{% url 'admin:clients_cohoikinhdoanh_add' %}" class="btn btn-primary" target="_blank">
-            <i class="fas fa-plus"></i> Thêm Cơ hội mới
-        </a>
-    </div>
-
-    <div class="pipeline-board">
-        {% for column in pipeline_data %}
-            <div class="pipeline-column">
-                <div class="column-header">
-                    {{ column.status_name }} ({{ column.opportunities.count }})
-                </div>
-                <div class="card-list">
-                    {% for co_hoi in column.opportunities %}
-                        <div class="opportunity-card">
-                            <h5>{{ co_hoi.ten_khach_hang }}</h5>
-                            <p class="mb-1"><small>Liên hệ: {{ co_hoi.nguoi_lien_he }}</small></p>
-                            <p class="mb-0"><small>Phụ trách: {{ co_hoi.nhan_vien_phu_trach.ho_ten|default:"Chưa gán" }}</small></p>
-                        </div>
-                    {% empty %}
-                        <p class="text-muted text-center mt-3">Chưa có cơ hội nào.</p>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Pipeline Kinh doanh</h1>
+    <a href="{% url 'admin:clients_cohoikinhdoanh_add' %}" class="btn btn-primary">
+        <i class="fas fa-plus me-2"></i>Thêm Cơ hội mới
+    </a>
 </div>
+
+<div class="pipeline-board">
+    {% for stage_name, data in pipeline_stages.items %}
+    <div class="pipeline-column">
+        <div class="pipeline-column-header">
+            <h6>{{ stage_name }}</h6>
+            <div class="stage-summary">
+                <span>{{ data.deal_count }} cơ hội</span>
+                <span class="mx-1">|</span>
+                <strong>{{ data.total_value|intcomma }} VNĐ</strong>
+            </div>
+        </div>
+        <div class="pipeline-cards">
+            {% for op in data.opportunities %}
+            <div class="opportunity-card position-relative">
+                <div class="card-title">{{ op.ten_co_hoi }}</div>
+                <div class="card-subtitle mb-2">
+                    <i class="fas fa-building me-1 text-muted"></i>
+                    {{ op.khach_hang_tiem_nang.ten_cong_ty }}
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="card-value">
+                        <i class="fas fa-coins me-1"></i>
+                        {{ op.gia_tri_uoc_tinh|intcomma }} VNĐ
+                    </div>
+                    {% if op.nguoi_phu_trach %}
+                    <i class="fas fa-user-circle fa-lg text-secondary" title="Phụ trách: {{ op.nguoi_phu_trach.ho_ten }}"></i>
+                    {% endif %}
+                </div>
+                <a href="{% url 'admin:clients_cohoikinhdoanh_change' op.id %}" class="stretched-link"></a>
+            </div>
+            {% empty %}
+            <p class="text-muted small text-center mt-3">Chưa có cơ hội nào.</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
+

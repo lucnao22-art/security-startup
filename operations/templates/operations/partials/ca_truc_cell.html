@@ -1,19 +1,18 @@
-{% if phan_cong and phan_cong.nhan_vien %}
-    <div 
-        class="employee"
-        hx-get="{% url 'operations:chi-tiet-ca' phan_cong.id %}"
-        hx-target="#details-panel"
-        hx-swap="innerHTML"
-        style="cursor: pointer;"
-        title="Nhấp để xem chi tiết">
+{% comment %} file: operations/templates/operations/partials/ca_truc_cell.html {% endcomment %}
+
+{% if phan_cong %}
+    <div class="phan-cong-item bg-primary text-white p-1 rounded small"
+         style="cursor: pointer;"
+         hx-get="{% url 'operations:chi_tiet_ca' phan_cong.id %}"
+         hx-target="#details-panel"
+         hx-swap="innerHTML">
         {{ phan_cong.nhan_vien.ho_ten }}
     </div>
 {% else %}
-    <button 
-        class="add-shift-btn"
-        hx-get="{% url 'operations:them-ca-form' %}?ngay={{ day|date:'Y-m-d' }}&ca_id={{ ca.id }}&vi_tri_id={{ vi_tri.id }}"
-        hx-target="#details-panel"
-        hx-swap="innerHTML">
-        +
-    </button>
+    <div class="ca-trong"
+         hx-get="{% url 'operations:them_ca_form' vi_tri.id ca.id day|date:'Y-m-d' %}"
+         hx-target="this"
+         hx-swap="innerHTML">
+        <button class="btn btn-sm btn-outline-success w-100 h-100">+</button>
+    </div>
 {% endif %}

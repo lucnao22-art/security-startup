@@ -1,0 +1,168 @@
+{% extends "base_public.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Đăng nhập Hệ thống An ninh{% endblock %}
+
+{% block content %}
+<style>
+    /* Tổng thể trang */
+    body {
+        background-color: #0c1d2e; /* Nền xanh đen */
+        color: #e0e0e0;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        overflow: hidden; /* Ngăn cuộn trang nếu ảnh nền quá lớn */
+    }
+
+    /* Container chính của form đăng nhập */
+    .login-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .login-box {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        min-height: 700px;
+        background-color: rgba(13, 37, 63, 0.8); /* Nền xanh đậm bán trong suốt */
+        border-radius: 15px;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    /* Phần branding (bên trái) */
+    .login-branding-section {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), 
+                    url('#') center center;
+        background-size: cover;
+        color: #ffffff;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .login-branding-section .logo {
+        max-width: 120px;
+        margin-bottom: 1.5rem;
+    }
+    .login-branding-section h1 {
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .login-branding-section p {
+        opacity: 0.9;
+    }
+
+    /* Phần form đăng nhập (bên phải) */
+    .login-form-section {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .login-form-section h2 {
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    /* Input fields */
+    .form-floating .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+    }
+    .form-floating .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: #00ffff;
+        box-shadow: 0 0 0 0.25rem rgba(0, 255, 255, 0.25);
+        color: #ffffff;
+    }
+    .form-floating label {
+        color: #cccccc;
+    }
+    
+    /* Nút đăng nhập */
+    .btn-primary {
+        background-color: #00ffff;
+        border-color: #00ffff;
+        font-weight: 600;
+        padding: 0.75rem;
+        transition: all 0.3s ease;
+        color: #0d253f;
+    }
+    .btn-primary:hover {
+        background-color: #2effff;
+        border-color: #2effff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 991.98px) {
+        .login-branding-section { display: none; }
+        .login-box {
+            flex-direction: column;
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+        .login-form-section {
+            background-color: rgba(13, 37, 63, 0.9);
+            border-radius: 15px;
+        }
+    }
+</style>
+
+<div class="login-container">
+    <div class="login-box">
+        <div class="col-lg-6 d-none d-lg-flex login-branding-section">
+            <div>
+                {% if thong_tin_cong_ty.logo %}
+                    <img src="{{ thong_tin_cong_ty.logo.url }}" alt="Company Logo" class="logo img-fluid rounded">
+                {% else %}
+                    <i class="fas fa-shield-alt fa-4x mb-4" style="color: #00ffff;"></i>
+                {% endif %}
+                <h1 class="display-5">{{ thong_tin_cong_ty.ten_cong_ty|default:"CÔNG TY AN NINH" }}</h1>
+                <p class="lead mt-3">"An toàn của bạn là sứ mệnh của chúng tôi"</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-12 login-form-section">
+            <h2 class="text-center">Đăng nhập Hệ thống</h2>
+            
+            {% if form.errors %}
+                <div class="alert alert-danger text-center small">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Tên đăng nhập hoặc mật khẩu không đúng.
+                </div>
+            {% endif %}
+            
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+                
+                <div class="form-floating mb-3">
+                    <input type="text" name="username" class="form-control" id="id_username" placeholder="Tên đăng nhập" required autofocus>
+                    <label for="id_username"><i class="fas fa-user-shield me-2"></i>Tên đăng nhập (Mã NV)</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="password" name="password" class="form-control" id="id_password" placeholder="Mật khẩu" required>
+                    <label for="id_password"><i class="fas fa-lock me-2"></i>Mật khẩu</label>
+                </div>
+                
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,8 +1,12 @@
-# inspection/apps.py
 from django.apps import AppConfig
-from django.utils.translation import gettext_lazy as _
+
 
 class InspectionConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'inspection'
-    verbose_name = _("Thanh tra & Đào tạo")
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "inspection"
+    verbose_name = "Thanh tra & Đào tạo"
+
+    def ready(self):
+        # Nếu bạn có signals trong app này, hãy import chúng ở đây.
+        # Ví dụ: import inspection.signals
+        pass

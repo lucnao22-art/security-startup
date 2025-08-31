@@ -2,6 +2,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class ThongBao(models.Model):
     nguoi_nhan = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     tieu_de = models.CharField("Tiêu đề", max_length=255)
@@ -11,4 +12,4 @@ class ThongBao(models.Model):
     da_doc = models.BooleanField("Đã đọc", default=False)
 
     class Meta:
-        ordering = ['-ngay_tao']
+        ordering = ["-ngay_tao"]

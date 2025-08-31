@@ -1,0 +1,38 @@
+{% extends "operations/mobile/base_mobile.html" %}
+
+{% block title %}Chi tiết Tuần tra{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h4>Đang Tuần tra: {{ luot_tuan_tra.tuyen_tuan_tra.ten_tuyen }}</h4>
+            <p class="mb-0 text-muted">Bắt đầu lúc: {{ luot_tuan_tra.thoi_gian_bat_dau|date:"H:i, d/m/Y" }}</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Danh sách Điểm kiểm tra</h5>
+            <ul class="list-group">
+                {% for diem in diem_kiem_tra_list %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ diem.thu_tu }}. {{ diem.ten_diem }}
+                    {% if diem.id in diem_da_quet_ids %}
+                        <span class="badge bg-success rounded-pill"><i class="fas fa-check"></i> Đã quét</span>
+                    {% else %}
+                        <span class="badge bg-secondary rounded-pill">Chưa quét</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card-footer d-grid gap-2">
+            <a href="#" class="btn btn-success btn-lg">
+                <i class="fas fa-qrcode"></i> Quét mã QR
+            </a>
+            <form method="post" action="#"> {# Sẽ thêm action kết thúc sau #}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger w-100">Kết thúc Tuần tra</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
