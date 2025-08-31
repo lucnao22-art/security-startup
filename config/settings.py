@@ -9,6 +9,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Lấy giá trị của biến RENDER_EXTERNAL_HOSTNAME từ môi trường
+RENDER_HOSTNAME = config("RENDER_EXTERNAL_HOSTNAME", default=None)
+
+if RENDER_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_HOSTNAME)
+else:
+    # Thêm các host cho môi trường local nếu không tìm thấy biến của Render
+    ALLOWED_HOSTS.extend(["localhost", "127.0.0.1"])
+
 INSTALLED_APPS = [
     "daphne",
     "channels",
