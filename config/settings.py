@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,29 +20,32 @@ else:
     ALLOWED_HOSTS.extend(["localhost", "127.0.0.1"])
 
 INSTALLED_APPS = [
-    "daphne",
-    "channels",
-    "main.apps.MainConfig",
-    "import_export",
-    "jazzmin",
-    "admin_reorder",
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "django.contrib.humanize",
-    "django_bootstrap5",
-    "dashboard.apps.DashboardConfig",
-    "accounting.apps.AccountingConfig",
-    "inspection.apps.InspectionConfig",
-    "inventory.apps.InventoryConfig",
-    "operations.apps.OperationsConfig",
-    "clients.apps.ClientsConfig",
-    "users.apps.UsersConfig",
-    "backup_restore.apps.BackupRestoreConfig",
-    "notifications.apps.NotificationsConfig",
+    # --- SỬA LỖI Ở ĐÂY: ĐƯA JAZZMIN LÊN TRÊN CÙNG ---
+    'jazzmin',
+    
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # Các ứng dụng của bên thứ ba
+    'django_bootstrap5',
+    'import_export',
+    'weasyprint',
+
+    # Các ứng dụng của bạn
+    'main',
+    'users',
+    'dashboard',
+    'clients',
+    'operations',
+    'inspection',
+    'inventory',
+    'accounting',
+    'notifications',
+    'backup_restore',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +65,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
+        # SỬA LỖI Ở ĐÂY: Thêm dòng BASE_DIR / "templates"
         "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -69,6 +74,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Thêm context processor của bạn
                 "main.context_processors.company_info",
             ],
         },
@@ -97,8 +103,31 @@ LANGUAGE_CODE = "vi"
 TIME_ZONE = "Asia/Ho_Chi_Minh"
 USE_I18N = True
 USE_TZ = True
+# --- THÊM CÁC DÒNG ĐỊNH DẠNG NGÀY THÁNG DƯỚI ĐÂY ---
+
+# Định dạng hiển thị ngày tháng năm
+DATE_FORMAT = "d/m/Y"
+
+# Định dạng hiển thị ngày giờ
+DATETIME_FORMAT = "H:i d/m/Y"
+
+# Các định dạng mà Django sẽ chấp nhận khi người dùng nhập liệu vào form
+DATE_INPUT_FORMATS = [
+    "%d/%m/%Y",  # '25/10/2025'
+    "%Y-%m-%d",  # '2025-10-25' (vẫn chấp nhận định dạng cũ để không gây lỗi)
+]
+
+DATETIME_INPUT_FORMATS = [
+    "%H:%M %d/%m/%Y",  # '14:30 25/10/2025'
+    "%Y-%m-%d %H:%M:%S", # '2025-10-25 14:30:59'
+]
 
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]    
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -108,8 +137,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "homepage"
-LOGIN_REDIRECT_URL = "dashboard_hub"
-LOGOUT_REDIRECT_URL = "homepage"
+LOGIN_REDIRECT_URL = "/hub/"
+LOGOUT_REDIRECT_URL = "/"
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
@@ -123,11 +152,35 @@ CHANNEL_LAYERS = {
 }
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Hệ thống Quản lý",
-    "site_header": "Admin",
-    "site_brand": "Quản trị",
-    "welcome_sign": "Chào mừng đến với Hệ thống Quản lý Vận hành",
-    "copyright": "Bảo vệ XYZ Ltd",
+    # Title trên tab trình duyệt (có thể để trống để dùng site_title)
+    "site_title": "Security Corp Admin",
+
+    # Title trên góc trái trên cùng (có thể dài hơn)
+    "site_header": "SECURITY CORP",
+
+    # Title trên trang đăng nhập (thường ngắn)
+    "site_brand": "SECURITY CORP",
+
+    # Logo cho trang đăng nhập
+    "login_logo": "img/company_logo.png", # Đường dẫn trong thư mục static
+
+    # Logo cho theme tối
+    "login_logo_dark": "img/company_logo.png",
+
+    # CSS class để áp dụng cho logo
+    "site_logo_classes": "img-circle",
+
+    # Chào mừng trên trang đăng nhập
+    "welcome_sign": "Chào mừng đến với Hệ thống Quản lý An ninh",
+
+    # Copyright ở footer
+    "copyright": "Security Corp Ltd",
+
+    # Giao diện
+    "theme": "darkly", # Sử dụng theme "darkly" có sẵn, rất chuyên nghiệp
+
+    # CSS tùy chỉnh để tinh chỉnh thêm
+    "custom_css": "css/login_styles.css",
 }
 
 # --- KHỐI CẤU HÌNH CÒN THIẾU ĐÃ ĐƯỢC BỔ SUNG ---
@@ -163,3 +216,53 @@ ADMIN_REORDER = (
         "models": ("auth.User", "auth.Group"),
     },
 )
+# ==============================================================================
+# LOGGING CONFIGURATION (CẤU HÌNH GHI NHẬT KÝ)
+# ==============================================================================
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    # Định dạng của dòng log
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+    },
+    # Nơi xử lý và xuất log ra (console, file, ...)
+    "handlers": {
+        # Ghi log ra màn hình console
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+        # Ghi log vào file, tự động xoay vòng khi file đầy
+        "file": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "debug.log"), # Tên file log
+            "maxBytes": 1024 * 1024 * 5,  # 5 MB
+            "backupCount": 2, # Giữ lại 2 file backup
+            "formatter": "verbose",
+        },
+    },
+    # Bộ ghi log chính của ứng dụng
+    "loggers": {
+        "django": {
+            "handlers": ["console", "file"],
+            "level": "INFO", # Mức log cho Django, có thể đổi thành WARNING trên production
+            "propagate": True,
+        },
+        # Logger cho các ứng dụng của bạn (users, operations, ...)
+        "my_project_logger": {
+            "handlers": ["console", "file"],
+            "level": "DEBUG", # Ghi lại tất cả các cấp độ log
+            "propagate": True,
+        },
+    },
+}

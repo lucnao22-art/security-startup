@@ -1,42 +1,57 @@
+# file: users/tests.py
 from django.test import TestCase
-from .models import NhanVien
+from .models import NhanVien, CauHinhMaNhanVien, PhongBan, ChucDanh
+from django.contrib.auth.models import User
+from datetime import date
 
+class NhanVienModelTestCase(TestCase):
+    """
+    Bộ kiểm thử cho model NhanVien.
+    """
 
-class NhanVienModelTest(TestCase):
     def setUp(self):
         """
-        Thiết lập dữ liệu mẫu để chạy test.
-        Hàm này sẽ được chạy trước mỗi bài test.
+        Thiết lập dữ liệu ban đầu cho mỗi bài test.
+        Hàm này sẽ chạy trước mỗi hàm test (bắt đầu bằng test_*).
         """
-        # Tạo một nhân viên mẫu.
-        self.nhan_vien_instance = NhanVien.objects.create(
+        CauHinhMaNhanVien.objects.create(pk=1, tien_to="NV", do_dai_so=4, so_hien_tai=0)
+        PhongBan.objects.create(ten_phong_ban="Phòng Kỹ thuật")
+        ChucDanh.objects.create(ten_chuc_danh="Lập trình viên")
+
+    def test_generate_employee_code_on_creation(self):
+        """
+        Kiểm tra xem mã nhân viên có được tự động sinh ra khi tạo mới không.
+        """
+        # Tạo nhân viên đầu tiên
+        nv1 = NhanVien.objects.create(
             ho_ten="Nguyễn Văn A",
-            ngay_sinh="1990-01-15",
-            gioi_tinh=NhanVien.GioiTinh.NAM,
-            so_cccd="012345678901",
-            ngay_cap_cccd="2020-10-10",
-            noi_cap_cccd="Công an TP.Hà Nội",
+            ngay_sinh=date(1990, 1, 1),
+            gioi_tinh="M",
+            so_cccd="123456789012",
+            sdt_chinh="0901234567",
+            email="a.nguyen@example.com",
+            phong_ban=PhongBan.objects.get(pk=1),
+            chuc_danh=ChucDanh.objects.get(pk=1),
+        )
+        
+        # Kiểm tra mã của nhân viên đầu tiên
+        self.assertEqual(nv1.ma_nhan_vien, "NV0001")
+
+        # Tạo nhân viên thứ hai
+        nv2 = NhanVien.objects.create(
+            ho_ten="Trần Thị B",
+            ngay_sinh=date(1995, 5, 10),
+            gioi_tinh="F",
+            so_cccd="987654321098",
             sdt_chinh="0987654321",
-            dia_chi_thuong_tru="Hà Nội",
-            dia_chi_tam_tru="Hà Nội",
-            ten_lien_he_khan_cap="Nguyễn Thị B",
-            quan_he_khan_cap="Vợ",
-            sdt_khan_cap="0123456788",
-            chuc_vu=NhanVien.ChucVu.NHAN_VIEN,
+            email="b.tran@example.com",
+            phong_ban=PhongBan.objects.get(pk=1),
+            chuc_danh=ChucDanh.objects.get(pk=1),
         )
 
-    def test_nhan_vien_str_method(self):
-        """
-        Kiểm tra phương thức __str__ của NhanVien
-        có trả về đúng định dạng "ma_nhan_vien - ho_ten" không.
-        """
-        # Lấy lại đối tượng nhân viên từ database để có `ma_nhan_vien`
-        nv = NhanVien.objects.get(id=self.nhan_vien_instance.id)
+        # Kiểm tra mã của nhân viên thứ hai phải tăng lên
+        self.assertEqual(nv2.ma_nhan_vien, "NV0002")
 
-        # Kết quả mong đợi theo định dạng trong model của bạn
-        expected_string = f"{nv.ma_nhan_vien} - {nv.ho_ten}"
-
-        # So sánh kết quả của hàm __str__() với kết quả mong đợi
-        self.assertEqual(str(nv), expected_string)
-
-        print(f"Đã test thành công: __str__ trả về '{expected_string}'")
+        # Kiểm tra xem cấu hình mã đã được cập nhật đúng chưa
+        config = CauHinhMaNhanVien.objects.get(pk=1)
+        self.assertEqual(config.so_hien_tai, 2)

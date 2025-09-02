@@ -5,7 +5,14 @@ from django.template.loader import render_to_string
 from weasyprint import HTML
 from .models import NhanVien
 from pathlib import Path
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import NhanVien, LichSuCongTac, BangCapChungChi
 
+# --- THÊM CÁC IMPORT NÀY VÀO ĐẦU TỆP ---
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from weasyprint import HTML
 
 def export_ly_lich_options_view(request, nhan_vien_id):
     """
@@ -52,4 +59,39 @@ def export_ly_lich_pdf(request, nhan_vien_id):
         f'attachment; filename="LLTN_{nhan_vien.ma_nhan_vien}.pdf"'
     )
 
+    return response
+@login_required
+def xuat_ly_lich_nhan_vien_pdf(request, pk):
+    """
+    View này chịu trách nhiệm tạo và trả về file PDF
+    trích ngang lý lịch của một nhân viên.
+    """
+    # Lấy thông tin nhân viên từ CSDL, nếu không có sẽ báo lỗi 404
+    nhan_vien = get_object_or_404(NhanVien, pk=pk)
+    
+    # Lấy các thông tin liên quan
+    lich_su_cong_tac = LichSuCongTac.objects.filter(nhan_vien=nhan_vien)
+    bang_cap = BangCapChungChi.objects.filter(nhan_vien=nhan_vien)
+
+    # Chuẩn bị context để truyền vào template
+    context = {
+        "nhan_vien": nhan_vien,
+        "lich_su_cong_tac": lich_su_cong_tac,
+        "bang_cap": bang_cap,
+    }
+
+    # 1. Render template HTML thành một chuỗi
+    html_string = render_to_string("users/ly_lich_pdf.html", context)
+    
+    # 2. Dùng WeasyPrint để chuyển chuỗi HTML thành PDF
+    # base_url giúp WeasyPrint tìm được các file static (CSS, ảnh)
+    html = HTML(string=html_string, base_url=request.build_absolute_uri('/'))
+    pdf = html.write_pdf()
+    
+    # 3. Trả về một HttpResponse với đúng content_type của file PDF
+    response = HttpResponse(pdf, content_type="application/pdf")
+    
+    # Dòng này giúp trình duyệt hiển thị file PDF thay vì tự động tải về
+    response["Content-Disposition"] = f"inline; filename=ly_lich_{nhan_vien.ma_nhan_vien}.pdf"
+    
     return response

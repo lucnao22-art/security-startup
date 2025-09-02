@@ -6,6 +6,7 @@ from . import views
 app_name = "operations"
 
 urlpatterns = [
+    path("dashboard/", views.van_hanh_dashboard_view, name="dashboard-van-hanh"),
     # Định nghĩa URL cho trang xếp lịch
     path("xep-lich/", views.xep_lich_view, name="xep-lich"),
     # URL cho HTMX để lấy chi tiết ca

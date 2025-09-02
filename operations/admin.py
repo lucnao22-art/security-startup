@@ -69,16 +69,30 @@ class ViTriChotAdmin(admin.ModelAdmin):
 @admin.register(CaLamViec)
 class CaLamViecAdmin(admin.ModelAdmin):
     list_display = ("ten_ca", "gio_bat_dau", "gio_ket_thuc")
-
+    search_fields = ("ten_ca",)
 
 @admin.register(PhanCongCaTruc)
-class PhanCongCaTrucAdmin(ImportExportModelAdmin):
-    resource_class = PhanCongCaTrucResource
-    list_display = ("nhan_vien", "vi_tri_chot", "ca_lam_viec", "ngay_truc")
-    list_filter = ("vi_tri_chot__muc_tieu", "ca_lam_viec", "ngay_truc")
+class PhanCongCaTrucAdmin(admin.ModelAdmin):
+    list_display = (
+        "ngay_truc",
+        "get_muc_tieu", # Hàm để lấy tên mục tiêu
+        "vi_tri_chot",
+        "nhan_vien",
+        "ca_lam_viec",
+    )
+    list_filter = ("ngay_truc", "vi_tri_chot__muc_tieu", "ca_lam_viec")
     search_fields = ("nhan_vien__ho_ten", "vi_tri_chot__ten_vi_tri")
-    autocomplete_fields = ["nhan_vien", "vi_tri_chot"]
+    autocomplete_fields = ["nhan_vien", "vi_tri_chot", "ca_lam_viec"]
 
+    # --- DÒNG CẢI TIẾN QUAN TRỌNG NHẤT ---
+    # Chỉ thị cho Django sử dụng JOIN để lấy các dữ liệu liên quan trong một lần truy vấn
+    list_select_related = ("vi_tri_chot__muc_tieu", "nhan_vien", "ca_lam_viec")
+
+    def get_muc_tieu(self, obj):
+        return obj.vi_tri_chot.muc_tieu.ten_muc_tieu
+
+    get_muc_tieu.short_description = "Mục tiêu"
+    get_muc_tieu.admin_order_field = "vi_tri_chot__muc_tieu"
 
 # ----- THÊM LỚP NÀY VÀO -----
 class ChamCongResource(resources.ModelResource):

@@ -9,7 +9,6 @@
     </div>
 
     <div class="row">
-
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -26,7 +25,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -43,7 +41,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
@@ -56,6 +53,21 @@
                         <div class="col-auto">
                             <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Thống kê Sự cố (7 ngày qua)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area" style="height: 320px;">
+                        <canvas id="incidentChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -84,11 +96,10 @@
                                 {% for su_co in su_co_gan_day %}
                                 <tr>
                                     <td>{{ su_co.thoi_gian_bao_cao|date:"H:i, d/m/Y" }}</td>
-                                    <td><a href="#">{{ su_co.tieu_de }}</a></td> {# Thay href="#" bằng link chi tiết sau
-                                    #}
+                                    <td><a href="#">{{ su_co.tieu_de }}</a></td>
                                     <td>{{ su_co.ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}</td>
                                     <td>{{ su_co.ca_truc.nhan_vien.ho_ten }}</td>
-                                    <td><span class="badge badge-danger">{{ su_co.get_trang_thai_display }}</span></td>
+                                    <td><span class="badge bg-danger text-white">{{ su_co.get_trang_thai_display }}</span></td>
                                 </tr>
                                 {% empty %}
                                 <tr>
@@ -104,3 +115,51 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (document.getElementById('incidentChart')) {
+            const ctx = document.getElementById('incidentChart').getContext('2d');
+            
+            // Lấy dữ liệu từ context của Django đã được chuyển thành JSON
+            const chartLabels = JSON.parse('{{ incident_chart_labels|safe }}');
+            const chartData = JSON.parse('{{ incident_chart_data|safe }}');
+
+            new Chart(ctx, {
+                type: 'line', // Loại biểu đồ: đường
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        label: 'Số sự cố',
+                        data: chartData,
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        backgroundColor: 'rgba(78, 115, 223, 0.05)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false // Ẩn chú thích 'Số sự cố' ở trên cùng
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

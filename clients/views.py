@@ -34,3 +34,14 @@ def pipeline_view(request):
 
     context = {"pipeline_stages": pipeline_stages, "section": "pipeline"}
     return render(request, "clients/pipeline.html", context)
+@login_required
+def kinh_doanh_dashboard_view(request):
+    """
+    Dashboard dành riêng cho Phòng Kinh doanh.
+    """
+    # (Trong tương lai, chúng ta sẽ thêm logic để lấy dữ liệu về pipeline, hợp đồng,...)
+    
+    context = {
+        'section': 'dashboard_kinhdoanh', # Để highlight menu
+    }
+    return render(request, "clients/dashboard_kinhdoanh.html", context)

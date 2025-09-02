@@ -1,0 +1,22 @@
+/* file: static/css/login_styles.css */
+
+/* Tinh chỉnh lại logo trên trang đăng nhập của Jazzmin */
+.login-logo img {
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4)) !important;
+}
+
+/* Thêm hiệu ứng cho card đăng nhập */
+.login-card-body {
+    background-color: rgba(30, 30, 30, 0.9) !important;
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2), 0 0 10px rgba(0, 255, 255, 0.1) !important;
+    border: 1px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+/* Nút bấm nổi bật hơn */
+.btn-primary {
+    background-color: #00ffff !important;
+    border-color: #00ffff !important;
+    color: #0f0f0f !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}

@@ -44,7 +44,7 @@ class PhanCongCaTruc(models.Model):
     ca_lam_viec = models.ForeignKey(
         CaLamViec, on_delete=models.CASCADE, verbose_name="Ca làm việc"
     )
-    ngay_truc = models.DateField("Ngày trực")
+    ngay_truc = models.DateField("Ngày trực", db_index=True) # Thêm db_index=True
 
     class Meta:
         verbose_name = "Phân công ca trực"

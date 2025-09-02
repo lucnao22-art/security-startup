@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from django.utils import timezone
 from django.contrib import messages
 from django.http import HttpResponseBadRequest
-
+from django.contrib.auth.decorators import login_required
 # Import các model cần thiết
 from clients.models import MucTieu
 from users.models import NhanVien
@@ -176,3 +176,14 @@ def bao_cao_su_co_mobile_view(request):
 
     context = {"form": form, "ca_truc": ca_truc_hien_tai}
     return render(request, "operations/mobile/bao_cao_su_co.html", context)
+@login_required
+def van_hanh_dashboard_view(request):
+    """
+    Dashboard dành riêng cho Phòng Vận hành.
+    """
+    # (Trong tương lai, chúng ta sẽ thêm logic để lấy dữ liệu về ca trực, sự cố,...)
+    
+    context = {
+        'section': 'dashboard_vanhanh', # Để highlight menu
+    }
+    return render(request, "operations/dashboard_vanhanh.html", context)

@@ -1,48 +1,39 @@
 # file: main/views.py
-
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
-
+from main.models import CompanyProfile
 
 def homepage_view(request):
-    if request.user.is_authenticated:
-        return redirect("dashboard_hub")
-
-    if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect("dashboard_hub")
-    else:
-        form = AuthenticationForm()
-
-    return render(request, "main/homepage.html", {"form": form})
-
+    return render(request, "main/homepage.html")
 
 @login_required
 def dashboard_hub_view(request):
+    """
+    View này hoạt động như một trung tâm điều phối.
+    Nó kiểm tra phòng ban của người dùng và chuyển hướng đến dashboard phù hợp.
+    """
     user = request.user
-    if hasattr(user, "nhanvien"):
-        nhanvien = user.nhanvien
-        if nhanvien.phong_ban:
-            phong_ban_name = nhanvien.phong_ban.ten_phong_ban.lower()
-            if "kinh doanh" in phong_ban_name:
-                return redirect("clients:pipeline")
-            if "nghiệp vụ" in phong_ban_name:
-                if (
-                    nhanvien.chuc_danh
-                    and "quản lý" not in nhanvien.chuc_danh.ten_chuc_danh.lower()
-                ):
-                    return redirect(
-                        "operations:mobile_dashboard"
-                    )  # Giả định có URL này
-                return redirect("operations:xep-lich")
+    
+    # Ưu tiên Superuser, sẽ luôn thấy dashboard tổng quan
+    if user.is_superuser:
+        return redirect("dashboard:dashboard_view")
 
-    # Dành cho Ban Giám đốc, các vai trò khác và superuser
-    return redirect("dashboard:main")
+    try:
+        # Lấy thông tin nhân viên từ tài khoản user
+        nhan_vien = user.nhanvien
+        
+        # Kiểm tra phòng ban (sử dụng tên phòng ban bạn đã định nghĩa)
+        if nhan_vien.phong_ban:
+            if nhan_vien.phong_ban.ten_phong_ban == "Phòng Vận hành":
+                return redirect("operations:dashboard-van-hanh")
+            elif nhan_vien.phong_ban.ten_phong_ban == "Phòng Kinh doanh":
+                return redirect("clients:dashboard-kinh-doanh")
+            # Bạn có thể thêm các điều kiện elif khác cho các phòng ban khác ở đây
+
+    except AttributeError:
+        # Xử lý trường hợp tài khoản user không liên kết với nhân viên nào
+        # (ví dụ: tài khoản admin được tạo nhưng chưa có hồ sơ nhân viên)
+        pass
+
+    # Mặc định: Nếu không thuộc phòng ban nào đặc biệt, hiển thị dashboard tổng quan
+    return redirect("dashboard:dashboard_view")

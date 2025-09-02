@@ -1,5 +1,8 @@
+# file: main/admin.py
 from django.contrib import admin
-from .models import ThongTinCongTy
+from .models import CompanyProfile # Sửa ThongTinCongTy thành CompanyProfile
 
-# Chỉ đăng ký model thuộc về app main
-admin.site.register(ThongTinCongTy)
+# Đăng ký model CompanyProfile vào trang admin
+@admin.register(CompanyProfile)
+class CompanyProfileAdmin(admin.ModelAdmin):
+    list_display = ('ten_cong_ty', 'email', 'sdt', 'website')

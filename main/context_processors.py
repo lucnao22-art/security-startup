@@ -1,12 +1,12 @@
-from .models import ThongTinCongTy
-
+# file: main/context_processors.py
+from .models import CompanyProfile # Sửa ThongTinCongTy thành CompanyProfile
 
 def company_info(request):
     """
-    Context processor này sẽ tải thông tin công ty
-    và cung cấp nó cho tất cả các template trong biến 'thong_tin_cong_ty'.
-
-    Sử dụng .first() để tránh gây lỗi nếu chưa có bản ghi nào được tạo.
+    Thêm thông tin công ty vào context của tất cả các template.
     """
-    info = ThongTinCongTy.objects.first()
-    return {"thong_tin_cong_ty": info}
+    try:
+        company = CompanyProfile.objects.first()
+    except CompanyProfile.DoesNotExist:
+        company = None
+    return {"company": company}

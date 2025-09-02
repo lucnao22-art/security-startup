@@ -1,16 +1,13 @@
-# file: core/models.py
+# file: main/models.py
 from django.db import models
 
-
-class ThongTinCongTy(models.Model):
-    ten_cong_ty = models.CharField(
-        "Tên công ty", max_length=255, default="Công ty TNHH Dịch vụ Bảo vệ XYZ"
-    )
+class CompanyProfile(models.Model):
+    ten_cong_ty = models.CharField("Tên công ty", max_length=255)
+    logo = models.ImageField("Logo", upload_to="logos/", null=True, blank=True)
     dia_chi = models.CharField("Địa chỉ", max_length=255, blank=True)
-    so_dien_thoai = models.CharField("Số điện thoại", max_length=20, blank=True)
     email = models.EmailField("Email", blank=True)
+    sdt = models.CharField("Số điện thoại", max_length=20, blank=True)
     website = models.URLField("Website", blank=True)
-    logo = models.ImageField("Logo công ty", upload_to="logos/", blank=True, null=True)
 
     class Meta:
         verbose_name = "Thông tin Công ty"
