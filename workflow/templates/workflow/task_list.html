@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Danh sách công việc</h3>
+    <a href="{% url 'workflow:task_create' %}" class="btn btn-primary float-right">Giao việc mới</a>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Tiêu đề</th>
+          <th>Người giao</th>
+          <th>Người nhận</th>
+          <th>Hạn chót</th>
+          <th>Trạng thái</th>
+          <th>Ưu tiên</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in tasks %}
+        <tr>
+          <td><a href="{{ task.get_absolute_url }}">{{ task.tieu_de }}</a></td>
+          <td>{{ task.nguoi_giao.ho_ten }}</td>
+          <td>{{ task.nguoi_nhan.ho_ten }}</td>
+          <td>{{ task.han_chot|date:"d/m/Y H:i" }}</td>
+          <td>{{ task.get_trang_thai_display }}</td>
+          <td>{{ task.get_uu_tien_display }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="6">Không có công việc nào.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

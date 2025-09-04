@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Tạo Đề xuất / Kiến nghị mới</h3>
+  </div>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card-body">
+      
+      {% comment %} Dùng vòng lặp để render form một cách an toàn {% endcomment %}
+      {% for field in form %}
+        <div class="form-group mb-3">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+          {% endif %}
+          {% for error in field.errors %}
+            <div class="alert alert-danger mt-1">{{ error }}</div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+    </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">Gửi đề xuất</button>
+      <a href="{% url 'workflow:proposal_list' %}" class="btn btn-secondary">Hủy</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

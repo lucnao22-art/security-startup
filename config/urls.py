@@ -19,6 +19,7 @@ urlpatterns = [
     path("inventory/", include("inventory.urls")),
     path("accounting/", include("accounting.urls")),
     path("backup/", include("backup_restore.urls")),
+    path('workflow/', include('workflow.urls')),
 ]
 
 # --- Cấu hình để hiển thị các tệp media (như ảnh thẻ) ---

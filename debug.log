@@ -3126,3 +3126,2966 @@ INFO 2025-09-02 20:32:28,340 basehttp 18580 8572 "GET /admin/jsi18n/ HTTP/1.1" 2
 INFO 2025-09-02 20:37:12,955 basehttp 18580 8572 "POST /admin/logout/ HTTP/1.1" 302 0
 INFO 2025-09-02 20:37:12,985 basehttp 18580 8572 "GET / HTTP/1.1" 200 5989
 INFO 2025-09-02 20:37:14,495 basehttp 18580 8572 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 13:33:24,417 autoreload 21496 23892 Watching for file changes with StatReloader
+INFO 2025-09-03 13:33:38,781 basehttp 21496 24140 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 13:33:40,188 basehttp 21496 24140 "GET / HTTP/1.1" 200 5989
+WARNING 2025-09-03 13:33:40,296 log 21496 24140 Not Found: /favicon.ico
+WARNING 2025-09-03 13:33:40,298 basehttp 21496 24140 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-03 13:33:43,134 basehttp 21496 24140 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-03 13:33:43,149 basehttp 21496 24140 "GET /hub/ HTTP/1.1" 302 0
+ERROR 2025-09-03 13:33:43,290 log 21496 24140 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 59, in dashboard_view
+    current_user_nhanvien = request.user.nhanvien
+                            ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 534, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.nhanvien.RelatedObjectDoesNotExist: User has no nhanvien.
+ERROR 2025-09-03 13:33:43,308 basehttp 21496 24140 "GET /dashboard/ HTTP/1.1" 500 88866
+INFO 2025-09-03 13:38:04,211 basehttp 21496 24140 "GET /admin/ HTTP/1.1" 200 74361
+INFO 2025-09-03 13:38:04,239 basehttp 21496 24140 "GET /static/css/login_styles.css HTTP/1.1" 304 0
+INFO 2025-09-03 13:38:22,833 basehttp 21496 24140 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40034
+INFO 2025-09-03 13:38:22,894 basehttp 21496 24140 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:38:28,429 basehttp 21496 24140 "GET /admin/users/nhanvien/add/ HTTP/1.1" 200 99567
+INFO 2025-09-03 13:38:28,462 basehttp 21496 24140 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:38:31,274 basehttp 21496 24140 "GET /admin/auth/user/?_to_field=id&_popup=1 HTTP/1.1" 200 12432
+INFO 2025-09-03 13:38:31,293 basehttp 21496 24140 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-03 13:39:06,012 basehttp 21496 24140 "GET /admin/users/chucdanh/add/?_to_field=id&_popup=1 HTTP/1.1" 200 9418
+INFO 2025-09-03 13:39:06,036 basehttp 21496 24140 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:39:15,595 basehttp 21496 24140 "GET /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 23708
+INFO 2025-09-03 13:39:15,645 basehttp 21496 24140 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:39:15,663 basehttp 21496 24388 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-03 13:39:15,664 basehttp 21496 9008 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-09-03 13:39:16,069 basehttp 21496 24388 "GET /static/jazzmin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-03 13:39:22,905 basehttp 21496 24388 "POST /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 387
+INFO 2025-09-03 13:39:22,963 basehttp 21496 24388 "GET /static/admin/js/popup_response.js HTTP/1.1" 200 1535
+INFO 2025-09-03 13:39:25,435 basehttp 21496 24388 "POST /admin/users/chucdanh/add/?_to_field=id&_popup=1 HTTP/1.1" 200 388
+INFO 2025-09-03 13:40:15,287 basehttp 21496 24388 "POST /admin/users/nhanvien/add/ HTTP/1.1" 200 100427
+INFO 2025-09-03 13:40:15,316 basehttp 21496 24388 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+WARNING 2025-09-03 13:40:15,319 log 21496 9008 Not Found: /media/company_logo.png.png
+WARNING 2025-09-03 13:40:15,320 basehttp 21496 9008 "GET /media/company_logo.png.png HTTP/1.1" 404 4655
+INFO 2025-09-03 13:41:14,563 basehttp 21496 9008 "POST /admin/users/nhanvien/add/ HTTP/1.1" 302 0
+INFO 2025-09-03 13:41:14,591 basehttp 21496 9008 "GET /admin/users/nhanvien/ HTTP/1.1" 200 41399
+INFO 2025-09-03 13:41:14,622 basehttp 21496 9008 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:41:16,883 basehttp 21496 9008 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101125
+INFO 2025-09-03 13:41:16,908 basehttp 21496 24388 "GET /media/anh_the/NNT_Mn5lb75.png HTTP/1.1" 200 126202
+INFO 2025-09-03 13:41:16,912 basehttp 21496 9008 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:41:20,630 basehttp 21496 9008 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 62427
+INFO 2025-09-03 13:41:20,658 basehttp 21496 9008 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:41:23,981 basehttp 21496 9008 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101125
+INFO 2025-09-03 13:41:42,192 basehttp 21496 9008 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 62427
+INFO 2025-09-03 13:41:42,220 basehttp 21496 9008 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:46:59,228 autoreload 21496 23892 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-03 13:47:02,817 autoreload 420 11248 Watching for file changes with StatReloader
+INFO 2025-09-03 13:47:08,271 basehttp 420 23740 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-09-03 13:47:08,328 basehttp 420 23740 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 13:47:09,641 basehttp 420 23740 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 13:47:12,296 basehttp 420 23740 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-03 13:47:12,319 basehttp 420 23740 "GET /hub/ HTTP/1.1" 302 0
+ERROR 2025-09-03 13:47:12,503 log 420 23740 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 37, in dashboard_view
+    so_nhan_vien = NhanVien.objects.filter(is_active=True).count()
+                   ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: anh_the, bang_cap, bangluong, baocaodexuat, baocaosuco, capphatcanhan, chi_nhanh_ngan_hang, chuc_danh, chuc_danh_id, cohoikinhdoanh, de_xuat, dia_chi_tam_tru, dia_chi_thuong_tru, duyet_de_xuat, email, giao_viec, gioi_tinh, ho_ten, hoc_van, id, lich_su_cong_tac, lichsucongtac, loai_hop_dong, luottuantra, ma_nhan_vien, muc_tieu_quan_ly, ngan_hang, ngay_sinh, ngay_vao_lam, nguoi_lien_he_khan_cap, nhan_viec, phancongcatruc, phong_ban, phong_ban_id, sdt_chinh, sdt_khan_cap, so_cccd, so_tai_khoan, trang_thai_lam_viec, user, user_id
+ERROR 2025-09-03 13:47:12,528 basehttp 420 23740 "GET /dashboard/ HTTP/1.1" 500 125627
+INFO 2025-09-03 13:48:31,936 autoreload 420 11248 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-03 13:48:35,480 autoreload 22292 20936 Watching for file changes with StatReloader
+INFO 2025-09-03 13:48:43,377 basehttp 22292 10188 "GET /dashboard/ HTTP/1.1" 200 11964
+INFO 2025-09-03 13:48:43,421 basehttp 22292 10188 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 304 0
+WARNING 2025-09-03 13:48:43,657 log 22292 14940 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:48:43,658 basehttp 22292 14940 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 13:48:59,179 basehttp 22292 10188 "GET /workflow/tasks/ HTTP/1.1" 200 5746
+WARNING 2025-09-03 13:48:59,410 log 22292 11704 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:48:59,412 basehttp 22292 11704 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 13:49:02,164 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'render_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'render_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:49:02,223 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 174572
+WARNING 2025-09-03 13:49:10,621 log 22292 8064 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:49:10,623 basehttp 22292 8064 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 13:49:12,650 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'render_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'render_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:49:12,669 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 174572
+WARNING 2025-09-03 13:49:41,065 log 22292 21076 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:49:41,066 basehttp 22292 21076 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 13:49:43,726 basehttp 22292 10188 "GET /admin/ HTTP/1.1" 200 74216
+INFO 2025-09-03 13:49:57,854 basehttp 22292 10188 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31216
+INFO 2025-09-03 13:49:57,900 basehttp 22292 10188 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:50:03,479 basehttp 22292 10188 "GET /admin/ HTTP/1.1" 200 74227
+INFO 2025-09-03 13:50:06,080 basehttp 22292 10188 "GET /admin/workflow/task/ HTTP/1.1" 200 31945
+INFO 2025-09-03 13:50:06,132 basehttp 22292 10188 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 13:50:08,732 basehttp 22292 10188 "GET /admin/ HTTP/1.1" 200 74227
+WARNING 2025-09-03 13:52:17,388 log 22292 17352 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:52:17,389 basehttp 22292 17352 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 13:52:19,035 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:19,043 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 175956
+ERROR 2025-09-03 13:52:20,671 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:20,697 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:21,754 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:21,774 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:22,477 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:22,496 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:22,999 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:23,020 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:23,538 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:23,558 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:24,141 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:24,160 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:24,603 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:24,624 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:25,205 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:25,228 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:29,331 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:29,371 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:30,613 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:30,637 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:31,011 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:31,032 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:52:34,325 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:52:34,354 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 176093
+ERROR 2025-09-03 13:54:44,717 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:54:44,726 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 175864
+ERROR 2025-09-03 13:54:46,231 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:54:46,238 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 175864
+WARNING 2025-09-03 13:54:47,747 log 22292 7608 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:54:47,748 basehttp 22292 7608 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 13:54:49,176 basehttp 22292 10188 "GET /workflow/tasks/ HTTP/1.1" 200 5746
+WARNING 2025-09-03 13:54:49,398 log 22292 8232 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:54:49,400 basehttp 22292 8232 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 13:54:51,134 log 22292 10188 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:54:51,152 basehttp 22292 10188 "GET /workflow/tasks/new/ HTTP/1.1" 500 175727
+INFO 2025-09-03 13:55:38,952 autoreload 5164 23680 Watching for file changes with StatReloader
+ERROR 2025-09-03 13:55:56,231 log 5164 23460 Internal Server Error: /workflow/tasks/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 72, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 51, in handle_no_permission
+    resolved_login_url = resolve_url(self.get_login_url())
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-03 13:55:56,249 basehttp 5164 23460 "GET /workflow/tasks/ HTTP/1.1" 500 96510
+ERROR 2025-09-03 13:55:57,343 log 5164 23460 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-03 13:55:57,355 basehttp 5164 23460 "GET /dashboard/ HTTP/1.1" 500 92639
+INFO 2025-09-03 13:56:01,905 basehttp 5164 23460 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 13:56:02,134 basehttp 5164 23460 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 13:56:04,798 basehttp 5164 23460 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-03 13:56:04,822 basehttp 5164 23460 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-03 13:56:04,931 basehttp 5164 23460 "GET /dashboard/ HTTP/1.1" 200 11964
+INFO 2025-09-03 13:56:04,994 basehttp 5164 23460 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 200 316107
+WARNING 2025-09-03 13:56:05,234 log 5164 21456 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:56:05,236 basehttp 5164 21456 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 13:56:09,604 basehttp 5164 23460 "GET /workflow/tasks/ HTTP/1.1" 200 5746
+WARNING 2025-09-03 13:56:09,825 log 5164 19036 Not Found: /ws/notifications/
+WARNING 2025-09-03 13:56:09,827 basehttp 5164 19036 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 13:56:11,308 log 5164 23460 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:56:11,339 basehttp 5164 23460 "GET /workflow/tasks/new/ HTTP/1.1" 500 175727
+INFO 2025-09-03 13:58:31,624 autoreload 17572 4416 Watching for file changes with StatReloader
+ERROR 2025-09-03 13:58:36,888 log 17572 9380 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:58:36,913 basehttp 17572 9380 "GET /workflow/tasks/new/ HTTP/1.1" 500 175864
+ERROR 2025-09-03 13:58:39,153 log 17572 9380 Internal Server Error: /workflow/tasks/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-03 13:58:39,169 basehttp 17572 9380 "GET /workflow/tasks/new/ HTTP/1.1" 500 175864
+INFO 2025-09-03 14:01:29,544 autoreload 18040 20536 Watching for file changes with StatReloader
+INFO 2025-09-03 14:01:30,122 basehttp 18040 10176 "GET /workflow/tasks/new/ HTTP/1.1" 200 7489
+WARNING 2025-09-03 14:01:31,377 log 18040 23536 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:01:31,378 basehttp 18040 23536 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:01:48,675 basehttp 18040 10176 "GET /dashboard/ HTTP/1.1" 200 11964
+WARNING 2025-09-03 14:01:48,931 log 18040 14628 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:01:48,932 basehttp 18040 14628 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:05:10,182 autoreload 18040 20536 D:\startup_bv\workflow\apps.py changed, reloading.
+INFO 2025-09-03 14:05:13,687 autoreload 17460 11248 Watching for file changes with StatReloader
+INFO 2025-09-03 14:05:22,861 basehttp 17460 22656 "GET /admin/ HTTP/1.1" 200 74264
+INFO 2025-09-03 14:05:22,908 basehttp 17460 22656 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-09-03 14:05:22,915 basehttp 17460 16900 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-09-03 14:05:22,948 basehttp 17460 17452 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-09-03 14:05:24,846 basehttp 17460 17452 "GET /static/css/login_styles.css HTTP/1.1" 200 725
+INFO 2025-09-03 14:05:24,854 basehttp 17460 16900 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-09-03 14:05:24,865 basehttp 17460 20228 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-09-03 14:05:24,865 basehttp 17460 9016 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-09-03 14:05:24,867 basehttp 17460 15916 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-09-03 14:05:24,875 basehttp 17460 22656 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-03 14:05:25,017 basehttp 17460 9016 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+INFO 2025-09-03 14:05:25,019 basehttp 17460 22656 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2025-09-03 14:05:28,959 basehttp 17460 9016 "GET /admin/ HTTP/1.1" 200 74264
+INFO 2025-09-03 14:05:31,627 basehttp 17460 9016 "GET /admin/ HTTP/1.1" 200 74264
+INFO 2025-09-03 14:06:01,586 basehttp 17460 9016 "GET /admin/workflow/task/ HTTP/1.1" 200 32013
+INFO 2025-09-03 14:06:01,622 basehttp 17460 9016 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2025-09-03 14:06:01,643 basehttp 17460 15916 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-03 14:06:01,643 basehttp 17460 20228 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-03 14:06:01,645 basehttp 17460 17452 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-03 14:06:01,651 basehttp 17460 22656 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 14:06:01,654 basehttp 17460 16900 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-03 14:06:01,659 basehttp 17460 9016 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-03 14:06:01,662 basehttp 17460 20228 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-03 14:06:01,677 basehttp 17460 16900 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2025-09-03 14:06:01,684 basehttp 17460 15916 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-03 14:06:01,932 basehttp 17460 15916 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+INFO 2025-09-03 14:06:03,919 basehttp 17460 15916 "GET /admin/workflow/task/add/ HTTP/1.1" 200 41414
+INFO 2025-09-03 14:06:03,974 basehttp 17460 15916 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 14:06:03,975 basehttp 17460 16900 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-09-03 14:06:03,979 basehttp 17460 20228 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-03 14:06:03,980 basehttp 17460 22656 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-03 14:06:03,980 basehttp 17460 9016 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-03 14:06:04,268 basehttp 17460 9016 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+INFO 2025-09-03 14:06:04,280 basehttp 17460 22656 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-03 14:06:04,280 basehttp 17460 9016 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-03 14:06:04,281 basehttp 17460 20228 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-03 14:06:04,284 basehttp 17460 16900 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-03 14:06:26,775 basehttp 17460 16900 "GET /admin/workflow/task/ HTTP/1.1" 200 32013
+INFO 2025-09-03 14:06:29,837 basehttp 17460 16900 "GET /admin/workflow/ HTTP/1.1" 200 40152
+INFO 2025-09-03 14:06:31,950 basehttp 17460 16900 "GET /workflow/tasks/new/ HTTP/1.1" 200 7489
+WARNING 2025-09-03 14:06:32,356 log 17460 18576 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:06:32,358 basehttp 17460 18576 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:06:34,180 basehttp 17460 16900 "GET /admin/workflow/ HTTP/1.1" 200 40152
+INFO 2025-09-03 14:06:35,996 basehttp 17460 16900 "GET /workflow/tasks/ HTTP/1.1" 200 5746
+WARNING 2025-09-03 14:06:36,432 log 17460 9844 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:06:36,434 basehttp 17460 9844 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:06:38,680 basehttp 17460 16900 "GET /admin/workflow/ HTTP/1.1" 200 40152
+ERROR 2025-09-03 14:06:40,559 log 17460 16900 Internal Server Error: /workflow/proposals/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: workflow/proposal_form.html
+ERROR 2025-09-03 14:06:40,574 basehttp 17460 16900 "GET /workflow/proposals/new/ HTTP/1.1" 500 91789
+INFO 2025-09-03 14:06:43,029 basehttp 17460 16900 "GET /admin/workflow/ HTTP/1.1" 200 40152
+ERROR 2025-09-03 14:06:44,699 log 17460 16900 Internal Server Error: /workflow/proposals/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: workflow/proposal_list.html, workflow/proposal_list.html
+ERROR 2025-09-03 14:06:44,708 basehttp 17460 16900 "GET /workflow/proposals/ HTTP/1.1" 500 97976
+INFO 2025-09-03 14:06:46,704 basehttp 17460 16900 "GET /admin/workflow/ HTTP/1.1" 200 40152
+INFO 2025-09-03 14:06:52,835 basehttp 17460 16900 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31284
+INFO 2025-09-03 14:06:52,879 basehttp 17460 16900 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 14:06:58,036 basehttp 17460 16900 "GET /admin/workflow/proposal/add/ HTTP/1.1" 200 39163
+INFO 2025-09-03 14:06:58,085 basehttp 17460 16900 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 14:07:11,954 basehttp 17460 16900 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31284
+INFO 2025-09-03 14:07:13,854 basehttp 17460 16900 "GET /admin/workflow/ HTTP/1.1" 200 40152
+INFO 2025-09-03 14:25:34,301 autoreload 17460 11248 D:\startup_bv\workflow\templates\__init__.py changed, reloading.
+INFO 2025-09-03 14:25:37,944 autoreload 25396 25272 Watching for file changes with StatReloader
+INFO 2025-09-03 14:54:10,223 autoreload 25396 25272 D:\startup_bv\workflow\models.py changed, reloading.
+INFO 2025-09-03 14:54:14,185 autoreload 12896 21456 Watching for file changes with StatReloader
+INFO 2025-09-03 14:54:18,799 basehttp 12896 20616 "GET /admin/workflow/ HTTP/1.1" 200 40218
+INFO 2025-09-03 14:54:50,146 basehttp 12896 20616 "GET /workflow/tasks/new/ HTTP/1.1" 200 7502
+WARNING 2025-09-03 14:54:50,514 log 12896 23340 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:54:50,516 basehttp 12896 23340 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:54:57,053 basehttp 12896 20616 "GET /admin/workflow/ HTTP/1.1" 200 40218
+INFO 2025-09-03 14:54:58,927 basehttp 12896 20616 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31336
+INFO 2025-09-03 14:54:58,978 basehttp 12896 20616 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 14:55:01,011 basehttp 12896 20616 "GET /admin/workflow/proposal/add/ HTTP/1.1" 200 39207
+INFO 2025-09-03 14:55:01,055 basehttp 12896 20616 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 14:55:02,618 basehttp 12896 20616 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31336
+INFO 2025-09-03 14:55:04,749 basehttp 12896 20616 "GET /admin/workflow/ HTTP/1.1" 200 40218
+INFO 2025-09-03 14:55:07,517 basehttp 12896 20616 "GET /workflow/tasks/new/ HTTP/1.1" 200 7502
+WARNING 2025-09-03 14:55:07,899 log 12896 22396 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:55:07,901 basehttp 12896 22396 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:55:11,582 basehttp 12896 20616 "GET /admin/workflow/ HTTP/1.1" 200 40218
+INFO 2025-09-03 14:55:13,262 basehttp 12896 20616 "GET /workflow/tasks/ HTTP/1.1" 200 5746
+WARNING 2025-09-03 14:55:13,535 log 12896 24868 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:55:13,537 basehttp 12896 24868 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:55:14,955 basehttp 12896 20616 "GET /workflow/tasks/new/ HTTP/1.1" 200 7502
+WARNING 2025-09-03 14:55:15,329 log 12896 24124 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:55:15,330 basehttp 12896 24124 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 14:55:19,301 basehttp 12896 20616 "GET /admin/workflow/ HTTP/1.1" 200 40218
+ERROR 2025-09-03 14:55:21,096 log 12896 20616 Internal Server Error: /workflow/proposals/new/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: workflow/proposal_form.html
+ERROR 2025-09-03 14:55:21,114 basehttp 12896 20616 "GET /workflow/proposals/new/ HTTP/1.1" 500 91789
+INFO 2025-09-03 14:58:12,558 basehttp 12896 20616 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 14:58:13,877 log 12896 21240 Not Found: /ws/notifications/
+WARNING 2025-09-03 14:58:13,879 basehttp 12896 21240 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:01:35,084 basehttp 12896 25976 "GET /admin/workflow/ HTTP/1.1" 200 40219
+INFO 2025-09-03 15:01:37,796 basehttp 12896 25976 "GET /workflow/tasks/new/ HTTP/1.1" 200 7502
+WARNING 2025-09-03 15:01:38,200 log 12896 6068 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:01:38,200 basehttp 12896 6068 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:01:46,484 basehttp 12896 25976 "GET /admin/workflow/ HTTP/1.1" 200 40219
+INFO 2025-09-03 15:01:49,278 basehttp 12896 25976 "GET /workflow/tasks/ HTTP/1.1" 200 5746
+WARNING 2025-09-03 15:01:49,655 log 12896 25968 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:01:49,656 basehttp 12896 25968 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:01:51,445 basehttp 12896 25976 "GET /admin/workflow/ HTTP/1.1" 200 40219
+INFO 2025-09-03 15:01:52,963 basehttp 12896 25976 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:01:53,392 log 12896 25460 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:01:53,393 basehttp 12896 25460 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:01:56,826 basehttp 12896 25976 "GET /admin/workflow/ HTTP/1.1" 200 40219
+ERROR 2025-09-03 15:01:59,375 log 12896 25976 Internal Server Error: /workflow/proposals/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: workflow/proposal_list.html, workflow/proposal_list.html
+ERROR 2025-09-03 15:01:59,379 basehttp 12896 25976 "GET /workflow/proposals/ HTTP/1.1" 500 97976
+INFO 2025-09-03 15:09:56,562 autoreload 12896 21456 D:\startup_bv\workflow\models.py changed, reloading.
+INFO 2025-09-03 15:10:00,271 autoreload 23420 25336 Watching for file changes with StatReloader
+INFO 2025-09-03 15:14:54,830 autoreload 21892 22956 Watching for file changes with StatReloader
+ERROR 2025-09-03 15:14:55,596 log 21892 22676 Internal Server Error: /workflow/proposals/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: workflow/proposal_list.html, workflow/proposal_list.html
+ERROR 2025-09-03 15:14:55,601 basehttp 21892 22676 "GET /workflow/proposals/ HTTP/1.1" 500 98113
+INFO 2025-09-03 15:15:04,147 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40219
+INFO 2025-09-03 15:15:08,489 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:08,838 log 21892 23324 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:08,839 basehttp 21892 23324 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:13,055 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:13,283 log 21892 8996 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:13,284 basehttp 21892 8996 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:15,171 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:15,410 log 21892 24108 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:15,412 basehttp 21892 24108 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:16,166 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:16,409 log 21892 24520 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:16,410 basehttp 21892 24520 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:16,542 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:16,775 log 21892 21804 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:16,776 basehttp 21892 21804 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:16,910 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:17,131 log 21892 25636 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:17,132 basehttp 21892 25636 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:17,283 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:17,501 log 21892 19264 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:17,502 basehttp 21892 19264 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:20,587 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:20,813 log 21892 17600 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:20,815 basehttp 21892 17600 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:23,105 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40206
+INFO 2025-09-03 15:15:26,148 basehttp 21892 22676 "GET /workflow/tasks/new/ HTTP/1.1" 200 7502
+WARNING 2025-09-03 15:15:26,496 log 21892 10004 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:26,498 basehttp 21892 10004 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:15:35,504 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40206
+INFO 2025-09-03 15:15:39,709 basehttp 21892 22676 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31336
+INFO 2025-09-03 15:15:39,757 basehttp 21892 22676 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 15:15:42,818 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40206
+INFO 2025-09-03 15:15:45,182 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:15:45,563 log 21892 20636 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:15:45,564 basehttp 21892 20636 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:17:49,175 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40218
+ERROR 2025-09-03 15:17:51,436 log 21892 22676 Internal Server Error: /workflow/proposals/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: workflow/proposal_list.html, workflow/proposal_list.html
+ERROR 2025-09-03 15:17:51,445 basehttp 21892 22676 "GET /workflow/proposals/ HTTP/1.1" 500 97976
+INFO 2025-09-03 15:21:15,528 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40218
+INFO 2025-09-03 15:21:21,304 basehttp 21892 22676 "GET /admin/workflow/proposal/ HTTP/1.1" 200 31336
+INFO 2025-09-03 15:21:21,349 basehttp 21892 22676 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-03 15:21:23,257 basehttp 21892 22676 "GET /admin/workflow/ HTTP/1.1" 200 40218
+INFO 2025-09-03 15:21:25,792 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:26,164 log 21892 24256 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:26,166 basehttp 21892 24256 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:29,864 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+INFO 2025-09-03 15:21:29,911 basehttp 21892 22676 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 200 316107
+WARNING 2025-09-03 15:21:30,392 log 21892 28000 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:30,395 basehttp 21892 28000 "GET /ws/notifications/ HTTP/1.1" 404 4426
+WARNING 2025-09-03 15:21:30,677 log 21892 22676 Not Found: /favicon.ico
+WARNING 2025-09-03 15:21:30,679 basehttp 21892 22676 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-03 15:21:35,926 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+INFO 2025-09-03 15:21:35,963 basehttp 21892 22676 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 200 316107
+WARNING 2025-09-03 15:21:36,284 log 21892 28592 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:36,285 basehttp 21892 28592 "GET /ws/notifications/ HTTP/1.1" 404 4426
+WARNING 2025-09-03 15:21:36,501 log 21892 22676 Not Found: /favicon.ico
+WARNING 2025-09-03 15:21:36,504 basehttp 21892 22676 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-03 15:21:54,483 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:54,757 log 21892 25424 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:54,758 basehttp 21892 25424 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:56,336 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:56,610 log 21892 25224 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:56,611 basehttp 21892 25224 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:57,300 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:57,571 log 21892 26696 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:57,572 basehttp 21892 26696 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:57,757 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:58,025 log 21892 25944 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:58,026 basehttp 21892 25944 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:58,243 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:58,474 log 21892 24288 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:58,476 basehttp 21892 24288 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:58,712 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:58,947 log 21892 25812 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:58,948 basehttp 21892 25812 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:59,118 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:59,354 log 21892 27064 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:59,355 basehttp 21892 27064 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:21:59,537 basehttp 21892 22676 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:21:59,796 log 21892 6264 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:21:59,798 basehttp 21892 6264 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:26:25,055 autoreload 21892 22956 D:\startup_bv\workflow\views.py changed, reloading.
+INFO 2025-09-03 15:26:28,713 autoreload 27068 24548 Watching for file changes with StatReloader
+INFO 2025-09-03 15:26:33,857 autoreload 27068 24548 D:\startup_bv\workflow\views.py changed, reloading.
+INFO 2025-09-03 15:26:37,399 autoreload 26668 26912 Watching for file changes with StatReloader
+INFO 2025-09-03 15:27:20,513 autoreload 26668 26912 D:\startup_bv\workflow\views.py changed, reloading.
+INFO 2025-09-03 15:27:24,048 autoreload 27980 28536 Watching for file changes with StatReloader
+INFO 2025-09-03 15:27:31,610 basehttp 27980 27672 "GET /admin/workflow/ HTTP/1.1" 200 40206
+INFO 2025-09-03 15:27:35,410 basehttp 27980 27672 "GET /workflow/tasks/new/ HTTP/1.1" 200 7502
+WARNING 2025-09-03 15:27:35,808 log 27980 27636 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:27:35,809 basehttp 27980 27636 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 15:27:39,053 basehttp 27980 27672 "GET /admin/workflow/ HTTP/1.1" 200 40206
+INFO 2025-09-03 15:28:35,263 basehttp 27980 27672 "GET /workflow/proposals/new/ HTTP/1.1" 200 6660
+WARNING 2025-09-03 15:28:35,691 log 27980 24028 Not Found: /ws/notifications/
+WARNING 2025-09-03 15:28:35,693 basehttp 27980 24028 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 16:10:36,970 basehttp 27980 13052 "GET /dashboard/ HTTP/1.1" 200 11964
+WARNING 2025-09-03 16:10:38,501 log 27980 30044 Not Found: /ws/notifications/
+WARNING 2025-09-03 16:10:38,502 basehttp 27980 30044 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 16:18:52,161 autoreload 11032 6116 Watching for file changes with StatReloader
+ERROR 2025-09-03 16:18:55,179 log 11032 20928 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 89, in dashboard_view
+    return render(request, "dashboard/main.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 523, in parse
+    self.unclosed_block_tag(parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 590, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 3: 'block'. Looking for one of: endblock.
+ERROR 2025-09-03 16:18:55,211 basehttp 11032 20928 "GET /dashboard/ HTTP/1.1" 500 190445
+INFO 2025-09-03 16:24:33,100 autoreload 27980 5092 Watching for file changes with StatReloader
+INFO 2025-09-03 16:24:36,163 basehttp 27980 29960 "GET /dashboard/ HTTP/1.1" 200 10076
+WARNING 2025-09-03 16:24:37,496 log 27980 30128 Not Found: /ws/notifications/
+WARNING 2025-09-03 16:24:37,498 basehttp 27980 30128 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 16:30:07,185 autoreload 27980 5092 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-03 16:30:10,671 autoreload 28316 27692 Watching for file changes with StatReloader
+ERROR 2025-09-03 16:30:16,629 log 28316 27088 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 58, in dashboard_view
+    cac_muc_tieu_cua_nv = PhanCongCaTruc.objects.filter(nhan_vien=current_user_nhanvien).values_list('ca_truc__muc_tieu', flat=True).distinct()
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1409, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1363, in _values
+    clone.query.set_values(fields)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2563, in set_values
+    self.add_fields(field_names, True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2237, in add_fields
+    join_info = self.setup_joins(
+        name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1900, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ~~~~~~~~~~~~~~~~~~^
+        names[:pivot],
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        fail_on_missing=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'ca_truc' into field. Choices are: baocaosuco, ca_lam_viec, ca_lam_viec_id, chamcong, id, ngay_truc, nhan_vien, nhan_vien_id, vi_tri_chot, vi_tri_chot_id
+ERROR 2025-09-03 16:30:16,650 basehttp 28316 27088 "GET /dashboard/ HTTP/1.1" 500 112411
+ERROR 2025-09-03 16:30:22,091 log 28316 27088 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 58, in dashboard_view
+    cac_muc_tieu_cua_nv = PhanCongCaTruc.objects.filter(nhan_vien=current_user_nhanvien).values_list('ca_truc__muc_tieu', flat=True).distinct()
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1409, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1363, in _values
+    clone.query.set_values(fields)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2563, in set_values
+    self.add_fields(field_names, True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2237, in add_fields
+    join_info = self.setup_joins(
+        name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1900, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ~~~~~~~~~~~~~~~~~~^
+        names[:pivot],
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        fail_on_missing=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'ca_truc' into field. Choices are: baocaosuco, ca_lam_viec, ca_lam_viec_id, chamcong, id, ngay_truc, nhan_vien, nhan_vien_id, vi_tri_chot, vi_tri_chot_id
+ERROR 2025-09-03 16:30:22,103 basehttp 28316 27088 "GET /dashboard/ HTTP/1.1" 500 112411
+INFO 2025-09-03 16:32:54,671 autoreload 28316 27692 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-03 16:32:58,149 autoreload 27380 26544 Watching for file changes with StatReloader
+ERROR 2025-09-03 16:33:46,551 log 27380 16768 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1923, in transform
+    return self.try_transform(wrapped, name)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1458, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'muc_tieu' for BigAutoField or join on the field not permitted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 56, in dashboard_view
+    cac_muc_tieu_cua_nv = PhanCongCaTruc.objects.filter(nhan_vien=current_user_nhanvien).values_list('ca_lam_viec__muc_tieu', flat=True).distinct()
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1409, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1363, in _values
+    clone.query.set_values(fields)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2563, in set_values
+    self.add_fields(field_names, True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2246, in add_fields
+    cols.append(join_info.transform_function(target, final_alias))
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1927, in transform
+    raise last_field_exception
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1900, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ~~~~~~~~~~~~~~~~~~^
+        names[:pivot],
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        fail_on_missing=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'muc_tieu' into field. Choices are: gio_bat_dau, gio_ket_thuc, id, phancongcatruc, ten_ca
+ERROR 2025-09-03 16:33:46,560 basehttp 27380 16768 "GET /dashboard/ HTTP/1.1" 500 135598
+ERROR 2025-09-03 16:33:48,123 log 27380 16768 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1923, in transform
+    return self.try_transform(wrapped, name)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1458, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'muc_tieu' for BigAutoField or join on the field not permitted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 56, in dashboard_view
+    cac_muc_tieu_cua_nv = PhanCongCaTruc.objects.filter(nhan_vien=current_user_nhanvien).values_list('ca_lam_viec__muc_tieu', flat=True).distinct()
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1409, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1363, in _values
+    clone.query.set_values(fields)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2563, in set_values
+    self.add_fields(field_names, True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 2246, in add_fields
+    cols.append(join_info.transform_function(target, final_alias))
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1927, in transform
+    raise last_field_exception
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1900, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ~~~~~~~~~~~~~~~~~~^
+        names[:pivot],
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        fail_on_missing=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'muc_tieu' into field. Choices are: gio_bat_dau, gio_ket_thuc, id, phancongcatruc, ten_ca
+ERROR 2025-09-03 16:33:48,129 basehttp 27380 16768 "GET /dashboard/ HTTP/1.1" 500 135598
+INFO 2025-09-03 16:35:44,934 autoreload 27380 26544 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-03 16:35:48,288 autoreload 26616 24248 Watching for file changes with StatReloader
+INFO 2025-09-03 16:35:53,172 basehttp 26616 29608 "GET /dashboard/ HTTP/1.1" 200 10077
+WARNING 2025-09-03 16:35:53,421 log 26616 26696 Not Found: /ws/notifications/
+WARNING 2025-09-03 16:35:53,422 basehttp 26616 26696 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 16:42:31,085 basehttp 26616 28848 "GET /operations/xep-lich/ HTTP/1.1" 200 6852
+WARNING 2025-09-03 16:42:32,626 log 26616 29028 Not Found: /ws/notifications/
+WARNING 2025-09-03 16:42:32,627 basehttp 26616 29028 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 16:42:34,242 log 26616 28848 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:42:34,280 basehttp 26616 28848 "GET /clients/pipeline/ HTTP/1.1" 500 207496
+INFO 2025-09-03 16:49:09,155 autoreload 29796 13176 Watching for file changes with StatReloader
+ERROR 2025-09-03 16:49:20,631 log 29796 28788 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:49:20,666 basehttp 29796 28788 "GET /clients/pipeline/ HTTP/1.1" 500 208473
+INFO 2025-09-03 16:53:51,973 autoreload 13180 27948 Watching for file changes with StatReloader
+ERROR 2025-09-03 16:54:04,231 log 13180 27444 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:54:04,266 basehttp 13180 27444 "GET /clients/pipeline/ HTTP/1.1" 500 208601
+WARNING 2025-09-03 16:54:05,704 log 13180 27444 Not Found: /favicon.ico
+WARNING 2025-09-03 16:54:05,706 basehttp 13180 27444 "GET /favicon.ico HTTP/1.1" 404 4408
+ERROR 2025-09-03 16:54:10,740 log 13180 27444 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:54:10,763 basehttp 13180 27444 "GET /clients/pipeline/ HTTP/1.1" 500 208601
+WARNING 2025-09-03 16:54:11,131 log 13180 27444 Not Found: /favicon.ico
+WARNING 2025-09-03 16:54:11,132 basehttp 13180 27444 "GET /favicon.ico HTTP/1.1" 404 4408
+ERROR 2025-09-03 16:54:15,117 log 13180 27444 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:54:15,142 basehttp 13180 27444 "GET /clients/pipeline/ HTTP/1.1" 500 208473
+ERROR 2025-09-03 16:54:16,382 log 13180 27444 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:54:16,410 basehttp 13180 27444 "GET /clients/pipeline/ HTTP/1.1" 500 208473
+WARNING 2025-09-03 16:54:17,584 log 13180 29380 Not Found: /ws/notifications/
+WARNING 2025-09-03 16:54:17,585 basehttp 13180 29380 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 16:54:19,516 log 13180 27444 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 16:54:19,551 basehttp 13180 27444 "GET /clients/pipeline/ HTTP/1.1" 500 208336
+INFO 2025-09-03 17:00:23,385 basehttp 13180 27400 "GET /operations/xep-lich/ HTTP/1.1" 200 6852
+WARNING 2025-09-03 17:00:24,668 log 13180 6988 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:00:24,669 basehttp 13180 6988 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 17:00:26,534 log 13180 27400 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 17:00:26,544 basehttp 13180 27400 "GET /clients/pipeline/ HTTP/1.1" 500 208336
+INFO 2025-09-03 17:08:02,455 autoreload 30344 28452 Watching for file changes with StatReloader
+ERROR 2025-09-03 17:08:12,380 log 30344 29128 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 17:08:12,418 basehttp 30344 29128 "GET /clients/pipeline/ HTTP/1.1" 500 208601
+WARNING 2025-09-03 17:08:13,814 log 30344 29128 Not Found: /favicon.ico
+WARNING 2025-09-03 17:08:13,816 basehttp 30344 29128 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-03 17:08:20,408 basehttp 30344 29128 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 17:08:20,648 basehttp 30344 29128 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-03 17:08:23,323 basehttp 30344 29128 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-03 17:08:23,354 basehttp 30344 29128 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-03 17:08:23,453 basehttp 30344 29128 "GET /dashboard/ HTTP/1.1" 200 10077
+WARNING 2025-09-03 17:08:23,802 log 30344 23952 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:08:23,804 basehttp 30344 23952 "GET /ws/notifications/ HTTP/1.1" 404 4426
+ERROR 2025-09-03 17:08:28,409 log 30344 29128 Internal Server Error: /clients/pipeline/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'humanize'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\clients\views.py", line 36, in pipeline_view
+    return render(request, "clients/pipeline.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'humanize' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+django_bootstrap5
+i18n
+import_export_tags
+jazzmin
+l10n
+log
+static
+tz
+ERROR 2025-09-03 17:08:28,434 basehttp 30344 29128 "GET /clients/pipeline/ HTTP/1.1" 500 208326
+INFO 2025-09-03 17:12:17,997 autoreload 30344 28452 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-03 17:19:16,445 autoreload 3272 20776 Watching for file changes with StatReloader
+INFO 2025-09-03 17:19:27,490 basehttp 3272 7296 "GET /clients/pipeline/ HTTP/1.1" 200 10120
+WARNING 2025-09-03 17:19:28,848 log 3272 20292 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:19:28,850 basehttp 3272 20292 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 17:19:39,493 basehttp 3272 7296 "GET /dashboard/ HTTP/1.1" 200 10077
+WARNING 2025-09-03 17:19:39,864 log 3272 20116 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:19:39,865 basehttp 3272 20116 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 17:19:40,896 basehttp 3272 7296 "GET /operations/xep-lich/ HTTP/1.1" 200 6852
+WARNING 2025-09-03 17:19:41,213 log 3272 30408 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:19:41,214 basehttp 3272 30408 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 17:19:42,882 basehttp 3272 7296 "GET /clients/pipeline/ HTTP/1.1" 200 10120
+WARNING 2025-09-03 17:19:43,263 log 3272 22508 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:19:43,263 basehttp 3272 22508 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-03 17:19:45,353 basehttp 3272 7296 "GET /dashboard/ HTTP/1.1" 200 10077
+WARNING 2025-09-03 17:19:45,737 log 3272 28892 Not Found: /ws/notifications/
+WARNING 2025-09-03 17:19:45,739 basehttp 3272 28892 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-04 17:55:07,162 autoreload 7484 10864 Watching for file changes with StatReloader
+INFO 2025-09-04 17:55:27,405 basehttp 7484 14752 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-04 17:55:29,128 basehttp 7484 14752 "GET / HTTP/1.1" 200 5989
+WARNING 2025-09-04 17:55:29,242 log 7484 14752 Not Found: /favicon.ico
+WARNING 2025-09-04 17:55:29,243 basehttp 7484 14752 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-04 17:55:34,413 basehttp 7484 14752 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-04 17:55:34,430 basehttp 7484 14752 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-04 17:55:34,598 basehttp 7484 14752 "GET /dashboard/ HTTP/1.1" 200 10077
+INFO 2025-09-04 17:55:34,636 basehttp 7484 14752 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 304 0
+WARNING 2025-09-04 17:55:35,822 log 7484 20488 Not Found: /ws/notifications/
+WARNING 2025-09-04 17:55:35,824 basehttp 7484 20488 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-04 17:55:45,496 basehttp 7484 14752 "GET /admin/ HTTP/1.1" 200 74294
+INFO 2025-09-04 17:55:45,527 basehttp 7484 14752 "GET /static/css/login_styles.css HTTP/1.1" 304 0
+INFO 2025-09-04 17:55:48,577 basehttp 7484 14752 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-04 17:55:48,634 basehttp 7484 14752 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-04 17:55:57,273 basehttp 7484 14752 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-04 17:55:57,321 basehttp 7484 24360 "GET /media/anh_the/NNT_Mn5lb75.png HTTP/1.1" 200 126202
+INFO 2025-09-04 17:55:57,329 basehttp 7484 14752 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-04 17:56:02,975 basehttp 7484 14752 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 62801
+INFO 2025-09-04 17:56:03,027 basehttp 7484 14752 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-04 17:56:06,446 basehttp 7484 14752 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179

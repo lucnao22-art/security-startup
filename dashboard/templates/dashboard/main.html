@@ -1,144 +1,172 @@
 {% extends "base.html" %}
 
-{% block title %}Bảng điều khiển{% endblock title %}
-
 {% block content %}
 <div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Bảng điều khiển</h1>
-    </div>
-
     <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Tổng Nhân viên (Chính thức)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ so_nhan_vien }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-users fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ so_nhan_vien }}</h3>
+                    <p>Tổng số nhân viên</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Tổng số Mục tiêu</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ so_muc_tieu }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-bullseye fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>{{ so_muc_tieu }}</h3>
+                    <p>Mục tiêu hoạt động</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-bullseye"></i>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
+        <div class="col-6 col-md-6 col-lg-3">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>{{ so_ca_truc_hom_nay }}</h3>
+                    <p>Ca trực hôm nay</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ su_co_moi }}</h3>
+                    <p>Sự cố mới</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <section class="col-12 col-lg-8 connectedSortable">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-chart-bar mr-1"></i>
+                        Thống kê sự cố (7 ngày qua)
+                    </h3>
+                </div>
                 <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Ca trực Hôm nay
+                    <div class="chart">
+                        <canvas id="incidentChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-info">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-tasks mr-1"></i>
+                        Công việc của tôi
+                    </h3>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {% for task in my_tasks %}
+                        <a href="{{ task.get_absolute_url }}" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ task.tieu_de }}</h5>
+                                <small>Hạn: {{ task.han_chot|date:"d/m" }}</small>
                             </div>
-                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ so_ca_truc_hom_nay }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
+                            <p class="mb-1">Giao bởi: {{ task.nguoi_giao.ho_ten }}</p>
+                            <small>Trạng thái: {{ task.get_trang_thai_display }}</small>
+                        </a>
+                        {% empty %}
+                        <li class="list-group-item">Bạn không có công việc nào.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'workflow:task_list' %}">Xem tất cả công việc</a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Thống kê Sự cố (7 ngày qua)</h6>
+            </section>
+        <section class="col-12 col-lg-4 connectedSortable">
+            {% if proposals_to_review %}
+            <div class="card card-warning">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-file-alt mr-1"></i>
+                        Đề xuất chờ duyệt
+                    </h3>
                 </div>
-                <div class="card-body">
-                    <div class="chart-area" style="height: 320px;">
-                        <canvas id="incidentChart"></canvas>
-                    </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {% for proposal in proposals_to_review %}
+                        <a href="{{ proposal.get_absolute_url }}" class="list-group-item">
+                            <h5 class="mb-1">{{ proposal.tieu_de }}</h5>
+                            <p class="mb-1">Gửi bởi: {{ proposal.nguoi_de_xuat.ho_ten }}</p>
+                            <small>Ngày gửi: {{ proposal.ngay_tao|date:"d/m/Y" }}</small>
+                        </a>
+                        {% endfor %}
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Sự cố Mới Báo cáo</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Thời gian</th>
-                                    <th>Tiêu đề</th>
-                                    <th>Mục tiêu</th>
-                                    <th>Người báo cáo</th>
-                                    <th>Trạng thái</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for su_co in su_co_gan_day %}
-                                <tr>
-                                    <td>{{ su_co.thoi_gian_bao_cao|date:"H:i, d/m/Y" }}</td>
-                                    <td><a href="#">{{ su_co.tieu_de }}</a></td>
-                                    <td>{{ su_co.ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}</td>
-                                    <td>{{ su_co.ca_truc.nhan_vien.ho_ten }}</td>
-                                    <td><span class="badge bg-danger text-white">{{ su_co.get_trang_thai_display }}</span></td>
-                                </tr>
-                                {% empty %}
-                                <tr>
-                                    <td colspan="5" class="text-center">Chưa có báo cáo sự cố nào.</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'workflow:proposal_list' %}">Xem tất cả đề xuất</a>
                 </div>
             </div>
+            {% endif %}
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-history mr-1"></i>
+                        Sự cố gần đây
+                    </h3>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="products-list product-list-in-card pl-2 pr-2">
+                        {% for su_co in su_co_gan_day %}
+                        <li class="item">
+                            <div>
+                                <a href="#" class="product-title">{{ su_co.muc_tieu.ten_muc_tieu }}</a>
+                                <span class="badge 
+                                    {% if su_co.muc_do_uu_tien == 'Cao' %}badge-danger
+                                    {% elif su_co.muc_do_uu_tien == 'Trung bình' %}badge-warning
+                                    {% else %}badge-info{% endif %} float-right">
+                                    {{ su_co.muc_do_uu_tien }}
+                                </span>
+                                <span class="product-description">
+                                    {{ su_co.mo_ta_su_co|truncatewords:10 }}
+                                </span>
+                            </div>
+                        </li>
+                        {% empty %}
+                        <li class="item">Không có sự cố nào gần đây.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            </section>
         </div>
     </div>
-</div>
-{% endblock content %}
+{% endblock %}  {# <-- DÒNG SỬA LỖI: ĐÓNG LẠI KHỐI `content` #}
 
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById('incidentChart')) {
             const ctx = document.getElementById('incidentChart').getContext('2d');
-            
-            // Lấy dữ liệu từ context của Django đã được chuyển thành JSON
-            const chartLabels = JSON.parse('{{ incident_chart_labels|safe }}');
-            const chartData = JSON.parse('{{ incident_chart_data|safe }}');
-
-            new Chart(ctx, {
-                type: 'line', // Loại biểu đồ: đường
+            const incidentChart = new Chart(ctx, {
+                type: 'bar',
                 data: {
-                    labels: chartLabels,
+                    labels: {{ incident_chart_labels|safe }},
                     datasets: [{
                         label: 'Số sự cố',
-                        data: chartData,
-                        borderColor: 'rgba(78, 115, 223, 1)',
-                        backgroundColor: 'rgba(78, 115, 223, 0.05)',
-                        fill: true,
-                        tension: 0.3
+                        data: {{ incident_chart_data|safe }},
+                        backgroundColor: 'rgba(220, 53, 69, 0.7)',
+                        borderColor: 'rgba(220, 53, 69, 1)',
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -148,13 +176,8 @@
                         y: {
                             beginAtZero: true,
                             ticks: {
-                                precision: 0
+                                stepSize: 1
                             }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false // Ẩn chú thích 'Số sự cố' ở trên cùng
                         }
                     }
                 }

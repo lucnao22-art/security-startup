@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Chi tiết công việc: {{ task.tieu_de }}</h3>
+  </div>
+  <div class="card-body">
+    <p><strong>Người giao:</strong> {{ task.nguoi_giao.ho_ten }}</p>
+    <p><strong>Người nhận:</strong> {{ task.nguoi_nhan.ho_ten }}</p>
+    <p><strong>Hạn chót:</strong> {{ task.han_chot|date:"d/m/Y H:i" }}</p>
+    <p><strong>Trạng thái:</strong> {{ task.get_trang_thai_display }}</p>
+    <p><strong>Độ ưu tiên:</strong> {{ task.get_uu_tien_display }}</p>
+    <hr>
+    <h4>Nội dung:</h4>
+    <p>{{ task.noi_dung|linebreaks }}</p>
+    {% if task.file_dinh_kem %}
+      <p><strong>File đính kèm:</strong> <a href="{{ task.file_dinh_kem.url }}" target="_blank">Tải xuống</a></p>
+    {% endif %}
+  </div>
+  <div class="card-footer">
+    {% if user.nhanvien == task.nguoi_nhan %}
+      <a href="{% url 'workflow:task_update' task.pk %}" class="btn btn-info">Cập nhật trạng thái</a>
+    {% endif %}
+    <a href="{% url 'workflow:task_list' %}" class="btn btn-secondary">Quay lại danh sách</a>
+  </div>
+</div>
+{% endblock %}
