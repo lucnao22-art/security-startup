@@ -1,41 +1,54 @@
-{% extends "operations/mobile/base_mobile.html" %}
+{% extends "operations/mobile/base_mobile_revamped.html" %}
+{% load static %}
 
-{% block title %}Bắt đầu Tuần tra{% endblock %}
+{% block title %}Tuần tra an ninh{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <div class="card text-center">
-        <div class="card-header">
-            <h4>Bắt đầu Ca Tuần tra</h4>
-        </div>
-        <div class="card-body">
-            {% if messages %}
-                {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}" role="alert">
-                    {{ message }}
-                </div>
-                {% endfor %}
+<div class="space-y-4">
+    <div class="flex items-center gap-4">
+        <a href="{% url 'operations:mobile_dashboard' %}" class="btn btn-square btn-ghost">
+            <i class="fas fa-arrow-left text-xl"></i>
+        </a>
+        <div>
+            <h1 class="text-2xl font-bold">Tuần tra an ninh</h1>
+            {% if muc_tieu %}
+                <p class="text-sm text-base-content/70">{{ muc_tieu.ten_muc_tieu }}</p>
             {% endif %}
-
-            {% if tuyen_tuan_tra_list %}
-                <h5 class="card-title">Mục tiêu: {{ muc_tieu.ten_muc_tieu }}</h5>
-                <p class="card-text">Vui lòng chọn tuyến tuần tra để bắt đầu.</p>
-                <div class="d-grid gap-2">
-                    {% for tuyen in tuyen_tuan_tra_list %}
-                    <form method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="tuyen_id" value="{{ tuyen.id }}">
-                        <button type="submit" class="btn btn-primary btn-lg w-100">{{ tuyen.ten_tuyen }}</button>
-                    </form>
-                    {% endfor %}
-                </div>
-            {% else %}
-                <p class="text-muted">Không có tuyến tuần tra nào được kích hoạt cho mục tiêu này.</p>
-            {% endif %}
-        </div>
-        <div class="card-footer text-muted">
-            Nhân viên: {{ request.user.nhanvien.ho_ten }}
         </div>
     </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div role="alert" class="alert alert-error shadow-md">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>{{ message }}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if not error and cac_loai_tuan_tra %}
+        <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Chọn tuyến tuần tra để bắt đầu</h2>
+                <div class="space-y-2 mt-4">
+                    {% for loai in cac_loai_tuan_tra %}
+                        <a href="#" class="btn btn-outline btn-primary w-full justify-start">
+                            <i class="fas fa-route"></i>
+                            {{ loai.ten_loai }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% elif not error %}
+        <div class="card bg-base-200 shadow-xl">
+             <div class="card-body items-center text-center">
+                <i class="fas fa-info-circle text-4xl text-base-content/50 mb-3"></i>
+                <h2 class="card-title">Không có tuyến tuần tra</h2>
+                <p>Mục tiêu này hiện chưa có tuyến tuần tra nào được thiết lập.</p>
+            </div>
+        </div>
+    {% endif %}
+
 </div>
 {% endblock %}

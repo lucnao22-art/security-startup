@@ -1,15 +1,36 @@
-{% comment %} file: operations/templates/operations/partials/them_ca_form.html {% endcomment %}
+<div class="modal-box">
+    <form hx-post="{% url 'operations:luu_ca' %}"
+          hx-target="#cell-{{ vi_tri.id }}-{{ ca.id }}-{{ ngay_truc }}"
+          hx-swap="innerHTML"
+          onsubmit="htmx_modal.close()">
 
-<form hx-post="{% url 'operations:luu_ca' %}" hx-target="closest td" hx-swap="innerHTML">
-    {% csrf_token %}
-    <input type="hidden" name="vi_tri_id" value="{{ vi_tri.id }}">
-    <input type="hidden" name="ca_id" value="{{ ca.id }}">
-    <input type="hidden" name="ngay_truc" value="{{ ngay_truc }}">
+        {% csrf_token %}
+        <h3 class="font-bold text-lg">Phân công ca trực</h3>
+        <p class="py-2">
+            <strong>Vị trí:</strong> {{ vi_tri.ten_vi_tri }}<br>
+            <strong>Ca:</strong> {{ ca.ten_ca }}<br>
+            <strong>Ngày:</strong> {{ ngay_truc }}
+        </p>
 
-    <select name="nhan_vien_id" class="form-select form-select-sm" onchange="this.form.submit()">
-        <option value="">Chọn NV...</option>
-        {% for nv in nhan_vien_list %}
-        <option value="{{ nv.id }}">{{ nv.ho_ten }}</option>
-        {% endfor %}
-    </select>
-</form>
+        <input type="hidden" name="vi_tri_id" value="{{ vi_tri.id }}">
+        <input type="hidden" name="ca_id" value="{{ ca.id }}">
+        <input type="hidden" name="ngay_truc" value="{{ ngay_truc }}">
+
+        <div class="form-control w-full mt-4">
+            <label class="label">
+                <span class="label-text">Chọn nhân viên</span>
+            </label>
+            <select name="nhan_vien_id" class="select select-bordered">
+                <option value="">-- Bỏ trống --</option>
+                {% for nhan_vien in nhan_vien_list %}
+                    <option value="{{ nhan_vien.id }}">{{ nhan_vien.ho_ten }} ({{ nhan_vien.ma_nhan_vien }})</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="modal-action">
+            <button type="button" class="btn" onclick="htmx_modal.close()">Hủy</button>
+            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        </div>
+    </form>
+</div>

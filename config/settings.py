@@ -5,11 +5,8 @@ from decouple import config
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = config("SECRET_KEY")
-
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 # Lấy giá trị của biến RENDER_EXTERNAL_HOSTNAME từ môi trường
@@ -26,6 +23,7 @@ else:
 # ==============================================================================
 INSTALLED_APPS = [
     'jazzmin',
+    'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +37,8 @@ INSTALLED_APPS = [
     'import_export',
     'weasyprint',
     'admin_reorder',
+    'tailwind',  # Thêm app tailwind
+    'theme',     # Thêm app theme quản lý giao diện
 
     # Các ứng dụng của bạn (SỬA LẠI ĐỂ DÙNG APPCONFIG)
     'main.apps.MainConfig',
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -144,7 +145,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # ==============================================================================
 # CẤU HÌNH ĐĂNG NHẬP/ĐĂNG XUẤT
 # ==============================================================================
-LOGIN_URL = "homepage"
+LOGIN_URL = "main:homepage"
 LOGIN_REDIRECT_URL = "/hub/"
 LOGOUT_REDIRECT_URL = "/"
 
@@ -239,6 +240,14 @@ ADMIN_REORDER = (
 )
 
 # ==============================================================================
+# CẤU HÌNH TAILWIND CSS (THÊM MỚI)
+# ==============================================================================
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+# ==============================================================================
 # LOGGING CONFIGURATION
 # ==============================================================================
 LOGGING = {
@@ -280,4 +289,12 @@ LOGGING = {
             "propagate": True,
         },
     },
+   
 }
+ # Cấu hình Tailwind CSS
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    ]
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd" 

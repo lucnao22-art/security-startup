@@ -1,0 +1,30 @@
+<ul class="menu p-4 w-64 min-h-full bg-base-300 text-base-content">
+    <li class="menu-title text-center p-4">
+        {% if company.logo %}
+            <img src="{{ company.logo.url }}" alt="Company Logo" class="w-16 h-16 mx-auto rounded-full mb-2">
+        {% endif %}
+        <span class="font-bold text-lg">{{ company.ten_cong_ty|default:"Hệ thống Vận hành" }}</span>
+    </li>
+
+    <li>
+        <a href="{% url 'dashboard:dashboard_view' %}" class="{% if section == 'dashboard' %}active{% endif %}">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'operations:xep-lich' %}" class="{% if section == 'xep_lich' %}active{% endif %}">
+            <i class="fas fa-calendar-alt"></i> Xếp lịch
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'clients:pipeline' %}" class="{% if section == 'pipeline' %}active{% endif %}">
+            <i class="fas fa-chart-line"></i> Pipeline
+        </a>
+    </li>
+
+    <div class="flex-grow"></div> <li>
+        <a href="{% url 'admin:index' %}">
+            <i class="fas fa-cogs"></i> Trang Admin
+        </a>
+    </li>
+</ul>

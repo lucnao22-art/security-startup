@@ -1,36 +1,111 @@
-{% extends "operations/mobile/base_mobile.html" %}
-{% load django_bootstrap5 %}
+{% extends "operations/mobile/base_mobile_revamped.html" %}
+{% load static %}
 
-{% block title %}Báo cáo Sự cố{% endblock %}
-
-{% block header %}Tạo Báo cáo Sự cố{% endblock %}
+{% block title %}Báo cáo sự cố{% endblock %}
 
 {% block content %}
-    <div class="card">
-        <div class="card-body">
-        {% if ca_truc_hom_nay %}
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="tieu_de" class="form-label">Tiêu đề:</label>
-                    <input type="text" class="form-control" id="tieu_de" name="tieu_de" required>
-                </div>
-                <div class="mb-3">
-                    <label for="noi_dung" class="form-label">Nội dung:</label>
-                    <textarea class="form-control" id="noi_dung" name="noi_dung" rows="5" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="hinh_anh" class="form-label">Hình ảnh (nếu có):</label>
-                    <input type="file" class="form-control" id="hinh_anh" name="hinh_anh" accept="image/*">
-                </div>
-                {% bootstrap_button button_type="submit" content="Gửi Báo cáo" button_class="btn-primary w-100" %}
-            </form>
-        {% else %}
-            <p class="text-center">Bạn không trong ca trực để báo cáo sự cố.</p>
-        {% endif %}
+<div class="space-y-4">
+    <div class="flex items-center gap-4">
+        <a href="{% url 'operations:mobile_dashboard' %}" class="btn btn-square btn-ghost">
+            <i class="fas fa-arrow-left text-xl"></i>
+        </a>
+        <h1 class="text-2xl font-bold">Báo cáo Sự cố</h1>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div role="alert" class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-error{% endif %} shadow-md">
+                <i class="fas {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-triangle{% endif %}"></i>
+                <span>{{ message }}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if ca_truc %}
+        <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" class="space-y-6">
+                    {% csrf_token %}
+                    
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-user-shield"></i>
+                                Gửi tới Quản lý
+                            </span>
+                        </div>
+                        {{ form.nguoi_nhan }}
+                    </label>
+
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-heading"></i>
+                                {{ form.tieu_de.label }}
+                            </span>
+                        </div>
+                        {{ form.tieu_de }}
+                    </label>
+                    
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-file-alt"></i>
+                                {{ form.noi_dung.label }}
+                            </span>
+                        </div>
+                        {{ form.noi_dung }}
+                    </label>
+
+                    <div class="form-control w-full">
+                        <div class="label">
+                             <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-camera"></i>
+                                {{ form.hinh_anh.label }}
+                            </span>
+                        </div>
+                        <div id="image-preview-container" class="hidden w-full h-48 bg-base-300 rounded-lg flex items-center justify-center mb-2 overflow-hidden">
+                            <img id="image-preview" src="#" alt="Xem trước ảnh" class="max-h-full max-w-full object-contain" />
+                        </div>
+                        {{ form.hinh_anh }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full mt-6">
+                        <i class="fas fa-paper-plane"></i>
+                        Gửi Báo Cáo
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="text-center mt-3">
-        <a href="{% url 'operations:mobile-dashboard' %}">Quay về Bảng điều khiển</a>
-    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const imageInput = document.getElementById('{{ form.hinh_anh.id_for_label }}');
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    const imagePreview = document.getElementById('image-preview');
+
+    if (imageInput) {
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    imagePreview.setAttribute('src', e.target.result);
+                    imagePreviewContainer.classList.remove('hidden');
+                }
+                
+                reader.readAsDataURL(file);
+            } else {
+                imagePreviewContainer.classList.add('hidden');
+            }
+        });
+    }
+});
+</script>
 {% endblock %}

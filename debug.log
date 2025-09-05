@@ -6089,3 +6089,1271 @@ INFO 2025-09-04 17:55:57,329 basehttp 7484 14752 "GET /admin/jsi18n/ HTTP/1.1" 2
 INFO 2025-09-04 17:56:02,975 basehttp 7484 14752 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 62801
 INFO 2025-09-04 17:56:03,027 basehttp 7484 14752 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
 INFO 2025-09-04 17:56:06,446 basehttp 7484 14752 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-05 13:14:32,838 autoreload 2200 22336 Watching for file changes with StatReloader
+INFO 2025-09-05 13:42:32,455 autoreload 2200 22336 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-05 13:42:35,995 autoreload 15844 20440 Watching for file changes with StatReloader
+INFO 2025-09-05 13:46:15,780 autoreload 15844 20440 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-05 13:46:19,336 autoreload 9480 3596 Watching for file changes with StatReloader
+INFO 2025-09-05 13:47:15,525 autoreload 9480 3596 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-05 13:47:19,022 autoreload 16072 2032 Watching for file changes with StatReloader
+INFO 2025-09-05 13:49:02,149 autoreload 16072 2032 D:\startup_bv\dashboard\views.py changed, reloading.
+INFO 2025-09-05 13:49:05,715 autoreload 11528 12716 Watching for file changes with StatReloader
+INFO 2025-09-05 13:49:30,535 basehttp 11528 22060 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 13:49:31,932 basehttp 11528 22060 "GET / HTTP/1.1" 200 5989
+WARNING 2025-09-05 13:49:32,054 log 11528 22060 Not Found: /favicon.ico
+WARNING 2025-09-05 13:49:32,059 basehttp 11528 22060 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-05 13:49:34,616 basehttp 11528 22060 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-05 13:49:34,655 basehttp 11528 22060 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-05 13:49:34,854 basehttp 11528 22060 "GET /dashboard/ HTTP/1.1" 200 12385
+INFO 2025-09-05 13:49:34,894 basehttp 11528 22060 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 304 0
+WARNING 2025-09-05 13:49:35,261 log 11528 23156 Not Found: /ws/notifications/
+WARNING 2025-09-05 13:49:35,262 basehttp 11528 23156 "GET /ws/notifications/ HTTP/1.1" 404 4426
+INFO 2025-09-05 15:26:01,632 autoreload 11528 12716 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-05 15:26:08,458 autoreload 22124 21452 Watching for file changes with StatReloader
+INFO 2025-09-05 15:28:34,895 autoreload 4452 9708 Watching for file changes with StatReloader
+INFO 2025-09-05 15:29:02,670 basehttp 4452 19800 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 302 0
+INFO 2025-09-05 15:29:02,978 basehttp 4452 19800 "GET /admin/login/?next=/admin/users/nhanvien/2/change/ HTTP/1.1" 200 3227
+INFO 2025-09-05 15:29:03,040 basehttp 4452 19800 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:03,041 basehttp 4452 12716 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:03,043 basehttp 4452 23284 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:03,054 basehttp 4452 23284 "GET /static/css/login_styles.css HTTP/1.1" 304 0
+WARNING 2025-09-05 15:29:03,094 basehttp 4452 12716 "GET /static/img/company_logo.png HTTP/1.1" 404 1874
+INFO 2025-09-05 15:29:03,096 basehttp 4452 23284 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:04,855 basehttp 4452 23284 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:04,863 basehttp 4452 19800 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:04,936 basehttp 4452 19800 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-09-05 15:29:04,967 basehttp 4452 19800 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+WARNING 2025-09-05 15:29:13,317 log 4452 19800 Not Found: /operations/mobile/dashboard/
+WARNING 2025-09-05 15:29:13,318 basehttp 4452 19800 "GET //operations/mobile/dashboard/ HTTP/1.1" 404 6350
+WARNING 2025-09-05 15:29:13,837 log 4452 19800 Not Found: /favicon.ico
+WARNING 2025-09-05 15:29:13,839 basehttp 4452 19800 "GET /favicon.ico HTTP/1.1" 404 4408
+INFO 2025-09-05 15:33:40,657 autoreload 4452 9708 D:\startup_bv\operations\urls.py changed, reloading.
+INFO 2025-09-05 15:33:44,194 autoreload 9740 20840 Watching for file changes with StatReloader
+ERROR 2025-09-05 15:33:51,799 log 9740 9724 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:33:51,810 basehttp 9740 9724 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94263
+ERROR 2025-09-05 15:33:55,471 log 9740 9724 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:33:55,482 basehttp 9740 9724 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94263
+INFO 2025-09-05 15:36:10,354 autoreload 9740 20840 D:\startup_bv\main\urls.py changed, reloading.
+INFO 2025-09-05 15:36:14,140 autoreload 23672 13876 Watching for file changes with StatReloader
+INFO 2025-09-05 15:38:56,945 autoreload 10596 9276 Watching for file changes with StatReloader
+INFO 2025-09-05 15:39:42,491 autoreload 10596 9276 D:\startup_bv\main\urls.py changed, reloading.
+INFO 2025-09-05 15:39:46,033 autoreload 13880 24652 Watching for file changes with StatReloader
+ERROR 2025-09-05 15:39:48,195 log 13880 24800 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:39:48,202 basehttp 13880 24800 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94263
+ERROR 2025-09-05 15:40:04,291 log 13880 24800 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:40:04,303 basehttp 13880 24800 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94263
+INFO 2025-09-05 15:42:52,027 autoreload 13880 24652 D:\startup_bv\config\urls.py changed, reloading.
+INFO 2025-09-05 15:42:55,659 autoreload 22468 26452 Watching for file changes with StatReloader
+ERROR 2025-09-05 15:42:59,294 log 22468 24792 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:42:59,301 basehttp 22468 24792 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94263
+ERROR 2025-09-05 15:43:04,109 log 22468 24792 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:43:04,124 basehttp 22468 24792 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94263
+INFO 2025-09-05 15:49:35,606 autoreload 22468 26452 D:\startup_bv\config\urls.py changed, reloading.
+INFO 2025-09-05 15:49:39,626 autoreload 24932 23380 Watching for file changes with StatReloader
+INFO 2025-09-05 15:52:33,965 autoreload 15904 22680 Watching for file changes with StatReloader
+INFO 2025-09-05 15:54:44,372 autoreload 15904 22680 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-05 15:54:48,382 autoreload 23212 21208 Watching for file changes with StatReloader
+ERROR 2025-09-05 15:54:56,727 log 23212 6788 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 15:54:56,733 basehttp 23212 6788 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94319
+INFO 2025-09-05 15:57:38,885 autoreload 23212 21208 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-05 15:57:42,813 autoreload 1656 22940 Watching for file changes with StatReloader
+INFO 2025-09-05 16:30:34,610 autoreload 6280 25408 Watching for file changes with StatReloader
+ERROR 2025-09-05 16:30:40,514 log 6280 10008 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'homepage' not found. 'homepage' is not a valid view function or pattern name.
+ERROR 2025-09-05 16:30:40,522 basehttp 6280 10008 "GET //operations/mobile/dashboard/ HTTP/1.1" 500 94319
+INFO 2025-09-05 16:33:57,709 autoreload 6280 25408 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-05 16:34:01,458 autoreload 21088 24692 Watching for file changes with StatReloader
+INFO 2025-09-05 16:34:22,192 autoreload 21088 24692 D:\startup_bv\config\urls.py changed, reloading.
+INFO 2025-09-05 16:34:25,803 autoreload 3368 4740 Watching for file changes with StatReloader
+INFO 2025-09-05 16:34:32,210 basehttp 3368 25268 "GET //operations/mobile/dashboard/ HTTP/1.1" 302 0
+INFO 2025-09-05 16:34:32,275 basehttp 3368 25268 "GET /?next=/operations/mobile/dashboard/ HTTP/1.1" 200 6018
+INFO 2025-09-05 16:34:33,686 basehttp 3368 25268 "GET /?next=/operations/mobile/dashboard/ HTTP/1.1" 200 6018
+INFO 2025-09-05 16:34:43,391 basehttp 3368 25268 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-09-05 16:34:43,765 log 3368 25268 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 212, in mobile_dashboard
+    return render(request, 'operations/mobile/dashboard.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tuan_tra' not found. 'tuan_tra' is not a valid view function or pattern name.
+ERROR 2025-09-05 16:34:43,799 basehttp 3368 25268 "GET /operations/mobile/dashboard/ HTTP/1.1" 500 163366
+INFO 2025-09-05 16:35:31,938 basehttp 3368 14312 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 16:35:33,443 basehttp 3368 14312 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 16:35:36,217 basehttp 3368 14312 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-05 16:35:36,330 basehttp 3368 14312 "GET /hub/ HTTP/1.1" 200 12379
+WARNING 2025-09-05 16:35:37,446 log 3368 22928 Not Found: /ws/notifications/
+WARNING 2025-09-05 16:35:37,447 basehttp 3368 22928 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 16:35:43,541 basehttp 3368 14312 "GET /admin/ HTTP/1.1" 200 74310
+INFO 2025-09-05 16:35:43,584 basehttp 3368 14312 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,588 basehttp 3368 11268 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,589 basehttp 3368 18680 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,591 basehttp 3368 16820 "GET /static/css/login_styles.css HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,597 basehttp 3368 14312 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,615 basehttp 3368 11268 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,879 basehttp 3368 11268 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,880 basehttp 3368 14312 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,881 basehttp 3368 16820 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,975 basehttp 3368 16820 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-09-05 16:35:43,976 basehttp 3368 14312 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-09-05 16:38:30,058 autoreload 1592 26016 Watching for file changes with StatReloader
+INFO 2025-09-05 16:38:41,284 basehttp 1592 18740 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 16:38:41,339 basehttp 1592 3240 "GET /media/anh_the/NNT_Mn5lb75.png HTTP/1.1" 200 126202
+INFO 2025-09-05 16:38:41,341 basehttp 1592 18740 "GET /static/css/dist/styles.css?v=1757065121 HTTP/1.1" 200 112475
+INFO 2025-09-05 16:39:06,795 basehttp 1592 18740 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 16:39:06,849 basehttp 1592 18740 "GET /static/css/dist/styles.css?v=1757065146 HTTP/1.1" 200 112475
+ERROR 2025-09-05 16:39:09,979 log 1592 18740 Internal Server Error: /operations/mobile/bao-cao-su-co/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: operations/mobile/base_mobile.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 164, in bao_cao_su_co_mobile_view
+    return render(request, "operations/mobile/bao_cao_su_co.html", {"form": None})
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: operations/mobile/base_mobile.html
+ERROR 2025-09-05 16:39:10,005 basehttp 1592 18740 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 500 166531
+ERROR 2025-09-05 16:44:52,685 log 1592 16804 Internal Server Error: /operations/mobile/bao-cao-su-co/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 164, in bao_cao_su_co_mobile_view
+    return render(request, "operations/mobile/bao_cao_su_co.html", {"form": None})
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'mobile-dashboard' not found. 'mobile-dashboard' is not a valid view function or pattern name.
+ERROR 2025-09-05 16:44:52,709 basehttp 1592 16804 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 500 161740
+ERROR 2025-09-05 16:44:57,555 log 1592 16804 Internal Server Error: /operations/mobile/bao-cao-su-co/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 164, in bao_cao_su_co_mobile_view
+    return render(request, "operations/mobile/bao_cao_su_co.html", {"form": None})
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'mobile-dashboard' not found. 'mobile-dashboard' is not a valid view function or pattern name.
+ERROR 2025-09-05 16:44:57,574 basehttp 1592 16804 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 500 161746
+INFO 2025-09-05 16:45:26,795 autoreload 5080 14932 Watching for file changes with StatReloader
+ERROR 2025-09-05 16:45:31,237 log 5080 6880 Internal Server Error: /operations/mobile/bao-cao-su-co/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 164, in bao_cao_su_co_mobile_view
+    return render(request, "operations/mobile/bao_cao_su_co.html", {"form": None})
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'mobile-dashboard' not found. 'mobile-dashboard' is not a valid view function or pattern name.
+ERROR 2025-09-05 16:45:31,250 basehttp 5080 6880 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 500 161750
+INFO 2025-09-05 16:47:54,795 autoreload 24540 3648 Watching for file changes with StatReloader
+INFO 2025-09-05 16:48:04,344 basehttp 24540 26572 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 2910
+INFO 2025-09-05 16:48:04,379 basehttp 24540 26572 "GET /static/css/dist/styles.css?v=1757065684 HTTP/1.1" 200 112475
+INFO 2025-09-05 16:48:28,461 basehttp 24540 26572 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 16:48:28,514 basehttp 24540 26572 "GET /static/css/dist/styles.css?v=1757065708 HTTP/1.1" 200 112475
+INFO 2025-09-05 16:48:29,999 basehttp 24540 26572 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 1946
+INFO 2025-09-05 16:48:30,046 basehttp 24540 26572 "GET /static/css/dist/styles.css?v=1757065709 HTTP/1.1" 200 112475
+INFO 2025-09-05 16:48:40,489 basehttp 24540 26572 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 16:48:40,545 basehttp 24540 26572 "GET /static/css/dist/styles.css?v=1757065720 HTTP/1.1" 200 112475
+ERROR 2025-09-05 16:48:42,318 log 24540 26572 Internal Server Error: /inspection/mobile/tuan-tra/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\inspection\views.py", line 18, in tuan_tra_mobile_view
+    muc_tieu_hien_tai = nhan_vien.muc_tieu_lam_viec
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NhanVien' object has no attribute 'muc_tieu_lam_viec'
+ERROR 2025-09-05 16:48:42,331 basehttp 24540 26572 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 500 79294
+INFO 2025-09-05 16:58:46,502 autoreload 24540 3648 D:\startup_bv\operations\models.py changed, reloading.
+INFO 2025-09-05 16:58:50,460 autoreload 7020 25940 Watching for file changes with StatReloader
+INFO 2025-09-05 17:03:59,863 autoreload 9364 8568 Watching for file changes with StatReloader
+INFO 2025-09-05 17:04:32,296 basehttp 9364 18028 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 17:04:32,337 basehttp 9364 18028 "GET /static/css/dist/styles.css?v=1757066672 HTTP/1.1" 200 113980
+INFO 2025-09-05 17:04:45,369 basehttp 9364 18028 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 1956
+INFO 2025-09-05 17:04:45,416 basehttp 9364 18028 "GET /static/css/dist/styles.css?v=1757066685 HTTP/1.1" 200 113980
+INFO 2025-09-05 17:04:58,569 basehttp 9364 18028 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 17:04:58,624 basehttp 9364 18028 "GET /static/css/dist/styles.css?v=1757066698 HTTP/1.1" 200 113980
+INFO 2025-09-05 17:05:22,206 basehttp 9364 22072 "GET /admin/ HTTP/1.1" 200 74310
+WARNING 2025-09-05 17:05:33,923 log 9364 25248 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:05:33,925 basehttp 9364 25248 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:05:36,255 basehttp 9364 22072 "GET /operations/xep-lich/ HTTP/1.1" 200 6846
+WARNING 2025-09-05 17:05:36,601 log 9364 25020 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:05:36,602 basehttp 9364 25020 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:05:55,089 basehttp 9364 22072 "GET /admin/ HTTP/1.1" 200 74310
+INFO 2025-09-05 17:06:00,279 basehttp 9364 22072 "GET /admin/main/companyprofile/ HTTP/1.1" 200 32418
+INFO 2025-09-05 17:06:00,312 basehttp 9364 22072 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,323 basehttp 9364 19528 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,324 basehttp 9364 22072 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,326 basehttp 9364 15988 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,327 basehttp 9364 25784 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,328 basehttp 9364 23344 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,332 basehttp 9364 19528 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,344 basehttp 9364 17636 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:06:00,352 basehttp 9364 23344 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,359 basehttp 9364 22072 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:00,365 basehttp 9364 19528 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:11,503 basehttp 9364 17636 "GET /admin/clients/khachhangtiemnang/ HTTP/1.1" 200 32902
+INFO 2025-09-05 17:06:11,548 basehttp 9364 17636 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:06:18,356 basehttp 9364 17636 "GET /admin/clients/ HTTP/1.1" 200 38812
+INFO 2025-09-05 17:06:22,502 basehttp 9364 17636 "GET /admin/clients/hopdong/ HTTP/1.1" 200 29028
+INFO 2025-09-05 17:06:22,550 basehttp 9364 17636 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:06:24,929 basehttp 9364 17636 "GET /admin/clients/hopdong/add/ HTTP/1.1" 200 35587
+INFO 2025-09-05 17:06:24,981 basehttp 9364 17636 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:06:25,000 basehttp 9364 19528 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:25,001 basehttp 9364 25784 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:25,005 basehttp 9364 23344 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:25,006 basehttp 9364 22072 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:25,320 basehttp 9364 22072 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:06:27,313 basehttp 9364 22072 "GET /admin/clients/cohoikinhdoanh/?_to_field=id&_popup=1 HTTP/1.1" 200 7625
+INFO 2025-09-05 17:06:29,168 basehttp 9364 22072 "GET /admin/clients/cohoikinhdoanh/?q=&_to_field=id&_popup=1 HTTP/1.1" 200 7663
+INFO 2025-09-05 17:06:39,895 basehttp 9364 22072 "GET /admin/clients/ HTTP/1.1" 200 38812
+INFO 2025-09-05 17:06:42,392 basehttp 9364 22072 "GET /admin/clients/cohoikinhdoanh/ HTTP/1.1" 200 31219
+INFO 2025-09-05 17:06:42,440 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:06:52,056 basehttp 9364 22072 "GET /admin/clients/cohoikinhdoanh/add/ HTTP/1.1" 200 35317
+INFO 2025-09-05 17:06:52,099 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:07:28,324 basehttp 9364 22072 "POST /admin/clients/cohoikinhdoanh/add/ HTTP/1.1" 200 36180
+INFO 2025-09-05 17:07:28,367 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:07:41,579 basehttp 9364 22072 "GET /admin/clients/khachhangtiemnang/?_to_field=id&_popup=1 HTTP/1.1" 200 7952
+INFO 2025-09-05 17:07:49,915 basehttp 9364 22072 "POST /admin/clients/cohoikinhdoanh/add/ HTTP/1.1" 200 35976
+INFO 2025-09-05 17:07:49,959 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:07:55,572 basehttp 9364 22072 "GET /admin/users/nhanvien/?_to_field=id&_popup=1 HTTP/1.1" 200 15888
+INFO 2025-09-05 17:08:04,204 basehttp 9364 22072 "POST /admin/clients/cohoikinhdoanh/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:08:04,351 basehttp 9364 22072 "GET /admin/clients/cohoikinhdoanh/ HTTP/1.1" 200 36161
+INFO 2025-09-05 17:08:04,398 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:08:09,494 basehttp 9364 22072 "GET /admin/clients/ HTTP/1.1" 200 38812
+INFO 2025-09-05 17:08:11,681 basehttp 9364 22072 "GET /admin/clients/muctieu/ HTTP/1.1" 200 29040
+INFO 2025-09-05 17:08:11,725 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:08:13,779 basehttp 9364 22072 "GET /admin/clients/muctieu/add/ HTTP/1.1" 200 34775
+INFO 2025-09-05 17:08:13,821 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:08:16,228 basehttp 9364 22072 "GET /admin/clients/hopdong/?_to_field=id&_popup=1 HTTP/1.1" 200 5438
+INFO 2025-09-05 17:08:17,663 basehttp 9364 22072 "GET /admin/clients/hopdong/?q=&_to_field=id&_popup=1 HTTP/1.1" 200 5476
+INFO 2025-09-05 17:08:21,578 basehttp 9364 22072 "GET /admin/clients/ HTTP/1.1" 200 38812
+INFO 2025-09-05 17:08:23,018 basehttp 9364 22072 "GET /admin/clients/hopdong/ HTTP/1.1" 200 29028
+INFO 2025-09-05 17:08:23,070 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:08:24,464 basehttp 9364 22072 "GET /admin/clients/hopdong/add/ HTTP/1.1" 200 35587
+INFO 2025-09-05 17:08:24,508 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:08:25,997 basehttp 9364 22072 "GET /admin/clients/cohoikinhdoanh/?_to_field=id&_popup=1 HTTP/1.1" 200 10668
+INFO 2025-09-05 17:09:06,271 basehttp 9364 22072 "POST /admin/clients/hopdong/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:09:06,394 basehttp 9364 22072 "GET /admin/clients/hopdong/ HTTP/1.1" 200 33885
+INFO 2025-09-05 17:09:06,465 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:09:09,078 basehttp 9364 22072 "GET /admin/clients/ HTTP/1.1" 200 38733
+INFO 2025-09-05 17:09:12,233 basehttp 9364 22072 "GET /admin/clients/muctieu/add/ HTTP/1.1" 200 34775
+INFO 2025-09-05 17:09:12,273 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:09:15,393 basehttp 9364 22072 "GET /admin/clients/hopdong/?_to_field=id&_popup=1 HTTP/1.1" 200 8439
+INFO 2025-09-05 17:09:46,044 basehttp 9364 22072 "GET /admin/users/nhanvien/?_to_field=id&_popup=1 HTTP/1.1" 200 15888
+INFO 2025-09-05 17:09:51,697 basehttp 9364 22072 "POST /admin/clients/muctieu/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:09:51,846 basehttp 9364 22072 "GET /admin/clients/muctieu/ HTTP/1.1" 200 33117
+INFO 2025-09-05 17:09:51,915 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:04,926 basehttp 9364 22072 "GET /admin/ HTTP/1.1" 200 73956
+INFO 2025-09-05 17:10:10,013 basehttp 9364 22072 "GET /admin/operations/calamviec/ HTTP/1.1" 200 29025
+INFO 2025-09-05 17:10:10,071 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:11,888 basehttp 9364 22072 "GET /admin/operations/calamviec/add/ HTTP/1.1" 200 31795
+INFO 2025-09-05 17:10:11,927 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:20,270 basehttp 9364 22072 "POST /admin/operations/calamviec/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:10:20,430 basehttp 9364 22072 "GET /admin/operations/calamviec/ HTTP/1.1" 200 33361
+INFO 2025-09-05 17:10:20,484 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:22,083 basehttp 9364 22072 "GET /admin/operations/calamviec/add/ HTTP/1.1" 200 31795
+INFO 2025-09-05 17:10:22,130 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:28,267 basehttp 9364 22072 "POST /admin/operations/calamviec/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:10:28,314 basehttp 9364 22072 "GET /admin/operations/calamviec/ HTTP/1.1" 200 33834
+INFO 2025-09-05 17:10:28,368 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:51,354 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:10:51,415 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:54,454 basehttp 9364 22072 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-05 17:10:54,485 basehttp 9364 25784 "GET /media/anh_the/NNT_Mn5lb75.png HTTP/1.1" 304 0
+INFO 2025-09-05 17:10:54,493 basehttp 9364 23344 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-09-05 17:10:54,502 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:10:54,813 basehttp 9364 22072 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-05 17:10:54,813 basehttp 9364 23344 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-05 17:10:54,823 basehttp 9364 23344 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-09-05 17:10:54,825 basehttp 9364 22072 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-05 17:11:00,231 basehttp 9364 22072 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 63152
+INFO 2025-09-05 17:11:00,276 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:11:07,062 basehttp 9364 22072 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-05 17:11:11,246 basehttp 9364 22072 "POST /admin/users/nhanvien/2/change/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:11:11,304 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 41459
+INFO 2025-09-05 17:11:11,362 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:11:13,539 basehttp 9364 22072 "GET /admin/users/nhanvien/1/change/ HTTP/1.1" 200 101099
+INFO 2025-09-05 17:11:13,576 basehttp 9364 23344 "GET /media/anh_the/NNT_ZDGTKeG.png HTTP/1.1" 200 126202
+INFO 2025-09-05 17:11:13,585 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:11:15,888 basehttp 9364 22072 "GET /admin/auth/user/?_to_field=id&_popup=1 HTTP/1.1" 200 12585
+INFO 2025-09-05 17:11:15,918 basehttp 9364 22072 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-05 17:11:43,055 basehttp 9364 22072 "GET /admin/auth/user/ HTTP/1.1" 200 37388
+INFO 2025-09-05 17:11:43,097 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:11:46,306 basehttp 9364 22072 "GET /admin/auth/user/add/ HTTP/1.1" 200 33916
+INFO 2025-09-05 17:11:46,354 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:13,034 basehttp 9364 22072 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:12:13,152 basehttp 9364 22072 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 63677
+INFO 2025-09-05 17:12:13,205 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:18,311 basehttp 9364 22072 "GET /admin/ HTTP/1.1" 200 74179
+INFO 2025-09-05 17:12:20,673 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:12:20,715 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:23,139 basehttp 9364 22072 "GET /admin/users/nhanvien/1/change/ HTTP/1.1" 200 101099
+INFO 2025-09-05 17:12:23,184 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:26,012 basehttp 9364 22072 "GET /admin/auth/user/?_to_field=id&_popup=1 HTTP/1.1" 200 13040
+INFO 2025-09-05 17:12:30,798 basehttp 9364 22072 "GET /admin/auth/user/?_to_field=id&_popup=1 HTTP/1.1" 200 13040
+INFO 2025-09-05 17:12:40,800 basehttp 9364 22072 "POST /admin/users/nhanvien/1/change/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:12:40,842 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 41456
+INFO 2025-09-05 17:12:40,902 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:43,568 basehttp 9364 22072 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-05 17:12:43,618 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:48,023 basehttp 9364 22072 "POST /admin/users/nhanvien/2/change/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:12:48,075 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 41459
+INFO 2025-09-05 17:12:48,127 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:12:49,928 basehttp 9364 22072 "GET /admin/users/nhanvien/1/change/ HTTP/1.1" 200 101174
+INFO 2025-09-05 17:12:49,979 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:13:07,438 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:13:08,116 basehttp 9364 22072 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-05 17:13:08,637 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:13:10,061 basehttp 9364 22072 "GET /admin/users/nhanvien/1/change/ HTTP/1.1" 200 101174
+INFO 2025-09-05 17:13:11,147 basehttp 9364 22072 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:13:12,054 basehttp 9364 22072 "GET /admin/ HTTP/1.1" 200 74799
+INFO 2025-09-05 17:13:14,685 basehttp 9364 22072 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 63066
+INFO 2025-09-05 17:13:19,071 basehttp 9364 22072 "GET /admin/auth/user/add/ HTTP/1.1" 200 33916
+INFO 2025-09-05 17:13:20,047 basehttp 9364 22072 "GET /admin/auth/user/ HTTP/1.1" 200 37940
+INFO 2025-09-05 17:13:21,011 basehttp 9364 22072 "GET /admin/users/nhanvien/1/change/ HTTP/1.1" 200 101174
+INFO 2025-09-05 17:13:42,253 basehttp 9364 22072 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 17:13:43,763 basehttp 9364 22072 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 17:13:46,267 basehttp 9364 22072 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:13:46,339 basehttp 9364 22072 "GET /hub/ HTTP/1.1" 200 12379
+WARNING 2025-09-05 17:13:47,428 log 9364 13156 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:13:47,430 basehttp 9364 13156 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:13:49,928 basehttp 9364 22072 "GET /operations/xep-lich/ HTTP/1.1" 200 7005
+WARNING 2025-09-05 17:13:50,435 log 9364 5780 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:13:50,436 basehttp 9364 5780 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:13:52,991 basehttp 9364 22072 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 8459
+WARNING 2025-09-05 17:13:53,316 log 9364 19344 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:13:53,317 basehttp 9364 19344 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:14:08,231 basehttp 9364 22072 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 17:14:09,887 basehttp 9364 22072 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 17:14:12,096 basehttp 9364 22072 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:14:12,122 basehttp 9364 22072 "GET /hub/ HTTP/1.1" 200 12379
+WARNING 2025-09-05 17:14:13,376 log 9364 19816 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:14:13,378 basehttp 9364 19816 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:14:18,103 basehttp 9364 22072 "GET /admin/ HTTP/1.1" 200 74797
+INFO 2025-09-05 17:14:28,995 basehttp 9364 22072 "GET /admin/operations/vitrichot/ HTTP/1.1" 200 29035
+INFO 2025-09-05 17:14:29,035 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:14:30,887 basehttp 9364 22072 "GET /admin/operations/vitrichot/add/ HTTP/1.1" 200 31855
+INFO 2025-09-05 17:14:30,932 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:14:36,714 basehttp 9364 22072 "POST /admin/operations/vitrichot/add/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:14:36,837 basehttp 9364 22072 "GET /admin/operations/vitrichot/ HTTP/1.1" 200 32667
+INFO 2025-09-05 17:14:36,889 basehttp 9364 22072 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:14:42,777 basehttp 9364 22072 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 13288
+WARNING 2025-09-05 17:14:43,051 log 9364 16896 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:14:43,052 basehttp 9364 16896 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:19:31,160 autoreload 4864 23684 Watching for file changes with StatReloader
+INFO 2025-09-05 17:19:47,144 basehttp 4864 2804 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 13288
+WARNING 2025-09-05 17:19:48,407 log 4864 2292 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:19:48,408 basehttp 4864 2292 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:43:20,582 autoreload 4864 23684 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-05 17:43:25,325 autoreload 1376 25540 Watching for file changes with StatReloader
+INFO 2025-09-05 17:44:20,136 basehttp 1376 17292 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 13288
+WARNING 2025-09-05 17:44:21,523 log 1376 22996 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:44:21,525 basehttp 1376 22996 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:47:40,020 autoreload 23180 23940 Watching for file changes with StatReloader
+ERROR 2025-09-05 17:48:03,841 log 23180 7748 Internal Server Error: /operations/xep-lich/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 81, in xep_lich_view
+    return render(request, "operations/xep_lich.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 523, in parse
+    self.unclosed_block_tag(parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 590, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 102: 'block'. Looking for one of: endblock.
+ERROR 2025-09-05 17:48:03,875 basehttp 23180 7748 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 500 203459
+INFO 2025-09-05 17:52:57,657 basehttp 23180 23764 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 20615
+WARNING 2025-09-05 17:52:58,969 log 23180 18028 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:52:58,971 basehttp 23180 18028 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:53:28,428 basehttp 23180 23764 "GET /admin/ HTTP/1.1" 200 74913
+INFO 2025-09-05 17:53:32,171 basehttp 23180 23764 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:53:32,239 basehttp 23180 23764 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:53:39,314 basehttp 23180 23764 "GET /admin/users/nhanvien/2/change/ HTTP/1.1" 200 101179
+INFO 2025-09-05 17:53:39,359 basehttp 23180 23764 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:57:47,693 basehttp 23180 23764 "GET /admin/ HTTP/1.1" 200 74913
+INFO 2025-09-05 17:57:53,503 basehttp 23180 23764 "GET /admin/users/nhanvien/ HTTP/1.1" 200 40860
+INFO 2025-09-05 17:57:53,539 basehttp 23180 23764 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:57:57,580 basehttp 23180 23764 "GET /admin/users/nhanvien/1/change/ HTTP/1.1" 200 101174
+INFO 2025-09-05 17:57:57,607 basehttp 23180 23764 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:58:02,984 basehttp 23180 23764 "GET /admin/clients/muctieu/?_to_field=id&_popup=1 HTTP/1.1" 200 7529
+INFO 2025-09-05 17:58:19,907 basehttp 23180 23764 "GET /admin/users/nhanvien/?_to_field=id&_popup=1 HTTP/1.1" 200 15888
+INFO 2025-09-05 17:58:38,850 basehttp 23180 23764 "POST /admin/users/nhanvien/1/change/ HTTP/1.1" 302 0
+INFO 2025-09-05 17:58:38,875 basehttp 23180 23764 "GET /admin/users/nhanvien/ HTTP/1.1" 200 41456
+INFO 2025-09-05 17:58:38,915 basehttp 23180 23764 "GET /admin/jsi18n/ HTTP/1.1" 200 8458
+INFO 2025-09-05 17:58:43,839 basehttp 23180 23764 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 21417
+WARNING 2025-09-05 17:58:45,140 log 23180 24844 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:58:45,140 basehttp 23180 24844 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:58:55,328 basehttp 23180 4748 "POST /operations/luu-ca/ HTTP/1.1" 200 255
+INFO 2025-09-05 17:59:15,810 basehttp 23180 4748 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 21766
+WARNING 2025-09-05 17:59:16,052 log 23180 25692 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:59:16,053 basehttp 23180 25692 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 17:59:47,126 basehttp 23180 4748 "POST /operations/luu-ca/ HTTP/1.1" 200 255
+INFO 2025-09-05 17:59:57,014 basehttp 23180 4748 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 22115
+WARNING 2025-09-05 17:59:58,243 log 23180 20728 Not Found: /ws/notifications/
+WARNING 2025-09-05 17:59:58,244 basehttp 23180 20728 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:07:34,595 autoreload 25316 22188 Watching for file changes with StatReloader
+INFO 2025-09-05 18:07:44,339 basehttp 25316 26204 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 20771
+WARNING 2025-09-05 18:07:45,640 log 25316 26140 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:07:45,641 basehttp 25316 26140 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:07:51,747 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:53,116 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:54,051 basehttp 25316 26204 "GET /operations/them-ca-form/1/1/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:54,633 basehttp 25316 26204 "GET /operations/them-ca-form/1/1/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:54,801 basehttp 25316 26204 "GET /operations/them-ca-form/1/1/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:54,952 basehttp 25316 26204 "GET /operations/them-ca-form/1/1/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:55,122 basehttp 25316 26204 "GET /operations/them-ca-form/1/1/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:55,282 basehttp 25316 26204 "GET /operations/them-ca-form/1/1/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:56,432 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:07:56,944 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:01,252 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:01,417 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:01,594 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:01,777 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:01,963 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:02,139 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:02,339 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:02,674 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:02,865 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:03,049 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-06/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:08:03,812 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:04,476 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:04,654 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:04,813 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:04,976 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:05,142 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:05,305 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:05,507 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:05,758 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:05,965 basehttp 25316 26204 "GET /operations/sua-ca-form/2/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:07,271 basehttp 25316 26204 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 20771
+WARNING 2025-09-05 18:08:07,521 log 25316 16924 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:08:07,522 basehttp 25316 16924 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:08:08,989 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:09,212 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:09,401 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:09,572 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:09,768 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:09,903 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:08:10,087 basehttp 25316 26204 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:09:08,324 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:09:08,853 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:09:09,019 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:09:09,209 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:09:09,401 basehttp 25316 26204 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+ERROR 2025-09-05 18:14:52,894 log 25316 7216 Internal Server Error: /operations/xep-lich/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 214, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: partials/_sidebar.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 81, in xep_lich_view
+    return render(request, "operations/xep_lich.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: partials/_sidebar.html
+ERROR 2025-09-05 18:14:52,925 basehttp 25316 7216 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 500 181300
+INFO 2025-09-05 18:18:15,698 autoreload 24056 26044 Watching for file changes with StatReloader
+INFO 2025-09-05 18:18:21,521 basehttp 24056 19796 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 20510
+INFO 2025-09-05 18:18:21,562 basehttp 24056 19796 "GET /static/css/dist/styles.css HTTP/1.1" 200 122166
+WARNING 2025-09-05 18:18:22,949 log 24056 24784 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:18:22,951 basehttp 24056 24784 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:18:34,055 basehttp 24056 19796 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:18:52,298 basehttp 24056 19796 "GET /operations/xep-lich/?csrfmiddlewaretoken=rMTQGxkKgNSwVVDIPlR6DSWX2MDWuCVjDCq4kyI5DNwgRb1e6ndjZaeN38u5Ccls&vi_tri_id=1&ca_id=1&ngay_truc=2025-09-05&delete_old=1&nhan_vien_id= HTTP/1.1" 200 6027
+INFO 2025-09-05 18:18:52,341 basehttp 24056 19796 "GET /static/css/dist/styles.css HTTP/1.1" 304 0
+WARNING 2025-09-05 18:18:52,636 log 24056 24016 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:18:52,637 basehttp 24056 24016 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:18:58,047 basehttp 24056 19796 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 20510
+WARNING 2025-09-05 18:18:58,450 log 24056 24412 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:18:58,451 basehttp 24056 24412 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:19:00,350 basehttp 24056 19796 "GET /operations/sua-ca-form/1/ HTTP/1.1" 200 700
+INFO 2025-09-05 18:19:03,427 basehttp 24056 19796 "GET /operations/xep-lich/?csrfmiddlewaretoken=ORC1PijBdvd0rZe4MlNzQZZq78nZJyJX0H9ftjHWAvRKnfCA3n9Mchhg8ue8R896&vi_tri_id=1&ca_id=1&ngay_truc=2025-09-05&delete_old=1&nhan_vien_id= HTTP/1.1" 200 6027
+WARNING 2025-09-05 18:19:03,843 log 24056 21784 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:19:03,844 basehttp 24056 21784 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:19:07,200 basehttp 24056 19796 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 20510
+WARNING 2025-09-05 18:19:07,579 log 24056 26060 Not Found: /ws/notifications/
+WARNING 2025-09-05 18:19:07,580 basehttp 24056 26060 "GET /ws/notifications/ HTTP/1.1" 404 4573
+INFO 2025-09-05 18:19:09,108 basehttp 24056 19796 "GET /operations/them-ca-form/1/2/2025-09-05/ HTTP/1.1" 200 1425
+INFO 2025-09-05 18:19:16,779 basehttp 24056 19796 "POST /operations/luu-ca/ HTTP/1.1" 200 651
+INFO 2025-09-05 18:19:47,520 basehttp 24056 21604 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 2876
+INFO 2025-09-05 18:19:47,586 basehttp 24056 21604 "GET /static/css/dist/styles.css?v=1757071187 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:20:10,868 basehttp 24056 21604 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 18:20:11,204 basehttp 24056 21604 "GET / HTTP/1.1" 200 5989
+INFO 2025-09-05 18:20:34,787 basehttp 24056 21604 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-05 18:20:35,068 basehttp 24056 21604 "GET /hub/ HTTP/1.1" 200 11751
+INFO 2025-09-05 18:20:35,235 basehttp 24056 20984 "GET /media/logos/logo_ckZdhj2.png HTTP/1.1" 200 316107
+INFO 2025-09-05 18:20:35,252 basehttp 24056 21604 "GET /static/css/dist/styles.css HTTP/1.1" 200 122166
+WARNING 2025-09-05 18:21:02,845 log 24056 21604 Not Found: /operations/mobile
+WARNING 2025-09-05 18:21:02,847 basehttp 24056 21604 "GET /operations/mobile HTTP/1.1" 404 7934
+INFO 2025-09-05 18:21:07,433 basehttp 24056 21604 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 3234
+INFO 2025-09-05 18:21:07,472 basehttp 24056 20984 "GET /media/anh_the/NNT_ZDGTKeG.png HTTP/1.1" 200 126202
+INFO 2025-09-05 18:21:07,487 basehttp 24056 21604 "GET /static/css/dist/styles.css?v=1757071267 HTTP/1.1" 200 122166
+ERROR 2025-09-05 18:21:28,389 log 24056 21604 Internal Server Error: /operations/mobile/check-in/1/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+TypeError: mobile_dashboard() got an unexpected keyword argument 'phan_cong_id'
+ERROR 2025-09-05 18:21:28,402 basehttp 24056 21604 "GET /operations/mobile/check-in/1/ HTTP/1.1" 500 75307
+INFO 2025-09-05 18:23:59,372 autoreload 24056 26044 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-05 18:24:04,442 autoreload 23844 18192 Watching for file changes with StatReloader
+INFO 2025-09-05 18:24:28,417 autoreload 23844 18192 D:\startup_bv\operations\urls.py changed, reloading.
+INFO 2025-09-05 18:24:33,096 autoreload 19084 3556 Watching for file changes with StatReloader
+INFO 2025-09-05 18:24:40,239 basehttp 19084 11636 "GET /operations/mobile/check-in/1/ HTTP/1.1" 302 0
+INFO 2025-09-05 18:24:40,306 basehttp 19084 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 3235
+INFO 2025-09-05 18:24:40,341 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071480 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:24:49,612 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 3956
+INFO 2025-09-05 18:24:49,670 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071489 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:25:35,578 basehttp 19084 11636 "POST /operations/mobile/bao-cao-su-co/ HTTP/1.1" 302 0
+INFO 2025-09-05 18:25:35,596 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 3961
+INFO 2025-09-05 18:25:35,632 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071535 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:26:46,627 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 3724
+INFO 2025-09-05 18:26:46,660 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071606 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:28:42,516 basehttp 19084 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 3235
+INFO 2025-09-05 18:28:42,556 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071722 HTTP/1.1" 200 122166
+ERROR 2025-09-05 18:28:57,684 log 19084 11636 Internal Server Error: /inspection/mobile/tuan-tra/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\inspection\views.py", line 18, in tuan_tra_mobile_view
+    muc_tieu_hien_tai = nhan_vien.muc_tieu_lam_viec
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NhanVien' object has no attribute 'muc_tieu_lam_viec'
+ERROR 2025-09-05 18:28:57,688 basehttp 19084 11636 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 500 79292
+INFO 2025-09-05 18:30:13,848 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 4775
+INFO 2025-09-05 18:30:13,891 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071813 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:30:14,127 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 4775
+INFO 2025-09-05 18:30:42,253 basehttp 19084 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 3235
+INFO 2025-09-05 18:30:42,311 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757071842 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:33:59,823 basehttp 19084 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 3281
+INFO 2025-09-05 18:33:59,859 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757072039 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:34:04,687 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 5727
+INFO 2025-09-05 18:34:04,741 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757072044 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:34:04,945 basehttp 19084 11636 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 5727
+INFO 2025-09-05 18:34:15,174 basehttp 19084 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 3281
+INFO 2025-09-05 18:34:15,221 basehttp 19084 11636 "GET /static/css/dist/styles.css?v=1757072055 HTTP/1.1" 200 122166
+ERROR 2025-09-05 18:34:18,093 log 19084 11636 Internal Server Error: /inspection/mobile/tuan-tra/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\inspection\views.py", line 18, in tuan_tra_mobile_view
+    muc_tieu_hien_tai = nhan_vien.muc_tieu_lam_viec
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NhanVien' object has no attribute 'muc_tieu_lam_viec'
+ERROR 2025-09-05 18:34:18,100 basehttp 19084 11636 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 500 79292
+INFO 2025-09-05 18:36:29,581 autoreload 19084 3556 D:\startup_bv\inspection\views.py changed, reloading.
+INFO 2025-09-05 18:36:33,355 autoreload 24220 26428 Watching for file changes with StatReloader
+INFO 2025-09-05 18:39:00,159 autoreload 24220 26428 D:\startup_bv\inspection\models.py changed, reloading.
+INFO 2025-09-05 18:39:03,909 autoreload 4200 4348 Watching for file changes with StatReloader
+INFO 2025-09-05 18:39:24,916 autoreload 23364 20048 Watching for file changes with StatReloader
+INFO 2025-09-05 18:41:46,423 autoreload 23364 20048 D:\startup_bv\inspection\admin.py changed, reloading.
+INFO 2025-09-05 18:41:50,198 autoreload 15912 20280 Watching for file changes with StatReloader
+ERROR 2025-09-05 18:41:55,461 log 15912 23520 Internal Server Error: /inspection/mobile/tuan-tra/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: operations/mobile/base_mobile.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\inspection\views.py", line 43, in tuan_tra_mobile_view
+    return render(request, "inspection/mobile/tuan_tra.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: operations/mobile/base_mobile.html
+ERROR 2025-09-05 18:41:55,474 basehttp 15912 23520 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 500 166812
+INFO 2025-09-05 18:44:03,133 autoreload 12432 6028 Watching for file changes with StatReloader
+ERROR 2025-09-05 18:44:03,924 log 12432 10340 Internal Server Error: /inspection/mobile/tuan-tra/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: inspection_loaituantra
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\inspection\views.py", line 43, in tuan_tra_mobile_view
+    return render(request, "inspection/mobile/tuan_tra.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 398, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: inspection_loaituantra
+ERROR 2025-09-05 18:44:03,944 basehttp 12432 10340 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 500 212518
+INFO 2025-09-05 18:55:38,611 autoreload 17784 25008 Watching for file changes with StatReloader
+INFO 2025-09-05 18:55:48,963 basehttp 17784 22096 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 200 15492
+INFO 2025-09-05 18:55:49,018 basehttp 17784 22096 "GET /static/css/dist/styles.css?v=1757073348 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:55:49,027 basehttp 17784 26160 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-09-05 18:55:49,031 basehttp 17784 26556 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-09-05 18:55:50,304 basehttp 17784 26556 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-09-05 18:55:50,384 basehttp 17784 26556 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2025-09-05 18:56:16,567 basehttp 17784 26556 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 16476
+INFO 2025-09-05 18:56:16,615 basehttp 17784 26556 "GET /static/css/dist/styles.css?v=1757073376 HTTP/1.1" 200 122166
+INFO 2025-09-05 18:57:28,644 basehttp 17784 26556 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 200 15490
+INFO 2025-09-05 18:57:28,680 basehttp 17784 26556 "GET /static/css/dist/styles.css?v=1757073448 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:00:14,563 basehttp 17784 26556 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 200 15490
+INFO 2025-09-05 19:00:14,595 basehttp 17784 26556 "GET /static/css/dist/styles.css?v=1757073614 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:00:19,032 basehttp 17784 26556 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 200 15491
+INFO 2025-09-05 19:00:19,073 basehttp 17784 26556 "GET /static/css/dist/styles.css?v=1757073618 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:01:08,372 autoreload 11464 22824 Watching for file changes with StatReloader
+INFO 2025-09-05 19:01:17,483 basehttp 11464 25192 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 200 15492
+INFO 2025-09-05 19:01:17,527 basehttp 11464 25192 "GET /static/css/dist/styles.css?v=1757073677 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:01:21,990 basehttp 11464 25192 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 16476
+INFO 2025-09-05 19:01:22,037 basehttp 11464 25192 "GET /static/css/dist/styles.css?v=1757073681 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:01:42,406 basehttp 11464 25192 "GET /__debug__/render_panel/?request_id=eec9fc530c93468684f60cac6bda445d&panel_id=SettingsPanel HTTP/1.1" 200 32601
+INFO 2025-09-05 19:04:45,322 autoreload 6832 24464 Watching for file changes with StatReloader
+INFO 2025-09-05 19:04:51,729 basehttp 6832 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 16477
+INFO 2025-09-05 19:04:51,793 basehttp 6832 11636 "GET /static/css/dist/styles.css?v=1757073891 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:04:55,539 basehttp 6832 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 16476
+INFO 2025-09-05 19:04:55,593 basehttp 6832 11636 "GET /static/css/dist/styles.css?v=1757073895 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:05:14,582 basehttp 6832 11636 "GET /operations/mobile/dashboard/ HTTP/1.1" 302 0
+INFO 2025-09-05 19:05:14,743 basehttp 6832 11636 "GET /?next=/operations/mobile/dashboard/ HTTP/1.1" 200 19202
+INFO 2025-09-05 19:05:14,805 basehttp 6832 11636 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-09-05 19:05:14,807 basehttp 6832 1212 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-09-05 19:05:15,262 basehttp 6832 11636 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-09-05 19:05:15,265 basehttp 6832 25016 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2025-09-05 19:05:15,393 basehttp 6832 1212 "GET /?next=/operations/mobile/dashboard/ HTTP/1.1" 200 19202
+INFO 2025-09-05 19:05:37,127 basehttp 6832 1212 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-05 19:05:37,377 basehttp 6832 1212 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 16476
+INFO 2025-09-05 19:05:37,444 basehttp 6832 1212 "GET /static/css/dist/styles.css?v=1757073937 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:05:37,586 basehttp 6832 25016 "GET /media/anh_the/NNT_ZDGTKeG.png HTTP/1.1" 200 126202
+INFO 2025-09-05 19:05:43,678 basehttp 6832 25016 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 16476
+INFO 2025-09-05 19:05:43,724 basehttp 6832 25016 "GET /static/css/dist/styles.css?v=1757073943 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:08:22,355 basehttp 6832 25016 "GET /__debug__/render_panel/?request_id=4bda8f96724945b390ee266be984d135&panel_id=TemplatesPanel HTTP/1.1" 200 7657
+INFO 2025-09-05 19:09:58,464 basehttp 6832 17652 "GET /operations/xep-lich/?muc_tieu_id=1 HTTP/1.1" 200 32714
+INFO 2025-09-05 19:09:58,503 basehttp 6832 17652 "GET /static/css/dist/styles.css HTTP/1.1" 304 0
+INFO 2025-09-05 19:09:58,511 basehttp 6832 25276 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-09-05 19:09:59,900 basehttp 6832 25276 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-09-05 19:09:59,943 basehttp 6832 25276 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-09-05 19:09:59,948 basehttp 6832 17652 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+WARNING 2025-09-05 19:10:00,028 log 6832 10164 Not Found: /ws/notifications/
+WARNING 2025-09-05 19:10:00,030 basehttp 6832 10164 "GET /ws/notifications/ HTTP/1.1" 404 17707
+INFO 2025-09-05 19:10:20,148 basehttp 6832 17652 "GET /admin/ HTTP/1.1" 200 90166
+INFO 2025-09-05 19:12:19,628 basehttp 6832 25016 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 19342
+INFO 2025-09-05 19:12:19,671 basehttp 6832 25016 "GET /static/css/dist/styles.css?v=1757074339 HTTP/1.1" 200 122166
+INFO 2025-09-05 19:12:21,430 basehttp 6832 25016 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 19342
+INFO 2025-09-05 19:12:39,043 basehttp 6832 25016 "GET /__debug__/render_panel/?request_id=b4cdc6ee7d0f472792d7f7b5c95534c2&panel_id=HeadersPanel HTTP/1.1" 200 4144

@@ -1,102 +1,75 @@
 {% extends "base.html" %}
-{% load django_bootstrap5 %}
+{% load static %}
 
-{% block title %}Bảng Xếp lịch{% endblock %}
+{% block title %}
+    Xếp lịch làm việc - {{ current_muc_tieu.ten_muc_tieu|default:"Chưa chọn mục tiêu" }}
+{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Lịch làm việc Tuần</h2>
-
-        <form id="muc-tieu-filter-form" method="get" class="d-flex align-items-center">
-            <label for="muc-tieu-select" class="me-2">Chọn Mục tiêu:</label>
-            <select name="muc_tieu_id" id="muc-tieu-select" class="form-select w-auto" onchange="this.form.submit()">
-                <option value="">--- Vui lòng chọn ---</option>
-                {% for mt in all_muc_tieu %}
-                {# --- DÒNG GÂY LỖI ĐÃ ĐƯỢC SỬA DỨT ĐIỂM --- #}
-                <option value="{{ mt.id }}" {% if current_muc_tieu and current_muc_tieu.id == mt.id %}selected{% endif %}>
-                    {{ mt.ten_muc_tieu }}
-                </option>
-                {% endfor %}
-            </select>
-        </form>
-    </div>
-
-    <div class="row">
-        {# --- CỘT DANH SÁCH NHÂN VIÊN --- #}
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Nhân viên Sẵn sàng</h4>
-                </div>
-                <div class="card-body" id="employee-list">
-                    {% if not current_muc_tieu %}
-                    <p class="text-muted">Chọn mục tiêu để xem nhân viên.</p>
-                    {% else %}
-                    {% for nv in nhan_vien_list %}
-                    <p class="border-bottom pb-2">{{ nv.ho_ten }} ({{ nv.ma_nhan_vien }})</p>
-                    {% empty %}
-                    <p>Không có nhân viên nào sẵn sàng cho mục tiêu này.</p>
+<div class="p-4 md:p-6">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 p-4 bg-base-200 rounded-box shadow">
+        <h1 class="text-2xl font-bold text-base-content">Xếp Lịch Vận Hành</h1>
+        
+        <div class="flex items-center gap-2">
+            <form id="mucTieuForm" method="GET" action="{% url 'operations:xep-lich' %}">
+                <select name="muc_tieu_id" class="select select-bordered" onchange="this.form.submit()">
+                    <option disabled {% if not current_muc_tieu %}selected{% endif %}>-- Chọn mục tiêu để xếp lịch --</option>
+                    {% for mt in all_muc_tieu %}
+                        <option value="{{ mt.id }}" {% if current_muc_tieu.id == mt.id %}selected{% endif %}>
+                            {{ mt.ten_muc_tieu }}
+                        </option>
                     {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        {# --- CỘT BẢNG LỊCH TRỰC --- #}
-        <div class="col-md-7">
-            <div class="card">
-                <div class="card-body">
-                    {% if not current_muc_tieu %}
-                    <div class="alert alert-info">Vui lòng chọn một mục tiêu để xem lịch làm việc.</div>
-                    {% else %}
-                    <table class="table table-bordered text-center">
-                        <thead>
-                            <tr>
-                                <th style="width: 20%;">Vị trí / Ca</th>
-                                {% for day in days_of_week %}
-                                <th style="width: 11.4%;">{{ day|date:"l" }} <br> ({{ day|date:"d/m" }})</th>
-                                {% endfor %}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for row in schedule_data %}
-                            <tr>
-                                <td>
-                                    <strong>{{ row.vi_tri.ten_vi_tri }}</strong><br>
-                                    <small class="text-muted">{{ row.ca.ten_ca }}</small>
-                                </td>
-                                {% for day, phan_cong in row.lich_truc_theo_ngay.items %}
-                                <td class="shift-cell">
-                                    {% include 'operations/partials/ca_truc_cell.html' with phan_cong=phan_cong day=day
-                                    vi_tri=row.vi_tri ca=row.ca %}
-                                </td>
-                                {% endfor %}
-                            </tr>
-                            {% empty %}
-                            <tr>
-                                <td colspan="8">Mục tiêu này chưa có Vị trí chốt nào. Vui lòng thêm trong trang Admin.
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        {# --- CỘT HIỂN THỊ CHI TIẾT (CHO HTMX) --- #}
-        <div class="col-md-2">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Chi tiết</h4>
-                </div>
-                <div class="card-body" id="details-panel">
-                    <p class="text-muted">Nhấp vào một ca trực để xem chi tiết.</p>
-                </div>
-            </div>
+                </select>
+            </form>
+            <button class="btn btn-primary"><i class="fas fa-calendar-week"></i> Tuần này</button>
         </div>
     </div>
+
+    {% if not current_muc_tieu %}
+        <div class="text-center p-10 bg-base-200 rounded-lg">
+            <p>Vui lòng chọn một mục tiêu để bắt đầu xếp lịch.</p>
+        </div>
+    {% else %}
+        <div class="overflow-x-auto">
+            <table class="table table-bordered w-full text-center">
+                <thead>
+                    <tr class="bg-base-200">
+                        <th class="w-1/4 text-left">Vị trí / Ca</th>
+                        {% for day in days_of_week %}
+                            <th>{{ day|date:"D" }}<br>{{ day|date:"d/m" }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in schedule_data %}
+                        <tr>
+                            <td class="text-left">
+                                <div class="font-bold">{{ row.vi_tri.ten_vi_tri }}</div>
+                                <div class="text-sm opacity-70">{{ row.ca.ten_ca }} ({{ row.ca.gio_bat_dau|time:"H:i" }} - {{ row.ca.gio_ket_thuc|time:"H:i" }})</div>
+                            </td>
+                            
+                            {% for day, phan_cong in row.lich_truc_theo_ngay.items %}
+                                <td class="p-2 align-middle">
+                                    <div id="cell-{{ row.vi_tri.id }}-{{ row.ca.id }}-{{ day|date:'Y-m-d' }}" class="min-h-[60px]">
+                                        {% if phan_cong %}
+                                            {% include "operations/partials/ca_truc_cell.html" %}
+                                        {% else %}
+                                            <button class="btn btn-ghost btn-sm btn-circle"
+                                                    hx-get="{% url 'operations:them_ca_form' vi_tri_id=row.vi_tri.id ca_id=row.ca.id ngay=day|date:'Y-m-d' %}"
+                                                    hx-target="#htmx-modal"
+                                                    hx-trigger="click"
+                                                    onclick="htmx_modal.showModal()">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        {% endif %}
+                                    </div>
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

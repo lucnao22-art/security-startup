@@ -5,7 +5,7 @@ from django.utils import timezone
 from datetime import timedelta
 from .models import BaoCaoSuCo
 from datetime import date, timedelta
-from users.models import ChungChi, NhanVien  # SỬA LẠI DÒNG NÀY
+from users.models import NhanVien  # SỬA LẠI DÒNG NÀY
 from .models import PhanCongCaTruc, ViTriChot, BaoCaoSuCo
 from .models import PhanCongCaTruc, ViTriChot
 

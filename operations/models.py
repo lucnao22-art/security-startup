@@ -1,5 +1,7 @@
 # file: operations/models.py
+
 from django.db import models
+from django.utils import timezone  # Thêm import timezone
 from users.models import NhanVien
 from clients.models import MucTieu
 
@@ -29,6 +31,7 @@ class CaLamViec(models.Model):
     class Meta:
         verbose_name = "Ca làm việc"
         verbose_name_plural = "Danh sách Ca làm việc"
+        ordering = ['gio_bat_dau'] # Sắp xếp ca theo giờ bắt đầu
 
     def __str__(self):
         return self.ten_ca
@@ -44,7 +47,7 @@ class PhanCongCaTruc(models.Model):
     ca_lam_viec = models.ForeignKey(
         CaLamViec, on_delete=models.CASCADE, verbose_name="Ca làm việc"
     )
-    ngay_truc = models.DateField("Ngày trực", db_index=True) # Thêm db_index=True
+    ngay_truc = models.DateField("Ngày trực", db_index=True)
 
     class Meta:
         verbose_name = "Phân công ca trực"
@@ -54,6 +57,20 @@ class PhanCongCaTruc(models.Model):
 
     def __str__(self):
         return f"{self.nhan_vien.ho_ten} trực tại {self.vi_tri_chot.ten_vi_tri} ngày {self.ngay_truc}"
+
+    # --- CẢI TIẾN: Thêm các property để dễ dàng truy cập thông tin chấm công ---
+    # Việc này không thay đổi CSDL nhưng rất hữu ích cho template
+    @property
+    def check_in(self):
+        if hasattr(self, 'chamcong'):
+            return self.chamcong.thoi_gian_check_in
+        return None
+
+    @property
+    def check_out(self):
+        if hasattr(self, 'chamcong'):
+            return self.chamcong.thoi_gian_check_out
+        return None
 
 
 class ChamCong(models.Model):
@@ -93,6 +110,17 @@ class BaoCaoSuCo(models.Model):
     ca_truc = models.ForeignKey(
         PhanCongCaTruc, on_delete=models.CASCADE, verbose_name="Ca trực"
     )
+    
+    # --- CẢI TIẾN: Thêm trường 'nguoi_nhan' theo yêu cầu ---
+    nguoi_nhan = models.ForeignKey(
+        NhanVien,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='cac_bao_cao_su_co_da_nhan',
+        verbose_name="Người nhận báo cáo"
+    )
+    
     thoi_gian_bao_cao = models.DateTimeField("Thời gian báo cáo", auto_now_add=True)
     tieu_de = models.CharField("Tiêu đề", max_length=255)
     noi_dung = models.TextField("Nội dung chi tiết")
@@ -111,12 +139,14 @@ class BaoCaoSuCo(models.Model):
         null=True,
         blank=True,
         verbose_name="Người chịu trách nhiệm",
+        related_name='cac_su_co_chiu_trach_nhiem' # Thêm related_name để tránh xung đột
     )
     lich_su_xu_ly = models.TextField("Lịch sử xử lý", blank=True)
 
     class Meta:
         verbose_name = "Báo cáo Sự cố"
         verbose_name_plural = "Danh sách Báo cáo Sự cố"
+        ordering = ['-thoi_gian_bao_cao'] # Sắp xếp theo thời gian báo cáo mới nhất
 
     def __str__(self):
         return self.tieu_de
@@ -141,6 +171,7 @@ class BaoCaoDeXuat(models.Model):
     class Meta:
         verbose_name = "Báo cáo & Đề xuất"
         verbose_name_plural = "DS Báo cáo & Đề xuất"
+        ordering = ['-ngay_gui'] # Sắp xếp theo ngày gửi mới nhất
 
     def __str__(self):
         return f"{self.get_loai_bao_cao_display()} từ {self.nhan_vien.ho_ten}"

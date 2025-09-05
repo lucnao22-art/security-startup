@@ -1,11 +1,11 @@
-# file: main/urls.py
 from django.urls import path
 from . import views
 
 app_name = "main"
 
 urlpatterns = [
-    # Sửa lại tên view ở đây từ homepage thành homepage_view
+    # Dòng này đã định nghĩa URL gốc ("") là 'homepage', đây là cấu hình chính xác.
     path("", views.homepage_view, name="homepage"),
+    
     path("hub/", views.dashboard_hub_view, name="dashboard-hub"),
 ]

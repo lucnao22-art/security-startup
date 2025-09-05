@@ -1,18 +1,25 @@
-{% comment %} file: operations/templates/operations/partials/ca_truc_cell.html {% endcomment %}
-
 {% if phan_cong %}
-    <div class="phan-cong-item bg-primary text-white p-1 rounded small"
-         style="cursor: pointer;"
-         hx-get="{% url 'operations:chi_tiet_ca' phan_cong.id %}"
-         hx-target="#details-panel"
-         hx-swap="innerHTML">
-        {{ phan_cong.nhan_vien.ho_ten }}
+    <div class="bg-primary text-primary-content rounded-lg p-2 text-left text-sm flex justify-between items-center">
+        <div>
+            <div class="font-bold">{{ phan_cong.nhan_vien.ho_ten }}</div>
+            <div class="text-xs opacity-80">MSNV: {{ phan_cong.nhan_vien.ma_nhan_vien }}</div>
+        </div>
+        <div class="flex gap-1">
+            <button class="btn btn-xs btn-ghost btn-square"
+                    hx-get="{% url 'operations:sua_ca_form' phan_cong.id %}"
+                    hx-target="#htmx-modal"
+                    hx-trigger="click"
+                    onclick="htmx_modal.showModal()">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+        </div>
     </div>
 {% else %}
-    <div class="ca-trong"
-         hx-get="{% url 'operations:them_ca_form' vi_tri.id ca.id day|date:'Y-m-d' %}"
-         hx-target="this"
-         hx-swap="innerHTML">
-        <button class="btn btn-sm btn-outline-success w-100 h-100">+</button>
-    </div>
+    <button class="btn btn-ghost btn-sm btn-circle"
+            hx-get="{% url 'operations:them_ca_form' vi_tri_id=vi_tri.id ca_id=ca.id ngay=day|date:'Y-m-d' %}"
+            hx-target="#htmx-modal"
+            hx-trigger="click"
+            onclick="htmx_modal.showModal()">
+        <i class="fas fa-plus"></i>
+    </button>
 {% endif %}
