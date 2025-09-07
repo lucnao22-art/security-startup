@@ -1,0 +1,111 @@
+{% extends "operations/mobile/base_mobile_revamped.html" %}
+{% load static %}
+
+{% block title %}Báo cáo sự cố{% endblock %}
+
+{% block content %}
+<div class="space-y-4">
+    <div class="flex items-center gap-4">
+        <a href="{% url 'operations:mobile_dashboard' %}" class="btn btn-square btn-ghost">
+            <i class="fas fa-arrow-left text-xl"></i>
+        </a>
+        <h1 class="text-2xl font-bold">Báo cáo Sự cố</h1>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div role="alert" class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-error{% endif %} shadow-md">
+                <i class="fas {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-triangle{% endif %}"></i>
+                <span>{{ message }}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if ca_truc %}
+        <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" class="space-y-6">
+                    {% csrf_token %}
+                    
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-user-shield"></i>
+                                Gửi tới Quản lý
+                            </span>
+                        </div>
+                        {{ form.nguoi_nhan }}
+                    </label>
+
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-heading"></i>
+                                {{ form.tieu_de.label }}
+                            </span>
+                        </div>
+                        {{ form.tieu_de }}
+                    </label>
+                    
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-file-alt"></i>
+                                {{ form.noi_dung.label }}
+                            </span>
+                        </div>
+                        {{ form.noi_dung }}
+                    </label>
+
+                    <div class="form-control w-full">
+                        <div class="label">
+                             <span class="label-text font-semibold flex items-center gap-2">
+                                <i class="fas fa-camera"></i>
+                                {{ form.hinh_anh.label }}
+                            </span>
+                        </div>
+                        <div id="image-preview-container" class="hidden w-full h-48 bg-base-300 rounded-lg flex items-center justify-center mb-2 overflow-hidden">
+                            <img id="image-preview" src="#" alt="Xem trước ảnh" class="max-h-full max-w-full object-contain" />
+                        </div>
+                        {{ form.hinh_anh }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full mt-6">
+                        <i class="fas fa-paper-plane"></i>
+                        Gửi Báo Cáo
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const imageInput = document.getElementById('{{ form.hinh_anh.id_for_label }}');
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    const imagePreview = document.getElementById('image-preview');
+
+    if (imageInput) {
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    imagePreview.setAttribute('src', e.target.result);
+                    imagePreviewContainer.classList.remove('hidden');
+                }
+                
+                reader.readAsDataURL(file);
+            } else {
+                imagePreviewContainer.classList.add('hidden');
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

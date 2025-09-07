@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Báo cáo Chấm công Mục tiêu{% endblock %}
+{% block page_title %}Báo cáo Chấm công Mục tiêu{% endblock %}
+
+{% block content %}
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <form method="get" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end mb-6 p-4 bg-base-200 rounded-box">
+            <div class="form-control">
+                <label class="label"><span class="label-text">Chọn mục tiêu</span></label>
+                <select name="muc_tieu_id" class="select select-bordered" required>
+                    <option value="">-- Chọn --</option>
+                    {% for mt in muc_tieu_list %}
+                        <option value="{{ mt.id }}" {% if selected_muc_tieu.id == mt.id %}selected{% endif %}>{{ mt.ten_muc_tieu }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-control">
+                <label class="label"><span class="label-text">Tháng</span></label>
+                <select name="thang" class="select select-bordered">
+                    {% for m in thang_range %}
+                    <option value="{{ m }}" {% if selected_thang == m %}selected{% endif %}>Tháng {{ m }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-control">
+                <label class="label"><span class="label-text">Năm</span></label>
+                <select name="nam" class="select select-bordered">
+                     {% for y in nam_range reversed %}
+                    <option value="{{ y }}" {% if selected_nam == y %}selected{% endif %}>{{ y }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Xem báo cáo</button>
+        </form>
+
+        {% if selected_muc_tieu %}
+        <div class="mb-6 prose max-w-none">
+            <h2 class="text-2xl font-bold">Báo cáo Hoạt động Mục tiêu Tháng {{ selected_thang }}/{{ selected_nam }}</h2>
+            <p><strong>Mục tiêu:</strong> {{ selected_muc_tieu.ten_muc_tieu }}</p>
+            <button class="btn btn-sm btn-outline no-print" onclick="window.print()"><i class="fas fa-print"></i> In báo cáo</button>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">I. Phân tích & Cảnh báo</h3>
+        {% if summary_data.canh_bao_vuot_dinhmuc or summary_data.canh_bao_vuot_24h %}
+            <div class="alert alert-error shadow-lg mb-6">
+                <div>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>
+                        <h3 class="font-bold">Cảnh báo Vượt Giờ!</h3>
+                        {% if summary_data.canh_bao_vuot_dinhmuc %}
+                            <div class="text-xs">Tổng giờ hoạt động thực tế <strong>({{ summary_data.tong_gio_hoat_dong }})</strong> đã vượt định mức dự kiến <strong>({{ summary_data.gio_dinh_muc }})</strong>.</div>
+                        {% endif %}
+                        {% for key, value in summary_data.canh_bao_vuot_24h.items %}
+                             <div class="text-xs">Vị trí <strong>{{ key }}</strong> có tổng giờ hoạt động là <strong>{{ value }}</strong>, vượt quá 24h.</div>
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="stats shadow mb-6 w-full">
+            <div class="stat">
+                <div class="stat-title">Tổng giờ hoạt động</div>
+                <div class="stat-value">{{ summary_data.tong_gio_hoat_dong }}</div>
+            </div>
+            <div class="stat">
+                <div class="stat-title">Định mức dự kiến</div>
+                <div class="stat-value">{{ summary_data.gio_dinh_muc }}</div>
+            </div>
+        </div>
+        <h4 class="font-bold mb-2">Tổng giờ theo vị trí chốt:</h4>
+        <ul class="list-disc list-inside mb-6">
+            {% for vitri, tong_gio in summary_data.gio_theo_vitri.items %}
+                <li><strong>{{ vitri }}:</strong> {{ tong_gio }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h3 class="text-xl font-bold mb-4">II. Bảng chi tiết chấm công</h3>
+        <div class="overflow-x-auto">
+            <table class="table table-zebra w-full">
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Vị trí chốt</th>
+                        <th>Ca</th>
+                        <th>Nhân viên</th>
+                        <th>Check-in</th>
+                        <th>Check-out</th>
+                        <th>Tổng giờ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cc in report_data %}
+                    <tr class="{% for key, value in summary_data.canh_bao_vuot_24h.items %}{% if cc.ca_truc.vi_tri_chot.ten_vi_tri in key and cc.ca_truc.ngay_truc|date:'d/m' in key %}bg-error/20{% endif %}{% endfor %}">
+                        <td>{{ cc.ca_truc.ngay_truc|date:"d/m/Y" }}</td>
+                        <td>{{ cc.ca_truc.vi_tri_chot.ten_vi_tri }}</td>
+                        <td>{{ cc.ca_truc.ca_lam_viec.ten_ca }}</td>
+                        <td>{{ cc.ca_truc.nhan_vien.ho_ten }}</td>
+                        <td>{{ cc.thoi_gian_check_in|date:"H:i" }}</td>
+                        <td>{{ cc.thoi_gian_check_out|date:"H:i" }}</td>
+                        <td>{{ cc.duration }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="7" class="text-center">Không có dữ liệu chấm công.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

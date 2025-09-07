@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Báo cáo Chấm công Cá nhân{% endblock %}
+{% block page_title %}Báo cáo Chấm công Cá nhân{% endblock %}
+
+{% block content %}
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <form method="get" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end mb-6 p-4 bg-base-200 rounded-box">
+            <div class="form-control">
+                <label class="label"><span class="label-text">Chọn nhân viên</span></label>
+                <select name="nhan_vien_id" class="select select-bordered" required>
+                    <option value="">-- Chọn --</option>
+                    {% for nv in nhan_vien_list %}
+                        <option value="{{ nv.id }}" {% if selected_nhan_vien.id == nv.id %}selected{% endif %}>
+                            {{ nv.ho_ten }} ({{ nv.ma_nhan_vien }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-control">
+                <label class="label"><span class="label-text">Tháng</span></label>
+                <select name="thang" class="select select-bordered">
+                    {% for m in thang_range %}
+                    <option value="{{ m }}" {% if selected_thang == m %}selected{% endif %}>Tháng {{ m }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-control">
+                <label class="label"><span class="label-text">Năm</span></label>
+                <select name="nam" class="select select-bordered">
+                     {% for y in nam_range reversed %}
+                    <option value="{{ y }}" {% if selected_nam == y %}selected{% endif %}>{{ y }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Xem báo cáo</button>
+        </form>
+
+        {% if selected_nhan_vien %}
+        <div class="mb-6 prose max-w-none">
+            <h2 class="text-2xl font-bold">Bảng Chấm Công Tháng {{ selected_thang }}/{{ selected_nam }}</h2>
+            <p>
+                <strong>Nhân viên:</strong> {{ selected_nhan_vien.ho_ten }} <br>
+                <strong>MSNV:</strong> {{ selected_nhan_vien.ma_nhan_vien }} <br>
+                <strong>Chức danh:</strong> {{ selected_nhan_vien.chuc_danh.ten_chuc_danh|default:"Chưa có" }}
+            </p>
+            <button class="btn btn-sm btn-outline no-print" onclick="window.print()"><i class="fas fa-print"></i> In báo cáo</button>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">I. Bảng tổng hợp công</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="stat bg-base-200 rounded-box p-4">
+                <div class="stat-title">Tổng ngày công</div>
+                <div class="stat-value">{{ summary_data.tong_ngay_cong }}</div>
+            </div>
+            <div class="stat bg-base-200 rounded-box p-4">
+                <div class="stat-title">Tổng giờ làm</div>
+                <div class="stat-value">{{ summary_data.tong_gio_lam }}</div>
+            </div>
+            <div class="stat bg-base-200 rounded-box p-4">
+                <div class="stat-title">Đi trễ</div>
+                <div class="stat-value text-warning">{{ summary_data.so_lan_di_tre }} lần</div>
+            </div>
+             <div class="stat bg-base-200 rounded-box p-4">
+                <div class="stat-title">Về sớm</div>
+                <div class="stat-value text-orange-400">{{ summary_data.so_lan_ve_som }} lần</div>
+            </div>
+        </div>
+
+        <h4 class="font-bold mb-2">Tổng giờ làm theo mục tiêu:</h4>
+        <ul class="list-disc list-inside mb-6">
+            {% for muc_tieu, tong_gio in summary_data.gio_lam_theo_muc_tieu.items %}
+                <li><strong>{{ muc_tieu }}:</strong> {{ tong_gio }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3 class="text-xl font-bold mb-4">II. Bảng chi tiết chấm công</h3>
+        <div class="overflow-x-auto">
+            <table class="table table-zebra w-full">
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Thứ</th>
+                        <th>Ca</th>
+                        <th>Mục tiêu</th>
+                        <th>Check-in</th>
+                        <th>Check-out</th>
+                        <th>Tổng giờ</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cc in cham_cong_data %}
+                    <tr>
+                        <td>{{ cc.ngay|date:"d/m/Y" }}</td>
+                        <td>{{ cc.ngay|date:"l" }}</td>
+                        <td>{{ cc.ca_truc }}</td>
+                        <td>{{ cc.muc_tieu }}</td>
+                        <td>{{ cc.check_in|date:"H:i:s"|default:"--" }}</td>
+                        <td>{{ cc.check_out|date:"H:i:s"|default:"--" }}</td>
+                        <td>{{ cc.tong_gio_lam }}</td>
+                        <td>
+                            {% if cc.trang_thai == 'Đi trễ' or cc.trang_thai == 'Về sớm' %}
+                            <span class="badge badge-warning">{{ cc.trang_thai }}</span>
+                            {% else %}
+                            <span class="badge badge-success">{{ cc.trang_thai }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="8" class="text-center">Không có dữ liệu chấm công trong tháng này.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

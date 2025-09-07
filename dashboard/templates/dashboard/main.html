@@ -1,186 +1,154 @@
 {% extends "base.html" %}
-{% load humanize %}
-
-{% block title %}Bảng điều khiển tổng quan{% endblock %}
+{% load humanize %} {% block title %}Bảng điều khiển{% endblock %}
+{% block page_title %}Bảng điều khiển tổng quan{% endblock %}
 
 {% block content %}
-<div class="container-fluid py-4">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="h3 mb-4 text-gray-800">Bảng điều khiển tổng quan</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    
+    <div class="stat bg-base-100 shadow rounded-box">
+        <div class="stat-figure text-primary">
+            <i class="fas fa-users text-3xl"></i>
+        </div>
+        <div class="stat-title">Nhân viên hoạt động</div>
+        <div class="stat-value text-primary">{{ total_nhan_vien|intcomma }}</div>
+        <div class="stat-desc">Tổng số nhân sự trong hệ thống</div>
+    </div>
+    
+    <div class="stat bg-base-100 shadow rounded-box">
+        <div class="stat-figure text-secondary">
+            <i class="fas fa-handshake text-3xl"></i>
+        </div>
+        <div class="stat-title">Khách hàng</div>
+        <div class="stat-value text-secondary">{{ total_khach_hang|intcomma }}</div>
+        <div class="stat-desc">Số lượng khách hàng đang hợp tác</div>
+    </div>
+    
+    <div class="stat bg-base-100 shadow rounded-box">
+        <div class="stat-figure text-accent">
+            <i class="fas fa-exclamation-triangle text-3xl"></i>
+        </div>
+        <div class="stat-title">Sự cố (30 ngày)</div>
+        <div class="stat-value text-accent">{{ su_co_gan_day|intcomma }}</div>
+        <div class="stat-desc">Tổng số sự cố được báo cáo</div>
+    </div>
+    
+    <div class="stat bg-base-100 shadow rounded-box">
+        <div class="stat-figure text-info">
+            <i class="fas fa-calendar-check text-3xl"></i>
+        </div>
+        <div class="stat-title">Ca trực hôm nay</div>
+        <div class="stat-value text-info">{{ ca_truc_hom_nay|intcomma }}</div>
+        <div class="stat-desc">Tổng số ca đã được phân công</div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-6">
+    
+    <div class="xl:col-span-2 card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">Hoạt động 7 ngày qua</h2>
+            <div class="h-96"> <canvas id="activityChart"></canvas>
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Tổng số nhân viên</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_nhan_vien }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-users fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Khách hàng đang hoạt động</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_khach_hang }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-handshake fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Hợp đồng hiệu lực
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ total_hop_dong_active }}</div>
+    
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">Sự cố gần đây</h2>
+            <div class="overflow-x-auto">
+                <table class="table">
+                    <tbody>
+                    {% for sc in cac_su_co_moi %}
+                        <tr>
+                            <td>
+                                <div class="font-bold">{{ sc.tieu_de }}</div>
+                                <div class="text-sm opacity-70">
+                                    {{ sc.ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-file-contract fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Sự cố (30 ngày qua)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_su_co_gan_day }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Tổng quan Doanh thu (12 tháng)</h6>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="revenueChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Phân bổ nhân sự</h6>
-                </div>
-                <div class="card-body">
-                    <p class="text-center">Biểu đồ phân bổ nhân sự theo phòng ban sẽ được cập nhật ở đây.</p>
-                </div>
+                            </td>
+                            <td class="text-right">
+                                <span class="badge badge-error badge-sm">{{ sc.get_trang_thai_display }}</span> <br>
+                                <span class="text-xs">{{ sc.thoi_gian_bao_cao|timesince }} trước</span>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr><td>Không có sự cố nào gần đây.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
 
+
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Dữ liệu từ Django view
-    const revenueLabels = JSON.parse('{{ revenue_labels|safe }}');
-    const revenueData = JSON.parse('{{ revenue_data|safe }}');
+    // Lấy dữ liệu từ Django context mà view đã cung cấp
+    const labels = JSON.parse('{{ chart_labels|safe }}');
+    const patrolData = JSON.parse('{{ tuan_tra_data|safe }}');
+    const incidentData = JSON.parse('{{ su_co_data|safe }}');
 
-    // Cài đặt biểu đồ Doanh thu
-    const ctx = document.getElementById('revenueChart').getContext('2d');
-    const revenueChart = new Chart(ctx, {
-        type: 'line', // Loại biểu đồ: đường
-        data: {
-            labels: revenueLabels,
-            datasets: [{
-                label: 'Doanh thu',
-                data: revenueData,
-                backgroundColor: 'rgba(78, 115, 223, 0.05)',
-                borderColor: 'rgba(78, 115, 223, 1)',
-                pointRadius: 3,
-                pointBackgroundColor: "rgba(78, 115, 223, 1)",
-                pointBorderColor: "rgba(78, 115, 223, 1)",
-                pointHoverRadius: 3,
-                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-                pointHitRadius: 10,
-                pointBorderWidth: 2,
-                borderWidth: 2,
-                fill: true,
-                tension: 0.4 // Làm mượt đường cong
-            }]
-        },
-        options: {
-            maintainAspectRatio: false,
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: function(value, index, values) {
-                            // Định dạng tiền tệ
-                            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+    const ctx = document.getElementById('activityChart');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'bar', // Loại biểu đồ cột
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Lượt Tuần tra',
+                        data: patrolData,
+                        backgroundColor: 'rgba(59, 130, 246, 0.5)', // Màu xanh dương
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Sự cố',
+                        data: incidentData,
+                        backgroundColor: 'rgba(239, 68, 68, 0.5)', // Màu đỏ
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1, // Đảm bảo trục Y chỉ hiển thị số nguyên
+                            color: 'hsl(var(--bc) / 0.6)' // Lấy màu chữ từ biến CSS của daisyUI
+                        },
+                        grid: {
+                            color: 'hsl(var(--b2) / 0.6)' // Lấy màu lưới từ biến CSS của daisyUI
+                        }
+                    },
+                    x: {
+                         ticks: {
+                            color: 'hsl(var(--bc) / 0.6)'
+                        },
+                        grid: {
+                            display: false
                         }
                     }
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false
                 },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            let label = context.dataset.label || '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            if (context.parsed.y !== null) {
-                                label += new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(context.parsed.y);
-                            }
-                            return label;
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'hsl(var(--bc) / 0.8)' // Lấy màu chữ chú thích
                         }
                     }
                 }
             }
-        }
-    });
+        });
+    }
 });
 </script>
-{% endblock %}
+{% endblock extra_js %}
