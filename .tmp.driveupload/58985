@@ -9134,3 +9134,8 @@ INFO 2025-09-07 17:26:06,559 basehttp 30428 26632 "GET /admin/jsi18n/ HTTP/1.1" 
 INFO 2025-09-07 17:26:08,945 basehttp 30428 26632 "GET /admin/users/nhanvien/ HTTP/1.1" 200 60377
 INFO 2025-09-07 17:26:13,169 basehttp 30428 26632 "GET /admin/users/nhanvien/add/ HTTP/1.1" 200 119247
 INFO 2025-09-07 17:26:13,355 basehttp 30428 26632 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-07 17:45:47,425 autoreload 30428 28568 D:\startup_bv\users\models.py changed, reloading.
+INFO 2025-09-07 17:45:50,800 autoreload 4564 18840 Watching for file changes with StatReloader
+INFO 2025-09-07 18:01:21,701 autoreload 29440 26780 Watching for file changes with StatReloader
+INFO 2025-09-07 18:01:31,338 basehttp 29440 13620 "GET /admin/users/nhanvien/add/ HTTP/1.1" 200 119249
+INFO 2025-09-07 18:01:31,422 basehttp 29440 13620 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
