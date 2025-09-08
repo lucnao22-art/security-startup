@@ -1,0 +1,55 @@
+# Môi trường ảo (Virtual Environments)
+/venv/
+/env/
+/.venv/
+/.env/
+/ENV/
+/env.bak/
+/venv.bak/
+
+# Các file cache của Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Thư mục IDE và cấu hình trình soạn thảo
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Các file hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Database
+*.sqlite3
+*.sql
+
+# Các file bí mật và biến môi trường
+*.env
+.env.*
+secrets.ini
+
+# Thư mục chứa các file static được thu thập bởi Django
+/staticfiles/
+/media/
+
+# Log files
+*.log
+
+# Các file nén và build
+*.tar.gz
+*.zip
+dist/
+build/
+*.egg-info/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+node_modules
