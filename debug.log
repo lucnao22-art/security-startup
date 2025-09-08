@@ -9139,3 +9139,24 @@ INFO 2025-09-07 17:45:50,800 autoreload 4564 18840 Watching for file changes wit
 INFO 2025-09-07 18:01:21,701 autoreload 29440 26780 Watching for file changes with StatReloader
 INFO 2025-09-07 18:01:31,338 basehttp 29440 13620 "GET /admin/users/nhanvien/add/ HTTP/1.1" 200 119249
 INFO 2025-09-07 18:01:31,422 basehttp 29440 13620 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-08 07:32:33,525 autoreload 18396 4752 Watching for file changes with StatReloader
+INFO 2025-09-08 07:33:44,760 basehttp 18396 21740 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 17384
+INFO 2025-09-08 07:33:44,840 basehttp 18396 21740 "GET /static/css/dist/styles.css?v=1757291624 HTTP/1.1" 200 134918
+INFO 2025-09-08 07:33:44,847 basehttp 18396 1884 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-09-08 07:33:44,905 basehttp 18396 20132 "GET /media/anh_the/NNT_ZDGTKeG.png HTTP/1.1" 304 0
+INFO 2025-09-08 07:33:46,524 basehttp 18396 20132 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-09-08 07:33:46,540 basehttp 18396 20132 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-09-08 07:33:46,683 basehttp 18396 20132 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-09-08 07:33:46,833 log 18396 20132 Not Found: /favicon.ico
+WARNING 2025-09-08 07:33:46,834 basehttp 18396 20132 "GET /favicon.ico HTTP/1.1" 404 18090
+ERROR 2025-09-08 07:34:04,490 log 18396 20132 Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\main\views.py", line 56, in logout_view
+    logout(request)
+    ^^^^^^
+NameError: name 'logout' is not defined
+ERROR 2025-09-08 07:34:04,569 basehttp 18396 20132 "POST /logout/ HTTP/1.1" 500 87218
