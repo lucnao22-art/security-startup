@@ -1,0 +1,261 @@
+/* file: static/css/login_styles.css */
+
+/* --- GENERAL BODY STYLES --- */
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); /* Nền gradient tối hơn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #e0e0e0;
+    overflow: hidden; /* Ngăn cuộn khi có hiệu ứng nền */
+}
+
+/* --- BACKGROUND GRID/PATTERN (Optional but enhances security feel) --- */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* --- MAIN LOGIN CARD CONTAINER --- */
+.card-login {
+    background-color: rgba(15, 15, 15, 0.95) !important; /* Nền card tối hơn, ít trong suốt */
+    border-radius: 12px !important;
+    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.25), 0 0 20px rgba(0, 255, 255, 0.15) !important; /* Hiệu ứng đổ bóng mạnh hơn */
+    max-width: 900px !important; /* Mở rộng chiều ngang cho 2 cột */
+    width: 90%;
+    overflow: hidden; /* Đảm bảo góc bo tròn */
+    display: flex; /* Sử dụng flexbox để chia 2 cột */
+    border: 1px solid rgba(0, 255, 255, 0.4) !important; /* Viền sáng hơn */
+}
+
+/* --- LEFT PANEL (COMPANY INFO) --- */
+.login-left-panel {
+    background: linear-gradient(180deg, #101010 0%, #000000 100%); /* Nền gradient cho panel trái */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 45%; /* Chia tỉ lệ 45% cho panel trái */
+    position: relative;
+    overflow: hidden;
+}
+
+.login-left-panel::before { /* Hiệu ứng vòng tròn phát sáng */
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-light 5s infinite alternate;
+}
+
+@keyframes pulse-light {
+    0% { transform: scale(0.8) translate(0, 0); opacity: 0.5; }
+    100% { transform: scale(1.2) translate(50px, 50px); opacity: 0.8; }
+}
+
+
+.login-logo {
+    margin-bottom: 25px;
+}
+
+.login-logo img {
+    max-width: 150px; /* Tăng kích thước logo */
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.7)) !important; /* Hiệu ứng phát sáng mạnh hơn */
+    transition: transform 0.3s ease-in-out;
+}
+.login-logo img:hover {
+    transform: scale(1.05);
+}
+
+.login-left-panel h2 {
+    color: #00ffff; /* Màu xanh neon cho tên công ty */
+    font-size: 2.8em; /* To hơn */
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    font-weight: 900; /* Đậm hơn */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Hiệu ứng chữ phát sáng */
+}
+
+.login-left-panel p {
+    color: #b0e0e6; /* Màu xanh nhạt hơn cho tagline */
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- RIGHT PANEL (LOGIN FORM) --- */
+.login-right-panel {
+    padding: 40px;
+    width: 55%; /* Chia tỉ lệ 55% cho panel phải */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-header {
+    margin-bottom: 30px;
+    text-align: center; /* Đảm bảo header nằm giữa */
+}
+
+.login-header h1 {
+    color: #e0e0e0; /* Màu trắng sáng cho tiêu đề đăng nhập */
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.form-group {
+    margin-bottom: 25px; /* Khoảng cách giữa các trường nhập */
+    position: relative; /* Dùng cho icon */
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 18px 14px 45px; /* Thêm padding cho icon */
+    border: 1px solid #333; /* Viền tối */
+    border-radius: 8px;
+    background-color: #202020; /* Nền input tối */
+    color: #e0e0e0;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #00ffff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Hiệu ứng sáng mạnh hơn khi focus */
+    background-color: #2a2a2a; /* Nền input hơi sáng khi focus */
+}
+
+/* Icons trong input */
+.form-group .fas {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff; /* Màu xanh neon cho icon */
+    font-size: 1.1em;
+}
+
+
+/* Nút Đăng nhập */
+.btn-primary {
+    width: 100%;
+    padding: 15px 20px !important; /* Tăng padding nút */
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%) !important; /* Gradient màu xanh */
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1.3em !important;
+    font-weight: 800 !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff !important; /* Chữ trắng */
+    box-shadow: 0 5px 15px rgba(0, 198, 255, 0.4); /* Đổ bóng cho nút */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #00e6ff 0%, #0099ff 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 198, 255, 0.6);
+}
+
+/* Forgot password link */
+.text-center a {
+    color: #00ffff !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.text-center a:hover {
+    color: #00e6e6 !important;
+    text-decoration: underline;
+}
+
+/* Adjustments for Jazzmin specific classes */
+.login-box-msg {
+    color: #b0e0e6;
+    margin-bottom: 20px;
+}
+
+/* Remove default Jazzmin card header/body styling that conflicts */
+.card-primary.card-outline {
+    border-top: none !important;
+}
+
+/* Ensure no extra padding/margins from default Jazzmin elements */
+.login-page .login-box {
+    margin: 0;
+    width: auto;
+    max-width: none;
+}
+
+/* Hide Jazzmin's default login header icon */
+.login-box-msg + h1 {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-login {
+        flex-direction: column; /* Chuyển thành 1 cột trên màn hình nhỏ */
+        max-width: 450px !important;
+    }
+    .login-left-panel, .login-right-panel {
+        width: 100%;
+        padding: 30px;
+    }
+    .login-left-panel {
+        border-bottom: 1px solid rgba(0, 255, 255, 0.3); /* Viền ngăn cách */
+    }
+    .login-left-panel::before {
+        display: none; /* Ẩn hiệu ứng phát sáng trên di động */
+    }
+    .login-logo img {
+        max-width: 100px;
+    }
+    .login-left-panel h2 {
+        font-size: 2em;
+    }
+    .login-left-panel p {
+        font-size: 0.9em;
+    }
+    .login-header h1 {
+        font-size: 1.8em;
+    }
+    .form-control {
+        padding: 12px 15px 12px 40px;
+    }
+    .form-group .fas {
+        left: 12px;
+        font-size: 1em;
+    }
+    .btn-primary {
+        font-size: 1.1em !important;
+        padding: 12px 20px !important;
+    }
+}

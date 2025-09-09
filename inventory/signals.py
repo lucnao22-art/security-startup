@@ -1,26 +1,34 @@
 # file: inventory/signals.py
-
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
-from .models import PhieuNhap, PhieuXuat, VatTu
+# Thêm ChiTietPhieuXuat
+from .models import PhieuNhap, PhieuXuat, VatTu, ChiTietPhieuXuat, ChiTietCapPhat
 
-# Tự động cộng số lượng tồn kho khi có phiếu nhập mới
-@receiver(post_save, sender=PhieuNhap)
-def update_stock_on_import(sender, instance, created, **kwargs):
+# ... (giữ nguyên signal cho PhieuNhap) ...
+
+# XÓA HOÀN TOÀN signal `update_stock_on_export` cũ
+
+# Signal mới cho ChiTietPhieuXuat
+@receiver(post_save, sender=ChiTietPhieuXuat)
+def update_stock_on_detail_export_save(sender, instance, created, **kwargs):
     if created:
-        instance.vat_tu.so_luong_ton += instance.so_luong
+        instance.vat_tu.so_luong_ton -= instance.so_luong
         instance.vat_tu.save()
 
-# Tự động trừ số lượng tồn kho khi có phiếu xuất mới
-@receiver(post_save, sender=PhieuXuat)
-def update_stock_on_export(sender, instance, created, **kwargs):
+@receiver(post_delete, sender=ChiTietPhieuXuat)
+def update_stock_on_detail_export_delete(sender, instance, **kwargs):
+    # Hoàn lại kho khi một dòng chi tiết bị xóa
+    instance.vat_tu.so_luong_ton += instance.so_luong
+    instance.vat_tu.save()
+
+# Signal tương tự cho cấp phát cá nhân (để đảm bảo tính nhất quán)
+@receiver(post_save, sender=ChiTietCapPhat)
+def update_stock_on_detail_alloc_save(sender, instance, created, **kwargs):
     if created:
-        # Đảm bảo số lượng tồn không bị âm
-        if instance.vat_tu.so_luong_ton >= instance.so_luong:
-            instance.vat_tu.so_luong_ton -= instance.so_luong
-        else:
-            # Nếu không đủ, chỉ trừ về 0 để tránh lỗi
-            instance.vat_tu.so_luong_ton = 0
+        instance.vat_tu.so_luong_ton -= instance.so_luong
         instance.vat_tu.save()
 
-# Các signal handler cho các model không còn tồn tại đã được xóa bỏ
+@receiver(post_delete, sender=ChiTietCapPhat)
+def update_stock_on_detail_alloc_delete(sender, instance, **kwargs):
+    instance.vat_tu.so_luong_ton += instance.so_luong
+    instance.vat_tu.save()

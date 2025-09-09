@@ -6,16 +6,21 @@ from datetime import date, timedelta
 from django.utils import timezone
 from django.contrib import messages
 from django.http import HttpResponseBadRequest
+import qrcode
+from io import BytesIO
+import base64
 
 # Import các model cần thiết
 from clients.models import MucTieu
 from users.models import NhanVien
 from .models import ViTriChot, CaLamViec, PhanCongCaTruc, BaoCaoSuCo, ChamCong
-
-# Import form
 from .forms import BaoCaoSuCoForm
 
 
+# ==============================================================================
+# CÁC VIEWS CHO GIAO DIỆN WEB ADMIN (Giữ nguyên)
+# ==============================================================================
+# ... (Các view xep_lich_view, chi_tiet_ca, etc. giữ nguyên)
 @login_required
 def xep_lich_view(request):
     all_muc_tieu = MucTieu.objects.all().order_by("ten_muc_tieu")
@@ -35,8 +40,6 @@ def xep_lich_view(request):
             .distinct()
             .select_related("user")
         )
-
-        # --- NÂNG CẤP: TỐI ƯU HÓA TRUY VẤN CSDL ---
         start_date = days_of_week[0]
         end_date = days_of_week[-1]
         phan_congs_in_week = PhanCongCaTruc.objects.filter(
@@ -116,11 +119,11 @@ def luu_ca_view(request):
         if old_phan_cong_id:
             PhanCongCaTruc.objects.filter(id=old_phan_cong_id).delete()
         if nhan_vien_id:
-            phan_cong = PhanCongCaTruc.objects.create(
-                nhan_vien_id=nhan_vien_id,
+            phan_cong, _ = PhanCongCaTruc.objects.update_or_create(
                 vi_tri_chot_id=vi_tri_id,
                 ca_lam_viec_id=ca_id,
                 ngay_truc=ngay_truc_str,
+                defaults={'nhan_vien_id': nhan_vien_id}
             )
         else:
             phan_cong = None
@@ -164,35 +167,66 @@ def van_hanh_dashboard_view(request):
         'section': 'dashboard_vanhanh',
     }
     return render(request, "operations/dashboard_vanhanh.html", context)
-
-
 # ==============================================================================
-# CÁC VIEWS CHO GIAO DIỆN MOBILE
+# CÁC VIEWS CHO GIAO DIỆN MOBILE (ĐÃ NÂNG CẤP)
 # ==============================================================================
 
 @login_required
 def mobile_dashboard(request):
-    nhan_vien = request.user.nhanvien
-    today = timezone.now().date()
-    # Tối ưu truy vấn bằng prefetch_related để lấy thông tin chấm công
-    phan_congs = PhanCongCaTruc.objects.filter(
-        nhan_vien=nhan_vien, ngay_truc=today
-    ).prefetch_related('chamcong')
-    
-    ca_truc_hom_nay = phan_congs.order_by('ca_lam_viec__gio_bat_dau').first()
+    try:
+        nhan_vien = request.user.nhanvien
+    except NhanVien.DoesNotExist:
+        # Xử lý trường hợp user đăng nhập nhưng chưa có hồ sơ nhân viên
+        messages.error(request, "Tài khoản của bạn chưa được liên kết với hồ sơ nhân viên.")
+        return render(request, 'operations/mobile/dashboard.html', {'error': True})
+
+    now = timezone.now()
+    today = now.date()
+    current_time = now.time()
+
+    # CẢI TIẾN: Logic tìm ca trực hiện tại thông minh hơn
+    ca_truc_hien_tai = PhanCongCaTruc.objects.filter(
+        nhan_vien=nhan_vien, 
+        ngay_truc=today,
+        ca_lam_viec__gio_bat_dau__lte=current_time,
+        ca_lam_viec__gio_ket_thuc__gte=current_time
+    ).select_related(
+        'ca_lam_viec', 'vi_tri_chot', 'vi_tri_chot__muc_tieu'
+    ).prefetch_related('chamcong').first()
+
+    # CẢI TIẾN: Lời chào động theo thời gian
+    hour = now.hour
+    if 5 <= hour < 12:
+        loi_chao = f"Chào buổi sáng,"
+    elif 12 <= hour < 18:
+        loi_chao = f"Chào buổi chiều,"
+    else:
+        loi_chao = f"Chào buổi tối,"
+
+    # CẢI TIẾN: Tạo mã QR cá nhân
+    qr_data = f"NV:{nhan_vien.ma_nhan_vien};TEN:{nhan_vien.ho_ten}"
+    qr = qrcode.QRCode(version=1, box_size=5, border=2)
+    qr.add_data(qr_data)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")
+    buffer = BytesIO()
+    img.save(buffer, format="PNG")
+    qr_code_base64 = base64.b64encode(buffer.getvalue()).decode()
 
     context = {
         'nhan_vien': nhan_vien,
-        'ca_truc_hom_nay': ca_truc_hom_nay,
+        'ca_truc_hien_tai': ca_truc_hien_tai,
+        'loi_chao': loi_chao,
+        'qr_code_base64': qr_code_base64,
     }
     return render(request, 'operations/mobile/dashboard.html', context)
 
 
 @login_required
 def mobile_lich_truc_view(request):
+    # ... (Giữ nguyên)
     nhan_vien = request.user.nhanvien
     today = timezone.now().date()
-    
     sap_toi_7_ca = PhanCongCaTruc.objects.filter(
         nhan_vien=nhan_vien, 
         ngay_truc__gte=today
@@ -200,15 +234,13 @@ def mobile_lich_truc_view(request):
         'ca_lam_viec', 
         'vi_tri_chot__muc_tieu'
     ).order_by('ngay_truc', 'ca_lam_viec__gio_bat_dau')[:7]
-
-    context = {
-        'danh_sach_ca_truc': sap_toi_7_ca,
-    }
+    context = {'danh_sach_ca_truc': sap_toi_7_ca}
     return render(request, 'operations/mobile/lich_truc.html', context)
 
 
 @login_required
 def bao_cao_su_co_mobile_view(request):
+    # ... (Giữ nguyên)
     try:
         nhan_vien = request.user.nhanvien
         ca_truc_hien_tai = PhanCongCaTruc.objects.filter(
@@ -243,16 +275,14 @@ def bao_cao_su_co_mobile_view(request):
 
 @login_required
 def check_in_view(request, phan_cong_id):
+    # ... (Giữ nguyên)
     if request.method == 'POST':
         phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhanvien)
         cham_cong, created = ChamCong.objects.get_or_create(ca_truc=phan_cong)
-        
         anh_check_in = request.FILES.get('anh_check_in')
-
         if not anh_check_in:
             messages.error(request, "Vui lòng chụp ảnh selfie để check-in.")
             return redirect('operations:mobile_dashboard')
-
         if not cham_cong.thoi_gian_check_in:
             cham_cong.thoi_gian_check_in = timezone.now()
             cham_cong.anh_check_in = anh_check_in
@@ -260,22 +290,19 @@ def check_in_view(request, phan_cong_id):
             messages.success(request, f"Check-in thành công lúc {cham_cong.thoi_gian_check_in.strftime('%H:%M %d/%m')}.")
         else:
             messages.warning(request, "Bạn đã check-in cho ca này rồi.")
-            
     return redirect('operations:mobile_dashboard')
 
 
 @login_required
 def check_out_view(request, phan_cong_id):
+    # ... (Giữ nguyên)
     if request.method == 'POST':
         phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhanvien)
         cham_cong, created = ChamCong.objects.get_or_create(ca_truc=phan_cong)
-        
         anh_check_out = request.FILES.get('anh_check_out')
-
         if not anh_check_out:
             messages.error(request, "Vui lòng chụp ảnh selfie để check-out.")
             return redirect('operations:mobile_dashboard')
-
         if cham_cong.thoi_gian_check_in and not cham_cong.thoi_gian_check_out:
             cham_cong.thoi_gian_check_out = timezone.now()
             cham_cong.anh_check_out = anh_check_out
@@ -285,5 +312,4 @@ def check_out_view(request, phan_cong_id):
             messages.error(request, "Bạn phải check-in trước khi check-out.")
         else:
             messages.warning(request, "Bạn đã check-out cho ca này rồi.")
-            
     return redirect('operations:mobile_dashboard')

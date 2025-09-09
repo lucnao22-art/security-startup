@@ -7,17 +7,21 @@
 <div class="space-y-6">
     <div class="flex justify-between items-center">
         <div>
-            <h1 class="text-2xl font-bold">Chào buổi sáng,</h1>
+            {# CẢI TIẾN: Lời chào động #}
+            <h1 class="text-2xl font-bold">{{ loi_chao }}</h1>
             <p class="text-lg text-base-content/80">{{ nhan_vien.ho_ten }}</p>
         </div>
         <div class="avatar">
-            <div class="w-14 rounded-full">
-                {% if nhan_vien.anh_the %}
-                    <img src="{{ nhan_vien.anh_the.url }}" alt="Avatar">
-                {% else %}
-                    <img src="{% static 'img/default-avatar.png' %}" alt="Avatar">
-                {% endif %}
-            </div>
+            <label for="qr_code_modal" class="cursor-pointer">
+                <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    {% if nhan_vien.anh_the %}
+                        <img src="{{ nhan_vien.anh_the.url }}" alt="Avatar">
+                    {% else %}
+                        {# Thay thế bằng một ảnh mặc định phù hợp hơn #}
+                        <img src="https://ui-avatars.com/api/?name={{ nhan_vien.ho_ten|urlencode }}&background=0D8ABC&color=fff" alt="Avatar">
+                    {% endif %}
+                </div>
+            </label>
         </div>
     </div>
 
@@ -30,21 +34,44 @@
         {% endfor %}
     {% endif %}
 
-    {% if ca_truc_hom_nay %}
+    {% if ca_truc_hien_tai %}
     <div class="card bg-base-200 shadow-xl">
         <div class="card-body">
-            <h2 class="card-title text-primary">Ca trực của bạn hôm nay</h2>
-            <p class="font-bold text-lg">{{ ca_truc_hom_nay.vi_tri_chot.muc_tieu.ten_muc_tieu }}</p>
+            <h2 class="card-title text-primary">Ca trực hiện tại của bạn</h2>
+            {# CẢI TIẾN: Hiển thị đầy đủ thông tin vị trí #}
+            <p class="font-bold text-lg">{{ ca_truc_hien_tai.vi_tri_chot.muc_tieu.ten_muc_tieu }}</p>
+            <div class="flex items-center text-base-content/70">
+                <i class="fas fa-map-marker-alt w-5 mr-2"></i>
+                <span>Vị trí: <b>{{ ca_truc_hien_tai.vi_tri_chot.ten_vi_tri }}</b></span>
+            </div>
             <div class="flex items-center text-base-content/70">
                 <i class="far fa-clock w-5 mr-2"></i>
-                <span>{{ ca_truc_hom_nay.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ ca_truc_hom_nay.ca_lam_viec.gio_ket_thuc|time:"H:i" }}</span>
+                <span>{{ ca_truc_hien_tai.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ ca_truc_hien_tai.ca_lam_viec.gio_ket_thuc|time:"H:i" }}</span>
             </div>
+            
+            {# CẢI TIẾN: Hiển thị trạng thái check-in rõ ràng hơn #}
+            {% if ca_truc_hien_tai.chamcong %}
+                <div class="divider">Trạng thái</div>
+                <div class="flex justify-around text-center">
+                    <div>
+                        <div class="font-semibold text-success">Check-in</div>
+                        <div class="text-xs">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_in|date:"H:i" }}</div>
+                    </div>
+                    {% if ca_truc_hien_tai.chamcong.thoi_gian_check_out %}
+                    <div>
+                        <div class="font-semibold text-error">Check-out</div>
+                        <div class="text-xs">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_out|date:"H:i" }}</div>
+                    </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
             <div class="card-actions justify-end mt-4">
-                {% if not ca_truc_hom_nay.check_in %}
+                {% if not ca_truc_hien_tai.chamcong %}
                     <button class="btn btn-primary w-full" onclick="checkin_modal.showModal()">
                         <i class="fas fa-sign-in-alt"></i> Bắt đầu ca (Check-in)
                     </button>
-                {% elif ca_truc_hom_nay.check_in and not ca_truc_hom_nay.check_out %}
+                {% elif not ca_truc_hien_tai.chamcong.thoi_gian_check_out %}
                      <button class="btn btn-error w-full" onclick="checkout_modal.showModal()">
                         <i class="fas fa-sign-out-alt"></i> Kết thúc ca (Check-out)
                     </button>
@@ -60,7 +87,7 @@
         <div class="card bg-base-200 shadow-xl">
             <div class="card-body items-center text-center">
                 <i class="fas fa-bed text-4xl text-base-content/50 mb-3"></i>
-                <h2 class="card-title">Hôm nay bạn không có ca trực.</h2>
+                <h2 class="card-title">Bạn không có ca trực nào.</h2>
                 <p>Hãy nghỉ ngơi và chuẩn bị cho ca tiếp theo!</p>
             </div>
         </div>
@@ -81,18 +108,37 @@
     </div>
 </div>
 
-{% if ca_truc_hom_nay %}
+{# CẢI TIẾN: Modal hiển thị mã QR cá nhân #}
+<dialog id="qr_code_modal" class="modal">
+    <div class="modal-box text-center">
+        <h3 class="font-bold text-lg">Mã QR của bạn</h3>
+        <p class="py-2 text-sm text-base-content/70">Dùng mã này để thanh tra viên quét khi kiểm tra.</p>
+        <img src="data:image/png;base64,{{ qr_code_base64 }}" alt="Mã QR cá nhân" class="mx-auto my-4 rounded-lg shadow-lg">
+        <p class="font-bold">{{ nhan_vien.ho_ten }}</p>
+        <p>{{ nhan_vien.ma_nhan_vien }}</p>
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">Đóng</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+{# CẢI TIẾN: Thêm xác nhận trước khi check-out #}
+{% if ca_truc_hien_tai %}
 <dialog id="checkin_modal" class="modal">
   <div class="modal-box">
     <h3 class="font-bold text-lg">Xác nhận Check-in</h3>
     <p class="py-4">Vui lòng chụp ảnh selfie để xác thực ca làm việc.</p>
-    <form method="post" action="{% url 'operations:check_in' ca_truc_hom_nay.id %}" enctype="multipart/form-data">
+    <form method="post" action="{% url 'operations:check_in' ca_truc_hien_tai.id %}" enctype="multipart/form-data">
         {% csrf_token %}
         <img id="checkin_preview" class="w-full rounded-lg mb-4 hidden" />
         <input type="file" name="anh_check_in" class="file-input file-input-bordered w-full" accept="image/*" capture="user" required onchange="previewImage(this, 'checkin_preview');">
         <div class="modal-action">
-          <button type="submit" class="btn btn-primary">Xác nhận</button>
-          <button type="button" class="btn" onclick="checkin_modal.close()">Hủy</button>
+            <form method="dialog">
+                <button type="submit" class="btn btn-primary">Xác nhận</button>
+                <button class="btn">Hủy</button>
+            </form>
         </div>
     </form>
   </div>
@@ -100,15 +146,17 @@
 
 <dialog id="checkout_modal" class="modal">
     <div class="modal-box">
-        <h3 class="font-bold text-lg">Xác nhận Check-out</h3>
-        <p class="py-4">Vui lòng chụp ảnh selfie để kết thúc ca làm việc.</p>
-        <form method="post" action="{% url 'operations:check_out' ca_truc_hom_nay.id %}" enctype="multipart/form-data">
+        <h3 class="font-bold text-lg">Xác nhận Kết thúc ca</h3>
+        <p class="py-4">Bạn có chắc chắn muốn check-out và kết thúc ca làm việc hiện tại không?</p>
+        <form method="post" action="{% url 'operations:check_out' ca_truc_hien_tai.id %}" enctype="multipart/form-data">
             {% csrf_token %}
             <img id="checkout_preview" class="w-full rounded-lg mb-4 hidden" />
             <input type="file" name="anh_check_out" class="file-input file-input-bordered w-full" accept="image/*" capture="user" required onchange="previewImage(this, 'checkout_preview');">
             <div class="modal-action">
-              <button type="submit" class="btn btn-primary">Xác nhận</button>
-              <button type="button" class="btn" onclick="checkout_modal.close()">Hủy</button>
+                <form method="dialog">
+                    <button type="submit" class="btn btn-error">Chắc chắn</button>
+                    <button class="btn">Hủy</button>
+                </form>
             </div>
         </form>
     </div>
@@ -118,7 +166,7 @@
 
 {% block extra_js %}
 <script>
-// Hàm xem trước ảnh selfie
+// Hàm xem trước ảnh selfie (giữ nguyên)
 function previewImage(input, previewId) {
     const preview = document.getElementById(previewId);
     if (input.files && input.files[0]) {

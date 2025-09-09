@@ -1,5 +1,5 @@
 {% extends "base_public.html" %}
-{% load django_bootstrap5 %}
+{% load django_bootstrap5 static %}
 
 {% block title %}Đăng nhập Hệ thống An ninh{% endblock %}
 
@@ -37,7 +37,7 @@
     /* Phần branding (bên trái) */
     .login-branding-section {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), 
-                    url('#') center center;
+                    url("{% static 'img/nen_moi.jpg' %}") center center;
         background-size: cover;
         color: #ffffff;
         padding: 3rem;
@@ -125,12 +125,13 @@
     <div class="login-box">
         <div class="col-lg-6 d-none d-lg-flex login-branding-section">
             <div>
-                {% if thong_tin_cong_ty.logo %}
-                    <img src="{{ thong_tin_cong_ty.logo.url }}" alt="Company Logo" class="logo img-fluid rounded">
+                {# --- ĐÃ SỬA: Sử dụng biến 'company' để hiển thị đúng logo và tên --- #}
+                {% if company.logo %}
+                    <img src="{{ company.logo.url }}" alt="Company Logo" class="logo img-fluid rounded">
                 {% else %}
                     <i class="fas fa-shield-alt fa-4x mb-4" style="color: #00ffff;"></i>
                 {% endif %}
-                <h1 class="display-5">{{ thong_tin_cong_ty.ten_cong_ty|default:"CÔNG TY AN NINH" }}</h1>
+                <h1 class="display-5">{{ company.ten_cong_ty|default:"CÔNG TY AN NINH" }}</h1>
                 <p class="lead mt-3">"An toàn của bạn là sứ mệnh của chúng tôi"</p>
             </div>
         </div>
@@ -153,16 +154,43 @@
                     <label for="id_username"><i class="fas fa-user-shield me-2"></i>Tên đăng nhập (Mã NV)</label>
                 </div>
                 
-                <div class="form-floating mb-3">
+                {# --- NÂNG CẤP: Thêm nút hiện/ẩn mật khẩu --- #}
+                <div class="input-group form-floating mb-3">
                     <input type="password" name="password" class="form-control" id="id_password" placeholder="Mật khẩu" required>
                     <label for="id_password"><i class="fas fa-lock me-2"></i>Mật khẩu</label>
+                    <button class="btn btn-outline-secondary" type="button" id="togglePassword" style="border-color: rgba(255, 255, 255, 0.3);">
+                        <i class="fas fa-eye" style="color: #cccccc;"></i>
+                    </button>
                 </div>
                 
                 <div class="d-grid mt-4">
                     <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
                 </div>
+                
+                {# --- NÂNG CẤP: Thêm link "Quên mật khẩu?" --- #}
+                <div class="text-center mt-3">
+                    <a href="{% url 'password_reset' %}" class="text-white-50" style="text-decoration: none;">Quên mật khẩu?</a>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+{# --- NÂNG CẤP: Thêm JavaScript cho chức năng hiện/ẩn mật khẩu --- #}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+        const eyeIcon = togglePassword.querySelector('i');
+
+        togglePassword.addEventListener('click', function (e) {
+            // Chuyển đổi type của input
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // Chuyển đổi icon
+            eyeIcon.classList.toggle('fa-eye');
+            eyeIcon.classList.toggle('fa-eye-slash');
+        });
+    });
+</script>
 {% endblock %}

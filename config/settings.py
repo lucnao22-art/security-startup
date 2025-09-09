@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'admin_reorder',
     'tailwind',
     'theme',
+    'django_bootstrap5',
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
     'dashboard.apps.DashboardConfig',

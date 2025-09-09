@@ -1,66 +1,49 @@
 # file: inventory/views.py
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import VatTu
-from .models import PhieuCapPhat
+from django.db.models import Q
+
+# Sửa lại các import cho gọn gàng và chính xác
+from .models import VatTu, PhieuCapPhat, PhieuXuat
+
 @login_required
 def in_phieu_cap_phat_view(request, phieu_id):
     phieu = get_object_or_404(PhieuCapPhat.objects.select_related('nguoi_nhan', 'nguoi_cap_phat'), id=phieu_id)
     context = {'phieu': phieu}
     return render(request, 'inventory/print/phieu_cap_phat.html', context)
+
 @login_required
 def bao_cao_ton_kho_view(request):
-    # Lấy query tìm kiếm từ URL
     query = request.GET.get('q', '')
-    
-    # Lấy tất cả vật tư và tối ưu hóa truy vấn
     vat_tu_list = VatTu.objects.select_related('loai', 'nha_cung_cap').all()
     
-    # Nếu có tìm kiếm, lọc theo tên hoặc mã vật tư
     if query:
         vat_tu_list = vat_tu_list.filter(
-            models.Q(ten_vat_tu__icontains=query) | 
-            models.Q(ma_vat_tu__icontains=query)
+            Q(ten_vat_tu__icontains=query) | 
+            Q(ma_vat_tu__icontains=query)
         )
         
     context = {
-        'section': 'inventory', # Để highlight menu sidebar
+        'section': 'inventory',
         'vat_tu_list': vat_tu_list,
         'query': query,
     }
     return render(request, 'inventory/bao_cao_ton_kho.html', context)
-# --- VIEW MỚI CHO CHỨC NĂNG CẤP PHÁT ---
+
 @login_required
-def cap_phat_ca_nhan_view(request):
-    if request.method == 'POST':
-        form = CapPhatCaNhanForm(request.POST)
-        if form.is_valid():
-            # Lưu form nhưng chưa commit vào CSDL để xử lý thêm
-            cap_phat = form.save(commit=False)
-            cap_phat.nguoi_cap_phat = request.user
-            
-            # Trừ tồn kho
-            vat_tu = cap_phat.vat_tu
-            vat_tu.so_luong_ton -= cap_phat.so_luong
-            vat_tu.save()
-            
-            # Lưu bản ghi cấp phát
-            cap_phat.save()
-            
-            messages.success(request, f"Đã cấp phát thành công {cap_phat.so_luong} {vat_tu.don_vi_tinh} {vat_tu.ten_vat_tu} cho {cap_phat.nguoi_nhan.ho_ten}.")
-            return redirect('inventory:cap_phat_ca_nhan')
-    else:
-        form = CapPhatCaNhanForm()
-
-    # Lấy lịch sử 5 lần cấp phát gần nhất
-    lich_su_cap_phat = CapPhatCaNhan.objects.select_related(
-        'vat_tu', 'nguoi_nhan', 'nguoi_cap_phat'
-    ).order_by('-ngay_cap_phat')[:5]
-
-    context = {
-        'section': 'inventory',
-        'form': form,
-        'lich_su_cap_phat': lich_su_cap_phat,
-    }
-    return render(request, 'inventory/cap_phat_ca_nhan.html', context)
+def in_phieu_xuat_view(request, phieu_id):
+    """
+    Tạo trang in cho một Phiếu Xuất Kho.
+    """
+    phieu = get_object_or_404(
+        # Tối ưu hóa: Thêm 'muc_tieu__quan_ly_muc_tieu' để lấy thông tin chỉ huy trưởng
+        PhieuXuat.objects.select_related(
+            'muc_tieu', 
+            'nguoi_xuat', 
+            'muc_tieu__quan_ly_muc_tieu'
+        ), 
+        id=phieu_id
+    )
+    context = {'phieu': phieu}
+    return render(request, 'inventory/print/phieu_xuat.html', context)

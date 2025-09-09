@@ -6,8 +6,6 @@ from django.utils import timezone
 from clients.models import MucTieu
 from users.models import NhanVien
 
-# Dòng "from .models import ..." đã được xóa bỏ khỏi đây
-
 class LoaiVatTu(models.Model):
     ten_loai = models.CharField("Tên loại vật tư", max_length=100, unique=True)
 
@@ -74,20 +72,42 @@ class PhieuNhap(models.Model):
         return f"Nhập {self.so_luong} {self.vat_tu.don_vi_tinh} {self.vat_tu.ten_vat_tu}"
 
 class PhieuXuat(models.Model):
-    vat_tu = models.ForeignKey(VatTu, on_delete=models.CASCADE, verbose_name="Vật tư")
-    so_luong = models.PositiveIntegerField("Số lượng xuất")
+    # ... (các trường của model giữ nguyên) ...
+    so_phieu = models.CharField("Số phiếu", max_length=50, unique=True, editable=False, null=True)
     nguoi_xuat = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='phieu_xuat_nguoi_xuat', verbose_name="Người xuất")
     muc_tieu = models.ForeignKey(MucTieu, on_delete=models.SET_NULL, null=True, verbose_name="Xuất cho mục tiêu")
-    ngay_xuat = models.DateTimeField("Ngày xuất", auto_now_add=True)
+    ngay_xuat = models.DateTimeField("Ngày xuất", default=timezone.now)
+    ghi_chu = models.TextField("Ghi chú", blank=True)
 
     class Meta:
         verbose_name = "Phiếu xuất kho (Mục tiêu)"
         verbose_name_plural = "DS Phiếu xuất kho (Mục tiêu)"
 
     def __str__(self):
-        if self.muc_tieu:
-            return f"Xuất {self.so_luong} {self.vat_tu.don_vi_tinh} {self.vat_tu.ten_vat_tu} cho {self.muc_tieu.ten_muc_tieu}"
-        return f"Xuất {self.so_luong} {self.vat_tu.don_vi_tinh} {self.vat_tu.ten_vat_tu}"
+        # SỬA LẠI PHƯƠNG THỨC NÀY
+        if self.so_phieu:
+            return self.so_phieu
+        return f"Phiếu xuất ID {self.id} (Chưa có số)"
+
+    def save(self, *args, **kwargs):
+        if not self.so_phieu:
+            today_str = timezone.now().strftime('%Y%m%d')
+            last_phieu = PhieuXuat.objects.filter(so_phieu__startswith=f"PXK-{today_str}").order_by('so_phieu').last()
+            if last_phieu:
+                last_num = int(last_phieu.so_phieu.split('-')[-1])
+                new_num = last_num + 1
+            else:
+                new_num = 1
+            self.so_phieu = f"PXK-{today_str}-{new_num:03d}"
+        super().save(*args, **kwargs)
+
+class ChiTietPhieuXuat(models.Model):
+    phieu_xuat = models.ForeignKey(PhieuXuat, on_delete=models.CASCADE, related_name='chi_tiet')
+    vat_tu = models.ForeignKey(VatTu, on_delete=models.CASCADE, verbose_name="Vật tư")
+    so_luong = models.PositiveIntegerField("Số lượng")
+
+    def __str__(self):
+        return f"{self.so_luong} {self.vat_tu.don_vi_tinh} {self.vat_tu.ten_vat_tu}"
 
 class PhieuCapPhat(models.Model):
     so_phieu = models.CharField("Số phiếu", max_length=50, unique=True, editable=False)

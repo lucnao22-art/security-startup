@@ -7,6 +7,6 @@ app_name = 'inventory'
 
 urlpatterns = [
     path('bao-cao-ton-kho/', views.bao_cao_ton_kho_view, name='bao_cao_ton_kho'),
-    path('cap-phat-ca-nhan/', views.cap_phat_ca_nhan_view, name='cap_phat_ca_nhan'),
     path('phieu-cap-phat/<int:phieu_id>/in/', views.in_phieu_cap_phat_view, name='in_phieu_cap_phat'),
+    path('phieu-xuat/<int:phieu_id>/in/', views.in_phieu_xuat_view, name='in_phieu_xuat'),
 ]
