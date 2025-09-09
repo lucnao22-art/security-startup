@@ -10915,3 +10915,4 @@ INFO 2025-09-10 02:25:27,843 basehttp 7784 27968 "GET /static/debug_toolbar/css/
 INFO 2025-09-10 02:25:27,870 basehttp 7784 27968 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
 WARNING 2025-09-10 02:25:28,326 log 7784 27968 Not Found: /favicon.ico
 WARNING 2025-09-10 02:25:28,329 basehttp 7784 27968 "GET /favicon.ico HTTP/1.1" 404 18260
+INFO 2025-09-10 02:48:25,748 autoreload 26392 25716 Watching for file changes with StatReloader
