@@ -10916,3 +10916,536 @@ INFO 2025-09-10 02:25:27,870 basehttp 7784 27968 "GET /static/debug_toolbar/js/u
 WARNING 2025-09-10 02:25:28,326 log 7784 27968 Not Found: /favicon.ico
 WARNING 2025-09-10 02:25:28,329 basehttp 7784 27968 "GET /favicon.ico HTTP/1.1" 404 18260
 INFO 2025-09-10 02:48:25,748 autoreload 26392 25716 Watching for file changes with StatReloader
+INFO 2025-09-10 03:10:39,473 autoreload 22484 13044 Watching for file changes with StatReloader
+INFO 2025-09-10 03:11:38,712 basehttp 22484 28260 "GET / HTTP/1.1" 200 20337
+INFO 2025-09-10 03:11:38,891 basehttp 22484 28260 "GET /media/logos/logo-Photoroom.png HTTP/1.1" 304 0
+INFO 2025-09-10 03:11:39,576 basehttp 22484 21612 - Broken pipe from ('127.0.0.1', 59465)
+WARNING 2025-09-10 03:11:40,655 log 22484 28260 Not Found: /favicon.ico
+WARNING 2025-09-10 03:11:40,658 basehttp 22484 28260 "GET /favicon.ico HTTP/1.1" 404 18260
+INFO 2025-09-10 03:11:53,575 basehttp 22484 28260 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 03:11:53,855 basehttp 22484 28260 "GET /hub/ HTTP/1.1" 200 23532
+INFO 2025-09-10 03:11:53,888 basehttp 22484 28260 "GET /static/css/dist/styles.css HTTP/1.1" 200 136478
+WARNING 2025-09-10 03:11:54,334 log 22484 4192 Not Found: /ws/notifications/
+WARNING 2025-09-10 03:11:54,336 basehttp 22484 4192 "GET /ws/notifications/ HTTP/1.1" 404 18283
+INFO 2025-09-10 03:38:04,868 basehttp 22484 15236 "GET /hub/ HTTP/1.1" 200 23532
+INFO 2025-09-10 03:38:04,903 basehttp 22484 15236 "GET /static/css/dist/styles.css HTTP/1.1" 304 0
+INFO 2025-09-10 03:38:04,994 basehttp 22484 26400 "GET /media/logos/logo-Photoroom.png HTTP/1.1" 304 0
+WARNING 2025-09-10 03:38:06,342 log 22484 28636 Not Found: /ws/notifications/
+WARNING 2025-09-10 03:38:06,343 basehttp 22484 28636 "GET /ws/notifications/ HTTP/1.1" 404 18284
+INFO 2025-09-10 04:11:20,303 autoreload 26528 25952 Watching for file changes with StatReloader
+INFO 2025-09-10 04:11:35,687 basehttp 26528 15280 "GET / HTTP/1.1" 200 20316
+INFO 2025-09-10 04:11:35,732 basehttp 26528 15280 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:11:35,737 basehttp 26528 15280 "GET /static/img/nen_moi.jpg HTTP/1.1" 304 0
+INFO 2025-09-10 04:11:35,738 basehttp 26528 16844 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:11:35,785 basehttp 26528 16844 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:11:35,786 basehttp 26528 15280 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-09-10 04:11:35,879 log 26528 15280 Not Found: /favicon.ico
+WARNING 2025-09-10 04:11:35,881 basehttp 26528 15280 "GET /favicon.ico HTTP/1.1" 404 18259
+ERROR 2025-09-10 04:11:39,440 log 26528 15280 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+ERROR 2025-09-10 04:11:39,629 basehttp 26528 15280 "POST /accounts/login/ HTTP/1.1" 500 108992
+INFO 2025-09-10 04:11:46,420 basehttp 26528 15280 "GET / HTTP/1.1" 200 20315
+INFO 2025-09-10 04:11:56,881 basehttp 26528 15280 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:11:57,155 basehttp 26528 15280 "GET /hub/ HTTP/1.1" 200 22854
+INFO 2025-09-10 04:11:57,190 basehttp 26528 15280 "GET /static/css/dist/styles.css HTTP/1.1" 200 136478
+WARNING 2025-09-10 04:11:57,433 log 26528 26676 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:11:57,435 basehttp 26528 26676 "GET /ws/notifications/ HTTP/1.1" 404 18284
+INFO 2025-09-10 04:12:15,298 basehttp 26528 15280 "GET /admin/ HTTP/1.1" 200 96583
+INFO 2025-09-10 04:12:15,324 basehttp 26528 15280 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,326 basehttp 26528 16844 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,329 basehttp 26528 23080 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,333 basehttp 26528 16844 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,336 basehttp 26528 23080 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,336 basehttp 26528 15280 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,394 basehttp 26528 23080 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,394 basehttp 26528 15280 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,563 basehttp 26528 15280 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:15,563 basehttp 26528 23080 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,314 basehttp 26528 23080 "GET /admin/auth/user/ HTTP/1.1" 200 85245
+INFO 2025-09-10 04:12:24,356 basehttp 26528 23080 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,382 basehttp 26528 26832 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,386 basehttp 26528 16844 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,391 basehttp 26528 2020 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,392 basehttp 26528 23080 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,398 basehttp 26528 26832 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,413 basehttp 26528 26384 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,427 basehttp 26528 26832 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,428 basehttp 26528 23080 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,436 basehttp 26528 16844 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,460 basehttp 26528 23080 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,475 basehttp 26528 16844 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:24,542 basehttp 26528 15280 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:12:46,377 basehttp 26528 15280 "GET /admin/auth/user/124/change/ HTTP/1.1" 200 88205
+INFO 2025-09-10 04:12:46,415 basehttp 26528 16844 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,422 basehttp 26528 26832 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,424 basehttp 26528 26384 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,427 basehttp 26528 16844 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,434 basehttp 26528 23080 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,451 basehttp 26528 16844 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,455 basehttp 26528 23080 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,482 basehttp 26528 23080 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-10 04:12:46,553 basehttp 26528 15280 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:13:03,015 basehttp 26528 15280 "GET /admin/auth/user/ HTTP/1.1" 200 85244
+INFO 2025-09-10 04:13:23,223 basehttp 26528 15280 "GET /admin/users/chucdanh/ HTTP/1.1" 200 54857
+INFO 2025-09-10 04:13:23,257 basehttp 26528 15280 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:13:23,260 basehttp 26528 16844 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:13:23,260 basehttp 26528 23080 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:13:23,264 basehttp 26528 2020 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:13:23,266 basehttp 26528 26832 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:13:23,278 basehttp 26528 26832 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:13:23,372 basehttp 26528 26384 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:13:28,600 basehttp 26528 26384 "GET /admin/users/nhanvien/ HTTP/1.1" 200 88427
+INFO 2025-09-10 04:13:28,867 basehttp 26528 26384 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:14:24,009 basehttp 26528 26384 "GET /admin/users/nhanvien/?chuc_danh__id__exact=17&q= HTTP/1.1" 200 65896
+INFO 2025-09-10 04:14:24,044 basehttp 26528 26384 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:24,050 basehttp 26528 26832 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:24,051 basehttp 26528 2020 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:24,053 basehttp 26528 16844 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:24,061 basehttp 26528 15280 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:24,067 basehttp 26528 16844 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:24,184 basehttp 26528 23080 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:14:37,327 basehttp 26528 23080 "GET /admin/users/nhanvien/148/change/?_changelist_filters=chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120044
+INFO 2025-09-10 04:14:37,359 basehttp 26528 16844 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:37,384 basehttp 26528 16844 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:37,402 basehttp 26528 16844 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:37,416 basehttp 26528 16844 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-10 04:14:37,486 basehttp 26528 23080 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:14:43,854 basehttp 26528 23080 "GET /admin/auth/user/148/change/ HTTP/1.1" 200 88204
+INFO 2025-09-10 04:14:44,040 basehttp 26528 23080 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:14:47,706 basehttp 26528 23080 "GET /admin/auth/user/148/password/ HTTP/1.1" 200 51096
+INFO 2025-09-10 04:14:47,862 basehttp 26528 23080 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:15:10,657 basehttp 26528 23080 "POST /admin/auth/user/148/password/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:15:11,427 basehttp 26528 23080 "GET /admin/auth/user/148/change/ HTTP/1.1" 200 88709
+INFO 2025-09-10 04:15:11,682 basehttp 26528 23080 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:15:27,010 basehttp 26528 23080 "POST /admin/auth/user/148/change/ HTTP/1.1" 200 88573
+INFO 2025-09-10 04:15:27,052 basehttp 26528 26384 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:15:27,052 basehttp 26528 23080 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:15:27,052 basehttp 26528 16844 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:15:27,053 basehttp 26528 15280 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:15:27,054 basehttp 26528 26832 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:15:27,069 basehttp 26528 26832 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:15:27,201 basehttp 26528 2020 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:15:41,487 basehttp 26528 2020 "GET /static/jazzmin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-10 04:15:54,699 basehttp 26528 2020 "POST /admin/auth/user/148/change/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:15:55,450 basehttp 26528 2020 "GET /admin/auth/user/ HTTP/1.1" 200 85817
+INFO 2025-09-10 04:15:55,614 basehttp 26528 2020 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:16:20,244 basehttp 26528 28500 "GET /operations/mobile/dashboard/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:16:20,370 basehttp 26528 28500 "GET /?next=/operations/mobile/dashboard/ HTTP/1.1" 200 20379
+INFO 2025-09-10 04:16:21,794 basehttp 26528 28500 "GET /static/img/nen_moi.jpg HTTP/1.1" 200 47541
+ERROR 2025-09-10 04:16:35,378 log 26528 28500 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+ERROR 2025-09-10 04:16:35,605 basehttp 26528 28500 "POST /accounts/login/ HTTP/1.1" 500 109139
+ERROR 2025-09-10 04:17:03,770 log 26528 28500 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+ERROR 2025-09-10 04:17:03,961 basehttp 26528 28500 "POST /accounts/login/ HTTP/1.1" 500 109138
+INFO 2025-09-10 04:17:19,949 basehttp 26528 28500 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:17:20,424 basehttp 26528 28500 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18898
+INFO 2025-09-10 04:17:20,482 basehttp 26528 28500 "GET /static/css/dist/styles.css?v=1757452640 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:20:43,275 basehttp 26528 2020 "GET /admin/inventory/phieucapphat/ HTTP/1.1" 200 60421
+INFO 2025-09-10 04:20:43,315 basehttp 26528 2020 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:43,320 basehttp 26528 7884 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:43,328 basehttp 26528 3000 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:43,333 basehttp 26528 1068 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:43,335 basehttp 26528 25740 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:43,349 basehttp 26528 25740 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:43,458 basehttp 26528 19664 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:20:43,516 basehttp 26528 19664 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-09-10 04:20:51,763 basehttp 26528 19664 "GET /admin/inventory/loaivattu/ HTTP/1.1" 200 53453
+INFO 2025-09-10 04:20:51,932 basehttp 26528 19664 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:20:55,336 basehttp 26528 19664 "GET /admin/inventory/loaivattu/3/change/ HTTP/1.1" 200 51573
+INFO 2025-09-10 04:20:55,480 basehttp 26528 19664 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:21:02,510 basehttp 26528 19664 "POST /admin/inventory/loaivattu/3/change/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:21:02,972 basehttp 26528 19664 "GET /admin/inventory/loaivattu/ HTTP/1.1" 200 54053
+INFO 2025-09-10 04:21:03,152 basehttp 26528 19664 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:21:06,542 basehttp 26528 19664 "GET /admin/inventory/ HTTP/1.1" 200 59185
+INFO 2025-09-10 04:21:13,751 basehttp 26528 19664 "GET /admin/inventory/vattu/ HTTP/1.1" 200 139849
+INFO 2025-09-10 04:21:13,903 basehttp 26528 19664 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:21:32,062 basehttp 26528 19664 "GET /admin/operations/calamviec/ HTTP/1.1" 200 54382
+INFO 2025-09-10 04:21:32,209 basehttp 26528 19664 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:21:40,776 basehttp 26528 19664 "GET /hub/ HTTP/1.1" 200 22854
+INFO 2025-09-10 04:21:40,813 basehttp 26528 19664 "GET /static/css/dist/styles.css HTTP/1.1" 304 0
+WARNING 2025-09-10 04:21:40,955 log 26528 4768 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:21:40,958 basehttp 26528 4768 "GET /ws/notifications/ HTTP/1.1" 404 18284
+INFO 2025-09-10 04:21:44,185 basehttp 26528 19664 "GET /operations/xep-lich/ HTTP/1.1" 200 22655
+WARNING 2025-09-10 04:21:44,330 log 26528 23408 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:21:44,332 basehttp 26528 23408 "GET /ws/notifications/ HTTP/1.1" 404 18283
+INFO 2025-09-10 04:21:57,274 basehttp 26528 19664 "GET /operations/xep-lich/?muc_tieu_id=17 HTTP/1.1" 200 54168
+WARNING 2025-09-10 04:21:57,422 log 26528 6656 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:21:57,427 basehttp 26528 6656 "GET /ws/notifications/ HTTP/1.1" 404 18284
+INFO 2025-09-10 04:22:04,682 basehttp 26528 19664 "GET /operations/sua-ca-form/4521/ HTTP/1.1" 200 613
+INFO 2025-09-10 04:22:04,906 basehttp 26528 19664 "GET /__debug__/history_sidebar/?request_id=d8cdc2cfc26d41fe9869875b16b44dc6 HTTP/1.1" 200 9221
+INFO 2025-09-10 04:22:32,185 basehttp 26528 19664 "GET /operations/xep-lich/?muc_tieu_id=17 HTTP/1.1" 200 54168
+WARNING 2025-09-10 04:22:32,328 log 26528 12836 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:22:32,331 basehttp 26528 12836 "GET /ws/notifications/ HTTP/1.1" 404 18283
+INFO 2025-09-10 04:22:37,758 basehttp 26528 19664 "GET /operations/sua-ca-form/4060/ HTTP/1.1" 200 613
+INFO 2025-09-10 04:22:37,990 basehttp 26528 19664 "GET /__debug__/history_sidebar/?request_id=a6ed4548b7a74ca58239d5194ae1076f HTTP/1.1" 200 9221
+INFO 2025-09-10 04:22:44,718 basehttp 26528 19664 "GET /operations/xep-lich/?muc_tieu_id=17 HTTP/1.1" 200 54168
+WARNING 2025-09-10 04:22:44,854 log 26528 22376 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:22:44,856 basehttp 26528 22376 "GET /ws/notifications/ HTTP/1.1" 404 18283
+INFO 2025-09-10 04:22:49,640 basehttp 26528 19664 "GET /operations/xep-lich/?muc_tieu_id=6 HTTP/1.1" 200 69625
+WARNING 2025-09-10 04:22:49,775 log 26528 13332 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:22:49,777 basehttp 26528 13332 "GET /ws/notifications/ HTTP/1.1" 404 18283
+INFO 2025-09-10 04:22:56,730 basehttp 26528 19664 "GET /operations/sua-ca-form/3716/ HTTP/1.1" 200 613
+INFO 2025-09-10 04:22:56,955 basehttp 26528 19664 "GET /__debug__/history_sidebar/?request_id=81e5499b7eb045f9a1689b17406d21a5 HTTP/1.1" 200 9221
+INFO 2025-09-10 04:25:36,344 autoreload 26528 25952 D:\startup_bv\main\views.py changed, reloading.
+INFO 2025-09-10 04:25:39,590 autoreload 18224 4460 Watching for file changes with StatReloader
+INFO 2025-09-10 04:29:14,320 autoreload 18224 4460 D:\startup_bv\main\views.py changed, reloading.
+INFO 2025-09-10 04:29:17,403 autoreload 24736 20276 Watching for file changes with StatReloader
+INFO 2025-09-10 04:29:50,539 basehttp 24736 28200 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18899
+INFO 2025-09-10 04:29:50,581 basehttp 24736 28200 "GET /static/css/dist/styles.css?v=1757453390 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:30:11,997 basehttp 24736 27572 "GET /operations/xep-lich/?muc_tieu_id=6 HTTP/1.1" 200 69625
+INFO 2025-09-10 04:30:12,026 basehttp 24736 27572 "GET /static/css/dist/styles.css HTTP/1.1" 304 0
+WARNING 2025-09-10 04:30:12,166 log 24736 20408 Not Found: /ws/notifications/
+WARNING 2025-09-10 04:30:12,168 basehttp 24736 20408 "GET /ws/notifications/ HTTP/1.1" 404 18284
+INFO 2025-09-10 04:30:17,352 basehttp 24736 27572 "GET /admin/ HTTP/1.1" 200 101204
+INFO 2025-09-10 04:30:17,376 basehttp 24736 27572 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:17,381 basehttp 24736 25824 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:17,384 basehttp 24736 4472 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:17,388 basehttp 24736 25824 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:17,395 basehttp 24736 25824 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:17,405 basehttp 24736 25824 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:17,688 basehttp 24736 25824 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:21,389 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/ HTTP/1.1" 200 139563
+INFO 2025-09-10 04:30:21,555 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:30:26,603 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/add/ HTTP/1.1" 200 58216
+INFO 2025-09-10 04:30:26,652 basehttp 24736 4472 "GET /static/admin/css/vendor/select2/select2.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:26,653 basehttp 24736 27572 "GET /static/admin/css/autocomplete.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:26,657 basehttp 24736 5468 "GET /static/admin/js/vendor/select2/select2.full.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:26,664 basehttp 24736 19160 "GET /static/admin/js/autocomplete.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:26,666 basehttp 24736 28196 "GET /static/admin/js/vendor/select2/i18n/vi.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:30:26,766 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:30:28,501 basehttp 24736 25824 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=vi_tri_chot HTTP/1.1" 200 2726
+INFO 2025-09-10 04:30:28,734 basehttp 24736 25824 "GET /__debug__/history_sidebar/?request_id=0cbf7884b9bc44618b517a55bd473774 HTTP/1.1" 200 9237
+INFO 2025-09-10 04:30:31,858 basehttp 24736 25824 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:30:32,086 basehttp 24736 25824 "GET /__debug__/history_sidebar/?request_id=e6b088eb1e8d45eb9d6cec7ad9d25d79 HTTP/1.1" 200 9234
+INFO 2025-09-10 04:30:35,873 basehttp 24736 25824 "GET /admin/autocomplete/?term=h%E1%BA%A3i&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 301
+INFO 2025-09-10 04:30:36,100 basehttp 24736 25824 "GET /__debug__/history_sidebar/?request_id=0df25fa9e8764966a6cf5114606a2709 HTTP/1.1" 200 9255
+INFO 2025-09-10 04:30:41,317 basehttp 24736 25824 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=ca_lam_viec HTTP/1.1" 200 122
+INFO 2025-09-10 04:30:41,561 basehttp 24736 25824 "GET /__debug__/history_sidebar/?request_id=608dbfdf4b2d47a79f2ea9cd12a53366 HTTP/1.1" 200 9236
+INFO 2025-09-10 04:30:48,103 basehttp 24736 25824 "POST /admin/operations/phancongcatruc/add/ HTTP/1.1" 302 0
+INFO 2025-09-10 04:30:48,757 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/ HTTP/1.1" 200 140210
+INFO 2025-09-10 04:30:48,903 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:30:55,754 basehttp 24736 28200 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18898
+INFO 2025-09-10 04:30:55,793 basehttp 24736 28200 "GET /static/css/dist/styles.css?v=1757453455 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:30:59,078 basehttp 24736 28200 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18898
+INFO 2025-09-10 04:30:59,115 basehttp 24736 28200 "GET /static/css/dist/styles.css?v=1757453458 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:31:06,490 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18898
+INFO 2025-09-10 04:31:06,543 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453466 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:31:16,396 basehttp 24736 25824 "GET /admin/users/nhanvien/ HTTP/1.1" 200 88427
+INFO 2025-09-10 04:31:16,545 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:31:36,780 basehttp 24736 25824 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&q= HTTP/1.1" 200 92010
+INFO 2025-09-10 04:31:36,814 basehttp 24736 25824 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:31:36,816 basehttp 24736 28196 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:31:36,821 basehttp 24736 19160 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:31:36,821 basehttp 24736 4472 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:31:36,824 basehttp 24736 27572 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:31:36,835 basehttp 24736 27572 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:31:36,960 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:31:43,469 basehttp 24736 5468 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&chuc_danh__id__exact=17&q= HTTP/1.1" 200 66607
+INFO 2025-09-10 04:31:43,661 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:31:53,685 basehttp 24736 5468 "GET /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120199
+INFO 2025-09-10 04:31:53,837 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:32:03,291 basehttp 24736 5468 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120675
+WARNING 2025-09-10 04:32:03,433 log 24736 27572 Not Found: /media/NNT.png
+WARNING 2025-09-10 04:32:03,436 basehttp 24736 27572 "GET /media/NNT.png HTTP/1.1" 404 18277
+INFO 2025-09-10 04:32:03,459 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:32:31,299 basehttp 24736 5468 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120607
+INFO 2025-09-10 04:32:31,465 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:32:57,406 basehttp 24736 5468 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120617
+INFO 2025-09-10 04:32:57,433 basehttp 24736 5468 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:32:57,437 basehttp 24736 27572 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:32:57,442 basehttp 24736 4472 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:32:57,450 basehttp 24736 28196 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:32:57,461 basehttp 24736 25824 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:32:57,472 basehttp 24736 25824 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:32:57,565 basehttp 24736 19160 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:33:26,302 basehttp 24736 19160 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120618
+INFO 2025-09-10 04:33:26,486 basehttp 24736 19160 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:33:54,197 basehttp 24736 19160 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 200 120722
+WARNING 2025-09-10 04:33:54,377 log 24736 25824 Not Found: /media/NNT.png
+WARNING 2025-09-10 04:33:54,379 basehttp 24736 25824 "GET /media/NNT.png HTTP/1.1" 404 18277
+INFO 2025-09-10 04:33:54,413 basehttp 24736 19160 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:34:12,307 basehttp 24736 19160 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DTHUVIEC%26chuc_danh__id__exact%3D17%26q%3D HTTP/1.1" 302 0
+INFO 2025-09-10 04:34:12,884 basehttp 24736 19160 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&chuc_danh__id__exact=17 HTTP/1.1" 200 66340
+INFO 2025-09-10 04:34:12,910 basehttp 24736 19160 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:34:12,914 basehttp 24736 25824 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:34:12,918 basehttp 24736 28196 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:34:12,920 basehttp 24736 27572 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:34:12,922 basehttp 24736 5468 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:34:12,934 basehttp 24736 5468 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:34:13,035 basehttp 24736 4472 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:34:25,114 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18922
+INFO 2025-09-10 04:34:25,157 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453664 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:34:48,398 basehttp 24736 9580 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 19748
+INFO 2025-09-10 04:34:48,445 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453688 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:34:49,074 basehttp 24736 9580 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 19748
+INFO 2025-09-10 04:34:52,132 basehttp 24736 9580 "GET /inspection/mobile/tuan-tra/ HTTP/1.1" 200 16023
+INFO 2025-09-10 04:34:52,181 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453691 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:34:56,645 basehttp 24736 9580 "GET /operations/mobile/lich-truc/ HTTP/1.1" 200 18747
+INFO 2025-09-10 04:34:56,682 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453696 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:36:22,814 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18922
+INFO 2025-09-10 04:36:22,861 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453782 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:36:31,217 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18922
+INFO 2025-09-10 04:36:31,259 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453791 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:36:50,529 basehttp 24736 4472 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&chuc_danh__id__exact=17&q=buig+h%E1%BA%A3i+ho%C3%A0ng HTTP/1.1" 200 55790
+INFO 2025-09-10 04:36:50,548 basehttp 24736 4472 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:36:50,555 basehttp 24736 5468 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:36:50,563 basehttp 24736 27572 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:36:50,571 basehttp 24736 25824 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:36:50,574 basehttp 24736 19160 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:36:50,588 basehttp 24736 19160 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:36:50,610 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:36:50,662 basehttp 24736 28196 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-09-10 04:37:00,316 basehttp 24736 28196 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&chuc_danh__id__exact=17&q=h%E1%BA%A3i+ho%C3%A0ng HTTP/1.1" 200 55773
+INFO 2025-09-10 04:37:00,380 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:37:01,324 basehttp 24736 28196 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&chuc_danh__id__exact=17&q=h%E1%BA%A3i+ho%C3%A0ng HTTP/1.1" 200 55773
+INFO 2025-09-10 04:37:01,384 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:37:10,127 basehttp 24736 28196 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=THUVIEC&chuc_danh__id__exact=17&q=B%C3%B9i+h%E1%BA%A3i+ho%C3%A0ng HTTP/1.1" 200 55802
+INFO 2025-09-10 04:37:10,191 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:37:14,178 basehttp 24736 28196 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=CHINHTHUC&chuc_danh__id__exact=17&q=B%C3%B9i+h%E1%BA%A3i+ho%C3%A0ng HTTP/1.1" 200 59909
+INFO 2025-09-10 04:37:14,239 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:37:18,806 basehttp 24736 28196 "GET /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DCHINHTHUC%26chuc_danh__id__exact%3D17%26q%3DB%25C3%25B9i%2Bh%25E1%25BA%25A3i%2Bho%25C3%25A0ng HTTP/1.1" 200 120455
+INFO 2025-09-10 04:37:18,877 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:37:47,076 basehttp 24736 28196 "GET /users/148/export-options/ HTTP/1.1" 200 28029
+INFO 2025-09-10 04:37:48,994 basehttp 24736 28196 "POST /users/148/export-pdf/ HTTP/1.1" 200 13778
+INFO 2025-09-10 04:38:04,583 basehttp 24736 28196 "POST /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DCHINHTHUC%26chuc_danh__id__exact%3D17%26q%3DB%25C3%25B9i%2Bh%25E1%25BA%25A3i%2Bho%25C3%25A0ng HTTP/1.1" 302 0
+INFO 2025-09-10 04:38:04,723 basehttp 24736 28196 "GET /admin/users/nhanvien/?trang_thai_lam_viec__exact=CHINHTHUC&chuc_danh__id__exact=17&q=B%C3%B9i+h%E1%BA%A3i+ho%C3%A0ng HTTP/1.1" 200 60509
+INFO 2025-09-10 04:38:04,742 basehttp 24736 28196 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:38:04,744 basehttp 24736 19160 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:38:04,748 basehttp 24736 25824 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:38:04,754 basehttp 24736 5468 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:38:04,756 basehttp 24736 4472 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:38:04,763 basehttp 24736 4472 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:38:04,797 basehttp 24736 27572 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:38:06,676 basehttp 24736 27572 "GET /admin/users/nhanvien/148/change/?_changelist_filters=trang_thai_lam_viec__exact%3DCHINHTHUC%26chuc_danh__id__exact%3D17%26q%3DB%25C3%25B9i%2Bh%25E1%25BA%25A3i%2Bho%25C3%25A0ng HTTP/1.1" 200 120816
+INFO 2025-09-10 04:38:06,779 basehttp 24736 4472 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 200 126202
+INFO 2025-09-10 04:38:06,789 basehttp 24736 27572 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:38:16,556 basehttp 24736 27572 "GET /admin/operations/calamviec/ HTTP/1.1" 200 54382
+INFO 2025-09-10 04:38:16,622 basehttp 24736 27572 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:38:23,240 basehttp 24736 27572 "GET /admin/operations/phancongcatruc/ HTTP/1.1" 200 139562
+INFO 2025-09-10 04:38:23,309 basehttp 24736 27572 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:38:34,793 basehttp 24736 27572 "GET /admin/operations/phancongcatruc/add/ HTTP/1.1" 200 58216
+INFO 2025-09-10 04:38:34,859 basehttp 24736 27572 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:38:36,042 basehttp 24736 27572 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=vi_tri_chot HTTP/1.1" 200 2726
+INFO 2025-09-10 04:38:36,264 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=2495fb0b0d214fd19772c23e78394f0d HTTP/1.1" 200 9236
+INFO 2025-09-10 04:38:38,136 basehttp 24736 27572 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:38:38,356 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=b4a4734216a24eefbf623374319d84a9 HTTP/1.1" 200 9233
+INFO 2025-09-10 04:38:43,026 basehttp 24736 27572 "GET /admin/autocomplete/?term=014&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 682
+INFO 2025-09-10 04:38:43,255 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=a70fbadd9c58489fa7d14dfe5b7793d3 HTTP/1.1" 200 9246
+INFO 2025-09-10 04:38:45,994 basehttp 24736 27572 "GET /admin/autocomplete/?term=0147&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 98
+INFO 2025-09-10 04:38:46,210 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=8b4e466f2fc140cf9a982c20855fd45c HTTP/1.1" 200 9247
+INFO 2025-09-10 04:38:47,653 basehttp 24736 27572 "GET /admin/autocomplete/?term=014&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 682
+INFO 2025-09-10 04:38:47,884 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=af24628fa1734cf28cb069ad8b3bd11e HTTP/1.1" 200 9246
+INFO 2025-09-10 04:38:48,108 basehttp 24736 27572 "GET /admin/autocomplete/?term=0148&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 108
+INFO 2025-09-10 04:38:48,328 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=6f177d0ae81d477f9a9123acb60c110f HTTP/1.1" 200 9247
+INFO 2025-09-10 04:38:52,122 basehttp 24736 27572 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=ca_lam_viec HTTP/1.1" 200 122
+INFO 2025-09-10 04:38:52,346 basehttp 24736 27572 "GET /__debug__/history_sidebar/?request_id=770b03c45a9f430c97f6839c47b38d84 HTTP/1.1" 200 9235
+INFO 2025-09-10 04:39:00,310 basehttp 24736 27572 "POST /admin/operations/phancongcatruc/add/ HTTP/1.1" 200 59058
+INFO 2025-09-10 04:39:00,374 basehttp 24736 27572 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:39:12,393 basehttp 24736 27572 "GET /admin/operations/phancongcatruc/ HTTP/1.1" 200 139562
+INFO 2025-09-10 04:39:12,413 basehttp 24736 27572 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:39:12,415 basehttp 24736 4472 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:39:12,419 basehttp 24736 5468 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:39:12,422 basehttp 24736 28196 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:39:12,422 basehttp 24736 19160 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:39:12,430 basehttp 24736 19160 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:39:12,467 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:39:20,246 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/?ngay_truc__gte=2025-09-10&q= HTTP/1.1" 200 146158
+INFO 2025-09-10 04:39:20,311 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:39:37,778 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/10293/change/?_changelist_filters=ngay_truc__gte%3D2025-09-10%26q%3D HTTP/1.1" 200 59414
+INFO 2025-09-10 04:39:37,847 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:39:41,966 basehttp 24736 25824 "POST /admin/operations/phancongcatruc/10293/change/?_changelist_filters=ngay_truc__gte%3D2025-09-10%26q%3D HTTP/1.1" 302 0
+INFO 2025-09-10 04:39:42,207 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/?ngay_truc__gte=2025-09-10 HTTP/1.1" 200 145992
+INFO 2025-09-10 04:39:42,279 basehttp 24736 25824 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:39:50,715 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:39:50,750 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757453990 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:39:50,784 basehttp 24736 26000 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 200 126202
+INFO 2025-09-10 04:40:39,731 basehttp 24736 25824 "GET /admin/operations/phancongcatruc/add/?_changelist_filters=ngay_truc__gte%3D2025-09-10 HTTP/1.1" 200 58312
+INFO 2025-09-10 04:40:39,842 basehttp 24736 25824 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:40:39,851 basehttp 24736 19160 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:40:39,852 basehttp 24736 28196 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:40:39,863 basehttp 24736 4472 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:40:39,865 basehttp 24736 27572 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:40:39,879 basehttp 24736 27572 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:40:39,910 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:40:41,369 basehttp 24736 5468 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=vi_tri_chot HTTP/1.1" 200 2726
+INFO 2025-09-10 04:40:41,596 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=ec9f0cdcb401484297b80749058f077c HTTP/1.1" 200 9236
+INFO 2025-09-10 04:40:43,221 basehttp 24736 5468 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:40:43,449 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=3c2e044aa1b94ec0a256570405d15019 HTTP/1.1" 200 9233
+INFO 2025-09-10 04:40:46,028 basehttp 24736 5468 "GET /admin/autocomplete/?term=01&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:40:46,247 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=03660999891543da9005cbf828054f7a HTTP/1.1" 200 9245
+INFO 2025-09-10 04:40:46,673 basehttp 24736 5468 "GET /admin/autocomplete/?term=0148&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 108
+INFO 2025-09-10 04:40:46,901 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=9ebf074f18f04ce98f9241214a582f9e HTTP/1.1" 200 9247
+INFO 2025-09-10 04:40:51,362 basehttp 24736 5468 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=ca_lam_viec HTTP/1.1" 200 122
+INFO 2025-09-10 04:40:51,583 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=4d257f7e244945cb920d640513a20d39 HTTP/1.1" 200 9235
+INFO 2025-09-10 04:41:01,592 basehttp 24736 5468 "POST /admin/operations/phancongcatruc/add/?_changelist_filters=ngay_truc__gte%3D2025-09-10 HTTP/1.1" 302 0
+INFO 2025-09-10 04:41:01,858 basehttp 24736 5468 "GET /admin/operations/phancongcatruc/?ngay_truc__gte=2025-09-10 HTTP/1.1" 200 145986
+INFO 2025-09-10 04:41:01,964 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:41:12,944 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:41:12,976 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454072 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:41:13,007 basehttp 24736 9580 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:14,654 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:41:14,683 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757454074 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:41:15,503 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:41:15,531 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757454075 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:41:15,880 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:41:17,241 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:41:17,271 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757454077 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:41:37,980 basehttp 24736 5468 "GET /admin/operations/phancongcatruc/add/?_changelist_filters=ngay_truc__gte%3D2025-09-10 HTTP/1.1" 200 58312
+INFO 2025-09-10 04:41:38,060 basehttp 24736 5468 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:41:39,029 basehttp 24736 5468 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=vi_tri_chot HTTP/1.1" 200 2726
+INFO 2025-09-10 04:41:39,244 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=cca7ba50ac0c405fb53a3749f75c0b9f HTTP/1.1" 200 9236
+INFO 2025-09-10 04:41:40,847 basehttp 24736 5468 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:41:41,061 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=f4cf95ac4d714837afb65dc55800dc04 HTTP/1.1" 200 9233
+INFO 2025-09-10 04:41:43,819 basehttp 24736 5468 "GET /admin/autocomplete/?term=0&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:41:44,034 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=341f7c4a8fe74e3687d16a576dcf06f5 HTTP/1.1" 200 9244
+INFO 2025-09-10 04:41:44,168 basehttp 24736 5468 "GET /admin/autocomplete/?term=01&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 1224
+INFO 2025-09-10 04:41:44,379 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=6e94462123ad40179a320d0eec426dca HTTP/1.1" 200 9245
+INFO 2025-09-10 04:41:46,161 basehttp 24736 5468 "GET /admin/autocomplete/?term=0148&app_label=operations&model_name=phancongcatruc&field_name=nhan_vien HTTP/1.1" 200 108
+INFO 2025-09-10 04:41:46,374 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=d7f0a502e8eb4d888b4c3361af997913 HTTP/1.1" 200 9247
+INFO 2025-09-10 04:41:49,285 basehttp 24736 5468 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=ca_lam_viec HTTP/1.1" 200 122
+INFO 2025-09-10 04:41:49,508 basehttp 24736 5468 "GET /__debug__/history_sidebar/?request_id=9e3d8dd520e549819637437f8a9d673a HTTP/1.1" 200 9235
+INFO 2025-09-10 04:41:57,234 basehttp 24736 5468 "POST /admin/operations/phancongcatruc/add/?_changelist_filters=ngay_truc__gte%3D2025-09-10 HTTP/1.1" 200 59154
+INFO 2025-09-10 04:41:57,253 basehttp 24736 5468 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:57,254 basehttp 24736 27572 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:57,259 basehttp 24736 4472 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:57,267 basehttp 24736 19160 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:57,280 basehttp 24736 25824 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:57,286 basehttp 24736 19160 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 04:41:57,313 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:42:12,778 basehttp 24736 28196 "GET /admin/autocomplete/?app_label=operations&model_name=phancongcatruc&field_name=ca_lam_viec HTTP/1.1" 200 122
+INFO 2025-09-10 04:42:13,008 basehttp 24736 28196 "GET /__debug__/history_sidebar/?request_id=9162e191309347c584fe0f944e52ad59 HTTP/1.1" 200 9235
+INFO 2025-09-10 04:42:15,931 basehttp 24736 28196 "POST /admin/operations/phancongcatruc/add/?_changelist_filters=ngay_truc__gte%3D2025-09-10 HTTP/1.1" 302 0
+INFO 2025-09-10 04:42:16,202 basehttp 24736 28196 "GET /admin/operations/phancongcatruc/?ngay_truc__gte=2025-09-10 HTTP/1.1" 200 145986
+INFO 2025-09-10 04:42:16,263 basehttp 24736 28196 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 04:42:21,537 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:42:21,570 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757454141 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:42:21,602 basehttp 24736 26000 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:42:24,755 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:42:24,838 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454144 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:42:25,724 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:42:25,751 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454145 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:42:26,319 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:42:26,348 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454146 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:42:26,777 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:42:27,131 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:42:27,160 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454147 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:42:27,543 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:43:01,070 basehttp 24736 26000 "GET /operations/mobile/lich-truc/ HTTP/1.1" 200 18754
+INFO 2025-09-10 04:43:01,111 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454181 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:44:09,439 basehttp 24736 26000 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:44:09,476 basehttp 24736 26000 "GET /static/css/dist/styles.css?v=1757454249 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:44:09,514 basehttp 24736 9580 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-10 04:44:12,275 basehttp 24736 9580 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 18830
+INFO 2025-09-10 04:44:12,305 basehttp 24736 9580 "GET /static/css/dist/styles.css?v=1757454252 HTTP/1.1" 200 136478
+INFO 2025-09-10 04:44:12,308 basehttp 24736 27552 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-09-10 04:44:12,314 basehttp 24736 24368 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-09-10 04:44:12,341 basehttp 24736 26000 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 200 126202
+INFO 2025-09-10 04:44:12,641 basehttp 24736 26000 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-09-10 04:44:12,662 basehttp 24736 26000 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+WARNING 2025-09-10 04:44:13,043 log 24736 26000 Not Found: /favicon.ico
+WARNING 2025-09-10 04:44:13,044 basehttp 24736 26000 "GET /favicon.ico HTTP/1.1" 404 18259
+INFO 2025-09-10 04:54:47,665 autoreload 24736 20276 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-10 04:54:50,812 autoreload 15520 7252 Watching for file changes with StatReloader
+INFO 2025-09-10 05:02:09,167 autoreload 26872 25676 Watching for file changes with StatReloader
+INFO 2025-09-10 05:26:28,467 autoreload 26872 25676 D:\startup_bv\operations\forms.py changed, reloading.
+INFO 2025-09-10 05:26:31,627 autoreload 13784 2020 Watching for file changes with StatReloader
+ERROR 2025-09-10 05:26:50,069 log 13784 16480 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 196, in mobile_dashboard
+    (Q(ngay_truc=yesterday) & Q(ca_lam_viec__gio_ket_thuc__lt=Q(ca_lam_viec__gio_bat_dau)))
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'ca_lam_viec__gio_bat_dau' is not defined
+ERROR 2025-09-10 05:26:50,146 basehttp 13784 16480 "GET /operations/mobile/dashboard/ HTTP/1.1" 500 94388
+INFO 2025-09-10 05:28:28,794 basehttp 13784 23888 "GET /admin/operations/phancongcatruc/?ngay_truc__gte=2025-09-10 HTTP/1.1" 200 145339
+INFO 2025-09-10 05:28:28,816 basehttp 13784 23888 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 05:28:28,819 basehttp 13784 23200 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-09-10 05:28:28,824 basehttp 13784 17552 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-09-10 05:28:28,827 basehttp 13784 25964 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-09-10 05:28:28,828 basehttp 13784 25320 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 05:28:28,846 basehttp 13784 25320 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-09-10 05:28:28,875 basehttp 13784 26448 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-10 05:28:28,930 basehttp 13784 26448 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+ERROR 2025-09-10 05:28:36,750 log 13784 16480 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 196, in mobile_dashboard
+    (Q(ngay_truc=yesterday) & Q(ca_lam_viec__gio_ket_thuc__lt=Q(ca_lam_viec__gio_bat_dau)))
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'ca_lam_viec__gio_bat_dau' is not defined
+ERROR 2025-09-10 05:28:36,815 basehttp 13784 16480 "GET /operations/mobile/dashboard/ HTTP/1.1" 500 94386
+INFO 2025-09-10 05:29:43,671 autoreload 13784 2020 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-10 05:29:46,826 autoreload 10236 10068 Watching for file changes with StatReloader
+INFO 2025-09-10 05:29:53,887 basehttp 10236 14380 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 21902
+INFO 2025-09-10 05:29:53,928 basehttp 10236 14380 "GET /static/css/dist/styles.css?v=1757456993 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:29:54,029 basehttp 10236 23692 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-10 05:30:04,790 basehttp 10236 23692 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 21901
+INFO 2025-09-10 05:30:04,829 basehttp 10236 23692 "GET /static/css/dist/styles.css?v=1757457004 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:45:31,935 basehttp 10236 14648 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 21437
+INFO 2025-09-10 05:45:31,979 basehttp 10236 14648 "GET /static/css/dist/styles.css?v=1757457931 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:45:32,011 basehttp 10236 22256 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-10 05:45:57,193 basehttp 10236 22256 "GET /operations/mobile/lich-truc/ HTTP/1.1" 200 18755
+INFO 2025-09-10 05:45:57,240 basehttp 10236 22256 "GET /static/css/dist/styles.css?v=1757457957 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:46:01,054 basehttp 10236 22256 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 22636
+INFO 2025-09-10 05:46:01,100 basehttp 10236 22256 "GET /static/css/dist/styles.css?v=1757457960 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:46:01,524 basehttp 10236 22256 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 22636
+INFO 2025-09-10 05:46:03,572 basehttp 10236 22256 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 21437
+INFO 2025-09-10 05:46:03,612 basehttp 10236 22256 "GET /static/css/dist/styles.css?v=1757457963 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:47:26,430 basehttp 10236 26176 "POST /operations/mobile/check-in/10294/ HTTP/1.1" 302 0
+INFO 2025-09-10 05:47:26,595 basehttp 10236 26176 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 21362
+INFO 2025-09-10 05:47:26,637 basehttp 10236 26176 "GET /static/css/dist/styles.css?v=1757458046 HTTP/1.1" 200 136478
+INFO 2025-09-10 05:51:32,283 basehttp 10236 26176 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 21315
+INFO 2025-09-10 05:51:32,319 basehttp 10236 26176 "GET /static/css/dist/styles.css?v=1757458292 HTTP/1.1" 200 136183

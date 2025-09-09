@@ -1,182 +1,133 @@
 {% extends "operations/mobile/base_mobile_revamped.html" %}
 {% load static %}
-
-{% block title %}Trang chủ - {{ user.nhanvien.ho_ten }}{% endblock %}
+{% load humanize %}
 
 {% block content %}
-<div class="space-y-6">
-    <div class="flex justify-between items-center">
-        <div>
-            {# CẢI TIẾN: Lời chào động #}
-            <h1 class="text-2xl font-bold">{{ loi_chao }}</h1>
-            <p class="text-lg text-base-content/80">{{ nhan_vien.ho_ten }}</p>
-        </div>
-        <div class="avatar">
-            <label for="qr_code_modal" class="cursor-pointer">
+<div class="p-4 space-y-6">
+
+    <div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <div class="flex items-center space-x-4"> {# Sử dụng flexbox để căn chỉnh ảnh và thông tin #}
+            <div class="avatar">
                 <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    {% if nhan_vien.anh_the %}
-                        <img src="{{ nhan_vien.anh_the.url }}" alt="Avatar">
-                    {% else %}
-                        {# Thay thế bằng một ảnh mặc định phù hợp hơn #}
-                        <img src="https://ui-avatars.com/api/?name={{ nhan_vien.ho_ten|urlencode }}&background=0D8ABC&color=fff" alt="Avatar">
-                    {% endif %}
+                    <img src="{% if nhan_vien.anh_the %}{{ nhan_vien.anh_the.url }}{% else %}{% static '/img/default-avatar.png' %}{% endif %}" alt="Ảnh thẻ nhân viên">
                 </div>
-            </label>
-        </div>
-    </div>
-
-    {% if messages %}
-        {% for message in messages %}
-        <div role="alert" class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'warning' %}alert-warning{% else %}alert-error{% endif %} shadow-md">
-            <i class="fas {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-triangle{% endif %}"></i>
-            <span>{{ message }}</span>
-        </div>
-        {% endfor %}
-    {% endif %}
-
-    {% if ca_truc_hien_tai %}
-    <div class="card bg-base-200 shadow-xl">
-        <div class="card-body">
-            <h2 class="card-title text-primary">Ca trực hiện tại của bạn</h2>
-            {# CẢI TIẾN: Hiển thị đầy đủ thông tin vị trí #}
-            <p class="font-bold text-lg">{{ ca_truc_hien_tai.vi_tri_chot.muc_tieu.ten_muc_tieu }}</p>
-            <div class="flex items-center text-base-content/70">
-                <i class="fas fa-map-marker-alt w-5 mr-2"></i>
-                <span>Vị trí: <b>{{ ca_truc_hien_tai.vi_tri_chot.ten_vi_tri }}</b></span>
             </div>
-            <div class="flex items-center text-base-content/70">
-                <i class="far fa-clock w-5 mr-2"></i>
-                <span>{{ ca_truc_hien_tai.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ ca_truc_hien_tai.ca_lam_viec.gio_ket_thuc|time:"H:i" }}</span>
+            <div>
+                {# Lời chào và Tên nằm trên cùng một dòng, hoặc tùy chỉnh font size/weight #}
+                <p class="text-lg font-semibold text-base-content/70">{{ loi_chao }} <span class="card-title text-2xl inline">{{ nhan_vien.ho_ten }}</span></p>
+                
+                {# Mã nhân viên riêng biệt, dễ nhìn #}
+                <p class="text-base-content/70 text-lg">Mã NV: <span class="font-semibold">{{ nhan_vien.ma_nhan_vien }}</span></p>
             </div>
-            
-            {# CẢI TIẾN: Hiển thị trạng thái check-in rõ ràng hơn #}
-            {% if ca_truc_hien_tai.chamcong %}
-                <div class="divider">Trạng thái</div>
-                <div class="flex justify-around text-center">
-                    <div>
-                        <div class="font-semibold text-success">Check-in</div>
-                        <div class="text-xs">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_in|date:"H:i" }}</div>
-                    </div>
-                    {% if ca_truc_hien_tai.chamcong.thoi_gian_check_out %}
-                    <div>
-                        <div class="font-semibold text-error">Check-out</div>
-                        <div class="text-xs">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_out|date:"H:i" }}</div>
-                    </div>
-                    {% endif %}
-                </div>
-            {% endif %}
-
-            <div class="card-actions justify-end mt-4">
-                {% if not ca_truc_hien_tai.chamcong %}
-                    <button class="btn btn-primary w-full" onclick="checkin_modal.showModal()">
-                        <i class="fas fa-sign-in-alt"></i> Bắt đầu ca (Check-in)
-                    </button>
-                {% elif not ca_truc_hien_tai.chamcong.thoi_gian_check_out %}
-                     <button class="btn btn-error w-full" onclick="checkout_modal.showModal()">
-                        <i class="fas fa-sign-out-alt"></i> Kết thúc ca (Check-out)
-                    </button>
-                {% else %}
-                     <div class="btn btn-disabled w-full">
-                        <i class="fas fa-check-circle"></i> Đã hoàn thành ca
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    {% else %}
-        <div class="card bg-base-200 shadow-xl">
-            <div class="card-body items-center text-center">
-                <i class="fas fa-bed text-4xl text-base-content/50 mb-3"></i>
-                <h2 class="card-title">Bạn không có ca trực nào.</h2>
-                <p>Hãy nghỉ ngơi và chuẩn bị cho ca tiếp theo!</p>
-            </div>
-        </div>
-    {% endif %}
-
-    <div>
-        <h2 class="text-lg font-semibold mb-3">Hành động nhanh</h2>
-        <div class="grid grid-cols-2 gap-4">
-            <a href="{% url 'operations:bao_cao_su_co' %}" class="btn btn-error h-24 flex-col">
-                <i class="fas fa-exclamation-triangle text-2xl"></i>
-                <span class="font-semibold">Báo cáo Sự cố</span>
-            </a>
-            <a href="{% url 'inspection:mobile_tuan_tra' %}" class="btn btn-info h-24 flex-col">
-                <i class="fas fa-clipboard-check text-2xl"></i>
-                <span class="font-semibold">Tuần tra</span>
-            </a>
         </div>
     </div>
 </div>
 
-{# CẢI TIẾN: Modal hiển thị mã QR cá nhân #}
-<dialog id="qr_code_modal" class="modal">
-    <div class="modal-box text-center">
-        <h3 class="font-bold text-lg">Mã QR của bạn</h3>
-        <p class="py-2 text-sm text-base-content/70">Dùng mã này để thanh tra viên quét khi kiểm tra.</p>
-        <img src="data:image/png;base64,{{ qr_code_base64 }}" alt="Mã QR cá nhân" class="mx-auto my-4 rounded-lg shadow-lg">
-        <p class="font-bold">{{ nhan_vien.ho_ten }}</p>
-        <p>{{ nhan_vien.ma_nhan_vien }}</p>
-        <div class="modal-action">
-            <form method="dialog">
-                <button class="btn">Đóng</button>
-            </form>
+    {% if error %}
+    <div role="alert" class="alert alert-error">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <span>
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </span>
+    </div>
+    {% endif %}
+
+    {% if ca_truc_hien_tai %}
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title text-primary"><i class="fas fa-calendar-check mr-2"></i>Ca trực hiện tại</h2>
+            <div class="space-y-2 mt-2 text-base-content">
+                <p><span class="font-semibold w-24 inline-block">Mục tiêu:</span> {{ ca_truc_hien_tai.vi_tri_chot.muc_tieu.ten_muc_tieu }}</p>
+                <p><span class="font-semibold w-24 inline-block">Vị trí:</span> {{ ca_truc_hien_tai.vi_tri_chot.ten_vi_tri }}</p>
+                <p><span class="font-semibold w-24 inline-block">Thời gian:</span> {{ ca_truc_hien_tai.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ ca_truc_hien_tai.ca_lam_viec.gio_ket_thuc|time:"H:i" }}</p>
+                
+                <div class="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-base-200">
+                    <div class="text-center">
+                        <p class="font-semibold text-success">Check-in</p>
+                        {% if ca_truc_hien_tai.chamcong and ca_truc_hien_tai.chamcong.thoi_gian_check_in %}
+                            <p class="text-2xl font-bold font-mono">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_in|time:"H:i" }}</p>
+                            <p class="text-xs text-base-content/70">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_in|date:"d/m/Y" }}</p>
+                        {% else %}
+                            <p class="text-2xl font-bold font-mono text-gray-400">--:--</p>
+                            <button onclick="check_in_modal.showModal()" class="btn btn-sm btn-success mt-2">Chấm công vào</button>
+                        {% endif %}
+                    </div>
+                    <div class="text-center">
+                        <p class="font-semibold text-error">Check-out</p>
+                        {% if ca_truc_hien_tai.chamcong and ca_truc_hien_tai.chamcong.thoi_gian_check_out %}
+                            <p class="text-2xl font-bold font-mono">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_out|time:"H:i" }}</p>
+                            <p class="text-xs text-base-content/70">{{ ca_truc_hien_tai.chamcong.thoi_gian_check_out|date:"d/m/Y" }}</p>
+                        {% else %}
+                            <p class="text-2xl font-bold font-mono text-gray-400">--:--</p>
+                            <button {% if not ca_truc_hien_tai.chamcong or not ca_truc_hien_tai.chamcong.thoi_gian_check_in %}disabled{% endif %} onclick="check_out_modal.showModal()" class="btn btn-sm btn-error mt-2">Chấm công ra</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</dialog>
+    {% else %}
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body text-center">
+            <i class="fas fa-bed text-4xl text-info mx-auto mb-4"></i>
+            <h2 class="card-title justify-center">Ngoài ca trực</h2>
+            <p>Bạn hiện không được phân công trong ca trực nào.</p>
+        </div>
+    </div>
+    {% endif %}
 
-{# CẢI TIẾN: Thêm xác nhận trước khi check-out #}
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+            <h2 class="card-title">Mã QR của bạn</h2>
+            <p>Dùng mã này để quét tại các điểm tuần tra.</p>
+            <img src="data:image/png;base64,{{ qr_code_base64 }}" alt="QR Code" class="w-48 h-48 mt-2 rounded-lg">
+        </div>
+    </div>
+</div>
+
 {% if ca_truc_hien_tai %}
-<dialog id="checkin_modal" class="modal">
+<dialog id="check_in_modal" class="modal">
   <div class="modal-box">
     <h3 class="font-bold text-lg">Xác nhận Check-in</h3>
-    <p class="py-4">Vui lòng chụp ảnh selfie để xác thực ca làm việc.</p>
+    <p class="py-4">Vui lòng chụp ảnh selfie tại vị trí để xác nhận chấm công vào ca.</p>
     <form method="post" action="{% url 'operations:check_in' ca_truc_hien_tai.id %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <img id="checkin_preview" class="w-full rounded-lg mb-4 hidden" />
-        <input type="file" name="anh_check_in" class="file-input file-input-bordered w-full" accept="image/*" capture="user" required onchange="previewImage(this, 'checkin_preview');">
+        {{ checkin_form.as_p }}
         <div class="modal-action">
+            <button type="submit" class="btn btn-success">Xác nhận</button>
             <form method="dialog">
-                <button type="submit" class="btn btn-primary">Xác nhận</button>
                 <button class="btn">Hủy</button>
             </form>
         </div>
     </form>
   </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
 </dialog>
 
-<dialog id="checkout_modal" class="modal">
-    <div class="modal-box">
-        <h3 class="font-bold text-lg">Xác nhận Kết thúc ca</h3>
-        <p class="py-4">Bạn có chắc chắn muốn check-out và kết thúc ca làm việc hiện tại không?</p>
-        <form method="post" action="{% url 'operations:check_out' ca_truc_hien_tai.id %}" enctype="multipart/form-data">
-            {% csrf_token %}
-            <img id="checkout_preview" class="w-full rounded-lg mb-4 hidden" />
-            <input type="file" name="anh_check_out" class="file-input file-input-bordered w-full" accept="image/*" capture="user" required onchange="previewImage(this, 'checkout_preview');">
-            <div class="modal-action">
-                <form method="dialog">
-                    <button type="submit" class="btn btn-error">Chắc chắn</button>
-                    <button class="btn">Hủy</button>
-                </form>
-            </div>
-        </form>
-    </div>
+<dialog id="check_out_modal" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Xác nhận Check-out</h3>
+    <p class="py-4">Vui lòng chụp ảnh selfie tại vị trí để xác nhận chấm công ra ca.</p>
+    <form method="post" action="{% url 'operations:check_out' ca_truc_hien_tai.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ checkout_form.as_p }}
+        <div class="modal-action">
+          <button type="submit" class="btn btn-error">Xác nhận</button>
+          <form method="dialog">
+            <button class="btn">Hủy</button>
+          </form>
+        </div>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
 </dialog>
 {% endif %}
-{% endblock %}
 
-{% block extra_js %}
-<script>
-// Hàm xem trước ảnh selfie (giữ nguyên)
-function previewImage(input, previewId) {
-    const preview = document.getElementById(previewId);
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            preview.classList.remove('hidden');
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-</script>
 {% endblock %}
