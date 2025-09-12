@@ -1,17 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="vi" data-theme="dark"> <head>
+<html lang="vi" data-theme="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Bảng điều khiển{% endblock %} | {{ company.ten_cong_ty|default:"Hệ thống" }}</title>
     
     <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     
     {% block extra_css %}{% endblock %}
 </head>
 <body class="bg-base-200" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+    {% if messages %}
+    <div class="toast toast-top toast-end" style="z-index: 10000;">
+        {% for message in messages %}
+            <div class="alert 
+                {% if message.tags == 'success' %} alert-success
+                {% elif message.tags == 'warning' %} alert-warning
+                {% elif message.tags == 'error' %} alert-danger
+                {% else %} alert-info {% endif %}">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span>{{ message }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+        // Tự động ẩn các message của Django sau 5 giây
+        setTimeout(function() {
+            const toastContainer = document.querySelector('.toast');
+            if (toastContainer) {
+                toastContainer.style.transition = 'opacity 0.5s ease';
+                toastContainer.style.opacity = '0';
+                setTimeout(() => toastContainer.remove(), 500);
+            }
+        }, 5000);
+    </script>
+    {% endif %}
 
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -24,7 +52,7 @@
                     </label>
                 </div>
                 <div class="flex-1">
-                    <a class="btn btn-ghost text-xl">{% block page_title %}Dashboard{% endblock %}</a>
+                    <div class="text-xl font-bold px-4">{% block page_title %}Dashboard{% endblock %}</div>
                 </div>
                 <div class="flex-none gap-2">
                     <div class="dropdown dropdown-end">
@@ -34,12 +62,12 @@
                             </div>
                         </label>
                         <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-300 rounded-box w-52">
-                            <li><a>Xin chào, {{ user.username }}</a></li>
-                            <li><a href="{% url 'admin:index' %}">Cài đặt</a></li>
+                            <li class="menu-title"><span>Xin chào, {{ user.username }}</span></li>
+                            <li><a href="{% url 'admin:index' %}"><i class="fas fa-cog w-4 mr-2"></i>Cài đặt</a></li>
                             <li>
-                                <form action="{% url 'logout' %}" method="post">
+                                <form action="{% url 'main:logout' %}" method="post" class="w-full">
                                     {% csrf_token %}
-                                    <button type="submit">Đăng xuất</button>
+                                    <button type="submit" class="btn btn-ghost btn-sm justify-start w-full font-normal"><i class="fas fa-sign-out-alt w-4 mr-2"></i>Đăng xuất</button>
                                 </form>
                             </li>
                         </ul>
@@ -48,8 +76,7 @@
             </div>
             
             <main class="flex-grow p-4 md:p-6">
-                {% block content %}
-                {% endblock %}
+                {% block content %}{% endblock %}
             </main>
 
         </div> 
@@ -62,34 +89,94 @@
     <dialog id="htmx-modal" class="modal"></dialog>
 
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-
-    <script>
-        // Gán phần tử dialog vào một biến toàn cục để dễ gọi từ các template con
-        const htmx_modal = document.getElementById("htmx-modal");
-
-        // Xử lý sự kiện đóng modal khi HTMX đã swap xong content
-        // Ví dụ: khi lưu form thành công, view không trả về gì, modal sẽ tự đóng.
-        htmx.on("htmx:afterSwap", (e) => {
-            if (e.detail.target.id === "htmx-modal") {
-                if (!e.detail.xhr.response) {
-                    htmx_modal.close();
-                }
-            }
-        });
-
-        // Xử lý kết nối WebSocket cho thông báo
-        {% if user.is_staff %}
-            const notificationSocket = new WebSocket('ws://' + window.location.host + '/ws/notifications/');
-            
-            notificationSocket.onmessage = function(e) {
-                const data = JSON.parse(e.data);
-                // (Trong tương lai, chúng ta sẽ hiển thị thông báo đẹp hơn thay vì alert)
-                alert('Thông báo mới: ' + data.message); 
-            };
-        {% endif %}
-    </script>
     
     {% block extra_js %}{% endblock %}
-    
-</body>
+
+    {% if user.is_authenticated and user.is_staff %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- HTMX Modal Logic ---
+            const htmxModal = document.getElementById("htmx-modal");
+            htmx.on("htmx:afterSwap", (e) => {
+                if (e.detail.target.id === "htmx-modal" && !e.detail.xhr.response) {
+                    htmxModal.close();
+                }
+            });
+
+            // --- Real-time Notification Logic ---
+            const toastContainer = document.createElement('div');
+            toastContainer.className = 'toast toast-top toast-end';
+            toastContainer.style.zIndex = '9999'; // Đảm bảo toast nổi lên trên
+            document.body.appendChild(toastContainer);
+
+            function showNotificationToast(notification) {
+                const toastId = `toast-${Date.now()}`;
+                const toastWrapper = document.createElement('div');
+                
+                let toastHtml = `
+                    <div id="${toastId}" class="alert alert-info shadow-lg">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h3 class="font-bold">${notification.title || 'Thông báo mới!'}</h3>
+                                <div class="text-xs">${notification.body || ''}</div>
+                            </div>
+                        </div>
+                `;
+
+                if (notification.url) {
+                    toastHtml += `
+                        <div class="flex-none">
+                            <a href="${notification.url}" class="btn btn-sm btn-primary">Xem</a>
+                        </div>
+                    `;
+                }
+                
+                toastHtml += '</div>';
+                toastWrapper.innerHTML = toastHtml;
+                toastContainer.appendChild(toastWrapper);
+
+                // Hiệu ứng và tự động xóa
+                setTimeout(() => {
+                    const toastEl = document.getElementById(toastId);
+                    if (toastEl) {
+                        toastEl.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        toastEl.style.opacity = '0';
+                        toastEl.style.transform = 'translateX(20px)';
+                        setTimeout(() => toastEl.parentElement.remove(), 500);
+                    }
+                }, 7000);
+            }
+
+            function connectWebSocket() {
+                const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+                const notificationSocket = new WebSocket(
+                    `${protocol}://${window.location.host}/ws/notifications/`
+                );
+
+                notificationSocket.onmessage = function(e) {
+                    const data = JSON.parse(e.data);
+                    if (data.type === 'notification' && data.payload) {
+                        showNotificationToast(data.payload);
+                    }
+                };
+
+                notificationSocket.onclose = function(e) {
+                    console.error('Notification socket closed. Reconnecting in 5 seconds...');
+                    setTimeout(connectWebSocket, 5000);
+                };
+
+                notificationSocket.onerror = function(err) {
+                    console.error('Socket error:', err);
+                    notificationSocket.close();
+                };
+
+                console.log("Notification socket connected.");
+            }
+            
+            connectWebSocket();
+        });
+    </script>
+    {% endif %}
+    </body>
 </html>

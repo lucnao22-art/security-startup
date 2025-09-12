@@ -71,7 +71,7 @@ MIDDLEWARE = [
 # ==============================================================================
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
-ASGI_APPLICATION = "config.asgi.application"
+ASGI_APPLICATION = "config.routing.application"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ==============================================================================
@@ -149,7 +149,7 @@ CHANNEL_LAYERS = {
 }
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1"]
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+NPM_BIN_PATH = config('NPM_BIN_PATH', default='npm')
 
 # ==============================================================================
 # 11. CẤU HÌNH GIAO DIỆN ADMIN (JAZZMIN)
@@ -249,3 +249,4 @@ LOGGING = {
         "django": {"handlers": ["console", "file"], "level": "INFO", "propagate": True,},
     },
 }
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

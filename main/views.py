@@ -2,57 +2,92 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from main.models import CompanyProfile
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import messages
 
-# --- PHẦN NÀY ĐƯỢC GIỮ NGUYÊN ---
-def homepage_view(request):
-    return render(request, "main/homepage.html")
+# --- View trang chủ và xử lý đăng nhập (Giữ nguyên cấu trúc) ---
+def homepage(request):
+    """
+    Hiển thị trang chủ/đăng nhập.
+    - Nếu người dùng đã đăng nhập, chuyển hướng họ tới hub.
+    - Xử lý form đăng nhập khi người dùng gửi thông tin (POST request).
+    """
+    if request.user.is_authenticated:
+        return redirect('main:dashboard_hub')
 
-# --- PHẦN NÀY ĐÃ ĐƯỢC CHỈNH SỬA ---
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('main:dashboard_hub')
+            else:
+                messages.error(request, "Tên đăng nhập hoặc mật khẩu không đúng.")
+        else:
+            messages.error(request, "Tên đăng nhập hoặc mật khẩu không đúng.")
+    
+    form = AuthenticationForm()
+    return render(request, "main/homepage.html", {'form': form})
+
+
+# --- NÂNG CẤP: Tái cấu trúc view điều phối để dễ mở rộng ---
 @login_required
 def dashboard_hub_view(request):
     """
-    View này hoạt động như một trung tâm điều phối.
-    Nó kiểm tra vai trò và phòng ban của người dùng để chuyển hướng đến dashboard phù hợp.
+    Hoạt động như một trung tâm điều phối, chuyển hướng người dùng đến dashboard phù hợp
+    dựa trên vai trò và phòng ban của họ.
     """
     user = request.user
-    
-    # Ưu tiên Superuser, sẽ luôn thấy dashboard tổng quan (Giữ nguyên)
+
+    # Superuser luôn được ưu tiên vào dashboard quản trị tổng quan
     if user.is_superuser:
         return redirect("dashboard:dashboard_view")
 
-    try:
-        # Lấy thông tin nhân viên từ tài khoản user (Giữ nguyên)
+    # Ánh xạ tên phòng ban tới URL dashboard tương ứng.
+    # -> Dễ dàng thêm phòng ban mới ở đây trong tương lai.
+    PHONG_BAN_DASHBOARDS = {
+        "Phòng Vận hành": "operations:mobile_dashboard",
+        "Phòng Kinh doanh": "clients:dashboard-kinh-doanh",
+        # Ví dụ: "Phòng Kế toán": "accounting:dashboard_ketoan",
+    }
+    
+    # URL mặc định cho nhân viên không thuộc các phòng ban trên
+    DEFAULT_NHANVIEN_DASHBOARD = "operations:mobile_dashboard"
+    
+    # URL mặc định chung nếu không có điều kiện nào khớp
+    DEFAULT_DASHBOARD = "dashboard:dashboard_view"
+
+    # Kiểm tra an toàn xem user có phải là nhân viên không
+    if hasattr(user, 'nhanvien'):
         nhan_vien = user.nhanvien
         
-        # Kiểm tra phòng ban để điều hướng tới các dashboard chuyên biệt (Giữ nguyên)
-        if nhan_vien.phong_ban:
-            # SỬA ĐỔI: Chuyển hướng nhân viên "Phòng Vận hành" về giao diện mobile theo yêu cầu.
-            # Bạn có thể thay 'operations:mobile_dashboard' bằng tên URL đúng của giao diện mobile.
-            if nhan_vien.phong_ban.ten_phong_ban == "Phòng Vận hành":
-                return redirect("operations:mobile_dashboard")
-                
-            elif nhan_vien.phong_ban.ten_phong_ban == "Phòng Kinh doanh":
-                return redirect("clients:dashboard-kinh-doanh")
-            
-            # Bạn có thể thêm các điều kiện elif khác cho các phòng ban khác ở đây
+        # Nếu nhân viên có phòng ban và phòng ban đó có trong danh sách ánh xạ
+        if nhan_vien.phong_ban and nhan_vien.phong_ban.ten_phong_ban in PHONG_BAN_DASHBOARDS:
+            url_name = PHONG_BAN_DASHBOARDS[nhan_vien.phong_ban.ten_phong_ban]
+            return redirect(url_name)
+        
+        # Nếu không, chuyển đến dashboard mặc định của nhân viên
+        return redirect(DEFAULT_NHANVIEN_DASHBOARD)
 
-        # **THÊM MỚI:** Nếu là nhân viên nhưng không thuộc các phòng ban trên,
-        # chuyển hướng đến giao diện mobile mặc định.
-        # Đây là logic cốt lõi để giải quyết vấn đề của bạn.
-        return redirect("operations:mobile_dashboard")
+    # Nếu user không phải superuser và cũng không liên kết với nhân viên nào
+    return redirect(DEFAULT_DASHBOARD)
 
-    except AttributeError:
-        # Xử lý trường hợp tài khoản user không liên kết với nhân viên nào (Giữ nguyên)
-        pass
 
-    # Mặc định: Nếu không phải superuser và không phải nhân viên, hiển thị dashboard tổng quan (Giữ nguyên)
-    return redirect("dashboard:dashboard_view")
-# --- HÀM MỚI ĐỂ XỬ LÝ ĐĂNG XUẤT ---
+# --- View xử lý đăng xuất (Giữ nguyên cấu trúc) ---
 def logout_view(request):
     """
-    Xử lý yêu cầu đăng xuất của người dùng.
+    Xử lý yêu cầu đăng xuất của người dùng và hiển thị thông báo.
     """
     logout(request)
     messages.success(request, "Bạn đã đăng xuất thành công.")
-    return redirect('main:homepage') # Chuyển hướng về trang chủ
+    return redirect('main:homepage')
+# --- THÊM VIEW MỚI CHO TRANG THÔNG BÁO QUÊN MẬT KHẨU ---
+def password_reset_notice_view(request):
+    """
+    Hiển thị trang thông báo hướng dẫn người dùng liên hệ quản lý.
+    """
+    return render(request, 'main/password_reset_notice.html')

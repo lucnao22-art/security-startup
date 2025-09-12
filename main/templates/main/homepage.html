@@ -132,7 +132,7 @@
                     <i class="fas fa-shield-alt fa-4x mb-4" style="color: #00ffff;"></i>
                 {% endif %}
                 <h1 class="display-5">{{ company.ten_cong_ty|default:"CÔNG TY AN NINH" }}</h1>
-                <p class="lead mt-3">"An toàn của bạn là sứ mệnh của chúng tôi"</p>
+                <p class="lead mt-3">"Vì bình yên cuộc sống !"</p>
             </div>
         </div>
         
@@ -145,7 +145,7 @@
                 </div>
             {% endif %}
             
-            <form method="post" action="{% url 'login' %}">
+            <form action="{% url 'main:homepage' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.GET.next }}">
                 
@@ -169,7 +169,7 @@
                 
                 {# --- NÂNG CẤP: Thêm link "Quên mật khẩu?" --- #}
                 <div class="text-center mt-3">
-                    <a href="{% url 'password_reset' %}" class="text-white-50" style="text-decoration: none;">Quên mật khẩu?</a>
+                    <a href="{% url 'main:password_reset' %}" class="text-white-50" style="text-decoration: none;">Quên mật khẩu?</a>
                 </div>
             </form>
         </div>

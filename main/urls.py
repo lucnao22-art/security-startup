@@ -1,14 +1,20 @@
 # file: main/urls.py
+
 from django.urls import path
-from django.contrib.auth import views as auth_views
 from . import views
 
 app_name = "main"
 
 urlpatterns = [
-    # Đây là URL sẽ render trang đăng nhập của bạn
-    path("", auth_views.LoginView.as_view(template_name="main/homepage.html"), name="homepage"),
-    
-    path("hub/", views.dashboard_hub_view, name="dashboard-hub"),
+    # URL cho trang chủ và đăng nhập
+    path("", views.homepage, name="homepage"),
+
+    # URL cho trang điều phối (hub) sau khi đăng nhập
+    path("hub/", views.dashboard_hub_view, name="dashboard_hub"),
+
+    # URL cho đăng xuất
     path("logout/", views.logout_view, name="logout"),
+
+    # URL cho trang thông báo quên mật khẩu (ĐÃ ĐƠN GIẢN HÓA)
+    path('password-reset-notice/', views.password_reset_notice_view, name='password_reset'),
 ]
