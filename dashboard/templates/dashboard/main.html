@@ -7,50 +7,63 @@
 {% block content %}
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
     
-    <div class="stat bg-base-100 shadow rounded-box">
+    <a href="{% url 'admin:users_nhanvien_changelist' %}" class="stat bg-base-100 shadow rounded-box hover:bg-base-200 transition-colors cursor-pointer">
         <div class="stat-figure text-primary">
             <i class="fas fa-users text-3xl"></i>
         </div>
         <div class="stat-title">Nhân viên hoạt động</div>
         <div class="stat-value text-primary">{{ total_nhanvien|intcomma }}</div>
         <div class="stat-desc">Tổng số nhân sự trong hệ thống</div>
-    </div>
+    </a>
     
-    <div class="stat bg-base-100 shadow rounded-box">
+    <a href="{% url 'admin:clients_khachhangtiemnang_changelist' %}" class="stat bg-base-100 shadow rounded-box hover:bg-base-200 transition-colors cursor-pointer">
         <div class="stat-figure text-secondary">
             <i class="fas fa-handshake text-3xl"></i>
         </div>
         <div class="stat-title">Khách hàng</div>
         <div class="stat-value text-secondary">{{ total_khachhang|intcomma }}</div>
         <div class="stat-desc">Số lượng khách hàng đang hợp tác</div>
-    </div>
+    </a>
     
-    <div class="stat bg-base-100 shadow rounded-box">
+    <a href="{% url 'admin:operations_baocaosuco_changelist' %}" class="stat bg-base-100 shadow rounded-box hover:bg-base-200 transition-colors cursor-pointer">
         <div class="stat-figure text-accent">
             <i class="fas fa-exclamation-triangle text-3xl"></i>
         </div>
         <div class="stat-title">Sự cố (30 ngày)</div>
         <div class="stat-value text-accent">{{ su_co_gan_day|intcomma }}</div>
         <div class="stat-desc">Tổng số sự cố được báo cáo</div>
-    </div>
+    </a>
     
-    <div class="stat bg-base-100 shadow rounded-box">
+    <a href="{% url 'admin:operations_phancongcatruc_changelist' %}" class="stat bg-base-100 shadow rounded-box hover:bg-base-200 transition-colors cursor-pointer">
         <div class="stat-figure text-info">
             <i class="fas fa-calendar-check text-3xl"></i>
         </div>
         <div class="stat-title">Ca trực hôm nay</div>
         <div class="stat-value text-info">{{ ca_truc_hom_nay|intcomma }}</div>
         <div class="stat-desc">Tổng số ca đã được phân công</div>
-    </div>
+    </a>
 </div>
 
 <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-6">
     
-    <div class="xl:col-span-2 card bg-base-100 shadow-xl">
-        <div class="card-body">
-            <h2 class="card-title">Hoạt động 7 ngày qua</h2>
-            <div class="h-96">
-                <canvas id="activityChart"></canvas>
+    <div class="xl:col-span-2 space-y-6">
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Hoạt động 7 ngày qua</h2>
+                <div class="h-96">
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">Thông báo mới nhất</h2>
+                <div id="notification-container" class="space-y-2 max-h-60 overflow-y-auto">
+                    <div class="text-center text-opacity-60 py-4" id="no-notification-placeholder">
+                        Chưa có thông báo mới.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -62,16 +75,20 @@
                 <table class="table">
                     <tbody>
                     {% for sc in cac_su_co_moi %}
-                        <tr>
+                        <tr class="hover">
                             <td>
-                                <div class="font-bold">{{ sc.tieu_de }}</div>
-                                <div class="text-sm opacity-70">
-                                    {{ sc.ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}
-                                </div>
+                                <a href="{% url 'admin:operations_baocaosuco_change' sc.id %}" class="block">
+                                    <div class="font-bold">{{ sc.tieu_de }}</div>
+                                    <div class="text-sm opacity-70">
+                                        {{ sc.ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}
+                                    </div>
+                                </a>
                             </td>
                             <td class="text-right">
-                                <span class="badge badge-error badge-sm">{{ sc.get_trang_thai_display }}</span> <br>
-                                <span class="text-xs">{{ sc.thoi_gian_bao_cao|timesince }} trước</span>
+                                <a href="{% url 'admin:operations_baocaosuco_change' sc.id %}" class="block">
+                                    <span class="badge badge-error badge-sm">{{ sc.get_trang_thai_display }}</span> <br>
+                                    <span class="text-xs">{{ sc.thoi_gian_bao_cao|timesince }} trước</span>
+                                </a>
                             </td>
                         </tr>
                     {% empty %}
@@ -90,8 +107,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+// --- Phần 1: Xử lý Biểu đồ (Không thay đổi) ---
 document.addEventListener("DOMContentLoaded", function() {
-    // Lấy dữ liệu từ Django context mà view đã cung cấp
     const labels = JSON.parse('{{ chart_labels|safe }}');
     const patrolData = JSON.parse('{{ tuan_tra_data|safe }}');
     const incidentData = JSON.parse('{{ su_co_data|safe }}');
@@ -99,21 +116,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const ctx = document.getElementById('activityChart');
     if (ctx) {
         new Chart(ctx, {
-            type: 'bar', // Loại biểu đồ cột
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [
                     {
                         label: 'Lượt Tuần tra',
                         data: patrolData,
-                        backgroundColor: 'rgba(59, 130, 246, 0.5)', // Màu xanh dương
+                        backgroundColor: 'rgba(59, 130, 246, 0.5)',
                         borderColor: 'rgba(59, 130, 246, 1)',
                         borderWidth: 1
                     },
                     {
                         label: 'Sự cố',
                         data: incidentData,
-                        backgroundColor: 'rgba(239, 68, 68, 0.5)', // Màu đỏ
+                        backgroundColor: 'rgba(239, 68, 68, 0.5)',
                         borderColor: 'rgba(239, 68, 68, 1)',
                         borderWidth: 1
                     }
@@ -124,15 +141,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     y: {
                         beginAtZero: true,
                         ticks: {
-                            stepSize: 1, // Đảm bảo trục Y chỉ hiển thị số nguyên
-                            color: 'hsl(var(--bc) / 0.6)' // Lấy màu chữ từ biến CSS của daisyUI
+                            stepSize: 1,
+                            color: 'hsl(var(--bc) / 0.6)'
                         },
                         grid: {
-                            color: 'hsl(var(--b2) / 0.6)' // Lấy màu lưới từ biến CSS của daisyUI
+                            color: 'hsl(var(--b2) / 0.6)'
                         }
                     },
                     x: {
-                         ticks: {
+                          ticks: {
                             color: 'hsl(var(--bc) / 0.6)'
                         },
                         grid: {
@@ -145,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 plugins: {
                     legend: {
                         labels: {
-                            color: 'hsl(var(--bc) / 0.8)' // Lấy màu chữ chú thích
+                            color: 'hsl(var(--bc) / 0.8)'
                         }
                     }
                 }
@@ -153,5 +170,60 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+// --- Phần 2: Xử lý Thông báo Real-time (Đã được nâng cấp và sửa lỗi) ---
+try {
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const notificationSocket = new WebSocket(
+        protocol + '//' + window.location.host + '/ws/notifications/'
+    );
+
+    notificationSocket.onopen = function(e) {
+        console.log('Đã kết nối tới kênh thông báo.');
+    };
+
+    notificationSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        if (data.type === 'notification') {
+            const notification = data.payload;
+            const notificationContainer = document.getElementById('notification-container');
+            const placeholder = document.getElementById('no-notification-placeholder');
+
+            // Ẩn thông báo "chưa có" nếu nó đang hiển thị
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+
+            // Tạo thẻ a (link) để bao bọc toàn bộ thông báo
+            const link = document.createElement('a');
+            link.href = notification.url; // URL từ server
+            link.className = 'notification-link block'; // Thêm class để dễ dàng style
+
+            // Tạo nội dung HTML cho thông báo
+            const notificationHTML = `
+                <div class="alert alert-info shadow-lg hover:shadow-xl hover:border-primary transition-all duration-300 cursor-pointer">
+                    <div class="flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold">${notification.title}</h3>
+                        <div class="text-xs">${notification.body}</div>
+                    </div>
+                </div>
+            `;
+
+            // Đặt nội dung vào link và thêm vào container
+            link.innerHTML = notificationHTML;
+            notificationContainer.prepend(link); // Thêm vào đầu danh sách
+        }
+    };
+
+    notificationSocket.onclose = function(e) {
+        console.error('Kết nối tới kênh thông báo đã đóng.');
+    };
+} catch (error) {
+    console.error("Không thể kết nối WebSocket:", error);
+}
+
 </script>
 {% endblock extra_js %}

@@ -12,11 +12,8 @@ from .models import (
 )
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
-from users.models import NhanVien
-from clients.models import MucTieu
 
-
-# --- CÁC LỚP RESOURCE ĐỂ XUẤT EXCEL (GIỮ NGUYÊN VÀ HOÀN THIỆN) ---
+# --- CÁC LỚP RESOURCE ĐỂ XUẤT EXCEL ---
 
 class PhanCongCaTrucResource(resources.ModelResource):
     nhan_vien = resources.Field(
@@ -67,6 +64,7 @@ class ViTriChotAdmin(admin.ModelAdmin):
     list_display = ("ten_vi_tri", "muc_tieu")
     search_fields = ("ten_vi_tri", "muc_tieu__ten_muc_tieu")
     list_filter = ("muc_tieu",)
+    autocomplete_fields = ('muc_tieu',)
 
 
 @admin.register(CaLamViec)
@@ -76,8 +74,8 @@ class CaLamViecAdmin(admin.ModelAdmin):
 
 
 @admin.register(PhanCongCaTruc)
-class PhanCongCaTrucAdmin(ImportExportModelAdmin): # Kế thừa ImportExportModelAdmin
-    resource_class = PhanCongCaTrucResource # Liên kết với Resource
+class PhanCongCaTrucAdmin(ImportExportModelAdmin):
+    resource_class = PhanCongCaTrucResource
     list_display = (
         "ngay_truc",
         "get_muc_tieu",
@@ -89,15 +87,16 @@ class PhanCongCaTrucAdmin(ImportExportModelAdmin): # Kế thừa ImportExportMod
     search_fields = ("nhan_vien__ho_ten", "vi_tri_chot__ten_vi_tri", "nhan_vien__ma_nhan_vien")
     autocomplete_fields = ["nhan_vien", "vi_tri_chot", "ca_lam_viec"]
     list_select_related = ("vi_tri_chot__muc_tieu", "nhan_vien", "ca_lam_viec")
+    list_per_page = 25
 
     @admin.display(description="Mục tiêu", ordering="vi_tri_chot__muc_tieu")
     def get_muc_tieu(self, obj):
-        return obj.vi_tri_chot.muc_tieu.ten_muc_tieu
+        return obj.vi_tri_chot.muc_tieu
 
 
 @admin.register(ChamCong)
-class ChamCongAdmin(ImportExportModelAdmin): # Kế thừa ImportExportModelAdmin
-    resource_class = ChamCongResource # Liên kết với Resource
+class ChamCongAdmin(ImportExportModelAdmin):
+    resource_class = ChamCongResource
     list_display = (
         "get_nhan_vien",
         "get_muc_tieu",
@@ -106,7 +105,6 @@ class ChamCongAdmin(ImportExportModelAdmin): # Kế thừa ImportExportModelAdmi
         "thoi_gian_check_in",
         "thoi_gian_check_out",
         "xem_anh_check_in",
-        "xem_anh_check_out",
     )
     list_filter = ("ca_truc__ngay_truc", "ca_truc__vi_tri_chot__muc_tieu", "ca_truc__nhan_vien")
     search_fields = ("ca_truc__nhan_vien__ho_ten", "ca_truc__nhan_vien__ma_nhan_vien")
@@ -136,36 +134,73 @@ class ChamCongAdmin(ImportExportModelAdmin): # Kế thừa ImportExportModelAdmi
     def get_ca_lam_viec(self, obj):
         return obj.ca_truc.ca_lam_viec
 
-    @admin.display(description='Ảnh Check-in')
+    @admin.display(description='Ảnh')
     def xem_anh_check_in(self, obj):
+        html = ''
         if obj.anh_check_in:
-            return format_html('<a href="{0}" target="_blank"><img src="{0}" width="60" /></a>', obj.anh_check_in.url)
-        return "Chưa có"
-
-    @admin.display(description='Ảnh Check-out')
-    def xem_anh_check_out(self, obj):
+            html += f'<a href="{obj.anh_check_in.url}" target="_blank" title="Check-in"><img src="{obj.anh_check_in.url}" width="50" /></a>'
         if obj.anh_check_out:
-            return format_html('<a href="{0}" target="_blank"><img src="{0}" width="60" /></a>', obj.anh_check_out.url)
-        return "Chưa có"
+            html += f'<a href="{obj.anh_check_out.url}" target="_blank" title="Check-out"><img src="{obj.anh_check_out.url}" width="50" /></a>'
+        return format_html(html or "Chưa có")
 
 
 @admin.register(BaoCaoSuCo)
 class BaoCaoSuCoAdmin(admin.ModelAdmin):
     list_display = (
+        "hien_thi_anh_minh_hoa", # <-- TỐI ƯU MỚI
         "tieu_de",
-        "ca_truc",
-        "trang_thai",
-        "nguoi_chiu_trach_nhiem",
+        "get_nhan_vien_bao_cao",
+        "get_muc_tieu",
+        "colored_trang_thai",
         "thoi_gian_bao_cao",
     )
-    list_filter = ("trang_thai", "nguoi_chiu_trach_nhiem", "ca_truc__vi_tri_chot__muc_tieu")
-    search_fields = ("tieu_de", "ca_truc__nhan_vien__ho_ten")
+    list_display_links = ("tieu_de",)
+    list_filter = ("trang_thai", "ca_truc__vi_tri_chot__muc_tieu")
+    search_fields = ("tieu_de", "ca_truc__nhan_vien__ho_ten", "ca_truc__vi_tri_chot__muc_tieu__ten_muc_tieu")
     list_select_related = ('ca_truc__nhan_vien', 'ca_truc__vi_tri_chot__muc_tieu', 'nguoi_chiu_trach_nhiem')
+    autocomplete_fields = ('ca_truc', 'nguoi_nhan', 'nguoi_chiu_trach_nhiem')
+    
+    # --- HÀM MỚI ĐỂ HIỂN THỊ ẢNH THUMBNAIL ---
+    @admin.display(description="Ảnh")
+    def hien_thi_anh_minh_hoa(self, obj):
+        if obj.hinh_anh:
+            return format_html(
+                '<a href="{0}" target="_blank"><img src="{0}" width="60" height="60" style="object-fit: cover; border-radius: 5px;" /></a>', 
+                obj.hinh_anh.url
+            )
+        return "Không có"
+    # ---------------------------------------------
+
+    @admin.display(description="Nhân viên Báo cáo", ordering='ca_truc__nhan_vien')
+    def get_nhan_vien_bao_cao(self, obj):
+        return obj.ca_truc.nhan_vien
+
+    @admin.display(description="Mục tiêu", ordering='ca_truc__vi_tri_chot__muc_tieu')
+    def get_muc_tieu(self, obj):
+        return obj.ca_truc.vi_tri_chot.muc_tieu
+
+    @admin.display(description="Trạng thái", ordering='trang_thai')
+    def colored_trang_thai(self, obj):
+        colors = {
+            "MOI": "blue",
+            "DAXEM": "orange",
+            "DXL": "purple",
+            "DGQ": "green",
+            "LEOTHANG": "red",
+        }
+        color = colors.get(obj.trang_thai, "black")
+        return format_html(f'<b style="color: {color};">{obj.get_trang_thai_display()}</b>')
 
 
 @admin.register(BaoCaoDeXuat)
 class BaoCaoDeXuatAdmin(admin.ModelAdmin):
     list_display = ("tieu_de", "nhan_vien", "loai_bao_cao", "ngay_gui", "da_doc")
-    list_filter = ("loai_bao_cao", "da_doc")
+    list_filter = ("loai_bao_cao", "da_doc", "nhan_vien")
     search_fields = ("tieu_de", "nhan_vien__ho_ten")
     readonly_fields = ("nhan_vien", "loai_bao_cao", "tieu_de", "noi_dung", "ngay_gui")
+    list_display_links = ("tieu_de",)
+    actions = ['mark_as_read']
+
+    @admin.action(description='Đánh dấu là "Đã đọc"')
+    def mark_as_read(self, request, queryset):
+        queryset.update(da_doc=True)

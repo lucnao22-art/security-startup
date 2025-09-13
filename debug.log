@@ -15411,3 +15411,537 @@ INFO 2025-09-12 06:56:19,979 autoreload 28424 14860 D:\startup_bv\operations\adm
 INFO 2025-09-12 06:56:23,227 autoreload 24392 21616 Watching for file changes with StatReloader
 INFO 2025-09-12 07:06:37,470 autoreload 24392 21616 D:\startup_bv\operations\admin.py changed, reloading.
 INFO 2025-09-12 07:06:40,492 autoreload 28772 28076 Watching for file changes with StatReloader
+INFO 2025-09-12 21:23:17,307 autoreload 16968 26060 Watching for file changes with StatReloader
+INFO 2025-09-12 21:24:05,546 basehttp 16968 23008 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 21:24:05,734 basehttp 16968 23008 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:24:06,376 basehttp 16968 23008 "GET /dashboard/ HTTP/1.1" 200 29289
+INFO 2025-09-12 21:24:06,457 basehttp 16968 23008 "GET /static/css/dist/styles.css HTTP/1.1" 304 0
+INFO 2025-09-12 21:24:06,561 basehttp 16968 20604 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-09-12 21:24:06,812 basehttp 16968 23008 "GET /media/logos/logo-nen.png HTTP/1.1" 304 0
+INFO 2025-09-12 21:24:07,038 basehttp 16968 23008 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-09-12 21:24:07,099 basehttp 16968 23008 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-09-12 21:24:07,103 basehttp 16968 20604 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-09-12 21:24:07,271 log 16968 29156 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:07,274 basehttp 16968 29156 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:07,310 log 16968 20604 Not Found: /favicon.ico
+WARNING 2025-09-12 21:24:07,314 basehttp 16968 20604 "GET /favicon.ico HTTP/1.1" 404 18392
+WARNING 2025-09-12 21:24:12,491 log 16968 30396 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:12,494 basehttp 16968 30396 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:17,806 log 16968 5620 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:17,814 basehttp 16968 5620 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:23,843 log 16968 12116 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:23,845 basehttp 16968 12116 "GET /ws/notifications/ HTTP/1.1" 404 18417
+WARNING 2025-09-12 21:24:29,024 log 16968 24360 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:29,026 basehttp 16968 24360 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:34,772 log 16968 30668 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:34,779 basehttp 16968 30668 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:40,326 log 16968 29824 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:40,330 basehttp 16968 29824 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:45,835 log 16968 11836 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:45,839 basehttp 16968 11836 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:51,083 log 16968 6080 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:51,086 basehttp 16968 6080 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:24:57,113 log 16968 22120 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:24:57,116 basehttp 16968 22120 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:25:02,491 log 16968 4776 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:02,492 basehttp 16968 4776 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:08,533 log 16968 26344 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:08,534 basehttp 16968 26344 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:14,434 log 16968 20436 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:14,435 basehttp 16968 20436 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:20,513 log 16968 22288 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:20,514 basehttp 16968 22288 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:25:26,436 log 16968 13336 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:26,438 basehttp 16968 13336 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:32,481 log 16968 24188 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:32,482 basehttp 16968 24188 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:25:38,442 log 16968 7360 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:38,443 basehttp 16968 7360 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:44,423 log 16968 26256 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:44,424 basehttp 16968 26256 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:50,449 log 16968 7900 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:50,451 basehttp 16968 7900 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:25:56,449 log 16968 25640 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:25:56,450 basehttp 16968 25640 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:02,436 log 16968 28740 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:02,437 basehttp 16968 28740 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:08,465 log 16968 30356 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:08,467 basehttp 16968 30356 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:14,531 log 16968 5076 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:14,532 basehttp 16968 5076 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:26:20,505 log 16968 30320 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:20,506 basehttp 16968 30320 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:26,635 log 16968 10260 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:26,637 basehttp 16968 10260 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:32,646 log 16968 24044 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:32,647 basehttp 16968 24044 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:39,411 log 16968 14956 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:39,413 basehttp 16968 14956 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:47,023 log 16968 14020 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:47,024 basehttp 16968 14020 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:26:56,264 log 16968 24956 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:26:56,265 basehttp 16968 24956 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:02,962 log 16968 18160 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:02,963 basehttp 16968 18160 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:09,666 log 16968 27084 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:09,667 basehttp 16968 27084 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:15,417 log 16968 15936 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:15,418 basehttp 16968 15936 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:21,438 log 16968 13316 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:21,439 basehttp 16968 13316 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:27,419 log 16968 3284 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:27,421 basehttp 16968 3284 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:33,438 log 16968 27936 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:33,439 basehttp 16968 27936 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:39,440 log 16968 8584 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:39,441 basehttp 16968 8584 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:45,425 log 16968 18280 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:45,426 basehttp 16968 18280 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:51,455 log 16968 28868 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:51,456 basehttp 16968 28868 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:27:57,437 log 16968 27688 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:27:57,438 basehttp 16968 27688 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:03,428 log 16968 19944 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:03,430 basehttp 16968 19944 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:09,433 log 16968 24156 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:09,434 basehttp 16968 24156 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:15,459 log 16968 21876 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:15,460 basehttp 16968 21876 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:21,587 log 16968 29152 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:21,588 basehttp 16968 29152 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:27,604 log 16968 19032 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:27,605 basehttp 16968 19032 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:34,020 log 16968 27464 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:34,021 basehttp 16968 27464 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:39,844 log 16968 30288 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:39,845 basehttp 16968 30288 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:46,383 log 16968 21840 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:46,384 basehttp 16968 21840 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:28:54,061 log 16968 18428 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:28:54,062 basehttp 16968 18428 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:02,492 log 16968 23032 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:02,493 basehttp 16968 23032 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:12,582 log 16968 17744 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:12,583 basehttp 16968 17744 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:18,420 log 16968 24772 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:18,422 basehttp 16968 24772 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:24,421 log 16968 14888 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:24,422 basehttp 16968 14888 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:30,421 log 16968 29384 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:30,422 basehttp 16968 29384 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:36,431 log 16968 13008 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:36,432 basehttp 16968 13008 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:42,430 log 16968 9884 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:42,432 basehttp 16968 9884 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:48,433 log 16968 18036 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:48,434 basehttp 16968 18036 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:29:54,441 log 16968 25852 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:29:54,442 basehttp 16968 25852 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:30:00,432 log 16968 24048 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:00,433 basehttp 16968 24048 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:30:06,433 log 16968 15196 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:06,435 basehttp 16968 15196 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:30:12,439 log 16968 18164 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:12,440 basehttp 16968 18164 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:30:18,638 log 16968 23720 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:18,641 basehttp 16968 23720 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:30:24,715 log 16968 15532 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:24,717 basehttp 16968 15532 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:30:30,797 log 16968 14464 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:30,805 basehttp 16968 14464 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:30:36,996 log 16968 11376 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:36,998 basehttp 16968 11376 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:30:43,028 log 16968 25800 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:43,032 basehttp 16968 25800 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:30:49,671 log 16968 15376 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:49,674 basehttp 16968 15376 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:30:59,793 log 16968 6544 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:30:59,795 basehttp 16968 6544 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:31:09,302 log 16968 4628 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:31:09,305 basehttp 16968 4628 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:31:18,967 log 16968 28984 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:31:18,970 basehttp 16968 28984 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:31:26,840 log 16968 28896 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:31:26,846 basehttp 16968 28896 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:31:37,119 log 16968 24152 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:31:37,122 basehttp 16968 24152 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:31:45,023 log 16968 23948 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:31:45,031 basehttp 16968 23948 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:31:53,448 log 16968 22604 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:31:53,454 basehttp 16968 22604 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:00,537 log 16968 4536 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:00,538 basehttp 16968 4536 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:07,634 log 16968 17700 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:07,635 basehttp 16968 17700 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:15,431 log 16968 25208 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:15,433 basehttp 16968 25208 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:26,455 log 16968 16056 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:26,456 basehttp 16968 16056 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:36,319 log 16968 26488 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:36,320 basehttp 16968 26488 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:46,432 log 16968 19032 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:46,434 basehttp 16968 19032 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:32:56,877 log 16968 24428 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:32:56,878 basehttp 16968 24428 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:07,180 log 16968 24584 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:07,182 basehttp 16968 24584 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:16,960 log 16968 25232 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:16,963 basehttp 16968 25232 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:22,523 log 16968 12124 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:22,525 basehttp 16968 12124 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:28,534 log 16968 17204 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:28,537 basehttp 16968 17204 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:34,472 log 16968 19900 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:34,474 basehttp 16968 19900 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:33:40,424 log 16968 27816 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:40,425 basehttp 16968 27816 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:33:44,766 basehttp 16968 28252 "GET /dashboard/ HTTP/1.1" 200 33889
+WARNING 2025-09-12 21:33:45,503 log 16968 11844 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:45,505 basehttp 16968 11844 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:45,655 log 16968 1724 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:45,660 basehttp 16968 1724 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:33:50,949 log 16968 21204 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:50,952 basehttp 16968 21204 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:33:51,593 basehttp 16968 28252 "GET /admin/users/nhanvien/ HTTP/1.1" 200 88388
+INFO 2025-09-12 21:33:51,772 basehttp 16968 28252 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:33:55,623 basehttp 16968 28252 "GET /admin/clients/khachhangtiemnang/ HTTP/1.1" 200 72445
+INFO 2025-09-12 21:33:55,784 basehttp 16968 28252 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+WARNING 2025-09-12 21:33:58,219 log 16968 17432 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:33:58,221 basehttp 16968 17432 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:33:59,722 basehttp 16968 28252 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 76450
+INFO 2025-09-12 21:33:59,896 basehttp 16968 28252 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+WARNING 2025-09-12 21:34:04,082 log 16968 26852 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:34:04,085 basehttp 16968 26852 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:34:09,399 log 16968 30680 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:34:09,405 basehttp 16968 30680 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:34:14,837 log 16968 18328 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:34:14,876 basehttp 16968 18328 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:34:14,907 basehttp 16968 18328 - Broken pipe from ('127.0.0.1', 56552)
+WARNING 2025-09-12 21:34:20,536 log 16968 13364 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:34:20,580 basehttp 16968 13364 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:34:20,590 basehttp 16968 13364 - Broken pipe from ('127.0.0.1', 60536)
+WARNING 2025-09-12 21:34:27,004 log 16968 13944 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:34:27,012 basehttp 16968 13944 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:34:27,024 basehttp 16968 13944 - Broken pipe from ('127.0.0.1', 52121)
+WARNING 2025-09-12 21:34:33,358 log 16968 444 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:34:33,360 basehttp 16968 444 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:34:34,394 basehttp 16968 28252 "GET /admin/operations/baocaosuco/9/change/ HTTP/1.1" 200 961455
+INFO 2025-09-12 21:34:34,468 basehttp 16968 28252 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:49:14,009 basehttp 16968 28188 "GET /admin/operations/baocaosuco/9/change/ HTTP/1.1" 200 961455
+INFO 2025-09-12 21:49:14,115 basehttp 16968 12592 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:49:16,806 basehttp 16968 12592 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:49:16,928 basehttp 16968 12592 "GET /dashboard/ HTTP/1.1" 200 33941
+WARNING 2025-09-12 21:49:17,246 log 16968 17424 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:17,248 basehttp 16968 17424 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:49:17,307 log 16968 23180 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:17,308 basehttp 16968 23180 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:49:22,642 log 16968 27200 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:22,646 basehttp 16968 27200 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:49:22,650 basehttp 16968 27200 - Broken pipe from ('127.0.0.1', 51411)
+WARNING 2025-09-12 21:49:28,199 log 16968 27464 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:28,203 basehttp 16968 27464 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 21:49:33,695 log 16968 4584 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:33,704 basehttp 16968 4584 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:49:33,714 basehttp 16968 4584 - Broken pipe from ('127.0.0.1', 50955)
+WARNING 2025-09-12 21:49:39,084 log 16968 28160 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:39,094 basehttp 16968 28160 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:49:39,103 basehttp 16968 28160 - Broken pipe from ('127.0.0.1', 61780)
+INFO 2025-09-12 21:49:41,864 basehttp 16968 12592 - Broken pipe from ('127.0.0.1', 55528)
+WARNING 2025-09-12 21:49:44,778 log 16968 21164 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:44,784 basehttp 16968 21164 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:49:44,799 basehttp 16968 21164 - Broken pipe from ('127.0.0.1', 60763)
+WARNING 2025-09-12 21:49:50,179 log 16968 15532 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:50,186 basehttp 16968 15532 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:49:50,191 basehttp 16968 15532 - Broken pipe from ('127.0.0.1', 55422)
+WARNING 2025-09-12 21:49:55,924 log 16968 20212 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:49:55,927 basehttp 16968 20212 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:49:55,934 basehttp 16968 20212 - Broken pipe from ('127.0.0.1', 64359)
+INFO 2025-09-12 21:49:56,924 basehttp 16968 27872 - Broken pipe from ('127.0.0.1', 54316)
+WARNING 2025-09-12 21:50:01,323 log 16968 26596 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:50:01,339 basehttp 16968 26596 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:50:01,342 basehttp 16968 26596 - Broken pipe from ('127.0.0.1', 58967)
+WARNING 2025-09-12 21:50:07,072 log 16968 24656 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:50:07,081 basehttp 16968 24656 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:50:07,088 basehttp 16968 24656 - Broken pipe from ('127.0.0.1', 58295)
+WARNING 2025-09-12 21:50:12,525 log 16968 11936 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:50:12,534 basehttp 16968 11936 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 21:50:12,553 basehttp 16968 11936 - Broken pipe from ('127.0.0.1', 55063)
+WARNING 2025-09-12 21:50:18,725 log 16968 26364 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:50:18,745 basehttp 16968 26364 "GET /ws/notifications/ HTTP/1.1" 404 18417
+INFO 2025-09-12 21:50:18,750 basehttp 16968 26364 - Broken pipe from ('127.0.0.1', 57021)
+INFO 2025-09-12 21:50:19,678 basehttp 16968 7808 - Broken pipe from ('127.0.0.1', 55941)
+INFO 2025-09-12 21:50:22,900 basehttp 16968 22328 "GET /admin/ HTTP/1.1" 200 105571
+INFO 2025-09-12 21:50:30,045 basehttp 16968 22328 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 76452
+INFO 2025-09-12 21:50:30,478 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:50:51,972 basehttp 16968 27864 - Broken pipe from ('127.0.0.1', 52109)
+INFO 2025-09-12 21:50:59,639 basehttp 16968 15160 - Broken pipe from ('127.0.0.1', 61699)
+INFO 2025-09-12 21:51:00,616 basehttp 16968 30416 - Broken pipe from ('127.0.0.1', 53901)
+INFO 2025-09-12 21:51:10,060 basehttp 16968 22328 "GET /admin/operations/baocaosuco/9/change/ HTTP/1.1" 200 961457
+INFO 2025-09-12 21:51:10,142 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:52:08,925 basehttp 16968 22328 "GET /media/su_co/xilanh_d%C3%A0i.jpg HTTP/1.1" 200 106816
+INFO 2025-09-12 21:52:25,775 basehttp 16968 22328 "GET /admin/operations/baocaosuco/9/change/ HTTP/1.1" 200 961455
+INFO 2025-09-12 21:53:39,235 basehttp 16968 22328 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 76450
+INFO 2025-09-12 21:53:39,334 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:55:48,511 basehttp 16968 22328 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:55:48,600 basehttp 16968 22328 "GET /dashboard/ HTTP/1.1" 200 33930
+WARNING 2025-09-12 21:55:48,784 log 16968 27428 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:55:48,785 basehttp 16968 27428 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:55:48,845 log 16968 27768 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:55:48,847 basehttp 16968 27768 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:55:53,916 log 16968 11476 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:55:53,917 basehttp 16968 11476 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:55:58,998 log 16968 20436 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:55:58,999 basehttp 16968 20436 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:55:59,561 basehttp 16968 22328 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:55:59,654 basehttp 16968 22328 "GET / HTTP/1.1" 200 20765
+INFO 2025-09-12 21:55:59,845 basehttp 16968 22328 "GET /static/img/nen_moi.jpg HTTP/1.1" 304 0
+INFO 2025-09-12 21:56:34,983 basehttp 16968 22328 "POST / HTTP/1.1" 302 0
+INFO 2025-09-12 21:56:35,072 basehttp 16968 22328 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:56:35,209 basehttp 16968 22328 "GET /dashboard/ HTTP/1.1" 200 33942
+WARNING 2025-09-12 21:56:35,510 log 16968 23520 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:35,512 basehttp 16968 23520 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:56:35,605 log 16968 8964 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:35,606 basehttp 16968 8964 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:56:40,695 log 16968 27840 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:40,696 basehttp 16968 27840 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:56:45,508 basehttp 16968 22328 "GET /admin/users/nhanvien/ HTTP/1.1" 200 88427
+INFO 2025-09-12 21:56:45,616 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:56:47,828 basehttp 16968 22328 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:56:47,922 basehttp 16968 22328 "GET /dashboard/ HTTP/1.1" 200 33941
+WARNING 2025-09-12 21:56:48,234 log 16968 23180 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:48,235 basehttp 16968 23180 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:56:48,325 log 16968 21632 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:48,327 basehttp 16968 21632 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:56:49,466 basehttp 16968 22328 "GET /admin/clients/khachhangtiemnang/ HTTP/1.1" 200 72445
+INFO 2025-09-12 21:56:49,550 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:56:54,320 basehttp 16968 22328 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:56:54,409 basehttp 16968 22328 "GET /dashboard/ HTTP/1.1" 200 33941
+WARNING 2025-09-12 21:56:54,700 log 16968 25756 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:54,702 basehttp 16968 25756 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:56:54,780 log 16968 444 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:54,782 basehttp 16968 444 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:56:56,658 basehttp 16968 22328 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 76450
+INFO 2025-09-12 21:56:56,749 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:56:58,296 basehttp 16968 22328 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:56:58,383 basehttp 16968 22328 "GET /dashboard/ HTTP/1.1" 200 33941
+WARNING 2025-09-12 21:56:58,790 log 16968 1820 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:58,791 basehttp 16968 1820 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 21:56:58,940 log 16968 7632 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:56:58,941 basehttp 16968 7632 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:57:04,265 basehttp 16968 22328 "GET /admin/ HTTP/1.1" 200 105569
+WARNING 2025-09-12 21:57:04,313 log 16968 28260 Not Found: /ws/notifications/
+WARNING 2025-09-12 21:57:04,315 basehttp 16968 28260 "GET /ws/notifications/ HTTP/1.1" 404 18415
+INFO 2025-09-12 21:57:25,293 basehttp 16968 22328 "GET /admin/inventory/vattu/ HTTP/1.1" 200 139848
+INFO 2025-09-12 21:57:25,380 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:57:30,120 basehttp 16968 22328 "GET /admin/inventory/vattu/100/change/ HTTP/1.1" 200 66459
+INFO 2025-09-12 21:57:30,203 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:57:40,924 basehttp 16968 22328 "GET /admin/clients/hopdong/ HTTP/1.1" 200 62847
+INFO 2025-09-12 21:57:41,013 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:57:44,126 basehttp 16968 22328 "GET /admin/clients/hopdong/10/change/ HTTP/1.1" 200 77434
+INFO 2025-09-12 21:57:44,211 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:58:03,652 basehttp 16968 22328 "GET /admin/users/nhanvien/ HTTP/1.1" 200 88427
+INFO 2025-09-12 21:58:03,729 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:58:14,512 basehttp 16968 22328 "GET /admin/users/nhanvien/148/change/ HTTP/1.1" 200 120244
+INFO 2025-09-12 21:58:14,587 basehttp 16968 18816 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-12 21:58:14,608 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:58:34,050 basehttp 16968 22328 "POST /admin/users/nhanvien/148/change/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:58:34,328 basehttp 16968 22328 "GET /admin/users/nhanvien/ HTTP/1.1" 200 89027
+INFO 2025-09-12 21:58:34,425 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:58:45,568 basehttp 16968 22328 "GET /admin/operations/chamcong/ HTTP/1.1" 200 73024
+INFO 2025-09-12 21:58:45,656 basehttp 16968 18816 "GET /media/check_in/Screenshot_2025-09-04_091812.png HTTP/1.1" 200 41053
+INFO 2025-09-12 21:58:45,659 basehttp 16968 27112 "GET /media/check_out/NNT.png HTTP/1.1" 200 126202
+INFO 2025-09-12 21:58:45,672 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:59:05,917 basehttp 16968 22328 "GET /admin/operations/chamcong/2/change/ HTTP/1.1" 200 951679
+INFO 2025-09-12 21:59:06,042 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:59:21,645 basehttp 16968 22328 "GET /admin/inventory/phieucapphat/ HTTP/1.1" 200 60421
+INFO 2025-09-12 21:59:21,734 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:59:24,467 basehttp 16968 22328 "GET /admin/inventory/phieucapphat/add/ HTTP/1.1" 200 70027
+INFO 2025-09-12 21:59:24,547 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:59:27,415 basehttp 16968 22328 "GET /admin/autocomplete/?app_label=inventory&model_name=phieucapphat&field_name=nguoi_nhan HTTP/1.1" 200 1224
+INFO 2025-09-12 21:59:27,634 basehttp 16968 22328 "GET /__debug__/history_sidebar/?request_id=fcc7fecaeaf34fb8b62ebf173d616092 HTTP/1.1" 200 9231
+INFO 2025-09-12 21:59:40,548 basehttp 16968 22328 "GET /admin/autocomplete/?app_label=inventory&model_name=chitietcapphat&field_name=vat_tu HTTP/1.1" 200 1385
+INFO 2025-09-12 21:59:40,760 basehttp 16968 22328 "GET /__debug__/history_sidebar/?request_id=d937433e45024db3ab49120ceeb47d06 HTTP/1.1" 200 9229
+INFO 2025-09-12 21:59:52,621 basehttp 16968 22328 "POST /admin/inventory/phieucapphat/add/ HTTP/1.1" 302 0
+INFO 2025-09-12 21:59:52,899 basehttp 16968 22328 "GET /admin/inventory/phieucapphat/ HTTP/1.1" 200 65392
+INFO 2025-09-12 21:59:53,018 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 21:59:55,874 basehttp 16968 22328 "GET /inventory/phieu-cap-phat/1/in/ HTTP/1.1" 200 15079
+INFO 2025-09-12 22:00:09,034 basehttp 16968 22328 "GET /admin/workflow/proposal/ HTTP/1.1" 200 69613
+INFO 2025-09-12 22:00:09,121 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:00:10,950 basehttp 16968 22328 "GET /admin/workflow/proposal/add/ HTTP/1.1" 200 65672
+INFO 2025-09-12 22:00:11,048 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:00:32,759 basehttp 16968 22328 "POST /admin/workflow/proposal/add/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:00:33,198 basehttp 16968 22328 "GET /admin/workflow/proposal/ HTTP/1.1" 200 75064
+INFO 2025-09-12 22:00:33,321 basehttp 16968 22328 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:00:46,735 basehttp 16968 22328 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:00:46,831 basehttp 16968 22328 "GET / HTTP/1.1" 200 20292
+INFO 2025-09-12 22:02:17,933 autoreload 16968 26060 D:\startup_bv\operations\admin.py changed, reloading.
+INFO 2025-09-12 22:02:21,701 autoreload 23856 9696 Watching for file changes with StatReloader
+INFO 2025-09-12 22:02:34,914 basehttp 23856 16300 "POST / HTTP/1.1" 302 0
+INFO 2025-09-12 22:02:35,058 basehttp 23856 16300 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:02:35,739 basehttp 23856 16300 "GET /dashboard/ HTTP/1.1" 200 33930
+WARNING 2025-09-12 22:02:36,099 log 23856 20252 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:02:36,101 basehttp 23856 20252 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 22:02:36,318 log 23856 20224 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:02:36,320 basehttp 23856 20224 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:02:41,506 log 23856 1004 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:02:41,508 basehttp 23856 1004 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 22:02:42,818 basehttp 23856 16300 "GET /admin/operations/baocaosuco/9/change/ HTTP/1.1" 200 63669
+INFO 2025-09-12 22:02:42,968 basehttp 23856 16300 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:02:59,822 basehttp 23856 16300 "GET /admin/operations/ HTTP/1.1" 200 63096
+INFO 2025-09-12 22:03:04,321 basehttp 23856 16300 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 67005
+INFO 2025-09-12 22:03:04,479 basehttp 23856 16300 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:03:21,187 basehttp 23856 16300 "GET /admin/operations/baocaosuco/7/change/ HTTP/1.1" 200 63398
+INFO 2025-09-12 22:03:21,360 basehttp 23856 16300 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:03:36,917 basehttp 23856 16300 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 67005
+INFO 2025-09-12 22:03:57,087 basehttp 23856 16300 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:03:57,317 basehttp 23856 16300 "GET /dashboard/ HTTP/1.1" 200 33941
+WARNING 2025-09-12 22:03:57,648 log 23856 29952 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:03:57,650 basehttp 23856 29952 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:03:57,767 log 23856 10236 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:03:57,769 basehttp 23856 10236 "GET /ws/notifications/ HTTP/1.1" 404 18415
+WARNING 2025-09-12 22:04:02,956 log 23856 13548 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:02,958 basehttp 23856 13548 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:08,540 log 23856 3400 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:08,542 basehttp 23856 3400 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:14,496 log 23856 25436 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:14,498 basehttp 23856 25436 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:20,552 log 23856 24532 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:20,553 basehttp 23856 24532 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:26,544 log 23856 22268 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:26,554 basehttp 23856 22268 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:32,563 log 23856 22676 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:32,565 basehttp 23856 22676 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:38,622 log 23856 24628 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:38,626 basehttp 23856 24628 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:44,571 log 23856 24880 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:44,573 basehttp 23856 24880 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:50,601 log 23856 24272 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:50,603 basehttp 23856 24272 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:04:56,573 log 23856 21740 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:04:56,574 basehttp 23856 21740 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:02,841 log 23856 17320 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:02,843 basehttp 23856 17320 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:09,156 log 23856 9768 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:09,158 basehttp 23856 9768 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:14,521 log 23856 21204 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:14,523 basehttp 23856 21204 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:20,609 log 23856 26528 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:20,611 basehttp 23856 26528 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:26,556 log 23856 15768 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:26,559 basehttp 23856 15768 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:32,541 log 23856 29596 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:32,543 basehttp 23856 29596 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:38,564 log 23856 21656 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:38,566 basehttp 23856 21656 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:44,565 log 23856 30472 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:44,572 basehttp 23856 30472 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:50,565 log 23856 28260 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:50,568 basehttp 23856 28260 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:05:56,557 log 23856 3116 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:05:56,558 basehttp 23856 3116 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:02,572 log 23856 19384 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:02,575 basehttp 23856 19384 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:08,555 log 23856 2644 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:08,557 basehttp 23856 2644 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:14,614 log 23856 28468 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:14,616 basehttp 23856 28468 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:20,639 log 23856 2356 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:20,640 basehttp 23856 2356 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:26,755 log 23856 12236 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:26,757 basehttp 23856 12236 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:32,949 log 23856 21424 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:32,951 basehttp 23856 21424 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:06:39,092 log 23856 1860 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:39,096 basehttp 23856 1860 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 22:06:43,147 autoreload 23856 9696 D:\startup_bv\operations\admin.py changed, reloading.
+INFO 2025-09-12 22:06:46,465 autoreload 30536 30672 Watching for file changes with StatReloader
+WARNING 2025-09-12 22:06:56,481 log 30536 23008 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:06:56,484 basehttp 30536 23008 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 22:06:59,103 basehttp 30536 27544 "GET /dashboard/ HTTP/1.1" 200 33907
+WARNING 2025-09-12 22:07:01,113 log 30536 23796 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:01,114 basehttp 30536 23796 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:07:02,349 log 30536 15556 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:02,350 basehttp 30536 15556 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 22:07:05,748 basehttp 30536 27544 "GET /admin/operations/baocaosuco/ HTTP/1.1" 200 68847
+INFO 2025-09-12 22:07:05,925 basehttp 30536 27544 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:07:06,029 basehttp 30536 27504 "GET /media/su_co/Screenshot_2025-09-04_091752.png HTTP/1.1" 200 44075
+INFO 2025-09-12 22:07:06,092 basehttp 30536 27708 "GET /media/su_co/Screenshot_2025-09-03_190934.png HTTP/1.1" 200 748184
+INFO 2025-09-12 22:07:06,095 basehttp 30536 27544 "GET /media/su_co/Screenshot_2025-09-03_190934_U2xubed.png HTTP/1.1" 200 748184
+INFO 2025-09-12 22:07:06,106 basehttp 30536 7740 "GET /media/su_co/Screenshot_2025-09-03_190934_aIGFa6n.png HTTP/1.1" 200 748184
+INFO 2025-09-12 22:07:28,005 basehttp 30536 7740 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:07:28,241 basehttp 30536 7740 "GET /dashboard/ HTTP/1.1" 200 33944
+WARNING 2025-09-12 22:07:28,609 log 30536 24228 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:28,612 basehttp 30536 24228 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:07:28,749 log 30536 28600 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:28,752 basehttp 30536 28600 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:07:33,972 log 30536 23876 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:33,974 basehttp 30536 23876 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:07:39,178 log 30536 4412 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:39,184 basehttp 30536 4412 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:07:44,393 log 30536 6488 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:44,443 basehttp 30536 6488 "GET /ws/notifications/ HTTP/1.1" 404 18416
+WARNING 2025-09-12 22:07:49,640 log 30536 28072 Not Found: /ws/notifications/
+WARNING 2025-09-12 22:07:49,644 basehttp 30536 28072 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-12 22:07:51,311 basehttp 30536 7740 "GET /admin/operations/baocaosuco/8/change/ HTTP/1.1" 200 63445
+INFO 2025-09-12 22:07:51,493 basehttp 30536 7740 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:12:41,935 basehttp 30536 23456 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 22:12:41,981 basehttp 30536 23456 "GET /hub/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:12:42,076 basehttp 30536 23456 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 19754
+INFO 2025-09-12 22:12:42,107 basehttp 30536 23456 "GET /static/css/dist/styles.css?v=1757689962 HTTP/1.1" 200 137668
+INFO 2025-09-12 22:12:42,139 basehttp 30536 14624 "GET /media/anh_the/NNT_NBOs4Xb.png HTTP/1.1" 304 0
+INFO 2025-09-12 22:12:45,152 basehttp 30536 14624 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 19754
+INFO 2025-09-12 22:12:45,188 basehttp 30536 14624 "GET /static/css/dist/styles.css?v=1757689965 HTTP/1.1" 200 137668
+WARNING 2025-09-12 22:12:45,352 log 30536 14624 Not Found: /favicon.ico
+WARNING 2025-09-12 22:12:45,353 basehttp 30536 14624 "GET /favicon.ico HTTP/1.1" 404 18391
+INFO 2025-09-12 22:12:49,057 basehttp 30536 14624 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 19747
+INFO 2025-09-12 22:12:49,097 basehttp 30536 14624 "GET /static/css/dist/styles.css?v=1757689968 HTTP/1.1" 200 137668
+INFO 2025-09-12 22:12:49,152 basehttp 30536 23456 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 19747
+INFO 2025-09-12 22:38:10,576 basehttp 30536 24984 "GET /admin/inventory/phieucapphat/ HTTP/1.1" 200 64784
+INFO 2025-09-12 22:38:10,742 basehttp 30536 24984 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:38:14,099 basehttp 30536 24984 "GET /admin/inventory/phieucapphat/1/change/ HTTP/1.1" 200 74634
+INFO 2025-09-12 22:38:14,290 basehttp 30536 24984 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 22:43:40,705 basehttp 30536 5068 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 18552
+INFO 2025-09-12 22:43:40,743 basehttp 30536 5068 "GET /static/css/dist/styles.css?v=1757691820 HTTP/1.1" 200 137668
+INFO 2025-09-12 22:43:40,746 basehttp 30536 24220 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:43:40,751 basehttp 30536 17184 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:43:40,774 basehttp 30536 17184 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:43:40,792 basehttp 30536 17184 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:43:40,825 basehttp 30536 5068 "GET /operations/mobile/bao-cao-su-co/ HTTP/1.1" 200 18551
+INFO 2025-09-12 22:45:45,159 basehttp 30536 5068 "GET /operations/mobile/lich-truc/ HTTP/1.1" 200 18801
+INFO 2025-09-12 22:45:45,193 basehttp 30536 5068 "GET /static/css/dist/styles.css?v=1757691944 HTTP/1.1" 200 137668
+INFO 2025-09-12 22:45:48,271 basehttp 30536 19028 "GET /operations/mobile/dashboard/ HTTP/1.1" 200 19755
+INFO 2025-09-12 22:45:48,300 basehttp 30536 19028 "GET /static/css/dist/styles.css?v=1757691948 HTTP/1.1" 200 137668
+INFO 2025-09-12 23:12:12,671 basehttp 30536 26956 "GET /admin/users/nhanvien/ HTTP/1.1" 200 88428
+INFO 2025-09-12 23:12:12,859 basehttp 30536 26956 "GET /admin/jsi18n/ HTTP/1.1" 200 8816
+INFO 2025-09-12 23:12:22,384 basehttp 30536 26956 "GET /admin/users/ HTTP/1.1" 200 62997
+INFO 2025-09-12 23:30:07,026 autoreload 30536 30672 D:\startup_bv\operations\admin.py changed, reloading.
+INFO 2025-09-12 23:30:10,409 autoreload 5148 16940 Watching for file changes with StatReloader
+INFO 2025-09-12 23:30:46,909 autoreload 5148 16940 D:\startup_bv\operations\admin.py changed, reloading.
+INFO 2025-09-12 23:30:50,099 autoreload 27724 26132 Watching for file changes with StatReloader
+INFO 2025-09-13 00:03:06,122 autoreload 27724 26132 D:\startup_bv\operations\admin.py changed, reloading.
+INFO 2025-09-13 00:03:09,177 autoreload 25992 21884 Watching for file changes with StatReloader
+INFO 2025-09-13 00:39:45,889 autoreload 25992 21884 D:\startup_bv\users\models.py changed, reloading.
+INFO 2025-09-13 00:39:48,279 autoreload 14192 12832 Watching for file changes with StatReloader
+INFO 2025-09-13 00:40:26,146 autoreload 26684 26356 Watching for file changes with StatReloader
+INFO 2025-09-13 00:46:36,671 autoreload 26684 26356 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-13 00:46:39,874 autoreload 27276 21320 Watching for file changes with StatReloader
+INFO 2025-09-13 00:47:39,394 autoreload 27276 21320 D:\startup_bv\users\admin.py changed, reloading.
+INFO 2025-09-13 00:47:42,624 autoreload 16800 6540 Watching for file changes with StatReloader
+INFO 2025-09-13 00:51:07,511 autoreload 16800 6540 D:\startup_bv\users\admin.py changed, reloading.
+INFO 2025-09-13 00:51:10,566 autoreload 17512 30932 Watching for file changes with StatReloader
+INFO 2025-09-13 00:51:37,586 autoreload 23200 7736 Watching for file changes with StatReloader
+INFO 2025-09-13 00:55:04,929 autoreload 23200 7736 D:\startup_bv\users\views.py changed, reloading.
+INFO 2025-09-13 00:55:08,039 autoreload 19444 2360 Watching for file changes with StatReloader
+INFO 2025-09-13 01:00:39,833 autoreload 19444 2360 D:\startup_bv\users\models.py changed, reloading.
+INFO 2025-09-13 01:00:43,231 autoreload 31336 18144 Watching for file changes with StatReloader
+INFO 2025-09-13 01:02:36,626 autoreload 31336 18144 D:\startup_bv\users\admin.py changed, reloading.
+INFO 2025-09-13 01:02:39,815 autoreload 30596 29168 Watching for file changes with StatReloader
+INFO 2025-09-13 01:03:00,329 autoreload 29596 7368 Watching for file changes with StatReloader
+INFO 2025-09-13 01:09:40,790 autoreload 29596 7368 D:\startup_bv\users\models.py changed, reloading.
+INFO 2025-09-13 01:09:43,778 autoreload 27016 26752 Watching for file changes with StatReloader
+INFO 2025-09-13 01:10:03,517 autoreload 27016 26752 D:\startup_bv\users\admin.py changed, reloading.
+INFO 2025-09-13 01:10:06,493 autoreload 24604 28576 Watching for file changes with StatReloader
+INFO 2025-09-13 01:54:29,894 autoreload 24604 28576 D:\startup_bv\users\models.py changed, reloading.
+INFO 2025-09-13 01:54:32,920 autoreload 19944 16968 Watching for file changes with StatReloader
+INFO 2025-09-13 02:18:27,626 autoreload 24924 25276 Watching for file changes with StatReloader
+INFO 2025-09-13 02:19:35,298 autoreload 29940 7492 Watching for file changes with StatReloader

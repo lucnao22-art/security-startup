@@ -155,52 +155,68 @@ NPM_BIN_PATH = config('NPM_BIN_PATH', default='npm')
 # 11. CẤU HÌNH GIAO DIỆN ADMIN (JAZZMIN)
 # ==============================================================================
 JAZZMIN_SETTINGS = {
-    "site_title": "Security Corp Admin",
-    "site_header": "SECURITY CORP",
-    "site_brand": "SECURITY CORP",
-    "welcome_sign": "Chào mừng đến với Hệ thống Quản lý An ninh",
-    "copyright": "Security Corp Ltd",
-    "theme": "darkly",
-    
-    "topmenu_links": [
-        {"name": "Trang chính",  "url": "/hub/", "permissions": ["auth.view_user"]},
-        {"app": "operations"},
-        {"app": "clients"},
-        {"app": "users"},
-        {"app": "workflow"},
-    ],
-    
-    # --- SỬ DỤNG custom_links CỦA JAZZMIN ĐỂ TẠO MENU BÁO CÁO ---
-    "custom_links": {
-        "reports": [
-            {
-                "name": "BCC Cá nhân",
-                "url": "reports:cham_cong_ca_nhan",
-                "icon": "fas fa-user-clock",
-            },
-            {
-                "name": "BCC Mục tiêu",
-                "url": "reports:cham_cong_muc_tieu",
-                "icon": "fas fa-chart-bar",
-            },
-        ]
-    },
-    
-    "icons": {
-        "auth": "fas fa-users-cog", "auth.user": "fas fa-user", "auth.Group": "fas fa-users",
-        "users": "fas fa-id-card",
-        "operations": "fas fa-cogs",
-        "clients": "fas fa-handshake",
-        "reports": "fas fa-print", # Icon cho menu Báo cáo
-        "workflow": "fas fa-project-diagram",
-        "inventory": "fas fa-boxes",
-        "inspection": "fas fa-search",
-        "accounting": "fas fa-cash-register",
-        "main": "fas fa-globe",
-        "backup_restore": "fas fa-database",
-    },
-}
+    "site_title": "Security Admin",
+    "site_header": "Security Admin",
+    "site_brand": "Security Admin",
+    "site_logo": "img/logo_moi.png",
+    "login_logo": "img/logo_moi.png",
+    "login_logo_dark": "img/logo_moi.png",
+    "site_logo_classes": "img-circle",
+    "site_icon": "img/logo_moi.png",
+    "welcome_sign": "Chào mừng đến với Security Admin",
+    "copyright": "Security Startup Ltd",
+    "search_model": ["users.NhanVien", "clients.MucTieu"],
 
+    "topmenu_links": [
+        {"name": "Trang chủ", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"app": "operations", "permissions": ["operations.view_phancongcatruc"]},
+    ],
+
+    "usermenu_links": [
+        {"model": "users.user"}
+    ],
+
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "hide_models": [],
+
+    "order_with_respect_to": ["users", "clients", "operations", "inventory", "inspection", "reports", "accounting"],
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "users.User": "fas fa-user",
+        "users.Group": "fas fa-users",
+        "users.phongban": "fas fa-building",
+        "users.chucdanh": "fas fa-id-badge",
+        "users.nhanvien": "fas fa-users",
+        "users.chungchi": "fas fa-certificate",
+
+        "clients.khachhangtiemnang": "fas fa-user-tie",
+        "clients.cohoikinhdoanh": "fas fa-lightbulb",
+        "clients.hopdong": "fas fa-file-signature",
+        "clients.muctieu": "fas fa-bullseye",
+
+        "operations.vitrichot": "fas fa-map-marker-alt",
+        "operations.calamviec": "fas fa-clock",
+        "operations.phancongcatruc": "fas fa-calendar-alt",
+        "operations.chamcong": "fas fa-check-circle",
+        "operations.baocaosuco": "fas fa-exclamation-triangle",
+        "operations.baocaodexuat": "fas fa-file-alt",
+    },
+
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+
+    "related_modal_active": True,
+
+    "custom_css": "admin/custom_admin.css",
+    "custom_js": None,
+    "show_ui_builder": True,
+
+    "changeform_format": "horizontal_tabs",
+    "changeform_format_overrides": {"users.user": "collapsible", "auth.group": "vertical_tabs"},
+}
 # ==============================================================================
 # 12. CẤU HÌNH SẮP XẾP MENU ADMIN (ADMIN_REORDER)
 # ==============================================================================
