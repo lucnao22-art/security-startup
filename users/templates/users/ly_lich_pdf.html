@@ -113,7 +113,7 @@
         <div class="left-column">
             {% if options.bao_gom_anh_the and avatar_uri %}<img src="{{ avatar_uri }}" class="avatar">{% endif %}
             <p class="name">{{ nhan_vien.ho_ten }}</p>
-            <p class="position">{{ nhan_vien.get_chuc_vu_display }}</p>
+            <p class="position">{{ nhan_vien.chuc_danh.ten_chuc_danh }}</p>
         </div>
         <div class="right-column">
             {% if options.bao_gom_thong_tin_ca_nhan %}
@@ -136,10 +136,14 @@
         <div class="section">
             <h3>Bằng cấp & Chứng chỉ</h3>
             <table class="history-table">
-                <thead><tr><th>Tên chứng chỉ</th><th>Ngày cấp</th><th>Ngày hết hạn</th></tr></thead>
+                <thead><tr><th>Tên bằng cấp</th><th>Ngày cấp</th><th>Ngày hết hạn</th></tr></thead>
                 <tbody>
-                    {% for chung_chi in nhan_vien.chung_chi.all %}
-                    <tr><td>{{ chung_chi.ten_chung_chi }}</td><td>{{ chung_chi.ngay_cap|date:"d/m/Y" }}</td><td>{{ chung_chi.ngay_het_han|date:"d/m/Y"|default:"-" }}</td></tr>
+                    {% for bc in bang_cap %}
+                    <tr>
+                        <td>{{ bc.ten_bang_cap }}</td>
+                        <td>{{ bc.ngay_cap|date:"d/m/Y" }}</td>
+                        <td>{{ bc.ngay_het_han|date:"d/m/Y"|default:"-" }}</td>
+                    </tr>
                     {% empty %}
                     <tr><td colspan="3" style="text-align: center;">Chưa có thông tin.</td></tr>
                     {% endfor %}
@@ -154,11 +158,11 @@
             <table class="history-table">
                 <thead><tr><th>Thời gian</th><th>Mục tiêu</th><th>Chức vụ</th></tr></thead>
                 <tbody>
-                    {% for ls in nhan_vien.lich_su_cong_tac.all %}
+                    {% for ls in lich_su_cong_tac %}
                     <tr>
                         <td>{{ ls.ngay_bat_dau|date:"m/Y" }} - {{ ls.ngay_ket_thuc|date:"m/Y"|default:"Hiện tại" }}</td>
                         <td>{{ ls.muc_tieu.ten_muc_tieu }}</td>
-                        <td>{{ ls.chuc_vu }}</td>
+                        <td>{{ ls.chuc_danh_kiem_nhiem.ten_chuc_danh }}</td>
                     </tr>
                     {% empty %}
                     <tr><td colspan="3" style="text-align: center;">Chưa có thông tin.</td></tr>

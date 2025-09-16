@@ -1,0 +1,96 @@
+{% extends "operations/mobile/base_mobile_revamped.html" %}
+{% load static %}
+
+{% block title %}Báo cáo Sự cố{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <div class="text-center mb-6">
+        <h1 class="text-2xl font-bold">Báo cáo Sự cố</h1>
+        {% if ca_truc %}
+            <p class="text-sm text-gray-500">
+                Tại: <span class="font-semibold">{{ ca_truc.vi_tri_chot.muc_tieu.ten_muc_tieu }}</span>
+            </p>
+        {% endif %}
+    </div>
+
+    {% if form %}
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ form.tieu_de.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                {{ form.tieu_de.label }} <span class="text-red-500">*</span>
+            </label>
+            {{ form.tieu_de }}
+            {% if form.tieu_de.errors %}
+                <p class="text-xs text-red-600 mt-1">{{ form.tieu_de.errors.as_text }}</p>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.noi_dung.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                {{ form.noi_dung.label }} <span class="text-red-500">*</span>
+            </label>
+            {{ form.noi_dung }}
+             {% if form.noi_dung.errors %}
+                <p class="text-xs text-red-600 mt-1">{{ form.noi_dung.errors.as_text }}</p>
+            {% endif %}
+        </div>
+        
+        <div>
+            <label for="{{ form.hinh_anh.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                {{ form.hinh_anh.label }}
+            </label>
+            <div id="image-preview-container" class="hidden w-32 h-32 mb-2 rounded-lg overflow-hidden border-2 border-dashed flex items-center justify-center">
+                <img id="image-preview" src="#" alt="Xem trước ảnh" class="w-full h-full object-cover"/>
+            </div>
+            {{ form.hinh_anh }}
+            {% if form.hinh_anh.errors %}
+                <p class="text-xs text-red-600 mt-1">{{ form.hinh_anh.errors.as_text }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="pt-4">
+            <button type="submit" class="btn btn-error w-full">
+                <i class="fas fa-paper-plane mr-2"></i>
+                Gửi Báo cáo
+            </button>
+        </div>
+    </form>
+    
+    {% else %}
+    <div role="alert" class="alert alert-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+        <span>Bạn hiện không trong ca trực nào. Không thể gửi báo cáo.</span>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const imageInput = document.getElementById('{{ form.hinh_anh.id_for_label }}');
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    const imagePreview = document.getElementById('image-preview');
+
+    if (imageInput) {
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.setAttribute('src', e.target.result);
+                    imagePreviewContainer.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.setAttribute('src', '#');
+                imagePreviewContainer.classList.add('hidden');
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

@@ -2,96 +2,83 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.template.loader import render_to_string
+from django.template import Context, Template
 from weasyprint import HTML
-from .models import NhanVien
+from .models import NhanVien, HopDongLaoDong, QuyetDinh
 from pathlib import Path
-from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from .models import NhanVien, LichSuCongTac, BangCapChungChi
+from django.contrib.auth.decorators import login_required, permission_required
+from main.models import CompanyProfile
 
-# --- THÊM CÁC IMPORT NÀY VÀO ĐẦU TỆP ---
-from django.http import HttpResponse
-from django.template.loader import render_to_string
-from weasyprint import HTML
-
+@login_required
 def export_ly_lich_options_view(request, nhan_vien_id):
-    """
-    Hiển thị form cho người dùng chọn các thông tin cần xuất.
-    """
     nhan_vien = get_object_or_404(NhanVien, pk=nhan_vien_id)
     return render(request, "users/ly_lich_options.html", {"nhan_vien": nhan_vien})
 
-
+@login_required
+# @permission_required('users.view_nhanvien', raise_exception=True)
 def export_ly_lich_pdf(request, nhan_vien_id):
-    """
-    Tạo file PDF dựa trên các tùy chọn được gửi từ form.
-    """
     nhan_vien = get_object_or_404(NhanVien, pk=nhan_vien_id)
-
-    # Lấy các tùy chọn từ form
     options = {
         "bao_gom_anh_the": request.POST.get("bao_gom_anh_the") == "on",
-        "bao_gom_thong_tin_ca_nhan": request.POST.get("bao_gom_thong_tin_ca_nhan")
-        == "on",
+        "bao_gom_thong_tin_ca_nhan": request.POST.get("bao_gom_thong_tin_ca_nhan") == "on",
         "bao_gom_bang_cap": request.POST.get("bao_gom_bang_cap") == "on",
-        "bao_gom_lich_su_cong_tac": request.POST.get("bao_gom_lich_su_cong_tac")
-        == "on",
+        "bao_gom_lich_su_cong_tac": request.POST.get("bao_gom_lich_su_cong_tac") == "on",
     }
-
     avatar_uri = ""
     if options["bao_gom_anh_the"] and nhan_vien.anh_the:
         avatar_path = Path(nhan_vien.anh_the.path)
         avatar_uri = avatar_path.as_uri()
-
     context = {
-        "nhan_vien": nhan_vien,
-        "avatar_uri": avatar_uri,
-        "options": options,
+        "nhan_vien": nhan_vien, "avatar_uri": avatar_uri, "options": options,
+        "lich_su_cong_tac": nhan_vien.lich_su_cong_tac.all(),
+        "bang_cap": nhan_vien.bang_cap.all(),
     }
-
     html_string = render_to_string("users/ly_lich_pdf.html", context)
-    pdf_file = HTML(
-        string=html_string, base_url=request.build_absolute_uri("/")
-    ).write_pdf()
-
+    pdf_file = HTML(string=html_string, base_url=request.build_absolute_uri("/")).write_pdf()
     response = HttpResponse(pdf_file, content_type="application/pdf")
-    response["Content-Disposition"] = (
-        f'attachment; filename="LLTN_{nhan_vien.ma_nhan_vien}.pdf"'
-    )
-
+    response["Content-Disposition"] = f'inline; filename="LLTN_{nhan_vien.ma_nhan_vien}.pdf"'
     return response
+
+def render_document_to_pdf(template_content, context, request):
+    """Hàm pomocniczy do renderowania szablonu i generowania PDF."""
+    template = Template(template_content)
+    html_string = template.render(Context(context))
+    
+    pdf_file = HTML(string=html_string, base_url=request.build_absolute_uri('/')).write_pdf()
+    return pdf_file
+
 @login_required
-def xuat_ly_lich_nhan_vien_pdf(request, pk):
-    """
-    View này chịu trách nhiệm tạo và trả về file PDF
-    trích ngang lý lịch của một nhân viên.
-    """
-    # Lấy thông tin nhân viên từ CSDL, nếu không có sẽ báo lỗi 404
-    nhan_vien = get_object_or_404(NhanVien, pk=pk)
+def in_hop_dong_view(request, hop_dong_id):
+    hop_dong = get_object_or_404(HopDongLaoDong, pk=hop_dong_id)
+    nhan_vien = hop_dong.nhan_vien
+    cong_ty = CompanyProfile.objects.first()
     
-    # Lấy các thông tin liên quan
-    lich_su_cong_tac = LichSuCongTac.objects.filter(nhan_vien=nhan_vien)
-    bang_cap = BangCapChungChi.objects.filter(nhan_vien=nhan_vien)
-
-    # Chuẩn bị context để truyền vào template
     context = {
-        "nhan_vien": nhan_vien,
-        "lich_su_cong_tac": lich_su_cong_tac,
-        "bang_cap": bang_cap,
+        'nhan_vien': nhan_vien,
+        'hop_dong': hop_dong,
+        'cong_ty': cong_ty,
     }
+    
+    pdf_file = render_document_to_pdf(hop_dong.mau_hop_dong.noi_dung, context, request)
+    
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="HD_{nhan_vien.ma_nhan_vien}.pdf"'
+    return response
 
-    # 1. Render template HTML thành một chuỗi
-    html_string = render_to_string("users/ly_lich_pdf.html", context)
+@login_required
+def in_quyet_dinh_view(request, quyet_dinh_id):
+    quyet_dinh = get_object_or_404(QuyetDinh, pk=quyet_dinh_id)
+    nhan_vien = quyet_dinh.nhan_vien
+    cong_ty = CompanyProfile.objects.first()
     
-    # 2. Dùng WeasyPrint để chuyển chuỗi HTML thành PDF
-    # base_url giúp WeasyPrint tìm được các file static (CSS, ảnh)
-    html = HTML(string=html_string, base_url=request.build_absolute_uri('/'))
-    pdf = html.write_pdf()
+    context = {
+        'nhan_vien': nhan_vien,
+        'quyet_dinh': quyet_dinh,
+        'cong_ty': cong_ty,
+    }
     
-    # 3. Trả về một HttpResponse với đúng content_type của file PDF
-    response = HttpResponse(pdf, content_type="application/pdf")
-    
-    # Dòng này giúp trình duyệt hiển thị file PDF thay vì tự động tải về
-    response["Content-Disposition"] = f"inline; filename=ly_lich_{nhan_vien.ma_nhan_vien}.pdf"
-    
+    pdf_file = render_document_to_pdf(quyet_dinh.mau_quyet_dinh.noi_dung, context, request)
+
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="QD_{nhan_vien.ma_nhan_vien}.pdf"'
     return response

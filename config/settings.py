@@ -22,32 +22,41 @@ else:
 # 2. CẤU HÌNH CÁC ỨNG DỤNG (APPS)
 # ==============================================================================
 INSTALLED_APPS = [
+    # ĐƯA JAZZMIN LÊN TRÊN, NGAY TRƯỚC ADMIN
     'jazzmin',
-    'debug_toolbar',
     'django.contrib.admin',
+
+    # CÁC APP CÒN LẠI CỦA DJANGO
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+
+    # CÁC THƯ VIỆN BÊN THỨ BA
+    'debug_toolbar',
     'import_export',
-    'admin_reorder',
+    'admin_reorder',  # <--- admin_reorder nằm sau admin và jazzmin
     'tailwind',
     'theme',
     'django_bootstrap5',
+    'phonenumber_field',
+
+    # CÁC APP CỦA BẠN
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
-    'dashboard.apps.DashboardConfig',
     'clients.apps.ClientsConfig',
     'operations.apps.OperationsConfig',
-    'inspection.apps.InspectionConfig',
     'inventory.apps.InventoryConfig',
+    'inspection.apps.InspectionConfig',
     'accounting.apps.AccountingConfig',
+    'workflow.apps.WorkflowConfig',
     'notifications.apps.NotificationsConfig',
     'backup_restore.apps.BackupRestoreConfig',
-    'workflow.apps.WorkflowConfig',
     'reports.apps.ReportsConfig',
+    'dashboard.apps.DashboardConfig',
+    'mobile.apps.MobileConfig',
 ]
 
 # ==============================================================================
@@ -73,6 +82,9 @@ ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 ASGI_APPLICATION = "config.routing.application"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+LOGIN_URL = '/mobile/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'  # <-- THÊM DÒNG NÀY
+PHONENUMBER_DEFAULT_REGION = "VN"
 
 # ==============================================================================
 # 5. CẤU HÌNH TEMPLATES
@@ -125,7 +137,7 @@ TIME_ZONE = "Asia/Ho_Chi_Minh"
 USE_I18N = True
 USE_TZ = True
 LOCALE_PATHS = [BASE_DIR / 'locale']
-
+PHONENUMBER_DEFAULT_REGION = "VN"
 # ==============================================================================
 # 9. CẤU HÌNH STATIC & MEDIA FILES
 # ==============================================================================

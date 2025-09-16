@@ -2,6 +2,7 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 from datetime import date, timedelta
 from django.utils import timezone
 from django.contrib import messages
@@ -13,7 +14,7 @@ from users.models import NhanVien
 from .models import ViTriChot, CaLamViec, PhanCongCaTruc, BaoCaoSuCo, ChamCong
 
 # Import form
-from .forms import BaoCaoSuCoForm
+from .forms import BaoCaoSuCoForm, MobileLoginForm
 
 
 @login_required
@@ -36,7 +37,7 @@ def xep_lich_view(request):
             .select_related("user")
         )
 
-        # --- NÂNG CẤP: TỐI ƯU HÓA TRUY VẤN CSDL ---
+        # --- TỐI ƯU HÓA TRUY VẤN CSDL ---
         start_date = days_of_week[0]
         end_date = days_of_week[-1]
         phan_congs_in_week = PhanCongCaTruc.objects.filter(
@@ -172,9 +173,16 @@ def van_hanh_dashboard_view(request):
 
 @login_required
 def mobile_dashboard(request):
-    nhan_vien = request.user.nhanvien
+    try:
+        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
+        # Thêm `try-except` để xử lý trường hợp user chưa có profile nhân viên
+        nhan_vien = request.user.nhan_vien
+    except NhanVien.DoesNotExist:
+        messages.error(request, "Tài khoản của bạn chưa được liên kết với hồ sơ nhân viên.")
+        # Chuyển hướng về trang đăng nhập nếu có lỗi
+        return redirect('operations:mobile_login')
+
     today = timezone.now().date()
-    # Tối ưu truy vấn bằng prefetch_related để lấy thông tin chấm công
     phan_congs = PhanCongCaTruc.objects.filter(
         nhan_vien=nhan_vien, ngay_truc=today
     ).prefetch_related('chamcong')
@@ -190,7 +198,8 @@ def mobile_dashboard(request):
 
 @login_required
 def mobile_lich_truc_view(request):
-    nhan_vien = request.user.nhanvien
+    # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
+    nhan_vien = request.user.nhan_vien
     today = timezone.now().date()
     
     sap_toi_7_ca = PhanCongCaTruc.objects.filter(
@@ -210,7 +219,8 @@ def mobile_lich_truc_view(request):
 @login_required
 def bao_cao_su_co_mobile_view(request):
     try:
-        nhan_vien = request.user.nhanvien
+        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
+        nhan_vien = request.user.nhan_vien
         ca_truc_hien_tai = PhanCongCaTruc.objects.filter(
             nhan_vien=nhan_vien, ngay_truc=timezone.now().date()
         ).latest("ca_lam_viec__gio_bat_dau")
@@ -244,7 +254,8 @@ def bao_cao_su_co_mobile_view(request):
 @login_required
 def check_in_view(request, phan_cong_id):
     if request.method == 'POST':
-        phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhanvien)
+        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
+        phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhan_vien)
         cham_cong, created = ChamCong.objects.get_or_create(ca_truc=phan_cong)
         
         anh_check_in = request.FILES.get('anh_check_in')
@@ -267,7 +278,8 @@ def check_in_view(request, phan_cong_id):
 @login_required
 def check_out_view(request, phan_cong_id):
     if request.method == 'POST':
-        phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhanvien)
+        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
+        phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhan_vien)
         cham_cong, created = ChamCong.objects.get_or_create(ca_truc=phan_cong)
         
         anh_check_out = request.FILES.get('anh_check_out')
@@ -287,3 +299,34 @@ def check_out_view(request, phan_cong_id):
             messages.warning(request, "Bạn đã check-out cho ca này rồi.")
             
     return redirect('operations:mobile_dashboard')
+
+
+# ==============================================================================
+# VIEW ĐĂNG NHẬP CHO MOBILE (BỔ SUNG)
+# ==============================================================================
+
+def mobile_login_view(request):
+    """
+    Xử lý đăng nhập cho giao diện mobile.
+    """
+    # Nếu người dùng đã đăng nhập, chuyển thẳng đến dashboard
+    if request.user.is_authenticated:
+        return redirect('operations:mobile_dashboard')
+
+    if request.method == 'POST':
+        form = MobileLoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            
+            if user is not None:
+                login(request, user)
+                # Chuyển hướng đến trang dashboard mobile sau khi đăng nhập thành công
+                return redirect('operations:mobile_dashboard')
+            else:
+                messages.error(request, 'Tên đăng nhập hoặc mật khẩu không đúng.')
+    else:
+        form = MobileLoginForm()
+        
+    return render(request, 'operations/mobile/login.html', {'form': form})

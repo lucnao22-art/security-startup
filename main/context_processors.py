@@ -1,5 +1,5 @@
 # file: main/context_processors.py
-from .models import CompanyProfile # Sửa ThongTinCongTy thành CompanyProfile
+from .models import CompanyProfile
 
 def company_info(request):
     """

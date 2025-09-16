@@ -1,0 +1,177 @@
+{% extends "operations/mobile/base_mobile_revamped.html" %}
+{% load static %}
+
+{% block title %}Bảng điều khiển{% endblock %}
+
+{% block content %}
+<div class="p-4 space-y-6" x-data="dashboardController()">
+
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body p-4">
+            <div class="flex items-center space-x-4">
+                <div class="avatar">
+                    <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src="{{ nhan_vien.anh_the.url|default:'/static/img/default-avatar.png' }}" alt="Ảnh thẻ" />
+                    </div>
+                </div>
+                <div>
+                    <h2 class="card-title text-lg">Chào, {{ nhan_vien.ho_ten }}!</h2>
+                    <p class="text-sm text-base-content/70">Mã nhân viên: {{ nhan_vien.ma_nhan_vien }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if quan_ly %}
+    <div class="card bg-base-100 shadow">
+        <div class="card-body p-4">
+            <h3 class="text-md font-bold mb-2">Quản lý trực tiếp</h3>
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="font-semibold">{{ quan_ly.ho_ten }}</p>
+                    <p class="text-sm text-base-content/70">{{ quan_ly.chuc_danh }}</p>
+                </div>
+                <a href="tel:{{ quan_ly.sdt_chinh }}" class="btn btn-primary btn-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    Gọi ngay
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="space-y-4">
+        <h3 class="text-xl font-bold">Ca trực hôm nay</h3>
+        {% if danh_sach_ca_truc %}
+            {% for pc in danh_sach_ca_truc %}
+            <div class="card bg-base-100 shadow-xl" x-data="shiftCard('{{ pc.start_iso }}', '{{ pc.end_iso }}')" x-init="startCountdown()">
+                <div class="card-body p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="card-title text-md">{{ pc.ca_lam_viec.ten_ca }}</h4>
+                            <p class="text-sm"><span class="font-semibold">Thời gian:</span> {{ pc.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ pc.ca_lam_viec.gio_ket_thuc|time:"H:i" }}</p>
+                            <p class="text-sm"><span class="font-semibold">Mục tiêu:</span> {{ pc.vi_tri_chot.muc_tieu.ten_muc_tieu }}</p>
+                            <p class="text-sm"><span class="font-semibold">Vị trí:</span> {{ pc.vi_tri_chot.ten_vi_tri }}</p>
+                        </div>
+                        <div class="badge {{ pc.status_color }} text-white font-semibold">{{ pc.status }}</div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <div x-show="countdownText" class="text-lg font-bold" x-text="countdownText"></div>
+                    </div>
+
+                    <div class="card-actions justify-center mt-4">
+                        {% with pc.chamcong.first as cham_cong %}
+                            {% if not cham_cong.thoi_gian_check_in %}
+                                <button @click="triggerCamera('checkin-form-{{ pc.id }}')" class="btn btn-success btn-block" :disabled="!isCheckinEnabled">
+                                    Check-in
+                                </button>
+                            {% elif not cham_cong.thoi_gian_check_out %}
+                                <div class="text-center w-full">
+                                    <p class="text-sm">Đã check-in lúc: {{ cham_cong.thoi_gian_check_in|time:"H:i" }}</p>
+                                    <button @click="triggerCamera('checkout-form-{{ pc.id }}')" class="btn btn-error btn-block mt-2">
+                                        Check-out
+                                    </button>
+                                </div>
+                            {% else %}
+                                 <div class="text-center w-full text-sm">
+                                    <p>Check-in: {{ cham_cong.thoi_gian_check_in|time:"H:i" }}</p>
+                                    <p>Check-out: {{ cham_cong.thoi_gian_check_out|time:"H:i" }}</p>
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+
+                    <form id="checkin-form-{{ pc.id }}" action="{% url 'operations:check_in' pc.id %}" method="post" enctype="multipart/form-data" class="hidden">
+                        {% csrf_token %}
+                        <input type="file" name="anh_check_in" accept="image/*" capture="user" @change="submitForm($event.target.form)">
+                    </form>
+                    <form id="checkout-form-{{ pc.id }}" action="{% url 'operations:check_out' pc.id %}" method="post" enctype="multipart/form-data" class="hidden">
+                        {% csrf_token %}
+                        <input type="file" name="anh_check_out" accept="image/*" capture="user" @change="submitForm($event.target.form)">
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div>
+                    <h3 class="font-bold">Hôm nay bạn được nghỉ!</h3>
+                    <div class="text-xs">Không có ca trực nào được phân công.</div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div x-show="isLoading" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <span class="loading loading-spinner loading-lg text-white"></span>
+        <p class="text-white ml-4">Đang xử lý...</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function dashboardController() {
+    return {
+        isLoading: false,
+        triggerCamera(formId) {
+            document.querySelector(`#${formId} input[type=file]`).click();
+        },
+        submitForm(form) {
+            // Check if a file was selected before showing the spinner
+            if (form.querySelector('input[type=file]').files.length > 0) {
+                this.isLoading = true;
+                form.submit();
+            }
+        }
+    };
+}
+
+function shiftCard(startTimeISO, endTimeISO) {
+    return {
+        countdownText: '',
+        isCheckinEnabled: false,
+        interval: null,
+        startCountdown() {
+            const startTime = new Date(startTimeISO);
+            const endTime = new Date(endTimeISO);
+
+            const update = () => {
+                const now = new Date();
+                const diffStart = startTime - now; // milliseconds
+                const diffEnd = endTime - now;
+
+                if (diffEnd <= 0) {
+                    this.countdownText = 'Ca trực đã kết thúc.';
+                    this.isCheckinEnabled = false;
+                    clearInterval(this.interval); // Dừng cập nhật
+                    return;
+                }
+                
+                // Cho phép check-in trong khoảng 30 phút trước giờ bắt đầu
+                if (diffStart <= 30 * 60 * 1000) {
+                    this.isCheckinEnabled = true;
+                } else {
+                    this.isCheckinEnabled = false;
+                }
+
+                if (diffStart <= 0) {
+                    this.countdownText = 'Đang trong giờ làm việc.';
+                     // Không dừng interval ở đây để nút check-out vẫn hoạt động đúng
+                } else {
+                    const hours = Math.floor(diffStart / (1000 * 60 * 60));
+                    const minutes = Math.floor((diffStart % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diffStart % (1000 * 60)) / 1000);
+                    this.countdownText = `Bắt đầu sau: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                }
+            };
+            
+            update();
+            this.interval = setInterval(update, 1000);
+        }
+    };
+}
+</script>
+{% endblock %}

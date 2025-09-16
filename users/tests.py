@@ -1,57 +1,85 @@
 # file: users/tests.py
-from django.test import TestCase
-from .models import NhanVien, CauHinhMaNhanVien, PhongBan, ChucDanh
-from django.contrib.auth.models import User
+from django.test import TestCase, RequestFactory
+from django.contrib.auth.models import User, Group, Permission
+from django.urls import reverse
+from .models import NhanVien, CauHinhMaNhanVien, PhongBan, ChucDanh, LichSuCongTac
 from datetime import date
+from .views import export_ly_lich_pdf
 
 class NhanVienModelTestCase(TestCase):
-    """
-    Bộ kiểm thử cho model NhanVien.
-    """
-
     def setUp(self):
-        """
-        Thiết lập dữ liệu ban đầu cho mỗi bài test.
-        Hàm này sẽ chạy trước mỗi hàm test (bắt đầu bằng test_*).
-        """
         CauHinhMaNhanVien.objects.create(pk=1, tien_to="NV", do_dai_so=4, so_hien_tai=0)
-        PhongBan.objects.create(ten_phong_ban="Phòng Kỹ thuật")
-        ChucDanh.objects.create(ten_chuc_danh="Lập trình viên")
+        self.phong_ban = PhongBan.objects.create(ten_phong_ban="Phòng Kỹ thuật")
+        self.chuc_danh = ChucDanh.objects.create(ten_chuc_danh="Lập trình viên")
+        self.user = User.objects.create_user('testuser', 'test@example.com', 'password')
 
     def test_generate_employee_code_on_creation(self):
-        """
-        Kiểm tra xem mã nhân viên có được tự động sinh ra khi tạo mới không.
-        """
-        # Tạo nhân viên đầu tiên
         nv1 = NhanVien.objects.create(
-            ho_ten="Nguyễn Văn A",
-            ngay_sinh=date(1990, 1, 1),
-            gioi_tinh="M",
-            so_cccd="123456789012",
-            sdt_chinh="0901234567",
-            email="a.nguyen@example.com",
-            phong_ban=PhongBan.objects.get(pk=1),
-            chuc_danh=ChucDanh.objects.get(pk=1),
+            ho_ten="Nguyễn Văn A", ngay_sinh=date(1990, 1, 1), gioi_tinh="M",
+            so_cccd="123456789012", sdt_chinh="+84901234567", email="a.nguyen@example.com"
         )
-        
-        # Kiểm tra mã của nhân viên đầu tiên
         self.assertEqual(nv1.ma_nhan_vien, "NV0001")
 
-        # Tạo nhân viên thứ hai
         nv2 = NhanVien.objects.create(
-            ho_ten="Trần Thị B",
-            ngay_sinh=date(1995, 5, 10),
-            gioi_tinh="F",
-            so_cccd="987654321098",
-            sdt_chinh="0987654321",
-            email="b.tran@example.com",
-            phong_ban=PhongBan.objects.get(pk=1),
-            chuc_danh=ChucDanh.objects.get(pk=1),
+            ho_ten="Trần Thị B", ngay_sinh=date(1995, 5, 10), gioi_tinh="F",
+            so_cccd="987654321098", sdt_chinh="+84987654321", email="b.tran@example.com"
         )
-
-        # Kiểm tra mã của nhân viên thứ hai phải tăng lên
         self.assertEqual(nv2.ma_nhan_vien, "NV0002")
-
-        # Kiểm tra xem cấu hình mã đã được cập nhật đúng chưa
         config = CauHinhMaNhanVien.objects.get(pk=1)
         self.assertEqual(config.so_hien_tai, 2)
+
+    def test_permission_signal(self):
+        group_pb = Group.objects.create(name='Quyền Phòng Ban')
+        group_cd = Group.objects.create(name='Quyền Chức Danh')
+        
+        self.phong_ban.nhom_quyen = group_pb
+        self.phong_ban.save()
+        self.chuc_danh.nhom_quyen = group_cd
+        self.chuc_danh.save()
+
+        nhan_vien = NhanVien.objects.create(
+            user=self.user, ho_ten="Test Signal", ngay_sinh=date(2000, 1, 1),
+            gioi_tinh="O", so_cccd="111222333", sdt_chinh="+84123456789",
+            email="signal@test.com", phong_ban=self.phong_ban, chuc_danh=self.chuc_danh
+        )
+        
+        self.assertIn(group_pb, self.user.groups.all())
+        self.assertIn(group_cd, self.user.groups.all())
+
+class PDFExportTestCase(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+        self.user = User.objects.create_user('pdfuser', 'pdf@test.com', 'password')
+        self.staff_user = User.objects.create_user('staffuser', 'staff@test.com', 'password', is_staff=True)
+        
+        # Thêm quyền view_nhanvien cho user staff
+        permission = Permission.objects.get(codename='view_nhanvien')
+        self.staff_user.user_permissions.add(permission)
+        
+        self.nhan_vien = NhanVien.objects.create(
+            ho_ten="PDF Tester", ngay_sinh=date(1998, 1, 1), gioi_tinh="M",
+            so_cccd="000000000000", sdt_chinh="+84900000000", email="pdf.tester@example.com"
+        )
+        self.url = reverse('users:export-ly-lich', args=[self.nhan_vien.id])
+
+    def test_pdf_export_permission_denied(self):
+        request = self.factory.post(self.url)
+        request.user = self.user # User thường không có quyền
+        response = export_ly_lich_pdf(request, self.nhan_vien.id)
+        self.assertEqual(response.status_code, 403) # Forbidden
+
+    def test_pdf_export_success(self):
+        post_data = {
+            "bao_gom_anh_the": "on",
+            "bao_gom_thong_tin_ca_nhan": "on",
+            "bao_gom_bang_cap": "on",
+            "bao_gom_lich_su_cong_tac": "on",
+        }
+        request = self.factory.post(self.url, post_data)
+        request.user = self.staff_user # User staff có quyền
+        
+        response = export_ly_lich_pdf(request, self.nhan_vien.id)
+        
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response['Content-Type'], 'application/pdf')
+        self.assertIn('attachment; filename=', response['Content-Disposition'])

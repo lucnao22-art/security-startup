@@ -1,0 +1,20 @@
+.next-tab-button-container {
+    /* Biến container này thành một khung tham chiếu cho nút bấm */
+    position: relative; 
+    
+    /* Tạo một khoảng trống cần thiết ở dưới cùng của tab */
+    height: 50px; 
+    
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-next-tab {
+    /* Lấy nút ra khỏi luồng và đặt nó vào vị trí tuyệt đối */
+    position: absolute;
+    
+    /* Căn lề chính xác ở góc trên cùng bên phải của container */
+    top: 20px; /* Cách top 20px (bằng với padding-top) */
+    right: 0;  /* Cách bên phải 0px */
+}
