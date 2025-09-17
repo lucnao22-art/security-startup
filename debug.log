@@ -19007,3 +19007,1254 @@ WARNING 2025-09-17 05:35:49,553 log 7200 5660 Not Found: /ws/notifications/
 WARNING 2025-09-17 05:35:49,555 basehttp 7200 5660 "GET /ws/notifications/ HTTP/1.1" 404 18416
 WARNING 2025-09-17 05:35:55,553 log 7200 5800 Not Found: /ws/notifications/
 WARNING 2025-09-17 05:35:55,555 basehttp 7200 5800 "GET /ws/notifications/ HTTP/1.1" 404 18416
+INFO 2025-09-17 07:20:13,967 autoreload 9264 21408 Watching for file changes with StatReloader
+INFO 2025-09-17 07:20:15,513 server 9264 18976 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 07:20:15,514 server 9264 18976 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-17 07:20:15,516 server 9264 18976 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-09-17 07:20:40,479 log 9264 16504 Internal Server Error: /admin/inventory/vattu/100/change/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'main.context_processors' has no attribute 'company_profile_processor'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+        response.render, thread_sensitive=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )()
+    ^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\panels\templates\panel.py", line 46, in _request_context_bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "main.context_processors" does not define a "company_profile_processor" attribute/class
+ERROR 2025-09-17 07:20:40,918 runserver 9264 18976 [35;1mHTTP GET /admin/inventory/vattu/100/change/ 500 [1.91, 127.0.0.1:62303][0m
+INFO 2025-09-17 07:20:43,233 runserver 9264 18976 [32mHTTP GET / 302 [0.33, 127.0.0.1:62303][0m
+INFO 2025-09-17 07:20:43,558 runserver 9264 18976 [32mHTTP GET /hub/ 302 [0.32, 127.0.0.1:62303][0m
+ERROR 2025-09-17 07:20:43,764 log 9264 16504 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'main.context_processors' has no attribute 'company_profile_processor'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\panels\templates\panel.py", line 46, in _request_context_bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "main.context_processors" does not define a "company_profile_processor" attribute/class
+ERROR 2025-09-17 07:20:44,100 runserver 9264 18976 [35;1mHTTP GET /dashboard/ 500 [0.53, 127.0.0.1:62303][0m
+INFO 2025-09-17 07:20:44,669 runserver 9264 18976 [32mHTTP GET / 302 [0.31, 127.0.0.1:62303][0m
+INFO 2025-09-17 07:20:45,003 runserver 9264 18976 [32mHTTP GET /hub/ 302 [0.32, 127.0.0.1:62303][0m
+ERROR 2025-09-17 07:20:45,177 log 9264 16504 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'main.context_processors' has no attribute 'company_profile_processor'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\panels\templates\panel.py", line 46, in _request_context_bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "main.context_processors" does not define a "company_profile_processor" attribute/class
+ERROR 2025-09-17 07:20:45,546 runserver 9264 18976 [35;1mHTTP GET /dashboard/ 500 [0.52, 127.0.0.1:62303][0m
+INFO 2025-09-17 07:43:55,192 autoreload 24496 24956 Watching for file changes with StatReloader
+INFO 2025-09-17 07:43:56,536 server 24496 7816 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 07:43:56,537 server 24496 7816 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+CRITICAL 2025-09-17 07:43:56,537 server 24496 7816 Listen failure: Couldn't listen on 127.0.0.1:8000: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted.
+INFO 2025-09-17 07:44:08,784 runserver 9264 18976 [32mHTTP GET / 302 [0.43, 127.0.0.1:61522][0m
+INFO 2025-09-17 07:44:09,101 runserver 9264 18976 [32mHTTP GET /hub/ 302 [0.31, 127.0.0.1:61522][0m
+ERROR 2025-09-17 07:44:09,293 log 9264 16504 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'main.context_processors' has no attribute 'company_profile_processor'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\panels\templates\panel.py", line 46, in _request_context_bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ~~~~~~~~~~~~~^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "main.context_processors" does not define a "company_profile_processor" attribute/class
+ERROR 2025-09-17 07:44:09,630 runserver 9264 18976 [35;1mHTTP GET /dashboard/ 500 [0.52, 127.0.0.1:61522][0m
+INFO 2025-09-17 07:45:39,790 autoreload 24496 24956 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-17 07:45:41,005 autoreload 9264 21408 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-17 07:45:44,493 autoreload 12412 8924 Watching for file changes with StatReloader
+INFO 2025-09-17 07:45:45,534 autoreload 9484 11724 Watching for file changes with StatReloader
+INFO 2025-09-17 07:45:45,881 server 12412 476 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 07:45:45,881 server 12412 476 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-17 07:45:45,882 server 12412 476 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-17 07:45:47,023 server 9484 13948 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 07:45:47,023 server 9484 13948 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+CRITICAL 2025-09-17 07:45:47,024 server 9484 13948 Listen failure: Couldn't listen on 127.0.0.1:8000: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted.
+INFO 2025-09-17 07:46:27,236 runserver 12412 476 [32mHTTP GET / 302 [6.64, 127.0.0.1:60485][0m
+INFO 2025-09-17 07:46:27,466 runserver 12412 476 [32mHTTP GET /hub/ 302 [0.21, 127.0.0.1:60485][0m
+ERROR 2025-09-17 07:46:28,067 log 12412 24636 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 35, in __getitem__
+    return self._storages[alias]
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+             ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\files.py", line 67, in url
+    return self.storage.url(self.name)
+           ^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+        f"Could not find config for '{alias}' in settings.STORAGES."
+    )
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2025-09-17 07:46:28,533 runserver 12412 476 [35;1mHTTP GET /dashboard/ 500 [1.05, 127.0.0.1:60485][0m
+INFO 2025-09-17 07:55:15,689 autoreload 2844 21224 Watching for file changes with StatReloader
+INFO 2025-09-17 07:55:16,992 server 2844 23760 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 07:55:16,993 server 2844 23760 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-17 07:55:16,993 server 2844 23760 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-17 07:55:29,812 runserver 2844 23760 [32mHTTP GET / 302 [8.31, 127.0.0.1:61374][0m
+INFO 2025-09-17 07:55:30,386 runserver 2844 23760 [32mHTTP GET /hub/ 302 [0.56, 127.0.0.1:61374][0m
+ERROR 2025-09-17 07:55:31,081 log 2844 18420 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 35, in __getitem__
+    return self._storages[alias]
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+             ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\files.py", line 67, in url
+    return self.storage.url(self.name)
+           ^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+        f"Could not find config for '{alias}' in settings.STORAGES."
+    )
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2025-09-17 07:55:31,473 runserver 2844 23760 [35;1mHTTP GET /dashboard/ 500 [1.08, 127.0.0.1:61374][0m
+INFO 2025-09-17 09:54:26,676 autoreload 2844 21224 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-17 09:54:32,013 autoreload 4036 22028 Watching for file changes with StatReloader
+INFO 2025-09-17 09:54:33,882 server 4036 26648 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 09:54:33,883 server 4036 26648 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-17 09:54:33,884 server 4036 26648 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-09-17 09:55:05,840 log 4036 26824 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 35, in __getitem__
+    return self._storages[alias]
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+             ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\files.py", line 67, in url
+    return self.storage.url(self.name)
+           ^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+        f"Could not find config for '{alias}' in settings.STORAGES."
+    )
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2025-09-17 09:55:06,389 runserver 4036 26648 [35;1mHTTP GET /dashboard/ 500 [8.68, 127.0.0.1:50818][0m
+INFO 2025-09-17 09:55:06,466 runserver 4036 26648 [36mHTTP GET /static/debug_toolbar/css/toolbar.css 304 [0.03, 127.0.0.1:50818][0m
+INFO 2025-09-17 09:55:06,470 runserver 4036 26648 [36mHTTP GET /static/debug_toolbar/js/toolbar.js 304 [0.03, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:06,966 runserver 4036 26648 [36mHTTP GET /static/debug_toolbar/css/print.css 304 [0.02, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:06,995 runserver 4036 26648 [36mHTTP GET /static/debug_toolbar/js/utils.js 304 [0.01, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:25,959 runserver 4036 26648 [32mHTTP GET / 302 [0.21, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:26,101 runserver 4036 26648 [32mHTTP GET /hub/ 302 [0.13, 127.0.0.1:59768][0m
+ERROR 2025-09-17 09:55:26,212 log 4036 26824 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 35, in __getitem__
+    return self._storages[alias]
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+             ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\files.py", line 67, in url
+    return self.storage.url(self.name)
+           ^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+        f"Could not find config for '{alias}' in settings.STORAGES."
+    )
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2025-09-17 09:55:26,358 runserver 4036 26648 [35;1mHTTP GET /dashboard/ 500 [0.24, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:26,924 runserver 4036 26648 [32mHTTP GET / 302 [0.09, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:27,021 runserver 4036 26648 [32mHTTP GET /hub/ 302 [0.08, 127.0.0.1:59768][0m
+ERROR 2025-09-17 09:55:27,111 log 4036 26824 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 35, in __getitem__
+    return self._storages[alias]
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+             ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\files.py", line 67, in url
+    return self.storage.url(self.name)
+           ^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+        f"Could not find config for '{alias}' in settings.STORAGES."
+    )
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2025-09-17 09:55:27,240 runserver 4036 26648 [35;1mHTTP GET /dashboard/ 500 [0.21, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:40,271 runserver 4036 26648 [32mHTTP GET / 302 [0.34, 127.0.0.1:59768][0m
+INFO 2025-09-17 09:55:40,583 runserver 4036 26648 [32mHTTP GET /hub/ 302 [0.30, 127.0.0.1:59768][0m
+ERROR 2025-09-17 09:55:40,816 log 4036 26824 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'ImageFieldFile' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 35, in __getitem__
+    return self._storages[alias]
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+             ~~~~~~~~~~~~~^^^^^^^
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\dashboard\views.py", line 96, in dashboard_view
+    return render(request, 'dashboard/main.html', context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\files.py", line 67, in url
+    return self.storage.url(self.name)
+           ^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+    ~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\files\storage\handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+        f"Could not find config for '{alias}' in settings.STORAGES."
+    )
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2025-09-17 09:55:41,216 runserver 4036 26648 [35;1mHTTP GET /dashboard/ 500 [0.62, 127.0.0.1:59768][0m
+INFO 2025-09-17 10:10:04,090 autoreload 4036 22028 D:\startup_bv\config\settings.py changed, reloading.
+INFO 2025-09-17 10:10:08,523 autoreload 26572 27116 Watching for file changes with StatReloader
+INFO 2025-09-17 10:10:09,741 server 26572 21708 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 10:10:09,742 server 26572 21708 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-17 10:10:09,742 server 26572 21708 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-17 10:10:24,606 runserver 26572 21708 [32mHTTP GET / 302 [3.44, 127.0.0.1:52989][0m
+INFO 2025-09-17 10:10:24,854 runserver 26572 21708 [32mHTTP GET /hub/ 302 [0.24, 127.0.0.1:63954][0m
+INFO 2025-09-17 10:10:25,578 runserver 26572 21708 [mHTTP GET /dashboard/ 200 [0.71, 127.0.0.1:63954][0m
+INFO 2025-09-17 10:10:25,638 runserver 26572 21708 [mHTTP GET /static/css/dist/styles.css 200 [0.02, 127.0.0.1:63954][0m
+INFO 2025-09-17 10:10:25,818 runserver 26572 21708 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.19, 127.0.0.1:58946][0m
+INFO 2025-09-17 10:10:26,291 runserver 26572 21708 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:57679]
+ERROR 2025-09-17 10:10:26,856 server 26572 21708 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-17 10:10:26,928 runserver 26572 21708 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:57679]
+INFO 2025-09-17 10:10:26,947 runserver 26572 21708 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:63573]
+ERROR 2025-09-17 10:10:27,935 server 26572 21708 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-17 10:10:27,954 runserver 26572 21708 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:63573]
+INFO 2025-09-17 10:10:32,960 runserver 26572 21708 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:61729]
+ERROR 2025-09-17 10:10:33,967 server 26572 21708 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-17 10:10:33,994 runserver 26572 21708 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:61729]
+INFO 2025-09-17 10:10:37,590 runserver 26572 21708 [32mHTTP POST /logout/ 302 [0.41, 127.0.0.1:58946][0m
+INFO 2025-09-17 10:10:38,093 runserver 26572 21708 [mHTTP GET / 200 [0.48, 127.0.0.1:58946][0m
+INFO 2025-09-17 10:10:38,368 runserver 26572 21708 [36mHTTP GET /static/img/nen_moi.jpg 304 [0.01, 127.0.0.1:58946][0m
+INFO 2025-09-17 10:10:57,716 runserver 26572 21708 [32mHTTP GET / 302 [0.28, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:10:58,011 runserver 26572 21708 [32mHTTP GET /hub/ 302 [0.26, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:10:58,328 runserver 26572 21708 [32mHTTP GET /dashboard/ 302 [0.28, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:10:58,904 runserver 26572 21708 [mHTTP GET /operations/mobile/dashboard/ 200 [0.55, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:10:59,166 runserver 26572 21708 [mHTTP GET /static/css/dist/styles.css?v=1758078658 200 [0.23, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:10:59,169 runserver 26572 21708 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.23, 127.0.0.1:63331][0m
+WARNING 2025-09-17 10:10:59,521 log 26572 5584 Not Found: /favicon.ico
+WARNING 2025-09-17 10:10:59,522 runserver 26572 21708 [33mHTTP GET /favicon.ico 404 [0.27, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:11:04,203 runserver 26572 21708 [32mHTTP POST /logout/ 302 [0.30, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:11:04,433 runserver 26572 21708 [mHTTP GET / 200 [0.22, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:11:04,725 runserver 26572 21708 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.26, 127.0.0.1:65509][0m
+INFO 2025-09-17 10:11:04,726 runserver 26572 21708 [36mHTTP GET /static/img/nen_moi.jpg 304 [0.01, 127.0.0.1:63331][0m

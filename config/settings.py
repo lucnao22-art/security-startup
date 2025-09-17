@@ -26,7 +26,7 @@ if os.path.exists(os.path.join(BASE_DIR, '.env')):
 SECRET_KEY = env('SECRET_KEY')
 
 # DEBUG sẽ là True nếu có biến DEBUG=True trong file .env, ngược lại là False
-DEBUG = env('DEBUG')
+DEBUG = env.bool('DEBUG', default=False)
 
 # Cấu hình ALLOWED_HOSTS linh hoạt cho cả local và production trên Render
 ALLOWED_HOSTS = []
@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',  # WhiteNoise
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
@@ -111,7 +110,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'main.context_processors.company_profile_processor',
+                'main.context_processors.company_info',
             ],
         },
     },
@@ -126,13 +125,10 @@ ASGI_APPLICATION = 'config.routing.application'
 # ==============================================================================
 # 7. CẤU HÌNH CƠ SỞ DỮ LIỆU (DATABASE)
 # ==============================================================================
-# Sử dụng dj-database-url để tự động cấu hình từ biến môi trường DATABASE_URL trên Render
-# Nếu không có, sẽ dùng SQLite mặc định cho môi trường local
 DATABASES = {
     'default': dj_database_url.config(
         default=f'sqlite:///{BASE_DIR / "db.sqlite3"}',
-        conn_max_age=600,
-        conn_health_checks=True,
+        conn_max_age=600
     )
 }
 
@@ -164,8 +160,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Tối ưu hóa việc phục vụ file tĩnh với WhiteNoise
+# SỬA LỖI: Bổ sung cấu hình `default` và `staticfiles` storage
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
@@ -182,6 +181,7 @@ PHONENUMBER_DEFAULT_REGION = "VN"
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ['127.0.0.1']
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 # ==============================================================================
 # 12. CẤU HÌNH JAZZMIN (GIỮ NGUYÊN TỪ FILE CỦA BẠN)
@@ -203,12 +203,6 @@ JAZZMIN_SETTINGS = {
         {"name": "Dashboard", "url": "/dashboard/", "permissions": ["auth.view_user"]},
         {"app": "operations", "name": "Vận hành", "permissions": ["auth.view_user"]},
         {"app": "users", "name": "Nhân sự", "permissions": ["auth.view_user"]},
-    ],
-    "order_with_respect_to": [
-        "auth", "users", "backup_restore", "main",
-        "operations", "clients", "inspection",
-        "inventory", "accounting",
-        "reports", "workflow", "notifications",
     ],
     "show_recent_actions": True,
     "custom_links": {
@@ -261,20 +255,15 @@ JAZZMIN_UI_TWEAKS = {
 }
 
 JAZZMIN_SETTINGS["order_with_respect_to"] = (
-    # Nghiệp vụ cốt lõi
     {"app": "dashboard", "label": "Tổng quan"},
     {"app": "users", "label": "Quản lý Nhân sự"},
     {"app": "clients", "label": "Quản lý Khách hàng"},
     {"app": "operations", "label": "Vận hành & Tác nghiệp"},
     {"app": "workflow", "label": "Quy trình & Công việc"},
     {"app": "reports", "label": "Báo cáo & Thống kê"},
-    
-    # Nghiệp vụ hỗ trợ
     {"app": "inspection", "label": "Thanh tra & Tuần tra"},
     {"app": "inventory", "label": "Kho & Vật tư"},
     {"app": "accounting", "label": "Kế toán"},
-    
-    # Cấu hình hệ thống
     {"app": "main", "label": "Cấu hình Chung"},
     {"app": "backup_restore", "label": "Sao lưu & Phục hồi"},
     {"app": "auth", "label": "Tài khoản & Phân quyền"},
@@ -296,7 +285,7 @@ LOGGING = {
             "level": "INFO",
             "class": "logging.handlers.RotatingFileHandler",
             "filename": os.path.join(BASE_DIR, "debug.log"),
-            "maxBytes": 1024 * 1024 * 5,  # 5 MB
+            "maxBytes": 1024 * 1024 * 5,
             "backupCount": 5,
             "formatter": "verbose",
         },
