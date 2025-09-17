@@ -20262,3 +20262,1028 @@ INFO 2025-09-17 10:49:09,249 autoreload 6540 21428 Watching for file changes wit
 INFO 2025-09-17 10:49:10,303 server 6540 5936 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
 INFO 2025-09-17 10:49:10,304 server 6540 5936 Configuring endpoint tcp:port=8000:interface=127.0.0.1
 INFO 2025-09-17 10:49:10,305 server 6540 5936 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-09-18 01:14:48,620 signal 6904 9072 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001B09384CEC0>> raised: ModuleNotFoundError("No module named 'notifications.urls'")
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\startup_bv\venv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "D:\startup_bv\config\urls.py", line 20, in <module>
+    path('notifications/', include('notifications.urls')),
+                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'notifications.urls'
+ERROR 2025-09-18 01:15:52,185 signal 24316 2026288874368 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001D7CC2E6BA0>> raised: ModuleNotFoundError("No module named 'notifications.urls'")
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\startup_bv\venv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\urls.py", line 42, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\urls.py", line 61, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "D:\startup_bv\config\urls.py", line 20, in <module>
+    path('notifications/', include('notifications.urls')),
+                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'notifications.urls'
+ERROR 2025-09-18 01:15:52,373 signal 16312 12384 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000002A395DACEC0>> raised: ModuleNotFoundError("No module named 'notifications.urls'")
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "D:\startup_bv\venv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "D:\startup_bv\config\urls.py", line 20, in <module>
+    path('notifications/', include('notifications.urls')),
+                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\AVC\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'notifications.urls'
+INFO 2025-09-18 02:04:52,067 autoreload 21940 7712 Watching for file changes with StatReloader
+INFO 2025-09-18 02:04:53,571 server 21940 4488 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:04:53,571 server 21940 4488 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:04:53,572 server 21940 4488 Listening on TCP address 127.0.0.1:8000
+WARNING 2025-09-18 02:05:18,884 connection 30024 23092 No hostname was supplied. Reverting to default 'localhost'
+ERROR 2025-09-18 02:05:29,208 log 21940 27064 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 173, in __acall__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-09-18 02:05:29,219 runserver 21940 4488 [35;1mHTTP GET / 500 [2.49, 127.0.0.1:53616][0m
+ERROR 2025-09-18 02:05:31,876 log 21940 27064 Internal Server Error: /admin/inventory/vattu/100/change/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 173, in __acall__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-09-18 02:05:31,885 runserver 21940 4488 [35;1mHTTP GET /admin/inventory/vattu/100/change/ 500 [0.22, 127.0.0.1:53616][0m
+ERROR 2025-09-18 02:05:32,701 log 21940 27064 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 173, in __acall__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-09-18 02:05:32,711 runserver 21940 4488 [35;1mHTTP GET /favicon.ico 500 [0.16, 127.0.0.1:53616][0m
+ERROR 2025-09-18 02:05:37,162 log 21940 27064 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 173, in __acall__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-09-18 02:05:37,172 runserver 21940 4488 [35;1mHTTP GET / 500 [0.19, 127.0.0.1:53616][0m
+ERROR 2025-09-18 02:05:38,331 log 21940 27064 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 173, in __acall__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-09-18 02:05:38,343 runserver 21940 4488 [35;1mHTTP GET / 500 [0.16, 127.0.0.1:53616][0m
+ERROR 2025-09-18 02:05:38,680 log 21940 27064 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 173, in __acall__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "D:\startup_bv\venv\Lib\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\startup_bv\venv\Lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-09-18 02:05:38,688 runserver 21940 4488 [35;1mHTTP GET /favicon.ico 500 [0.15, 127.0.0.1:53616][0m
+INFO 2025-09-18 02:18:01,733 autoreload 21940 7712 D:\startup_bv\config\urls.py changed, reloading.
+INFO 2025-09-18 02:18:06,075 autoreload 10640 13120 Watching for file changes with StatReloader
+INFO 2025-09-18 02:18:07,521 server 10640 29944 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:18:07,521 server 10640 29944 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:18:07,522 server 10640 29944 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 02:18:21,154 runserver 10640 29944 [mHTTP GET / 200 [3.51, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:21,403 runserver 10640 29944 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.20, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:21,673 runserver 10640 29944 [36mHTTP GET /static/img/nen_moi.jpg 304 [0.00, 127.0.0.1:52312][0m
+WARNING 2025-09-18 02:18:22,010 log 10640 29132 Not Found: /favicon.ico
+WARNING 2025-09-18 02:18:22,019 runserver 10640 29944 [33mHTTP GET /favicon.ico 404 [0.22, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:28,535 runserver 10640 29944 [32mHTTP POST / 302 [2.64, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:28,956 runserver 10640 29944 [32mHTTP GET /hub/ 302 [0.33, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:29,869 runserver 10640 29944 [mHTTP GET /dashboard/ 200 [0.89, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:30,056 runserver 10640 29944 [36mHTTP GET /static/css/dist/styles.css 304 [0.03, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:30,228 runserver 10640 29944 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:60420]
+ERROR 2025-09-18 02:18:30,967 server 10640 29944 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-18 02:18:30,998 runserver 10640 29944 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:60420]
+INFO 2025-09-18 02:18:31,011 runserver 10640 29944 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:57853]
+ERROR 2025-09-18 02:18:32,002 server 10640 29944 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-18 02:18:32,018 runserver 10640 29944 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:57853]
+INFO 2025-09-18 02:18:34,812 runserver 10640 29944 [32mHTTP POST /logout/ 302 [0.47, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:35,128 runserver 10640 29944 [mHTTP GET / 200 [0.30, 127.0.0.1:52312][0m
+INFO 2025-09-18 02:18:58,185 runserver 10640 29944 [mHTTP GET / 200 [0.34, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:18:58,429 runserver 10640 29944 [36mHTTP GET /static/img/nen_moi.jpg 304 [0.01, 127.0.0.1:64084][0m
+INFO 2025-09-18 02:18:58,431 runserver 10640 29944 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.18, 127.0.0.1:49219][0m
+WARNING 2025-09-18 02:19:01,441 log 10640 29132 Not Found: /favicon.ico
+WARNING 2025-09-18 02:19:01,443 runserver 10640 29944 [33mHTTP GET /favicon.ico 404 [0.34, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:05,729 runserver 10640 29944 [32mHTTP POST / 302 [2.32, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:06,251 runserver 10640 29944 [32mHTTP GET /hub/ 302 [0.51, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:06,671 runserver 10640 29944 [32mHTTP GET /dashboard/ 302 [0.34, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:07,242 runserver 10640 29944 [mHTTP GET /operations/mobile/dashboard/ 200 [0.53, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:07,328 runserver 10640 29944 [mHTTP GET /static/css/dist/styles.css?v=1758136746 200 [0.03, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:07,636 runserver 10640 29944 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.32, 127.0.0.1:64084][0m
+INFO 2025-09-18 02:19:12,473 runserver 10640 29944 [mHTTP GET /operations/mobile/dashboard/ 200 [0.35, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:12,526 runserver 10640 29944 [mHTTP GET /static/css/dist/styles.css?v=1758136752 200 [0.02, 127.0.0.1:49219][0m
+INFO 2025-09-18 02:19:12,714 runserver 10640 29944 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.21, 127.0.0.1:64084][0m
+INFO 2025-09-18 02:50:41,760 autoreload 10640 13120 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 02:50:46,261 autoreload 16900 2416 Watching for file changes with StatReloader
+INFO 2025-09-18 02:50:47,578 server 16900 5708 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:50:47,578 server 16900 5708 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:50:47,579 server 16900 5708 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 02:51:31,668 autoreload 16900 2416 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 02:51:35,752 autoreload 17656 27628 Watching for file changes with StatReloader
+INFO 2025-09-18 02:51:36,957 server 17656 24712 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:51:36,957 server 17656 24712 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:51:36,958 server 17656 24712 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 02:52:06,783 autoreload 17656 27628 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 02:52:10,804 autoreload 18420 10984 Watching for file changes with StatReloader
+INFO 2025-09-18 02:52:12,114 server 18420 29128 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:52:12,117 server 18420 29128 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:52:12,118 server 18420 29128 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 02:52:20,991 autoreload 18420 10984 D:\startup_bv\operations\urls.py changed, reloading.
+INFO 2025-09-18 02:52:25,004 autoreload 29660 6524 Watching for file changes with StatReloader
+INFO 2025-09-18 02:52:26,217 server 29660 30168 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:52:26,218 server 29660 30168 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:52:26,219 server 29660 30168 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-09-18 02:52:58,574 log 29660 1468 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 194, in mobile_dashboard
+    cham_cong = pc.chamcong.first()
+                ^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 525, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+operations.models.PhanCongCaTruc.chamcong.RelatedObjectDoesNotExist: PhanCongCaTruc has no chamcong.
+ERROR 2025-09-18 02:52:58,715 runserver 29660 30168 [35;1mHTTP GET /operations/mobile/dashboard/ 500 [2.42, 127.0.0.1:56207][0m
+INFO 2025-09-18 02:57:46,649 autoreload 29660 6524 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 02:57:50,606 autoreload 19264 24384 Watching for file changes with StatReloader
+INFO 2025-09-18 02:57:51,765 server 19264 31156 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 02:57:51,765 server 19264 31156 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 02:57:51,766 server 19264 31156 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 02:58:09,585 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [6.40, 127.0.0.1:56602][0m
+INFO 2025-09-18 02:58:09,633 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139089 200 [0.01, 127.0.0.1:56602][0m
+INFO 2025-09-18 02:58:09,835 runserver 19264 31156 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.21, 127.0.0.1:61445][0m
+INFO 2025-09-18 02:58:32,918 runserver 19264 31156 [mHTTP GET /operations/mobile/lich-truc/ 200 [0.41, 127.0.0.1:61445][0m
+INFO 2025-09-18 02:58:32,966 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139112 200 [0.02, 127.0.0.1:61445][0m
+INFO 2025-09-18 02:58:37,694 runserver 19264 31156 [mHTTP GET /operations/mobile/bao-cao-su-co/ 200 [0.48, 127.0.0.1:61445][0m
+INFO 2025-09-18 02:58:37,740 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139117 200 [0.01, 127.0.0.1:61445][0m
+INFO 2025-09-18 02:58:37,960 runserver 19264 31156 [mHTTP GET /operations/mobile/bao-cao-su-co/ 200 [0.23, 127.0.0.1:56602][0m
+INFO 2025-09-18 02:58:44,689 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.35, 127.0.0.1:56602][0m
+INFO 2025-09-18 02:58:45,018 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139124 200 [0.30, 127.0.0.1:56602][0m
+INFO 2025-09-18 02:58:45,024 runserver 19264 31156 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.30, 127.0.0.1:61445][0m
+INFO 2025-09-18 03:07:56,236 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.18, 127.0.0.1:57132][0m
+INFO 2025-09-18 03:07:56,284 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139676 200 [0.02, 127.0.0.1:57132][0m
+INFO 2025-09-18 03:08:05,857 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.39, 127.0.0.1:57132][0m
+INFO 2025-09-18 03:08:05,905 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139685 200 [0.03, 127.0.0.1:57132][0m
+INFO 2025-09-18 03:08:08,008 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.33, 127.0.0.1:57132][0m
+INFO 2025-09-18 03:08:08,057 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139687 200 [0.03, 127.0.0.1:57132][0m
+INFO 2025-09-18 03:12:30,053 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.17, 127.0.0.1:64011][0m
+INFO 2025-09-18 03:12:30,095 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139949 200 [0.01, 127.0.0.1:64011][0m
+INFO 2025-09-18 03:12:30,165 runserver 19264 31156 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.08, 127.0.0.1:65460][0m
+INFO 2025-09-18 03:12:39,195 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.35, 127.0.0.1:65460][0m
+INFO 2025-09-18 03:12:39,520 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758139958 200 [0.29, 127.0.0.1:65460][0m
+INFO 2025-09-18 03:12:39,526 runserver 19264 31156 [36mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 304 [0.29, 127.0.0.1:64011][0m
+INFO 2025-09-18 03:18:05,350 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.44, 127.0.0.1:65145][0m
+INFO 2025-09-18 03:18:05,400 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140284 200 [0.02, 127.0.0.1:65145][0m
+INFO 2025-09-18 03:18:05,606 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/js/toolbar.js 200 [0.20, 127.0.0.1:52200][0m
+INFO 2025-09-18 03:18:05,611 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/css/toolbar.css 200 [0.21, 127.0.0.1:65372][0m
+INFO 2025-09-18 03:18:05,619 runserver 19264 31156 [mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 200 [0.23, 127.0.0.1:53930][0m
+INFO 2025-09-18 03:18:06,500 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/css/print.css 200 [0.04, 127.0.0.1:53930][0m
+INFO 2025-09-18 03:18:06,513 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/js/utils.js 200 [0.05, 127.0.0.1:65372][0m
+WARNING 2025-09-18 03:18:10,685 log 19264 28372 Not Found: /favicon.ico
+WARNING 2025-09-18 03:18:10,687 runserver 19264 31156 [33mHTTP GET /favicon.ico 404 [0.39, 127.0.0.1:65372][0m
+INFO 2025-09-18 03:24:45,167 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.18, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:45,213 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140685 200 [0.01, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:48,252 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.33, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:48,316 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140687 200 [0.03, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:49,991 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.37, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:50,048 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140689 200 [0.03, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:51,117 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.38, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:51,171 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140690 200 [0.02, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:52,077 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.38, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:52,132 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140691 200 [0.03, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:53,118 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.40, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:53,168 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140692 200 [0.01, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:54,010 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.33, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:54,076 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140693 200 [0.02, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:54,983 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.32, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:55,036 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140694 200 [0.03, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:56,005 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.34, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:56,061 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140695 200 [0.02, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:57,144 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.35, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:57,181 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140696 200 [0.01, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:58,146 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.35, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:24:58,189 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140697 200 [0.01, 127.0.0.1:57659][0m
+INFO 2025-09-18 03:25:58,566 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.13, 127.0.0.1:57731][0m
+INFO 2025-09-18 03:25:58,601 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140758 200 [0.01, 127.0.0.1:57731][0m
+INFO 2025-09-18 03:25:58,604 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/js/toolbar.js 200 [0.01, 127.0.0.1:59427][0m
+INFO 2025-09-18 03:25:58,607 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/css/toolbar.css 200 [0.01, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:25:58,671 runserver 19264 31156 [mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 200 [0.08, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:25:59,329 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/css/print.css 200 [0.01, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:25:59,332 runserver 19264 31156 [mHTTP GET /static/debug_toolbar/js/utils.js 200 [0.01, 127.0.0.1:62416][0m
+WARNING 2025-09-18 03:26:01,954 log 19264 28372 Not Found: /favicon.ico
+WARNING 2025-09-18 03:26:01,955 runserver 19264 31156 [33mHTTP GET /favicon.ico 404 [0.12, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:02,093 runserver 19264 31156 [mHTTP GET /operations/mobile/lich-truc/ 200 [0.14, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:26:02,138 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140761 200 [0.01, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:26:04,515 runserver 19264 31156 [mHTTP GET /operations/mobile/bao-cao-su-co/ 200 [0.14, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:26:04,552 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140764 200 [0.01, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:26:04,701 runserver 19264 31156 [mHTTP GET /operations/mobile/bao-cao-su-co/ 200 [0.16, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:09,046 runserver 19264 31156 [32mHTTP POST /logout/ 302 [0.13, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:09,155 runserver 19264 31156 [mHTTP GET / 200 [0.09, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:09,189 runserver 19264 31156 [36mHTTP GET /static/img/nen_moi.jpg 304 [0.00, 127.0.0.1:64435][0m
+INFO 2025-09-18 03:26:09,263 runserver 19264 31156 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.08, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:21,068 runserver 19264 31156 [32mHTTP POST / 302 [0.69, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:21,163 runserver 19264 31156 [32mHTTP GET /hub/ 302 [0.08, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:21,250 runserver 19264 31156 [32mHTTP GET /dashboard/ 302 [0.08, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:21,354 runserver 19264 31156 [mHTTP GET /operations/mobile/dashboard/ 200 [0.09, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:26:21,393 runserver 19264 31156 [mHTTP GET /static/css/dist/styles.css?v=1758140781 200 [0.00, 127.0.0.1:62416][0m
+ERROR 2025-09-18 03:26:39,938 log 19264 14356 Internal Server Error: /inspection/mobile/tuan-tra/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\inspection\views.py", line 15, in tuan_tra_mobile_view
+    nhan_vien = request.user.nhanvien
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'User' object has no attribute 'nhanvien'. Did you mean: 'nhan_vien'?
+ERROR 2025-09-18 03:26:40,053 runserver 19264 31156 [35;1mHTTP GET /inspection/mobile/tuan-tra/ 500 [0.17, 127.0.0.1:62416][0m
+INFO 2025-09-18 03:36:49,681 autoreload 19264 24384 D:\startup_bv\inspection\views.py changed, reloading.
+INFO 2025-09-18 03:36:53,898 autoreload 4716 17276 Watching for file changes with StatReloader
+INFO 2025-09-18 03:41:04,429 autoreload 4716 17276 D:\startup_bv\inspection\models.py changed, reloading.
+INFO 2025-09-18 03:41:08,144 autoreload 24560 26944 Watching for file changes with StatReloader
+INFO 2025-09-18 03:46:36,055 autoreload 21308 13044 Watching for file changes with StatReloader
+INFO 2025-09-18 03:46:37,160 server 21308 3144 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 03:46:37,160 server 21308 3144 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 03:46:37,161 server 21308 3144 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 03:46:44,226 runserver 21308 3144 [32mHTTP GET /inspection/mobile/tuan-tra/ 302 [2.38, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:46:44,484 runserver 21308 3144 [mHTTP GET /operations/mobile/dashboard/ 200 [0.24, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:46:44,532 runserver 21308 3144 [mHTTP GET /static/css/dist/styles.css?v=1758142004 200 [0.01, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:47:10,339 runserver 21308 3144 [32mHTTP POST /operations/mobile/check-in/5204/ 302 [0.33, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:47:10,722 runserver 21308 3144 [mHTTP GET /operations/mobile/dashboard/ 200 [0.37, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:47:10,771 runserver 21308 3144 [mHTTP GET /static/css/dist/styles.css?v=1758142030 200 [0.02, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:47:13,139 runserver 21308 3144 [32mHTTP GET /inspection/mobile/tuan-tra/ 302 [0.31, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:47:13,428 runserver 21308 3144 [mHTTP GET /operations/mobile/dashboard/ 200 [0.28, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:47:13,476 runserver 21308 3144 [mHTTP GET /static/css/dist/styles.css?v=1758142033 200 [0.01, 127.0.0.1:56266][0m
+INFO 2025-09-18 03:52:59,201 autoreload 21308 13044 D:\startup_bv\inspection\views.py changed, reloading.
+INFO 2025-09-18 03:53:03,041 autoreload 19968 31196 Watching for file changes with StatReloader
+INFO 2025-09-18 03:53:04,220 server 19968 13836 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 03:53:04,221 server 19968 13836 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 03:53:04,221 server 19968 13836 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 03:53:18,921 runserver 19968 13836 [mHTTP GET /operations/mobile/dashboard/ 200 [7.15, 127.0.0.1:64001][0m
+INFO 2025-09-18 03:53:18,972 runserver 19968 13836 [mHTTP GET /static/css/dist/styles.css?v=1758142398 200 [0.01, 127.0.0.1:64001][0m
+INFO 2025-09-18 03:53:30,868 runserver 19968 13836 [mHTTP GET /operations/mobile/lich-truc/ 200 [0.37, 127.0.0.1:64001][0m
+INFO 2025-09-18 03:53:30,911 runserver 19968 13836 [mHTTP GET /static/css/dist/styles.css?v=1758142410 200 [0.01, 127.0.0.1:64001][0m
+INFO 2025-09-18 03:53:39,092 runserver 19968 13836 [32mHTTP GET /inspection/mobile/tuan-tra/ 302 [0.33, 127.0.0.1:64001][0m
+INFO 2025-09-18 03:53:39,372 runserver 19968 13836 [mHTTP GET /operations/mobile/dashboard/ 200 [0.27, 127.0.0.1:64001][0m
+INFO 2025-09-18 03:53:39,421 runserver 19968 13836 [mHTTP GET /static/css/dist/styles.css?v=1758142419 200 [0.01, 127.0.0.1:64001][0m
+INFO 2025-09-18 04:08:49,139 runserver 19968 13836 [mHTTP GET /operations/mobile/dashboard/ 200 [0.13, 127.0.0.1:59371][0m
+INFO 2025-09-18 04:08:49,186 runserver 19968 13836 [mHTTP GET /static/css/dist/styles.css?v=1758143329 200 [0.01, 127.0.0.1:59371][0m
+INFO 2025-09-18 04:14:28,583 runserver 19968 13836 [mHTTP GET /operations/mobile/lich-truc/ 200 [0.38, 127.0.0.1:56856][0m
+INFO 2025-09-18 04:14:28,630 runserver 19968 13836 [mHTTP GET /static/css/dist/styles.css?v=1758143668 200 [0.02, 127.0.0.1:56856][0m
+INFO 2025-09-18 04:16:08,681 runserver 19968 13836 [mHTTP GET /operations/mobile/dashboard/ 200 [0.18, 127.0.0.1:56402][0m
+INFO 2025-09-18 04:16:08,733 runserver 19968 13836 [mHTTP GET /static/css/dist/styles.css?v=1758143768 200 [0.01, 127.0.0.1:56402][0m
+INFO 2025-09-18 04:52:40,769 autoreload 30328 8180 Watching for file changes with StatReloader
+INFO 2025-09-18 04:52:41,901 server 30328 13560 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 04:52:41,902 server 30328 13560 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 04:52:41,902 server 30328 13560 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 04:52:49,605 runserver 30328 13560 [mHTTP GET /operations/mobile/dashboard/ 200 [2.45, 127.0.0.1:57635][0m
+INFO 2025-09-18 04:52:49,651 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css?v=1758145969 200 [0.01, 127.0.0.1:57635][0m
+INFO 2025-09-18 04:52:55,942 runserver 30328 13560 [mHTTP GET /operations/mobile/dashboard/ 200 [0.36, 127.0.0.1:57635][0m
+INFO 2025-09-18 04:52:55,994 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css?v=1758145975 200 [0.01, 127.0.0.1:57635][0m
+INFO 2025-09-18 04:53:00,678 runserver 30328 13560 [mHTTP GET /operations/mobile/dashboard/ 200 [0.36, 127.0.0.1:57635][0m
+INFO 2025-09-18 04:53:00,722 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css?v=1758145980 200 [0.01, 127.0.0.1:57635][0m
+WARNING 2025-09-18 04:53:43,359 log 30328 24332 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-18 04:53:43,360 runserver 30328 13560 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.35, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:16,634 runserver 30328 13560 [32mHTTP POST / 302 [1.45, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:16,879 runserver 30328 13560 [32mHTTP GET /hub/ 302 [0.23, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:17,333 runserver 30328 13560 [mHTTP GET /dashboard/ 200 [0.44, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:17,402 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css 200 [0.01, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:17,909 runserver 30328 13560 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:57454]
+ERROR 2025-09-18 04:54:18,610 server 30328 13560 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-18 04:54:18,636 runserver 30328 13560 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:57454]
+INFO 2025-09-18 04:54:18,654 runserver 30328 13560 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:57578]
+ERROR 2025-09-18 04:54:19,636 server 30328 13560 Exception inside application: 'NoneType' object has no attribute 'group_add'
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+           ^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 62, in __call__
+    await await_many_dispatch([receive], self.dispatch)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\consumer.py", line 74, in dispatch
+    await handler(message)
+  File "D:\startup_bv\venv\Lib\site-packages\channels\generic\websocket.py", line 180, in websocket_connect
+    await self.connect()
+  File "D:\startup_bv\notifications\consumers.py", line 28, in connect
+    await self.channel_layer.group_add(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group_add'
+INFO 2025-09-18 04:54:19,649 runserver 30328 13560 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:57578]
+WARNING 2025-09-18 04:54:20,785 utils 30328 904 Couldnt reverse index
+INFO 2025-09-18 04:54:21,167 runserver 30328 13560 [mHTTP GET /admin/ 200 [0.52, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:21,206 runserver 30328 13560 [36mHTTP GET /static/admin/custom_admin.css 304 [0.00, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:21,272 runserver 30328 13560 [36mHTTP GET /static/img/logo_moi.png 304 [0.00, 127.0.0.1:52843][0m
+WARNING 2025-09-18 04:54:36,567 utils 30328 14020 Couldnt reverse index
+INFO 2025-09-18 04:54:37,311 runserver 30328 13560 [mHTTP GET /admin/main/companyprofile/ 200 [1.01, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:37,345 runserver 30328 13560 [36mHTTP GET /static/admin/custom_admin.css 304 [0.01, 127.0.0.1:52843][0m
+INFO 2025-09-18 04:54:37,678 runserver 30328 13560 [mHTTP GET /admin/jsi18n/ 200 [0.34, 127.0.0.1:51950][0m
+WARNING 2025-09-18 04:54:41,593 utils 30328 4972 Couldnt reverse index
+INFO 2025-09-18 04:54:42,250 runserver 30328 13560 [mHTTP GET /admin/main/companyprofile/1/change/ 200 [0.96, 127.0.0.1:51950][0m
+INFO 2025-09-18 04:54:42,288 runserver 30328 13560 [36mHTTP GET /static/admin/custom_admin.css 304 [0.01, 127.0.0.1:51950][0m
+INFO 2025-09-18 04:54:42,514 runserver 30328 13560 [mHTTP GET /admin/jsi18n/ 200 [0.22, 127.0.0.1:52843][0m
+INFO 2025-09-18 05:24:21,118 runserver 30328 13560 [mHTTP GET /operations/mobile/dashboard/ 200 [0.17, 127.0.0.1:49615][0m
+INFO 2025-09-18 05:24:21,172 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css?v=1758147860 200 [0.01, 127.0.0.1:49615][0m
+INFO 2025-09-18 05:24:21,241 runserver 30328 13560 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.08, 127.0.0.1:50913][0m
+INFO 2025-09-18 05:27:08,102 runserver 30328 13560 [mHTTP GET /operations/mobile/dashboard/ 200 [0.18, 127.0.0.1:50594][0m
+INFO 2025-09-18 05:27:08,252 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css?v=1758148027 200 [0.11, 127.0.0.1:50594][0m
+INFO 2025-09-18 05:27:08,255 runserver 30328 13560 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.11, 127.0.0.1:49378][0m
+INFO 2025-09-18 05:29:13,733 runserver 30328 13560 [mHTTP GET /operations/mobile/dashboard/ 200 [0.45, 127.0.0.1:61759][0m
+INFO 2025-09-18 05:29:14,060 runserver 30328 13560 [mHTTP GET /static/css/dist/styles.css?v=1758148153 200 [0.30, 127.0.0.1:61759][0m
+INFO 2025-09-18 05:29:14,066 runserver 30328 13560 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.30, 127.0.0.1:62218][0m
+INFO 2025-09-18 05:36:23,564 autoreload 30328 8180 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 05:36:27,406 autoreload 3012 28392 Watching for file changes with StatReloader
+INFO 2025-09-18 05:36:28,552 server 3012 7824 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 05:36:28,552 server 3012 7824 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 05:36:28,553 server 3012 7824 Listening on TCP address 127.0.0.1:8000
+ERROR 2025-09-18 05:37:00,478 log 3012 29808 Internal Server Error: /operations/mobile/dashboard/
+Traceback (most recent call last):
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "D:\startup_bv\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\startup_bv\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\startup_bv\operations\views.py", line 191, in mobile_dashboard
+    cham_cong = pc.chamcong.first()
+                ^^^^^^^^^^^^^^^^^
+AttributeError: 'ChamCong' object has no attribute 'first'
+ERROR 2025-09-18 05:37:00,886 runserver 3012 7824 [35;1mHTTP GET /operations/mobile/dashboard/ 500 [3.24, 127.0.0.1:58720][0m
+INFO 2025-09-18 05:37:30,478 autoreload 3012 28392 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 05:37:34,392 autoreload 19736 5136 Watching for file changes with StatReloader
+INFO 2025-09-18 05:37:35,489 server 19736 23736 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 05:37:35,490 server 19736 23736 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 05:37:35,490 server 19736 23736 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 05:43:42,488 autoreload 19736 5136 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 05:43:46,857 autoreload 27852 13800 Watching for file changes with StatReloader
+INFO 2025-09-18 05:43:48,014 server 27852 30652 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 05:43:48,014 server 27852 30652 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 05:43:48,015 server 27852 30652 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 05:44:15,964 runserver 27852 30652 [mHTTP GET /operations/mobile/dashboard/ 200 [2.40, 127.0.0.1:56745][0m
+INFO 2025-09-18 05:44:16,006 runserver 27852 30652 [mHTTP GET /static/css/dist/styles.css?v=1758149055 200 [0.01, 127.0.0.1:56745][0m
+INFO 2025-09-18 05:49:34,423 autoreload 27852 13800 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 05:49:38,451 autoreload 16456 8216 Watching for file changes with StatReloader
+INFO 2025-09-18 05:49:39,618 server 16456 16680 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 05:49:39,618 server 16456 16680 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 05:49:39,619 server 16456 16680 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 05:50:03,968 runserver 16456 16680 [mHTTP GET /operations/mobile/dashboard/ 200 [2.34, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:04,010 runserver 16456 16680 [mHTTP GET /static/css/dist/styles.css?v=1758149403 200 [0.01, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:06,503 runserver 16456 16680 [mHTTP GET /operations/mobile/dashboard/ 200 [0.37, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:06,557 runserver 16456 16680 [mHTTP GET /static/css/dist/styles.css?v=1758149406 200 [0.03, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:07,751 runserver 16456 16680 [mHTTP GET /operations/mobile/dashboard/ 200 [0.34, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:07,802 runserver 16456 16680 [mHTTP GET /static/css/dist/styles.css?v=1758149407 200 [0.03, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:11,634 runserver 16456 16680 [mHTTP GET /operations/mobile/dashboard/ 200 [0.34, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:11,685 runserver 16456 16680 [mHTTP GET /static/css/dist/styles.css?v=1758149411 200 [0.02, 127.0.0.1:58849][0m
+INFO 2025-09-18 05:50:11,872 runserver 16456 16680 [mHTTP GET /static/debug_toolbar/css/toolbar.css 200 [0.20, 127.0.0.1:58031][0m
+INFO 2025-09-18 05:50:11,874 runserver 16456 16680 [mHTTP GET /static/debug_toolbar/js/toolbar.js 200 [0.21, 127.0.0.1:64814][0m
+INFO 2025-09-18 05:50:11,881 runserver 16456 16680 [mHTTP GET /media/anh_the/NNT_NBOs4Xb.png 200 [0.21, 127.0.0.1:56340][0m
+INFO 2025-09-18 05:50:12,313 runserver 16456 16680 [mHTTP GET /static/debug_toolbar/css/print.css 200 [0.01, 127.0.0.1:56340][0m
+INFO 2025-09-18 05:50:12,321 runserver 16456 16680 [mHTTP GET /static/debug_toolbar/js/utils.js 200 [0.01, 127.0.0.1:64814][0m
+WARNING 2025-09-18 05:50:14,351 log 16456 8956 Not Found: /favicon.ico
+WARNING 2025-09-18 05:50:14,353 runserver 16456 16680 [33mHTTP GET /favicon.ico 404 [0.31, 127.0.0.1:64814][0m
+INFO 2025-09-18 05:58:12,879 autoreload 16456 8216 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 05:58:16,931 autoreload 19100 13560 Watching for file changes with StatReloader
+INFO 2025-09-18 05:58:18,144 server 19100 23268 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 05:58:18,145 server 19100 23268 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 05:58:18,146 server 19100 23268 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 05:58:21,091 runserver 19100 23268 [mHTTP GET /operations/mobile/dashboard/ 200 [2.43, 127.0.0.1:61568][0m
+INFO 2025-09-18 05:58:21,238 runserver 19100 23268 [mHTTP GET /static/css/dist/styles.css?v=1758149900 200 [0.11, 127.0.0.1:61568][0m
+INFO 2025-09-18 05:58:21,241 runserver 19100 23268 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.11, 127.0.0.1:62311][0m
+INFO 2025-09-18 05:58:26,934 autoreload 19100 13560 D:\startup_bv\operations\views.py changed, reloading.
+INFO 2025-09-18 05:58:30,952 autoreload 7696 23600 Watching for file changes with StatReloader
+INFO 2025-09-18 05:58:32,064 server 7696 24172 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-18 05:58:32,064 server 7696 24172 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-18 05:58:32,065 server 7696 24172 Listening on TCP address 127.0.0.1:8000
+INFO 2025-09-18 05:58:38,422 runserver 7696 24172 [mHTTP GET /operations/mobile/dashboard/ 200 [2.42, 127.0.0.1:59322][0m
+INFO 2025-09-18 05:58:38,567 runserver 7696 24172 [mHTTP GET /static/css/dist/styles.css?v=1758149918 200 [0.11, 127.0.0.1:59322][0m
+INFO 2025-09-18 05:58:38,570 runserver 7696 24172 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.11, 127.0.0.1:62236][0m
+INFO 2025-09-18 05:59:32,594 runserver 7696 24172 [mHTTP GET /operations/mobile/dashboard/ 200 [0.17, 127.0.0.1:62236][0m
+INFO 2025-09-18 05:59:32,743 runserver 7696 24172 [mHTTP GET /static/css/dist/styles.css?v=1758149972 200 [0.11, 127.0.0.1:62236][0m
+INFO 2025-09-18 05:59:32,757 runserver 7696 24172 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.12, 127.0.0.1:59322][0m

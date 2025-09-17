@@ -1,15 +1,29 @@
 {% extends "operations/mobile/base_mobile_revamped.html" %}
 {% load static %}
 
-{% block title %}Trang chủ - {{ user.nhanvien.ho_ten }}{% endblock %}
+{% block title %}Trang chủ - {{ user.nhan_vien.ho_ten }}{% endblock %}
 
 {% block content %}
 <div class="space-y-6">
+
+    {# === KHỐI ĐƯỢC CẬP NHẬT: Thêm Logo và Mã Nhân Viên === #}
     <div class="flex justify-between items-center">
-        <div>
-            <h1 class="text-2xl font-bold">Chào buổi sáng,</h1>
-            <p class="text-lg text-base-content/80">{{ nhan_vien.ho_ten }}</p>
+        <div class="flex items-center gap-4">
+            
+            {# 1. Cấu hình để lấy logo từ địa chỉ bạn đã cung cấp #}
+            <img src="/media/logos/logo-nen-den.png" alt="Company Logo" class="h-12 w-auto">
+            
+            {# 2. Giữ nguyên lời chào và tên, thêm Mã NV bên dưới #}
+            <div>
+                <h1 class="text-2xl font-bold">Xin Chào!</h1>
+                <p class="text-lg text-base-content/80">{{ nhan_vien.ho_ten }}</p>
+                {% if nhan_vien.ma_nhan_vien %}
+                    <p class="text-sm text-base-content/60 -mt-1">Mã NV: {{ nhan_vien.ma_nhan_vien }}</p>
+                {% endif %}
+            </div>
         </div>
+
+        {# Giữ nguyên Avatar của nhân viên ở bên phải #}
         <div class="avatar">
             <div class="w-14 rounded-full">
                 {% if nhan_vien.anh_the %}
@@ -20,6 +34,8 @@
             </div>
         </div>
     </div>
+    {# === KẾT THÚC KHỐI CẬP NHẬT === #}
+
 
     {% if messages %}
         {% for message in messages %}
@@ -31,6 +47,7 @@
     {% endif %}
 
     {% if ca_truc_hom_nay %}
+    {% with cham_cong=ca_truc_hom_nay.chamcong.first %}
     <div class="card bg-base-200 shadow-xl">
         <div class="card-body">
             <h2 class="card-title text-primary">Ca trực của bạn hôm nay</h2>
@@ -40,11 +57,11 @@
                 <span>{{ ca_truc_hom_nay.ca_lam_viec.gio_bat_dau|time:"H:i" }} - {{ ca_truc_hom_nay.ca_lam_viec.gio_ket_thuc|time:"H:i" }}</span>
             </div>
             <div class="card-actions justify-end mt-4">
-                {% if not ca_truc_hom_nay.check_in %}
+                {% if not cham_cong.thoi_gian_check_in %}
                     <button class="btn btn-primary w-full" onclick="checkin_modal.showModal()">
                         <i class="fas fa-sign-in-alt"></i> Bắt đầu ca (Check-in)
                     </button>
-                {% elif ca_truc_hom_nay.check_in and not ca_truc_hom_nay.check_out %}
+                {% elif cham_cong.thoi_gian_check_in and not cham_cong.thoi_gian_check_out %}
                      <button class="btn btn-error w-full" onclick="checkout_modal.showModal()">
                         <i class="fas fa-sign-out-alt"></i> Kết thúc ca (Check-out)
                     </button>
@@ -56,6 +73,7 @@
             </div>
         </div>
     </div>
+    {% endwith %}
     {% else %}
         <div class="card bg-base-200 shadow-xl">
             <div class="card-body items-center text-center">
@@ -76,6 +94,10 @@
             <a href="{% url 'inspection:mobile_tuan_tra' %}" class="btn btn-info h-24 flex-col">
                 <i class="fas fa-clipboard-check text-2xl"></i>
                 <span class="font-semibold">Tuần tra</span>
+            </a>
+             <a href="{% url 'operations:mobile_lich_truc' %}" class="btn h-24 flex-col col-span-2">
+                <i class="fas fa-calendar-alt text-2xl"></i>
+                <span class="font-semibold">Xem Lịch Trực Tuần</span>
             </a>
         </div>
     </div>

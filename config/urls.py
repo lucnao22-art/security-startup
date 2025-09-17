@@ -25,7 +25,14 @@ urlpatterns = [
     # URL đăng nhập cho mobile
     path('mobile/login/', operations_views.mobile_login_view, name='mobile_login'),
 ]
-
+# === BẮT ĐẦU PHẦN SỬA LỖI ===
+# Chỉ thêm URL của Debug Toolbar khi ở chế độ DEBUG
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
+# === KẾT THÚC PHẦN SỬA LỖI ===
 # ==============================================================================
 # BỔ SUNG CẤU HÌNH CHO STATIC VÀ MEDIA FILES
 # ==============================================================================

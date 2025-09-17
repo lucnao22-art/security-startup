@@ -174,20 +174,41 @@ def van_hanh_dashboard_view(request):
 @login_required
 def mobile_dashboard(request):
     try:
-        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
-        # Thêm `try-except` để xử lý trường hợp user chưa có profile nhân viên
         nhan_vien = request.user.nhan_vien
     except NhanVien.DoesNotExist:
         messages.error(request, "Tài khoản của bạn chưa được liên kết với hồ sơ nhân viên.")
-        # Chuyển hướng về trang đăng nhập nếu có lỗi
         return redirect('operations:mobile_login')
 
     today = timezone.now().date()
-    phan_congs = PhanCongCaTruc.objects.filter(
+    now_time = timezone.now().time()
+
+    # TỐI ƯU HÓA: Sử dụng select_related cho OneToOneField để tránh lỗi và tối ưu truy vấn.
+    phan_congs_today = PhanCongCaTruc.objects.filter(
         nhan_vien=nhan_vien, ngay_truc=today
-    ).prefetch_related('chamcong')
+    ).select_related('chamcong').order_by('ca_lam_viec__gio_bat_dau')
+
+    ca_truc_hom_nay = None
     
-    ca_truc_hom_nay = phan_congs.order_by('ca_lam_viec__gio_bat_dau').first()
+    # Ưu tiên 1: Tìm ca đã check-in nhưng chưa check-out
+    for pc in phan_congs_today:
+        # SỬA LỖI: Dùng hasattr để kiểm tra an toàn sự tồn tại của `chamcong`
+        # Điều này sẽ ngăn lỗi "RelatedObjectDoesNotExist"
+        if hasattr(pc, 'chamcong') and pc.chamcong.thoi_gian_check_in and not pc.chamcong.thoi_gian_check_out:
+            ca_truc_hom_nay = pc
+            break
+    
+    # Ưu tiên 2: Nếu không có ca nào đang diễn ra, tìm ca sắp tới gần nhất trong ngày mà chưa check-in
+    if not ca_truc_hom_nay:
+        for pc in phan_congs_today:
+            # Nếu ca chưa có chấm công (chưa check-in) và sắp diễn ra
+            if not hasattr(pc, 'chamcong'):
+                ca_truc_hom_nay = pc
+                break
+
+    # Ưu tiên 3: Nếu vẫn không có, có thể tất cả ca đã qua hoặc đã hoàn thành.
+    # Lấy ca cuối cùng trong ngày để hiển thị trạng thái (ví dụ: đã hoàn thành).
+    if not ca_truc_hom_nay:
+        ca_truc_hom_nay = phan_congs_today.last()
 
     context = {
         'nhan_vien': nhan_vien,
@@ -198,8 +219,7 @@ def mobile_dashboard(request):
 
 @login_required
 def mobile_lich_truc_view(request):
-    # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
-    nhan_vien = request.user.nhan_vien
+    nhan_vien = get_object_or_404(NhanVien, user=request.user)
     today = timezone.now().date()
     
     sap_toi_7_ca = PhanCongCaTruc.objects.filter(
@@ -219,7 +239,6 @@ def mobile_lich_truc_view(request):
 @login_required
 def bao_cao_su_co_mobile_view(request):
     try:
-        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
         nhan_vien = request.user.nhan_vien
         ca_truc_hien_tai = PhanCongCaTruc.objects.filter(
             nhan_vien=nhan_vien, ngay_truc=timezone.now().date()
@@ -254,7 +273,6 @@ def bao_cao_su_co_mobile_view(request):
 @login_required
 def check_in_view(request, phan_cong_id):
     if request.method == 'POST':
-        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
         phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhan_vien)
         cham_cong, created = ChamCong.objects.get_or_create(ca_truc=phan_cong)
         
@@ -278,7 +296,6 @@ def check_in_view(request, phan_cong_id):
 @login_required
 def check_out_view(request, phan_cong_id):
     if request.method == 'POST':
-        # SỬA LỖI: Đổi `request.user.nhanvien` thành `request.user.nhan_vien`
         phan_cong = get_object_or_404(PhanCongCaTruc, id=phan_cong_id, nhan_vien=request.user.nhan_vien)
         cham_cong, created = ChamCong.objects.get_or_create(ca_truc=phan_cong)
         
@@ -309,7 +326,6 @@ def mobile_login_view(request):
     """
     Xử lý đăng nhập cho giao diện mobile.
     """
-    # Nếu người dùng đã đăng nhập, chuyển thẳng đến dashboard
     if request.user.is_authenticated:
         return redirect('operations:mobile_dashboard')
 
@@ -322,7 +338,6 @@ def mobile_login_view(request):
             
             if user is not None:
                 login(request, user)
-                # Chuyển hướng đến trang dashboard mobile sau khi đăng nhập thành công
                 return redirect('operations:mobile_dashboard')
             else:
                 messages.error(request, 'Tên đăng nhập hoặc mật khẩu không đúng.')

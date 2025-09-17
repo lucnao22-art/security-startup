@@ -2709,6 +2709,9 @@
   .col-12 {
     grid-column: 12;
   }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
   .stat-figure {
     grid-column-start: 2;
     grid-row: span 3 / span 3;
@@ -2950,6 +2953,9 @@
     display: flex;
     justify-content: flex-end;
     gap: calc(0.25rem * 2);
+  }
+  .-mt-1 {
+    margin-top: calc(var(--spacing) * -1);
   }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
@@ -3533,6 +3539,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
@@ -3604,6 +3613,9 @@
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
+  }
+  .w-auto {
+    width: auto;
   }
   .w-full {
     width: 100%;
@@ -4049,6 +4061,14 @@
   @supports (color: color-mix(in lab, red, red)) {
     .text-base-content\/50 {
       color: color-mix(in oklab, var(--color-base-content) 50%, transparent);
+    }
+  }
+  .text-base-content\/60 {
+    color: var(--color-base-content);
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-base-content\/60 {
+      color: color-mix(in oklab, var(--color-base-content) 60%, transparent);
     }
   }
   .text-base-content\/70 {
