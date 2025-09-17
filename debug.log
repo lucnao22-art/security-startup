@@ -20258,3 +20258,7 @@ INFO 2025-09-17 10:11:04,203 runserver 26572 21708 [32mHTTP POST /logout/ 302 [
 INFO 2025-09-17 10:11:04,433 runserver 26572 21708 [mHTTP GET / 200 [0.22, 127.0.0.1:65509][0m
 INFO 2025-09-17 10:11:04,725 runserver 26572 21708 [36mHTTP GET /media/logos/logo-nen-den.png 304 [0.26, 127.0.0.1:65509][0m
 INFO 2025-09-17 10:11:04,726 runserver 26572 21708 [36mHTTP GET /static/img/nen_moi.jpg 304 [0.01, 127.0.0.1:63331][0m
+INFO 2025-09-17 10:49:09,249 autoreload 6540 21428 Watching for file changes with StatReloader
+INFO 2025-09-17 10:49:10,303 server 6540 5936 HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-09-17 10:49:10,304 server 6540 5936 Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-09-17 10:49:10,305 server 6540 5936 Listening on TCP address 127.0.0.1:8000

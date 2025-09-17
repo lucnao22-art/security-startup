@@ -160,7 +160,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# SỬA LỖI: Bổ sung cấu hình `default` và `staticfiles` storage
+# SỬA LỖI: Bổ sung cấu hình `default` storage và `staticfiles`
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -181,10 +181,9 @@ PHONENUMBER_DEFAULT_REGION = "VN"
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ['127.0.0.1']
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 # ==============================================================================
-# 12. CẤU HÌNH JAZZMIN (GIỮ NGUYÊN TỪ FILE CỦA BẠN)
+# 12. CẤU HÌNH JAZZMIN
 # ==============================================================================
 JAZZMIN_SETTINGS = {
     "site_title": "Hệ Thống Quản Lý",
@@ -203,6 +202,21 @@ JAZZMIN_SETTINGS = {
         {"name": "Dashboard", "url": "/dashboard/", "permissions": ["auth.view_user"]},
         {"app": "operations", "name": "Vận hành", "permissions": ["auth.view_user"]},
         {"app": "users", "name": "Nhân sự", "permissions": ["auth.view_user"]},
+    ],
+    # SỬA LỖI: Sử dụng danh sách chuỗi tên ứng dụng, đúng định dạng Jazzmin yêu cầu
+    "order_with_respect_to": [
+        "dashboard",
+        "users", 
+        "clients", 
+        "operations",
+        "workflow",
+        "reports",
+        "inspection",
+        "inventory",
+        "accounting",
+        "main",
+        "backup_restore",
+        "auth",
     ],
     "show_recent_actions": True,
     "custom_links": {
@@ -254,21 +268,6 @@ JAZZMIN_UI_TWEAKS = {
     }
 }
 
-JAZZMIN_SETTINGS["order_with_respect_to"] = (
-    {"app": "dashboard", "label": "Tổng quan"},
-    {"app": "users", "label": "Quản lý Nhân sự"},
-    {"app": "clients", "label": "Quản lý Khách hàng"},
-    {"app": "operations", "label": "Vận hành & Tác nghiệp"},
-    {"app": "workflow", "label": "Quy trình & Công việc"},
-    {"app": "reports", "label": "Báo cáo & Thống kê"},
-    {"app": "inspection", "label": "Thanh tra & Tuần tra"},
-    {"app": "inventory", "label": "Kho & Vật tư"},
-    {"app": "accounting", "label": "Kế toán"},
-    {"app": "main", "label": "Cấu hình Chung"},
-    {"app": "backup_restore", "label": "Sao lưu & Phục hồi"},
-    {"app": "auth", "label": "Tài khoản & Phân quyền"},
-)
-
 # ==============================================================================
 # 13. CẤU HÌNH LOGGING
 # ==============================================================================
@@ -292,3 +291,9 @@ LOGGING = {
     },
     "root": {"handlers": ["console", "file"], "level": "INFO",},
 }
+
+# ==============================================================================
+# BỔ SUNG ĐƯỜNG DẪN NPM ĐỂ SỬA LỖI TRÊN MÁY LOCAL
+# ==============================================================================
+if DEBUG:
+    NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
