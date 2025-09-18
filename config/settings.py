@@ -2,6 +2,7 @@
 
 import os
 from pathlib import Path
+from decouple import config
 import environ
 import dj_database_url
 
@@ -51,7 +52,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+     'cloudinary',
     'django.contrib.humanize',
 
     # Thư viện bên thứ ba
